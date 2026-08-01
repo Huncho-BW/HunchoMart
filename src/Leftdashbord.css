@@ -1,0 +1,129 @@
+
+
+.user-dashboard {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 24px;
+    padding: 40px;
+}
+.borderOne {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.div-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #111827;
+    color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.profile-text h1 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.profile-text span {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.borderTwo {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.dashboard-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dashboard-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #111827;
+}
+
+.dashboard-link:hover {
+    background: #f5f5f5;
+}
+
+.dashboard-link.active {
+    background: #111827;
+    color: #fff;
+}
+
+.dashboard-mobile-header {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .user-dashboard {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+         .dashboard-sidebar {
+             display: none;
+         }
+
+          .dashboard-mobile-header {
+              display: flex;
+              align-items: center;
+              gap: 12px;
+    
+            padding: 20px;
+          }
+    
+    
+          .dashboard-mobile-header h1 {
+              margin: 0;
+              font-size: 18px;
+              font-weight: 600;
+          }
+          .mobile-drawer {
+              position: fixed;
+              top: 0;
+              left: 0;
+    
+              width: 300px;
+              min-height: 100;
+              overflow-y: auto;
+    
+              transform: translateX(-100%);
+          }
+    
+          .mobile-drawer[data-state="open"] {
+              transform: translateX(0);
+          }
+}

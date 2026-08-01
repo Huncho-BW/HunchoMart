@@ -1,0 +1,244 @@
+
+
+/* ===========================
+   PRODUCT DETAILS
+=========================== */
+
+.product-details {
+    display: grid;
+    grid-template-columns:   600px 1fr; 
+    gap: 30px;
+   
+    padding: 40px;
+    align-items: start;
+}
+
+/* Left */
+
+.product-gallery {
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    
+}
+
+.product-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #f3f4f6;
+}
+
+.product-type {
+    display: flex;
+    justify-content: center;
+}
+
+/* Right */
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Header */
+
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.product-header span {
+    cursor: pointer;
+}
+
+/* Price */
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.product-price h1 {
+    font-size: 1rem;
+}
+
+.product-price h1:first-child {
+    color: #2563eb;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Divider */
+
+.divider hr {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Color & Size */
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header span {
+    color: #2563eb;
+    cursor: pointer;
+}
+
+/* Quantity */
+
+.product-quantity {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.quantity-box {
+    width: 90px;
+    height: 45px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Buttons */
+
+.product-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.cart-btn,
+.buy-btn {
+    flex: 1;
+}
+
+.buy-btn a {
+    text-decoration: none;
+}
+
+.cart-btn button,
+.buy-btn button {
+    width: 100%;
+    height: 52px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cart-btn button {
+    background: #2563eb;
+    color: #fff;
+}
+
+.buy-btn button {
+    background: #111827;
+    color: #fff;
+}
+
+/* Benefits */
+
+.product-benefits {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    padding: 1rem 0;
+
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+/* Delivery */
+
+.delivery-info {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.delivery-info p {
+    margin-top: .7rem;
+    line-height: 1.8;
+    color: #64748b;
+}
+
+/* Accordion */
+
+.accordion {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media(max-width:992px) {
+
+    .product-details {
+
+        grid-template-columns: minmax(0, 1fr) 300px;
+
+    }
+
+    .product-image {
+
+        height: 500px;
+
+    }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px) {
+
+    .product-details {
+
+        display: block;
+
+    }
+
+    .product-gallery {
+
+        margin-bottom: 2rem;
+
+    }
+
+    .product-image {
+
+        height: 380px;
+
+    }
+
+    .product-actions {
+
+        flex-direction: column;
+
+    }
+
+}

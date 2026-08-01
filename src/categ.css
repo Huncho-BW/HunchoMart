@@ -1,0 +1,103 @@
+
+
+.categoriesHead{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+   
+}
+
+.CatLayout{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+   
+    
+}
+
+
+.filter{
+    max-width: 300px;
+    min-height: 0;
+    border: 1px solid;
+    position: sticky;
+        top: 90px;
+}
+
+.filter {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 1.5rem;
+    height: fit-content;
+    position: sticky;
+    top: 90px;
+}
+
+/* Main Title */
+
+.filter>div>h1:first-child {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #111827;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Every Filter Section */
+
+.filter>div>div {
+    margin-bottom: 2rem;
+}
+
+.filter>div>div:last-child {
+    margin-bottom: 0;
+}
+
+/* Section Title */
+
+.filter>div>div>h1 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+}
+
+/* Checkbox Row */
+
+.filter>div>div>div {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding: .6rem .8rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+/* Hover */
+
+.filter>div>div>div:hover {
+    background: #f8fafc;
+}
+
+/* Checkbox */
+
+.filter input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #2563eb;
+}
+
+/* Label */
+
+.filter>div>div>div h1 {
+    font-size: .95rem;
+    font-weight: 500;
+    color: #475569;
+    margin: 0;
+}
