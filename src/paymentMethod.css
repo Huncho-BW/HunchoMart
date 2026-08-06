@@ -1,0 +1,266 @@
+
+
+.credit {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.credit label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.input-box {
+    width: 100%;
+}
+
+.input-box input {
+    width: 100%;
+    height: 45px;
+    padding: 0 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.input-box input:focus {
+    border-color: #111;
+}
+
+
+/* Expiry + CVV */
+.card-details {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+}
+
+.field {
+    flex: 1;
+}
+
+
+/* Save card */
+.save-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.save-card input {
+    width: 18px;
+    height: 18px;
+}
+
+.save-card h1 {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+/* Security */
+.secure-payment {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background: #f7f7f7;
+    border-radius: 10px;
+}
+
+.secure-payment span {
+    font-size: 20px;
+}
+
+.secure-payment p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+}
+
+
+.card-details {
+  display: flex;
+}
+
+.field {
+  flex: 1;
+}
+
+
+.paypal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.paypal-box {
+    width: 100%;
+    height: 62px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+.paypal-box h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #003087;
+    /* PayPal dark blue */
+    letter-spacing: -1px;
+}
+
+.paypal-box h1 span {
+    color: #009cde;
+    /* PayPal light blue */
+}
+
+
+.paypal-box p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+
+/* Security section */
+.secure-payment {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 15px;
+    background: #f7f7f7;
+    border-radius: 10px;
+}
+
+.secure-payment span {
+    font-size: 20px;
+}
+
+.secure-payment p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+}
+
+
+.apple-pay {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.apple-pay-box {
+    width: 100%;
+    height: 62px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.apple-pay-box h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: -1px;
+}
+
+.apple-logo {
+    font-size: 32px;
+}
+
+.apple-pay-box p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+
+/* Security */
+.secure-payment {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 15px;
+    background: #f7f7f7;
+    border-radius: 10px;
+}
+
+.secure-payment p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+}
+
+
+@media (max-width: 767px) {
+    .card-details {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .save-card h1 {
+        font-size: 13px;
+    }
+
+    .secure-payment {
+        align-items: flex-start;
+    }
+
+         .paypal-box {
+             height: auto;
+             min-height: 62px;
+             flex-direction: column;
+             gap: 5px;
+             padding: 12px;
+             box-sizing: border-box;
+         }
+    
+         .paypal-box h1 {
+             font-size: 24px;
+         }
+    
+         .paypal-box p {
+             text-align: center;
+         }
+
+                  .apple-pay-box {
+                      height: auto;
+                      min-height: 62px;
+                      flex-direction: column;
+                      gap: 5px;
+                      padding: 12px;
+                      box-sizing: border-box;
+                  }
+        
+                  .apple-pay-box h1 {
+                      font-size: 24px;
+                  }
+        
+                  .apple-pay-box p {
+                      text-align: center;
+                  }
+                  
+}

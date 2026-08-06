@@ -3,7 +3,13 @@ import CheckOutLeft from "./CheckoutLeft";
 import CheckOutRight from "./CheckOutRight";
 import CheckOutSecurity from "./CheckOutSecurity";
 
+import { useParams } from "react-router-dom";
+
 export default function CheckOut() {
+  const { id } = useParams();
+  const checkId = Number(id);
+  console.log("check id", checkId);
+
   return (
     <div className="checkoutContainer">
       <header className="checkoutHeader ">
@@ -13,17 +19,14 @@ export default function CheckOut() {
           <h1 className="">Security Checkout</h1>
         </div>
       </header>
-      <div>
-        <CheckOutSecurity />
-      </div>
 
       <div className="checkoutGrid">
         <div className="checkoutLeftWrapper">
-          <CheckOutLeft />
+          <CheckOutLeft id={checkId} />
         </div>
 
         <div className="checkoutRightWrapper">
-          <CheckOutRight />
+          <CheckOutRight id={checkId} />
         </div>
       </div>
     </div>

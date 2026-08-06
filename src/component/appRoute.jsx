@@ -16,8 +16,14 @@ import UserAdrees from "../pages/UserAddres";
 import UserPayment from "../pages/UserPayment";
 
 import Notification from "../pages/Notification.jsx";
-
+import Address from "../pages/Address.jsx";
+import Delivery from "../pages/Delivery.jsx";
 import Settings from "../pages/Setting";
+import CheckOutPayment from "../pages/CheckOutPayment.jsx";
+import Credit from "../pages/credit.jsx";
+import ApplePay from "../pages/ApplePay.jsx";
+import PayPal from "../pages/PayPal.jsx";
+import Comfirmation from "../pages/Corfirmation.jsx";
 export const roterConfigu = [
   {
     path: "/",
@@ -28,10 +34,33 @@ export const roterConfigu = [
       { path: "sneakers", element: <Sneaker /> },
       { path: "tech", element: <Tech /> },
       { path: "product/:id", element: <ProductDetails /> },
-      { path: "checkOut/:id", element: <CheckOut /> },
+      {
+        path: "checkOut/:id",
+        element: <CheckOut />,
+        children: [
+          { index: true, element: <Address /> },
+          { path: "Shipping", element: <Address /> },
+          { path: "Delivery", element: <Delivery /> },
+          {
+            path: "checkoutPayment",
+            element: <CheckOutPayment />,
+            children: [
+              { index: true, element: <Credit /> },
+              { path: "credit", element: <Credit /> },
+              { path: "applePay", element: <ApplePay /> },
+              { path: "paypal", element: <PayPal /> },
+            ],
+          },
+        ],
+      },
       {
         path: "cart/:id",
         element: <Cart />,
+      },
+
+      {
+        path: "Comfirmation",
+        element: <Comfirmation />,
       },
       {
         path: "userDash",

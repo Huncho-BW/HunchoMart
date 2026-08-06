@@ -1,16 +1,15 @@
 import React from "react";
-
-export default function CheckOutSecurity() {
+import { NavLink } from "react-router-dom";
+export default function CheckOutSecurity({ id }) {
   const secureCheckout = [
-    { id: 1, name: "Shipping" },
-    { id: 2, name: "Delivery" },
-    { id: 3, name: "Payment" },
-    { id: 4, name: "comfirmation" },
+    { id: 1, name: "Shipping", path: "Shipping" },
+    { id: 2, name: "Delivery", path: "Delivery" },
+    { id: 3, name: "Payment", path: "checkoutPayment" },
   ];
   return (
     <div className="checkoutProgress">
       {secureCheckout.map((item, index) => (
-        <div className="progressItem" key={item.id}>
+        <NavLink to={item.path} className="progressItem" key={item.id}>
           <div className="progressTop">
             <span
               className={`progressCircle ${item.active ? "activeCircle" : ""}`}
@@ -26,7 +25,7 @@ export default function CheckOutSecurity() {
           <h2 className={`progressTitle ${item.active ? "activeTitle" : ""}`}>
             {item.name}
           </h2>
-        </div>
+        </NavLink>
       ))}
     </div>
   );

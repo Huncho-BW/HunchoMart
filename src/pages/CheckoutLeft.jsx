@@ -2,19 +2,17 @@ import React from "react";
 import Address from "./Address";
 import Delivery from "./Delivery";
 import ComfirmationPage from "./comfiremationPage";
-const secureCheckout = [
-  { id: 1, name: "Shipping" },
-  { id: 2, name: "Delivery" },
-  { id: 3, name: "Payment" },
-  { id: 4, name: "comfirmation" },
-];
-export default function CheckOutLeft() {
+import CheckOutSecurity from "./CheckOutSecurity";
+import { Outlet } from "react-router-dom";
+export default function CheckOutLeft({ id }) {
   return (
     <div className="bg-[white]">
-      <Address />
-      <Delivery />
+      <CheckOutSecurity />
 
-      <ComfirmationPage />
+      <div>
+        <Outlet />
+        <ComfirmationPage />
+      </div>
     </div>
   );
 }

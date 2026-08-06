@@ -1,26 +1,49 @@
 import React from "react";
 import fashion from "../assets/fashion.webp";
+import { product } from "../data/product";
+import { useParams } from "react-router-dom";
 export default function ProductDetails() {
+  const { id } = useParams();
+  const productDetailsData = Number(id);
+  console.log("id", productDetailsData);
+  const allProductData = [
+    ...product.productBeauty,
+    ...product.productFashion,
+    ...product.productSneakers,
+    ...product.productTech,
+  ];
+
+  console.log("all product", allProductData);
+
+  const productData = allProductData.find(
+    (item) => item?.id === productDetailsData,
+  );
+  console.log(" product data", productData);
+
   return (
     <div className="product-details">
       <div className="product-gallery">
-        <img src={fashion} alt="" className="product-image" />
+        <img
+          src={productData?.images?.[0] || productData?.image}
+          alt=""
+          className="product-image"
+        />
 
         <div className="product-type">
-          <h1>type</h1>
+          <h1>{productData?.title}</h1>
         </div>
       </div>
 
       <div className="product-info">
         <div className="product-header">
-          <h1>name</h1>
+          <h1>{productData?.title}</h1>
           <span>like</span>
         </div>
 
         <div className="product-price">
-          <h1>current price</h1>
-          <h1>actual price</h1>
-          <h1>discount price</h1>
+          <h1>{productData?.price}</h1>
+          <h1>actualy price</h1>
+          <h1>{productData?.discountPercentage}</h1>
         </div>
 
         <div className="divider">
@@ -30,7 +53,7 @@ export default function ProductDetails() {
         <div className="product-color">
           <div className="section-header">
             <h1>color</h1>
-            <span>name of color</span>
+            <span></span>
           </div>
         </div>
 
@@ -57,7 +80,7 @@ export default function ProductDetails() {
           </div>
 
           <div className="buy-btn">
-            <a href="/checkOut/:id">
+            <a href={`/checkOut/${productData?.id}`}>
               <button>Buy Now</button>
             </a>
           </div>

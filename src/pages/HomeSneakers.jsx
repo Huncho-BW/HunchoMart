@@ -1,14 +1,14 @@
 import React from "react";
 import BrandCard from "./BrandCard";
 import { product } from "../data/product";
-export default function HomeTech() {
-  const techData = product.productTech;
+import { Snail } from "lucide-react";
+export default function HomeSneankers() {
+  const sneakers = product.productSneakers;
   return (
     <div className=" p-[40px] mt-[20px]">
-      <h1 className="text-[32px] font-[600] mb-[20px]">Tech</h1>
-
+      <h1 className="text-[32px] font-[600] mb-[20px]">Sneakers</h1>
       <div className="flex gap-[10px]">
-        {techData.map((item) => (
+        {sneakers.map((item) => (
           <BrandCard key={item.id} product={item} />
         ))}
       </div>

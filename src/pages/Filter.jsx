@@ -1,6 +1,9 @@
 import React from "react";
 
-export default function FilterSide() {
+export default function FilterSide({ filterData }) {
+  const result = filterData;
+  console.log("result", result);
+
   return (
     <div className="filter p-3">
       <div>

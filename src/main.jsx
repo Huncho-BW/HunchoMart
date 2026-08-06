@@ -9,6 +9,7 @@ import "./productDetails.css";
 import "./cart.css";
 import "./checkOut.css";
 import "./Leftdashbord.css";
+import "./paymentMethod.css";
 import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(

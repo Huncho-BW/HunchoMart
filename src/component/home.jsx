@@ -6,7 +6,8 @@ import FlashDeal from "../pages/FlashDeal";
 import Trading from "../pages/Trading";
 import HomeBueaty from "../pages/HomeBeauty";
 import HomeFashion from "../pages/HomeFashion";
-import HomeSneankers from "../pages/Sneakers";
+
+import HomeSneankers from "../pages/HomeSneakers";
 import HomeTech from "../pages/HomeTech";
 
 export default function Home() {
