@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import CartLeft from "./CartLeft";
 import CartRight from "./CartRight";
-
+import { CartContext } from "../context/CartContext";
 export default function Cart() {
+  const { cart } = useContext(CartContext);
+
+  console.log("cart inside Cart page:", cart);
   return (
     <div className="cartContainer">
       <header className="flex justify-between items-center cartHeader">

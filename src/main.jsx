@@ -10,10 +10,15 @@ import "./cart.css";
 import "./checkOut.css";
 import "./Leftdashbord.css";
 import "./paymentMethod.css";
+import "./Confirmation.css";
+import "./setting.css";
+import CartProvider from "./context/CartContext";
 import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <CartProvider>
+      <App />
+    </CartProvider>
   </StrictMode>,
 );

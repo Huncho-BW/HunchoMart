@@ -20,8 +20,7 @@
     max-width: 300px;
     min-height: 0;
     border: 1px solid;
-    position: sticky;
-        top: 90px;
+    
 }
 
 .filter {
@@ -29,10 +28,8 @@
     border: 1px solid #e5e7eb;
     border-radius: 16px;
     padding: 1.5rem;
-    height: fit-content;
-    position: sticky;
-    top: 90px;
 }
+    
 
 /* Main Title */
 

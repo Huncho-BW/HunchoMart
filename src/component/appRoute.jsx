@@ -23,7 +23,9 @@ import CheckOutPayment from "../pages/CheckOutPayment.jsx";
 import Credit from "../pages/credit.jsx";
 import ApplePay from "../pages/ApplePay.jsx";
 import PayPal from "../pages/PayPal.jsx";
+import HeartWish from "../pages/Heart.jsx";
 import Comfirmation from "../pages/Corfirmation.jsx";
+import { Navigate } from "react-router-dom";
 export const roterConfigu = [
   {
     path: "/",
@@ -33,12 +35,13 @@ export const roterConfigu = [
       { path: "fashion", element: <Fashion /> },
       { path: "sneakers", element: <Sneaker /> },
       { path: "tech", element: <Tech /> },
+
       { path: "product/:id", element: <ProductDetails /> },
       {
         path: "checkOut/:id",
         element: <CheckOut />,
         children: [
-          { index: true, element: <Address /> },
+          { index: true, element: <Navigate to="Shipping" replace /> },
           { path: "Shipping", element: <Address /> },
           { path: "Delivery", element: <Delivery /> },
           {
@@ -54,10 +57,10 @@ export const roterConfigu = [
         ],
       },
       {
-        path: "cart/:id",
+        path: "cart",
         element: <Cart />,
       },
-
+      { path: "heart", element: <HeartWish /> },
       {
         path: "Comfirmation",
         element: <Comfirmation />,

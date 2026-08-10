@@ -7,8 +7,8 @@ export default function Orders() {
         <h1>Order</h1>
       </div>
 
-      <div>
-        <div>
+      <div className="flex flex-col gap-[30px]">
+        <div className="flex justify-between items-center">
           <div>
             <h1>package name</h1>
             <h1>Dec 24 2024 .3 items </h1>
@@ -21,15 +21,15 @@ export default function Orders() {
           </div>
         </div>
 
-        <div>
-          <div>
-            <img src="" alt="" />
+        <div className="flex justify-between items-center">
+          <div className="flex gap-[20px] items-center">
+            <img src="" className="w-[60px] h-[60px]" alt="" />
             <div>
               <h1>Name </h1>
               <h1>Brand</h1>
             </div>
           </div>
-          <div>
+          <div className="flex gap-[20px]">
             <span>
               <h1>Reorder</h1>
             </span>

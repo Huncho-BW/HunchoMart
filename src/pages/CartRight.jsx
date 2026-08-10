@@ -1,7 +1,22 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
+import { product } from "../data/product";
 export default function CartRight() {
+  const { cart } = useContext(CartContext);
+  const cardId = Number(cart);
+  const allproductData = [
+    ...product.productBeauty,
+    ...product.productFashion,
+    ...product.productSneakers,
+    ...product.productTech,
+  ];
+
+  const productData = allproductData.filter((item) => cart.includes(item?.id));
+
+  console.log("log out cart data", productData);
+
   return (
     <div className="orderSummary">
       <h1 className="summaryTitle">Order Summary</h1>

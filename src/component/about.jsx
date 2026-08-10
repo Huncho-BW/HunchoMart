@@ -2,13 +2,24 @@ import React from "react";
 import FilterSide from "../pages/Filter";
 import ProductCard from "../pages/ProductCard";
 import { product } from "../data/product";
+import { useState } from "react";
 import BrandCard from "../pages/BrandCard";
 export default function Fashion() {
+  const [selectedValue, setSelectionValue] = useState({
+    brand: [],
+    price: { min: null, max: null },
+    color: [],
+    size: [],
+  });
   const fashionData = product.productFashion;
   return (
     <div className="CatLayout">
       <div>
-        <FilterSide filterData={fashionData} />
+        <FilterSide
+          setSelectionValue={setSelectionValue}
+          selectedValue={selectedValue}
+          filterData={fashionData}
+        />
       </div>
 
       <div>

@@ -29,15 +29,17 @@ export default function Navbar() {
 
         {/* Actions */}
         <div className="actions">
-          <button>
-            <Heart />
-          </button>
+          <NavLink to={"/heart"}>
+            <button>
+              <Heart />
+            </button>
+          </NavLink>
 
-          <a href="/cart/:id">
+          <NavLink to="/cart">
             <button>
               <ShoppingCart />
             </button>
-          </a>
+          </NavLink>
           <a href="/userDash">
             <button>
               <CircleUser />

@@ -1,0 +1,87 @@
+
+
+.confirmation-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+  padding: 30px;
+}
+
+
+.confirmation-icon {
+  font-size: 60px;
+  color: green;
+}
+
+
+.confirmation-title p {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+
+.confirmation-message h1 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 12px 0;
+}
+
+
+.confirmation-message span {
+  font-weight: 800;
+}
+
+
+.order-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 25px;
+  border-radius: 12px;
+  background: #f8f8f8;
+}
+
+
+.order-info div {
+  min-width: 150px;
+}
+
+
+.order-info p {
+  color: gray;
+  margin-bottom: 8px;
+}
+
+
+.order-info h2 {
+  font-size: 18px;
+}
+
+
+.confirmation-buttons {
+  display: flex;
+  gap: 20px;
+width: 270px;
+}
+
+.confirmation-buttons > .active{
+padding: 12px 16px ;
+width: 100%;
+    border-radius: 8px;
+    border: 1px solid;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+
+    
+}
+
+.confirmation-buttons > .active > button {
+  
+text-wrap: nowrap;
+}
+
