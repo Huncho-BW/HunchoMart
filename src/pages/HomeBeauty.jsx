@@ -7,7 +7,7 @@ export default function HomeBueaty() {
   return (
     <div className=" p-[40px] mt-[20px]">
       <h1 className="text-[32px] font-[600] mb-[20px]">Beauty</h1>
-      <div className="flex gap-[20px]">
+      <div className="flex gap-[20px] overflow-hidden overflow-x-auto scrollbar-hide">
         {BeautyProduct.map((item) => (
           <BrandCard key={item.id} product={item} />
         ))}

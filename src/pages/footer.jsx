@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
   return (
     <footer class="footer">
       <div class="footer-container">
@@ -63,7 +64,7 @@ export default function Footer() {
         </div>
 
         <div class="footer-bottom">
-          <p>© 2026 NOVA. All rights reserved.</p>
+          <p>© {year} HUNCHO MART. All rights reserved.</p>
 
           <div class="socials">
             <a href="#">Instagram</a>

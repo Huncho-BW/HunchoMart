@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Shield } from "lucide-react";
 export default function PayPal() {
   return (
     <div className="paypal">
@@ -11,7 +11,7 @@ export default function PayPal() {
       </div>
 
       <div className="secure-payment">
-        <span>logo guide</span>
+        <Shield />
         <p>Your payment information is encrypted and secure</p>
       </div>
     </div>

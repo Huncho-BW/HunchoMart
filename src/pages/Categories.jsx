@@ -14,9 +14,12 @@ export default function Categories() {
     { name: "Beauty", pic: beauty },
   ];
   return (
-    <div className="mt-[20px] p-[40px]">
+    <div className="mt-[20px] p-[40px] ">
       <section>
-        <h1 className="text-[32px] font-[600] mb-[20px]">
+        <span className="text-[10px] text-[#B8965A] text-[DM Mono] tracking-[0.2em] font-[500]">
+          Explore
+        </span>
+        <h1 className="text-[32px] topHeader text-[#0C0C0C] font-[600] mb-[20px]">
           Shop By Catergories
         </h1>
         <div className="categoriesHead ">
@@ -24,7 +27,12 @@ export default function Categories() {
             <NavLink className="Categories" to={item.name}>
               <img className="cat-img" src={item.pic} alt="" />
 
-              <h1>{item.name}</h1>
+              <h1 className="text-[12px] text-[sans-serif] text-[#ffffff] font-[700]">
+                {item.name} <br />{" "}
+                <span className="text-[10px] text-white/50 text-[sans-serif]">
+                  55
+                </span>
+              </h1>
             </NavLink>
           ))}
         </div>

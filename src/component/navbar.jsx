@@ -15,11 +15,21 @@ export default function Navbar() {
 
         {/* Navigation */}
         <nav className="nav-links ">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="fashion">Fashion</NavLink>
-          <NavLink to="sneakers">Sneakers</NavLink>
-          <NavLink to="tech">Tech</NavLink>
-          <NavLink to="beauty">Beauty</NavLink>
+          <NavLink className={"nav-text"} to="/">
+            Home
+          </NavLink>
+          <NavLink className="nav-text" to="fashion">
+            Fashion
+          </NavLink>
+          <NavLink className="nav-text" to="sneakers">
+            Sneakers
+          </NavLink>
+          <NavLink className="nav-text" to="tech">
+            Tech
+          </NavLink>
+          <NavLink className="nav-text" to="beauty">
+            Beauty
+          </NavLink>
         </nav>
 
         {/* Search */}
@@ -31,18 +41,18 @@ export default function Navbar() {
         <div className="actions">
           <NavLink to={"/heart"}>
             <button>
-              <Heart />
+              <Heart className="nav-text" />
             </button>
           </NavLink>
 
           <NavLink to="/cart">
             <button>
-              <ShoppingCart />
+              <ShoppingCart className="nav-text" />
             </button>
           </NavLink>
           <a href="/userDash">
             <button>
-              <CircleUser />
+              <CircleUser className="nav-text" />
             </button>
           </a>
         </div>

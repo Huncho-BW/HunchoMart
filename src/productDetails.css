@@ -51,10 +51,7 @@
     align-items: center;
 }
 
-.product-header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-}
+
 
 .product-header span {
     cursor: pointer;
@@ -69,16 +66,12 @@
     flex-wrap: wrap;
 }
 
-.product-price h1 {
-    font-size: 1rem;
-}
 
-.product-price h1:first-child {
-    color: #2563eb;
-    font-size: 2rem;
-    font-weight: 700;
-}
 
+
+.heartColor{
+    color: red;
+}
 /* Divider */
 
 .divider hr {
@@ -144,6 +137,10 @@
     border-radius: 10px;
     cursor: pointer;
     font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .cart-btn button {

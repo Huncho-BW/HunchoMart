@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Shield } from "lucide-react";
 export default function ApplePay() {
   return (
     <div className="apple-pay">
@@ -11,7 +11,7 @@ export default function ApplePay() {
       </div>
 
       <div className="secure-payment">
-        <span>logo guide</span>
+        <Shield />
         <p>Your payment information is encrypted and secure</p>
       </div>
     </div>

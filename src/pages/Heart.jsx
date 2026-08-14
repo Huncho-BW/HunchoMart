@@ -23,7 +23,7 @@ export default function HeartWish() {
         <h1> Whish List</h1>
       </div>
 
-      <div className="flex flex-wrap  justify-center gap-[10px] ">
+      <div className="catDisplay ">
         {productData.map((product) => (
           <div>
             <NavLink to={`/product/${product.id}`}>

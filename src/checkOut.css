@@ -43,19 +43,6 @@
       LEFT SIDE
 ===========================*/
 
-.checkoutLeftWrapper {
-
-    min-width: 0;
-
-    
-
-    
-}
-
-.checkoutLeftWrapper::-webkit-scrollbar {
-
-    display: none;
-}
 
 /*==========================
       RIGHT SIDE
@@ -64,7 +51,54 @@
 .checkoutRightWrapper {
 
     width: 100%;
+    background-color:#fff ;
+
+    padding: 20px;
 }
+
+.checkOutcardBorder{
+    display: flex;
+        justify-content: space-between;
+        align-items: center;
+  
+      
+    
+}
+
+.checkOutProductInfo{
+    display: flex;
+        align-items: center;
+        gap: 24px;
+}
+
+.checkOutProductImage{
+    width: 60px ;
+    height: 60px;
+    border-radius: 16px;
+    
+        background: #F5F5F5;
+    
+        object-fit: cover;
+    
+        flex-shrink: 0;
+}
+
+.checkOutProductContent{
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+}
+.checkOutProductRight{
+    display: flex;
+        flex-direction: column;
+    
+       
+    
+        
+}
+
+
+
 
 /*==========================
       cirlcle layout

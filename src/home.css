@@ -4,13 +4,49 @@
 
 .hero {
     position: relative;
+    display: flex;
+    padding: 34px;
+background-color: #0B1B33;
+color: #F8FAFC;
 }
 
-.hero-image {
+.image {
     width: 100%;
-    height: 100dvh;
-    object-fit: cover;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: fill;
 }
+
+.hero-image{
+    width: 50%;
+    height: 100dvh;
+    border: 0px solid;
+    border-radius: 20px;
+}
+
+
+.hero-text{
+    width: 50%;
+    height: 100dvh;
+    border: 0px solid;
+    padding: 20px;
+   
+}
+.hero-text  {
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.subText{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: none;
+}
+
+
 
 
 
@@ -46,6 +82,7 @@
         font-size: 18px;
     
         font-weight: 600;
+    
 }
 
 .Categories{
@@ -56,7 +93,7 @@
     flex: 1 1;
     position: relative;
    
-    border:  1px solid;
+    border:  0px solid;
 
 }
 .Categories > .cat-img{
@@ -109,72 +146,128 @@ border: 1px solid;
     display: flex;gap: 20px;
 }
 .emailInput{
-    max-width: 400px;
-    height: 40px;
-    border: 1px solid ;
+    max-width: 442px;
+
+    height: 45px;
+    border: 1px solid  ;
 flex: 1 1;
+background-color: #1A1A1A;
+padding: 12px 16px;
+border-radius: 12px;
 }
+.emailInput:focus-within{
+    border-color: #B8965A;
+}
+
 .emailInput >input{
     width: 100%;
-    padding: 8px 12px;
+    border: none;
+    border: none;
+        outline: none;
+        color: #3D3A36;
+
+}.emailInput > input::placeholder{
+    color: #3D3A36;
+}
+.emailInput > input:focus{
+    border: none;
+        outline: none;
 }
 .eamilBut{
     width: 100px;
     border: 1px solid;
-   
+   background-color: #B8965A;
+   border-radius: 8px;
+padding: 12px 24px;
 }
 .eamilBut > button{
     width: 100%;
-    padding: 8px 12px;
+    
+} .eamilBut:hover{
+    background-color: #D4B27A;
 }
 
 
 .flashDeal{
-    width: 220px;
-    height: 300px;
+    width: 223px;
+    height: 324px;
     border: 1px solid;
     border-radius: 12px;
 }
 .flashDeal > img{
     width: 100%;
-    height: 200px;
+    height: 223px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
 
 }
 
 .tranding{
-    width: 300px;
-        height: 300px;
-        border: 1px solid;
+    width: 217px;
+        height: 365px;
+        border: 0px solid;
         border-radius: 12px;
         position: relative;
 }
 
 .tranding > img{
-    width: 100%;
-        height: 200px;
+    width: 217px;
+    border: 1px solid;
+        height: 272px;
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
         position: absolute;
+        object-fit: fill;
+        background-color:darkgray;
+
+      
 }
 
 .addCart{
     position: absolute;
-    
-    top: 50%;
+  
+    top: 65%;
         left: 50%;
         transform: translate(-50%, -50%);
-    border: 1px solid ;
-    padding: 10px 16px;
+    border: 1px solid  ;
+    border-radius: 8px;
+    
     width: 80%;
+    background-color: white;
+    color: black;
+    animation: addcartStyle 0.8s ease-in-out;
 }
 
+.addCart:hover{
+    display: block;
+    background-color: black;
+    color: white;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+
+@keyframes addcartStyle {
+    0%{
+ opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
 
 
 .trending-content{
     position: absolute;
-        top: 65%;
+        inset: 0;
+        top: 75%;
 }
 
 

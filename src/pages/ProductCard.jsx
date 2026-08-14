@@ -14,7 +14,7 @@ export default function ProductCard() {
         </div>
         <div>
           <span>curent price</span>
-          <span>actual price</span>
+          <span className="line-through">actual price</span>
           <span>percentage </span>
         </div>
       </div>

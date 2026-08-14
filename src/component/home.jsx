@@ -9,11 +9,12 @@ import HomeFashion from "../pages/HomeFashion";
 
 import HomeSneankers from "../pages/HomeSneakers";
 import HomeTech from "../pages/HomeTech";
-
+import HomeDivider from "../pages/HomeDivider";
 export default function Home() {
   return (
-    <div>
+    <div className=" ">
       <HeroSection />
+      <HomeDivider />
       <Categories />
       <FlashDeal />
       <Trading />
