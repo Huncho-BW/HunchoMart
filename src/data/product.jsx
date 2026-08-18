@@ -348,7 +348,7 @@ export const product = {
 
   productFashion: [
     {
-      id: 5,
+      id: 6,
       title: "Fjallraven Foldsack Backpack",
       description:
         "Your perfect pack for everyday use and walks in the forest. Stash your laptop up to 15 inches in the padded sleeve.",
@@ -427,7 +427,7 @@ export const product = {
     },
 
     {
-      id: 6,
+      id: 7,
       title: "Premium Slim Fit T-Shirt",
       description:
         "Slim-fitting casual t-shirt with soft breathable fabric designed for comfortable everyday fashion wear.",
@@ -466,14 +466,14 @@ export const product = {
           reviewerEmail: "james.anderson@x.dummyjson.com",
         },
         {
-          rating: 4,
+          rating: 4.34,
           comment: "Nice fit and good quality.",
           date: "2025-04-30T09:41:02.053Z",
           reviewerName: "Robert Williams",
           reviewerEmail: "robert.williams@x.dummyjson.com",
         },
         {
-          rating: 2,
+          rating: 2.2,
           comment: "Good shirt for everyday use.",
           date: "2025-04-30T09:41:02.053Z",
           reviewerName: "David Thomas",
@@ -509,7 +509,7 @@ export const product = {
     },
 
     {
-      id: 7,
+      id: 8,
       title: "Classic Cotton Jacket",
       description:
         "Premium cotton jacket suitable for outdoor activities, travel, casual occasions, and everyday style.",
@@ -588,7 +588,7 @@ export const product = {
     },
 
     {
-      id: 8,
+      id: 9,
       title: "Casual Slim Fit Shirt",
       description:
         "A comfortable slim fit casual shirt designed with a modern style for everyday wear.",
@@ -667,7 +667,7 @@ export const product = {
     },
 
     {
-      id: 9,
+      id: 10,
       title: "Women's Winter Snowboard Jacket",
       description:
         "Warm winter jacket with detachable liner, adjustable hood, and comfortable design for cold weather.",
@@ -746,7 +746,7 @@ export const product = {
     },
 
     {
-      id: 10,
+      id: 11,
       title: "Women's Faux Leather Moto Jacket",
       description:
         "Stylish faux leather jacket designed for comfort with a modern biker-inspired look.",
@@ -825,7 +825,7 @@ export const product = {
     },
 
     {
-      id: 11,
+      id: 12,
       title: "Women's Windbreaker Rain Jacket",
       description:
         "Lightweight rain jacket perfect for travel and casual wear with hood and adjustable design.",
@@ -904,7 +904,7 @@ export const product = {
     },
 
     {
-      id: 12,
+      id: 13,
       title: "Women's Solid Short Sleeve Top",
       description:
         "Soft lightweight fabric top with comfortable stretch designed for casual everyday fashion.",
@@ -983,7 +983,7 @@ export const product = {
     },
 
     {
-      id: 13,
+      id: 14,
       title: "Women's Moisture Control T-Shirt",
       description:
         "Lightweight breathable polyester shirt designed for comfort and active lifestyles.",
@@ -1062,7 +1062,7 @@ export const product = {
     },
 
     {
-      id: 14,
+      id: 15,
       title: "Women's Casual Cotton T-Shirt",
       description:
         "Soft cotton casual t-shirt suitable for office, school, beach, and everyday street fashion.",
@@ -1143,7 +1143,7 @@ export const product = {
 
   productSneakers: [
     {
-      id: 15,
+      id: 16,
       title: "Nike Air Jordan 1 Red And Black",
       description:
         "The Nike Air Jordan 1 in Red and Black is an iconic basketball sneaker known for its stylish design and high-performance features, making it a favorite among sneaker enthusiasts and athletes.",
@@ -1226,7 +1226,7 @@ export const product = {
     },
 
     {
-      id: 16,
+      id: 17,
       title: "Nike Baseball Cleats",
       description:
         "Nike Baseball Cleats are designed for maximum traction and performance on the baseball field. They provide stability and support for players during games and practices.",
@@ -1309,7 +1309,7 @@ export const product = {
     },
 
     {
-      id: 17,
+      id: 18,
       title: "Puma Future Rider Trainers",
       description:
         "The Puma Future Rider Trainers offer a blend of retro style and modern comfort. Perfect for casual wear, these trainers provide a fashionable and comfortable option for everyday use.",
@@ -1392,7 +1392,7 @@ export const product = {
     },
 
     {
-      id: 18,
+      id: 19,
       title: "Sports Sneakers Off White & Red",
       description:
         "The Sports Sneakers in Off White and Red combine style and functionality, making them a fashionable choice for sports enthusiasts. The red and off-white color combination adds a bold and energetic touch.",
@@ -1475,7 +1475,7 @@ export const product = {
     },
 
     {
-      id: 19,
+      id: 20,
       title: "Sports Sneakers Off White Red",
       description:
         "Another variant of the Sports Sneakers in Off White Red, featuring a unique design. These sneakers offer style and comfort for casual occasions.",
@@ -1558,7 +1558,7 @@ export const product = {
     },
 
     {
-      id: 20,
+      id: 21,
       title: "Black & Brown Slipper",
       description:
         "The Black & Brown Slipper is a comfortable and stylish choice for casual wear. Featuring a blend of black and brown colors, it adds a touch of sophistication to your relaxation.",
@@ -1641,7 +1641,7 @@ export const product = {
     },
 
     {
-      id: 21,
+      id: 22,
       title: "Calvin Klein Heel Shoes",
       description:
         "Calvin Klein Heel Shoes are elegant and sophisticated, designed for formal occasions. With a classic design and high-quality materials, they complement your stylish ensemble.",
@@ -1724,7 +1724,7 @@ export const product = {
     },
 
     {
-      id: 22,
+      id: 23,
       title: "Golden Shoes Woman",
       description:
         "The Golden Shoes for Women are a glamorous choice for special occasions. Featuring a golden hue and stylish design, they add a touch of luxury to your outfit.",
@@ -1807,7 +1807,7 @@ export const product = {
     },
 
     {
-      id: 23,
+      id: 24,
       title: "Pampi Shoes",
       description:
         "Pampi Shoes offer a blend of comfort and style for everyday use. With a versatile design, they are suitable for various casual occasions, providing a trendy and relaxed look.",
@@ -1890,7 +1890,7 @@ export const product = {
     },
 
     {
-      id: 24,
+      id: 25,
       title: "Red Shoes",
       description:
         "The Red Shoes make a bold statement with their vibrant red color. Whether for a party or a casual outing, these shoes add a pop of color and style to your wardrobe.",
@@ -1975,7 +1975,7 @@ export const product = {
 
   productTech: [
     {
-      id: 25,
+      id: 26,
       title: "Amazon Echo Plus",
       description:
         "The Amazon Echo Plus is a smart speaker with built-in Alexa voice control. It features premium sound quality and serves as a hub for controlling smart home devices.",
@@ -2046,7 +2046,7 @@ export const product = {
     },
 
     {
-      id: 26,
+      id: 27,
       title: "Apple Airpods",
       description:
         "The Apple Airpods offer a seamless wireless audio experience. With easy pairing, high-quality sound, and Siri integration, they are perfect for on-the-go listening.",
@@ -2118,7 +2118,7 @@ export const product = {
     },
 
     {
-      id: 27,
+      id: 28,
       title: "Apple AirPods Max Silver",
       description:
         "The Apple AirPods Max in Silver are premium over-ear headphones with high-fidelity audio, adaptive EQ, and active noise cancellation. Experience immersive sound in style.",
@@ -2188,7 +2188,7 @@ export const product = {
     },
 
     {
-      id: 28,
+      id: 29,
       title: "Apple Airpower Wireless Charger",
       description:
         "The Apple AirPower Wireless Charger provides a convenient way to charge your compatible Apple devices wirelessly. Simply place your devices on the charging mat for effortless charging.",
@@ -2258,7 +2258,7 @@ export const product = {
     },
 
     {
-      id: 29,
+      id: 30,
       title: "Apple HomePod Mini Cosmic Grey",
       description:
         "The Apple HomePod Mini in Cosmic Grey is a compact smart speaker that delivers impressive audio and integrates seamlessly with the Apple ecosystem for a smart home experience.",
@@ -2328,7 +2328,7 @@ export const product = {
     },
 
     {
-      id: 30,
+      id: 31,
       title: "Apple iPhone Charger",
       description:
         "The Apple iPhone Charger is a high-quality charger designed for fast and efficient charging of your iPhone. Ensure your device stays powered up and ready to go.",
@@ -2399,7 +2399,7 @@ export const product = {
     },
 
     {
-      id: 31,
+      id: 32,
       title: "Apple MagSafe Battery Pack",
       description:
         "The Apple MagSafe Battery Pack is a portable and convenient way to add extra battery life to your MagSafe-compatible iPhone. Attach it magnetically for a secure connection.",
@@ -2470,7 +2470,7 @@ export const product = {
     },
 
     {
-      id: 32,
+      id: 33,
       title: "Apple Watch Series 4 Gold",
       description:
         "The Apple Watch Series 4 in Gold is a stylish and advanced smartwatch with features like heart rate monitoring, fitness tracking, and a beautiful Retina display.",
@@ -2542,7 +2542,7 @@ export const product = {
     },
 
     {
-      id: 33,
+      id: 34,
       title: "Beats Flex Wireless Earphones",
       description:
         "The Beats Flex Wireless Earphones offer a comfortable and versatile audio experience. With magnetic earbuds and up to 12 hours of battery life, they are ideal for everyday use.",
@@ -2612,7 +2612,7 @@ export const product = {
     },
 
     {
-      id: 34,
+      id: 35,
       title: "iPhone 12 Silicone Case with MagSafe Plum",
       description:
         "The iPhone 12 Silicone Case with MagSafe in Plum is a stylish and protective case designed for the iPhone 12. It features MagSafe technology for easy attachment of accessories.",
@@ -2685,7 +2685,7 @@ export const product = {
     },
 
     {
-      id: 35,
+      id: 36,
       title: "Monopod",
       description:
         "The Monopod is a versatile camera accessory for stable and adjustable shooting. Perfect for capturing selfies, group photos, and videos with ease.",
@@ -2756,7 +2756,7 @@ export const product = {
     },
 
     {
-      id: 36,
+      id: 37,
       title: "Selfie Lamp with iPhone",
       description:
         "The Selfie Lamp with iPhone is a portable and adjustable LED light designed to enhance your selfies and video calls. Attach it to your iPhone for well-lit photos.",
@@ -2826,7 +2826,7 @@ export const product = {
     },
 
     {
-      id: 37,
+      id: 38,
       title: "Selfie Stick Monopod",
       description:
         "The Selfie Stick Monopod is a extendable and foldable device for capturing the perfect selfie or group photo. Compatible with smartphones and cameras.",
@@ -2896,7 +2896,7 @@ export const product = {
     },
 
     {
-      id: 38,
+      id: 39,
       title: "TV Studio Camera Pedestal",
       description:
         "The TV Studio Camera Pedestal is a professional-grade camera support system for smooth and precise camera movements in a studio setting. Ideal for broadcast and production.",

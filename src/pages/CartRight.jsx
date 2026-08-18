@@ -4,8 +4,8 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { product } from "../data/product";
 export default function CartRight() {
-  const { cart } = useContext(CartContext);
-  const cardId = Number(cart);
+  const { cartItems } = useContext(CartContext);
+  const lenghtofCart = cartItems.length;
   const allproductData = [
     ...product.productBeauty,
     ...product.productFashion,
@@ -13,9 +13,41 @@ export default function CartRight() {
     ...product.productTech,
   ];
 
-  const productData = allproductData.filter((item) => cart.includes(item?.id));
+  const productData = cartItems?.map((cartItem) => {
+    const productData = allproductData.find(
+      (product) => product.id === cartItem.id,
+    );
+
+    return {
+      ...productData,
+      quantity: cartItem.quantity,
+      size: cartItem.size,
+      color: cartItem.color,
+    };
+  });
 
   console.log("log out cart data", productData);
+  const actualPrice = productData.map((item) => {
+    return item.actualPrice;
+  });
+
+  const price = productData.map((item) => {
+    return item.price;
+  });
+
+  const actualTotalPrice = productData.reduce(
+    (acc, item) => acc + item.actualPrice * item.quantity,
+    0,
+  );
+
+  const totalPrice = productData.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0,
+  );
+
+  const savingPrice = Math.round(actualTotalPrice - totalPrice);
+
+  console.log("log out total", actualTotalPrice, totalPrice, savingPrice);
 
   return (
     <div className="orderSummary">
@@ -33,10 +65,10 @@ export default function CartRight() {
 
       <div className="summaryRow">
         <h1>
-          Subtotal <span>(4 items)</span>
+          Subtotal <span>( {lenghtofCart} items)</span>
         </h1>
 
-        <h1>$2277</h1>
+        <h1>${totalPrice}</h1>
       </div>
 
       <div className="summaryRow">
@@ -48,7 +80,7 @@ export default function CartRight() {
       <div className="summaryRow">
         <h1>Sale savings</h1>
 
-        <h1 className="saleSaving">-$551</h1>
+        <h1 className="saleSaving">-${savingPrice}</h1>
       </div>
 
       <span className="divider"></span>
@@ -60,10 +92,10 @@ export default function CartRight() {
           <span className="taxText">Taxes calculated at checkout</span>
         </div>
 
-        <h1 className="totalPrice">$2277</h1>
+        <h1 className="totalPrice">${totalPrice}</h1>
       </div>
 
-      <NavLink to="/checkOut/:id" className="checkoutButton">
+      <NavLink to="/checkOut/cart" className="checkoutButton">
         <button>Proceed to Checkout</button>
       </NavLink>
 

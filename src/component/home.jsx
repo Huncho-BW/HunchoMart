@@ -13,15 +13,37 @@ import HomeDivider from "../pages/HomeDivider";
 export default function Home() {
   return (
     <div className=" ">
-      <HeroSection />
-      <HomeDivider />
-      <Categories />
-      <FlashDeal />
-      <Trading />
-      <HomeFashion />
-      <HomeSneankers />
-      <HomeTech />
-      <HomeBueaty />
+      <div className="home">
+        <HeroSection />
+      </div>
+      <div>
+        <HomeDivider />
+      </div>
+      <div>
+        <div className="home">
+          <Categories />
+        </div>
+
+        <div>
+          <FlashDeal />
+        </div>
+        <div className="home">
+          <Trading />
+        </div>
+        <div className="home">
+          <HomeFashion />
+        </div>
+        <div className="home">
+          <HomeSneankers />
+        </div>
+        <div className="home">
+          <HomeTech />
+        </div>
+        <div className="home">
+          <HomeBueaty />
+        </div>
+      </div>
+
       <div className="p-[40px]">
         <EmailLongin />
       </div>

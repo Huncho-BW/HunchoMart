@@ -9,7 +9,7 @@ export default function FlashDeal() {
   const flashData = product.productFashion;
 
   return (
-    <div className="bg-[#0C0C0C] p-[40px] mt-[20px]">
+    <div className="bg-[#0C0C0C] home ">
       <>
         <div className="flex gap-[20px]  mb-[20px]">
           <div className="flex  items-center gap-2">

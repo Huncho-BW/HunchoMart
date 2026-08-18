@@ -2,19 +2,46 @@ import React from "react";
 import { CartContext } from "../context/CartContext";
 import { product } from "../data/product";
 import { useContext } from "react";
-export default function CheckOutRight({ id }) {
-  const { cart } = useContext(CartContext);
-
+export default function CheckOutRight() {
+  const { checkoutItems } = useContext(CartContext);
   const allproductData = [
     ...product.productBeauty,
     ...product.productFashion,
     ...product.productSneakers,
     ...product.productTech,
   ];
+  console.log("log out check", checkoutItems);
 
-  const productData = allproductData.filter((item) => cart.includes(item?.id));
+  const productData = checkoutItems.map((checkoutItem) => {
+    const product = allproductData.find(
+      (item) => item.id === (checkoutItem.id || checkoutItem.productId),
+    );
 
-  console.log("log out cart data", productData);
+    return {
+      ...product,
+      quantity: checkoutItem.quantity,
+    };
+  });
+
+  const actualPrice = productData.map((item) => {
+    return item.actualPrice;
+  });
+
+  const price = productData.map((item) => {
+    return item.price;
+  });
+
+  const actualTotalPrice = productData.reduce(
+    (acc, item) => acc + item.actualPrice * item.quantity,
+    0,
+  );
+
+  const totalPrice = productData.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0,
+  );
+
+  const savingPrice = Math.round(actualTotalPrice - totalPrice);
 
   return (
     <div className="flex flex-col gap-[20px]">
@@ -22,45 +49,26 @@ export default function CheckOutRight({ id }) {
         <h1>Order Summary</h1>
       </div>
       {productData.map((item) => (
-        <div className="checkOutcardBorder">
+        <div key={item.id} className="checkOutcardBorder">
           <div className="checkOutProductInfo">
-            <img src="" alt="" className="checkOutProductImage" />
+            <img src={item.images} alt="" className="checkOutProductImage" />
 
             <div className="checkOutProductContent">
-              <h2 className="">NOVARUN</h2>
+              <h2 className="">{item.brand}</h2>
 
-              <h1 className="">Air Orbit IV</h1>
+              <h1 className="">{item.title}</h1>
             </div>
           </div>
 
           <div className="checkOutProductRight">
             <div className="priceBox">
-              <h1 className="">$289</h1>
+              <h1 className="">${item.price}</h1>
 
-              <h1 className="">$380</h1>
+              <h1 className="">${item.actualPrice}</h1>
             </div>
           </div>
         </div>
       ))}
-      <div className="checkOutcardBorder">
-        <div className="checkOutProductInfo">
-          <img src="" alt="" className="checkOutProductImage" />
-
-          <div className="checkOutProductContent">
-            <h2 className="">NOVARUN</h2>
-
-            <h1 className="">Air Orbit IV</h1>
-          </div>
-        </div>
-
-        <div className="checkOutProductRight">
-          <div className="priceBox">
-            <h1 className="">$289</h1>
-
-            <h1 className="">$380</h1>
-          </div>
-        </div>
-      </div>
 
       <div>
         <span className="divider"></span>
@@ -68,7 +76,7 @@ export default function CheckOutRight({ id }) {
       <div>
         <div className="flex justify-between">
           <h1>SubTotal</h1>
-          <h1>22220</h1>
+          <h1>{totalPrice}</h1>
         </div>
         <div className="flex justify-between">
           <h1>DElivery</h1>
@@ -81,7 +89,7 @@ export default function CheckOutRight({ id }) {
 
       <div className="flex justify-between">
         <h1>Total</h1>
-        <h1>22220</h1>
+        <h1>{totalPrice}</h1>
       </div>
     </div>
   );

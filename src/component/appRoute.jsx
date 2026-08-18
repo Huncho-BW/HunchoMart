@@ -26,12 +26,16 @@ import PayPal from "../pages/PayPal.jsx";
 import HeartWish from "../pages/Heart.jsx";
 import Comfirmation from "../pages/Corfirmation.jsx";
 import { Navigate } from "react-router-dom";
+import ProtectedRount from "./ProtectedRout.jsx";
+import Login from "./Login.jsx";
+import CreateAccount from "../pages/CreateAccount.jsx";
 export const roterConfigu = [
   {
     path: "/",
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
+      { path: "home", element: <Home /> },
       { path: "fashion", element: <Fashion /> },
       { path: "sneakers", element: <Sneaker /> },
       { path: "tech", element: <Tech /> },
@@ -57,6 +61,26 @@ export const roterConfigu = [
         ],
       },
       {
+        path: "checkOut/cart",
+        element: <CheckOut />,
+        children: [
+          { index: true, element: <Navigate to="Shipping" replace /> },
+          { path: "Shipping", element: <Address /> },
+          { path: "Delivery", element: <Delivery /> },
+          {
+            path: "checkoutPayment",
+            element: <CheckOutPayment />,
+            children: [
+              { index: true, element: <Credit /> },
+              { path: "credit", element: <Credit /> },
+              { path: "applePay", element: <ApplePay /> },
+              { path: "paypal", element: <PayPal /> },
+            ],
+          },
+        ],
+      },
+
+      {
         path: "cart",
         element: <Cart />,
       },
@@ -65,9 +89,15 @@ export const roterConfigu = [
         path: "Comfirmation",
         element: <Comfirmation />,
       },
+
       {
         path: "userDash",
-        element: <UserDashbord />,
+
+        element: (
+          <ProtectedRount>
+            <UserDashbord />
+          </ProtectedRount>
+        ),
         children: [
           { index: true, element: <Overview /> },
           { path: "overview", element: <Overview /> },
@@ -93,4 +123,7 @@ export const roterConfigu = [
       },
     ],
   },
+
+  { path: "/login", element: <Login /> },
+  { path: "/create-account", element: <CreateAccount /> },
 ];

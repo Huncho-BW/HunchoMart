@@ -12,13 +12,18 @@ import "./Leftdashbord.css";
 import "./paymentMethod.css";
 import "./Confirmation.css";
 import "./setting.css";
+import "./signUp.css";
 import CartProvider from "./context/CartContext";
+import AuthProvider from "./context/AuthenticatonContext.jsx";
+
 import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <CartProvider>
-      <App />
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <App />
+      </CartProvider>
+    </AuthProvider>
   </StrictMode>,
 );

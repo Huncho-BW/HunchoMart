@@ -1,17 +1,23 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import CartLeft from "./CartLeft";
 import CartRight from "./CartRight";
 import { CartContext } from "../context/CartContext";
+import { useLocation } from "react-router-dom";
 export default function Cart() {
-  const { cart } = useContext(CartContext);
+  const { cartItems, setCheckoutItems } = useContext(CartContext);
 
-  console.log("cart inside Cart page:", cart);
+  const lenghtofCart = cartItems.length;
+
+  const location = useLocation();
+  console.log("log cart location ", location.pathname);
+
+  console.log("cart inside Cart page:", cartItems);
   return (
     <div className="cartContainer">
       <header className="flex justify-between items-center cartHeader">
         <div>
           <h1 className="cartTitle">Shopping Cart</h1>
-          <span className="cartItems">3 Items</span>
+          <span className="cartItems">{lenghtofCart} Items</span>
         </div>
 
         <div>

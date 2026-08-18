@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { User } from "lucide-react";
 import { Package } from "lucide-react";
 import { NavLink } from "react-router-dom";
@@ -7,7 +7,47 @@ import { MapPin } from "lucide-react";
 import { Bell } from "lucide-react";
 import { CreditCard } from "lucide-react";
 import { Settings } from "lucide-react";
+import { CartContext } from "../context/CartContext";
+import { product } from "../data/product";
 export default function LeftDashbord() {
+  const { order } = useContext(CartContext);
+  const allproductData = [
+    ...product.productBeauty,
+    ...product.productFashion,
+    ...product.productSneakers,
+    ...product.productTech,
+  ];
+
+  const orderHistory = order.map((order) => {
+    const orderedProducts = order.items.map((orderItem) => {
+      const product = allproductData.find(
+        (product) => product.id === orderItem.id,
+      );
+
+      return {
+        ...product,
+        quantity: orderItem.quantity,
+        size: orderItem.size,
+        color: orderItem.color,
+      };
+    });
+
+    return {
+      ...order,
+      products: orderedProducts,
+    };
+  });
+
+  let ccc = {
+    length: orderHistory?.flatMap((item) => item?.products ?? []).length,
+
+    valuePoint: Math.round(
+      orderHistory
+        ?.flatMap((item) => item?.products ?? [])
+        .reduce((total, pro) => total + Number(pro.actualPrice || 0) * 0.05, 0),
+    ),
+  };
+
   const section = [
     { logo: User, name: "overview" },
     { logo: Package, name: "orders" },
@@ -32,12 +72,12 @@ export default function LeftDashbord() {
 
         <div className="profile-stats">
           <div className="borderTwo">
-            <h1>24</h1>
+            <h1>{ccc.length}</h1>
             <span>Orders</span>
           </div>
 
           <div className="borderTwo">
-            <h1>200</h1>
+            <h1>{ccc.valuePoint}</h1>
             <span>Points</span>
           </div>
         </div>

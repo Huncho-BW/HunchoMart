@@ -14,7 +14,7 @@ export default function Categories() {
     { name: "Beauty", pic: beauty },
   ];
   return (
-    <div className="mt-[20px] p-[40px] ">
+    <div className=" ">
       <section>
         <span className="text-[10px] text-[#B8965A] text-[DM Mono] tracking-[0.2em] font-[500]">
           Explore

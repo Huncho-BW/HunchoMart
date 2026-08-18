@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import fashion from "../assets/fashion.webp";
 import { Truck } from "lucide-react";
 import { Shield } from "lucide-react";
@@ -6,17 +6,17 @@ import { product } from "../data/product";
 import { useParams } from "react-router-dom";
 import { Heart } from "lucide-react";
 import { Star } from "lucide-react";
+import { CartContext } from "../context/CartContext";
 import { ShoppingBag } from "lucide-react";
+import { NavLink } from "react-router-dom";
 export default function ProductDetails() {
-  const { id } = useParams();
-  const [count, setCount] = useState(1);
-  const addCount = () => {
-    setCount((prev) => prev + 1);
-  };
+  const { cart, addToCart, checkoutItems, count, addCount, reMoveCount } =
+    useContext(CartContext);
+  const [click, setClick] = useState(false);
+  console.log("log out cart", cart);
 
-  const reMoveCount = () => {
-    setCount((prev) => prev - 1);
-  };
+  const { id } = useParams();
+
   const productDetailsData = Number(id);
   console.log("id", productDetailsData);
   const allProductData = [
@@ -153,15 +153,22 @@ export default function ProductDetails() {
 
           <div className="product-actions">
             <div className="cart-btn ">
-              <button>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  addToCart(productData?.id);
+                  setClick(true);
+                }}
+              >
                 <Shield /> Add to Cart
               </button>
             </div>
 
             <div className="buy-btn">
-              <a href={`/checkOut/${productData?.id}`}>
+              <NavLink to={`/checkOut/${productData?.id}`}>
                 <button>Buy Now</button>
-              </a>
+              </NavLink>
             </div>
           </div>
 
@@ -184,6 +191,7 @@ export default function ProductDetails() {
               <span>Free Return</span>
             </div>
           </div>
+          <span className="divider"></span>
 
           <div className="delivery-info">
             <h1>Delivery & Returns</h1>
@@ -194,21 +202,36 @@ export default function ProductDetails() {
               original tags.
             </p>
           </div>
-
+          <span className="divider"></span>
           <div>
-            <h1>specilization</h1>
+            <details>
+              <summary>Specifications</summary>
+              Standard delivery in 3-5 business days. Express available. Free
+              returns within 30 days of delivery. Items must be unworn with
+              original tags.
+            </details>
           </div>
 
           <div>
-            <h1>Sizing and fiting</h1>
+            <details>
+              <summary>Sizing & Fit</summary>
+              These run true to size for most people. If you're between sizes,
+              we recommend sizing up. The toe box has a medium width —
+              wide-footers should consider going up half a size.
+            </details>
           </div>
+          <span className="divider"></span>
         </div>
       </div>
 
       <section className="p-[40px]">
-        <div>
+        <span className="divider"></span>
+        <div className=" flex flex-col gap-[20px] ">
           <div>
             <h1>Customer Reviews</h1>
+          </div>
+
+          <div>
             <div className="flex items-center gap-5">
               {" "}
               <div className="flex gap-5">
@@ -233,7 +256,7 @@ export default function ProductDetails() {
               </div>
             </div>
           </div>
-          <div className="flex ">
+          <div className="grid grid-cols-3 gap-[20px] ">
             {productData?.reviews?.map((item) => (
               <div className="border p-5">
                 <div className="flex gap-5">
@@ -241,14 +264,7 @@ export default function ProductDetails() {
                     <Star
                       key={star}
                       className="text-yellow-400"
-                      fill={
-                        star <=
-                        Math.round(
-                          productData?.reviews?.map((item) => item?.rating),
-                        )
-                          ? "gold"
-                          : "none"
-                      }
+                      fill={star <= Math.round(item?.rating) ? "gold" : "none"}
                     />
                   ))}
                 </div>

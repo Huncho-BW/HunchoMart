@@ -35,7 +35,7 @@ export default function Address() {
               placeholder="Alex"
             />
 
-            {details.firstname.length === 0 && (
+            {errors.firstname && (
               <p className="errorMessage">First name is required</p>
             )}
           </div>
@@ -51,7 +51,7 @@ export default function Address() {
               placeholder="Jordan"
             />
 
-            {details.lastname.length === 0 && (
+            {errors.lastname && (
               <p className="errorMessage">Last name is required</p>
             )}
           </div>
@@ -67,9 +67,7 @@ export default function Address() {
               placeholder="alex@email.com"
             />
 
-            {details.email.length === 0 && (
-              <p className="errorMessage">Email is required</p>
-            )}
+            {errors.email && <p className="errorMessage">Email is required</p>}
           </div>
 
           <div className="inputGroup">
@@ -83,9 +81,7 @@ export default function Address() {
               placeholder="+1 (555) 000-0000"
             />
 
-            {details.phone.length === 0 && (
-              <p className="errorMessage">Phone is required</p>
-            )}
+            {errors.phone && <p className="errorMessage">Phone is required</p>}
           </div>
 
           <div className="inputGroup fullInput">
@@ -99,7 +95,7 @@ export default function Address() {
               placeholder="123 Main Street"
             />
 
-            {details.addressLine1.length === 0 && (
+            {errors.addressLine1 && (
               <p className="errorMessage">Address is required</p>
             )}
           </div>
@@ -127,9 +123,7 @@ export default function Address() {
               placeholder="New York"
             />
 
-            {details.city.length === 0 && (
-              <p className="errorMessage">City is required</p>
-            )}
+            {errors.city && <p className="errorMessage">City is required</p>}
           </div>
 
           <div className="inputGroup">
@@ -143,9 +137,7 @@ export default function Address() {
               placeholder="NY"
             />
 
-            {details.state.length === 0 && (
-              <p className="errorMessage">State is required</p>
-            )}
+            {errors.state && <p className="errorMessage">State is required</p>}
           </div>
 
           <div className="inputGroup">
@@ -159,7 +151,7 @@ export default function Address() {
               placeholder="10001"
             />
 
-            {details.zipCode.length === 0 && (
+            {errors.zipCode && (
               <p className="errorMessage">ZIP code is required</p>
             )}
           </div>
@@ -175,7 +167,7 @@ export default function Address() {
               placeholder="Nigeria"
             />
 
-            {details.country.length === 0 && (
+            {errors.country && (
               <p className="errorMessage">Country is required</p>
             )}
           </div>

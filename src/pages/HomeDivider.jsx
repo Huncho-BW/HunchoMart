@@ -27,8 +27,8 @@ export default function HomeDivider() {
     },
   ];
   return (
-    <div className="px-[32px] flex flex-col justify-center border h-[95px] bg-[#0C0C0C]">
-      <div className="flex justify-evenly">
+    <div className=" home flex flex-col justify-center border h-[95px] bg-[#0C0C0C]">
+      <div className="flex justify-between">
         {defaul.map((item) => (
           <div
             className="flex

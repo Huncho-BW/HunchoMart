@@ -6,10 +6,11 @@
         display: flex ;
         align-items: center;
         gap: 20px ;
-        padding: 20px  60px;
+        padding: 0  40px;
        border: 2px solid #E8E3DA;
        background-color: #FAF8F5;
         margin-bottom: 20px;
+        height: 80px;
         
     }
 

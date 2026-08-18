@@ -5,7 +5,7 @@ export default function Trading() {
   const trendData = product.productFashion;
 
   return (
-    <div className=" p-[40px] mt-[20px]">
+    <div className="">
       <span className="text-[10px] text-[#B8965A] text-[DM Mono] tracking-[0.2em] font-[500]">
         What's hot
       </span>

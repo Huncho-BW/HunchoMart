@@ -50,11 +50,11 @@ export default function Navbar() {
               <ShoppingCart className="nav-text" />
             </button>
           </NavLink>
-          <a href="/userDash">
+          <NavLink to="/userDash">
             <button>
               <CircleUser className="nav-text" />
             </button>
-          </a>
+          </NavLink>
         </div>
 
         {/* Mobile Menu */}

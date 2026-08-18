@@ -3,16 +3,47 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 
 export default function ComfirmationPage() {
-  const { fillDetails, chooseinput, errors, setErrors } =
-    useContext(CartContext);
+  const {
+    fillDetails,
+    chooseinput,
+    errors,
+    setErrors,
+    createOder,
+    createNotification,
+  } = useContext(CartContext);
 
   const navigate = useNavigate();
   const location = useLocation();
   const { id } = useParams();
 
+  const isShipping = location.pathname.endsWith("/Shipping");
+
+  const isDelivery = location.pathname.endsWith("/Delivery");
+
+  const isPayment = location.pathname.includes("/checkoutPayment");
+
+  const handleBack = () => {
+    // Shipping → back to cart
+    if (isShipping) {
+      navigate("/cart");
+      return;
+    }
+
+    // Delivery → back to Shipping
+    if (isDelivery) {
+      navigate("Shipping");
+      return;
+    }
+
+    // Payment → back to Delivery
+    if (isPayment) {
+      navigate("Delivery");
+    }
+  };
+
   const handleNextStage = () => {
     // SHIPPING
-    if (location.pathname === `/checkOut/${id}/Shipping`) {
+    if (isShipping) {
       const details = fillDetails[0];
 
       const newErrors = {};
@@ -55,7 +86,6 @@ export default function ComfirmationPage() {
 
       setErrors(newErrors);
 
-      // Don't navigate if there are errors
       if (Object.keys(newErrors).length > 0) {
         return;
       }
@@ -64,7 +94,7 @@ export default function ComfirmationPage() {
     }
 
     // DELIVERY
-    else if (location.pathname === `/checkOut/${id}/Delivery`) {
+    else if (isDelivery) {
       const newErrors = {};
 
       if (!chooseinput.type) {
@@ -73,36 +103,36 @@ export default function ComfirmationPage() {
 
       setErrors(newErrors);
 
-      // Don't navigate if no delivery was selected
       if (Object.keys(newErrors).length > 0) {
         return;
       }
 
-      // Delivery selected → continue
       navigate("checkoutPayment");
     }
 
     // PAYMENT
-    else if (location.pathname === `/checkOut/${id}/checkoutPayment`) {
+    else if (isPayment) {
+      createOder();
+
       navigate("/Comfirmation");
     }
   };
 
-  const buttonText =
-    location.pathname === `/checkOut/${id}/Shipping`
-      ? "Continue to Delivery"
-      : location.pathname === `/checkOut/${id}/Delivery`
-        ? "Continue to Payment"
-        : location.pathname === `/checkOut/${id}/checkoutPayment`
-          ? "Submit Payment"
-          : "";
-
+  const buttonText = isShipping
+    ? "Continue to Delivery"
+    : isDelivery
+      ? "Continue to Payment"
+      : isPayment
+        ? "Submit Payment"
+        : "";
   return (
     <div>
       <div className="border border-w-[100%] h-[1px] mt-[24px]"></div>
 
       <div className="checkoutActions">
-        <button className="backCart">← Return to cart</button>
+        <button onClick={handleBack} className="backCart">
+          {isShipping ? "Return to cart" : "Back"}
+        </button>
 
         <button onClick={handleNextStage} className="continueBtn">
           {buttonText}

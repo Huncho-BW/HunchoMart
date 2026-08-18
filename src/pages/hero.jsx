@@ -3,8 +3,9 @@ import heroBackgroundImg from "../assets/heroBackground.png";
 import fashion from "../assets/fashion.webp";
 import tech from "../assets/tech.webp";
 import { NavLink } from "react-router-dom";
-
+import beauty from "../assets/beauty.webp";
 import sneakers from "../assets/sneaker.webp";
+import { ArrowRight } from "lucide-react";
 export default function HeroSection() {
   const heroData = [
     {
@@ -58,7 +59,7 @@ export default function HeroSection() {
       subtitle: "Elevate your everyday",
       description:
         "Discover beauty essentials carefully selected for your everyday routine.",
-      image: "",
+      image: beauty,
       button: "Shop Beauty",
       price: 890,
       actualPrice: 1000,
@@ -73,7 +74,7 @@ export default function HeroSection() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % heroData.length);
-    }, 30000);
+    }, 20000);
 
     return () => clearInterval(timer);
   }, []);
@@ -84,17 +85,26 @@ export default function HeroSection() {
       <div className="hero-text">
         <div className="subText">
           <h1 className="text-[10px] text-[#C9A227]"> {currentHero.title}</h1>
-          <h2 className="text-[42px] font-[700] topHeader text-[#F8FAFC]">
+          <h2 className="text-[72px] text-[600] topHeader text-[#F8FAFC]">
             {currentHero.subtitle}
           </h2>
           <p className="text-[14px] text-[#64748B]">
             {currentHero.description}
           </p>
 
-          <div className="border bg-[#C9A227] py-[12px] flex justify-center ">
-            <NavLink className="ccc" to={currentHero.link}>
-              <button className="text-[#08090B]">{currentHero.button}</button>
-            </NavLink>
+          <div className=" flex  gap-[20px] ">
+            <div className="heroBorder bg-[#F5F5F3] text-[#08090B] hover:bg-[#08090B] hover:text-[#F8FAFC]">
+              <NavLink className="" to={currentHero.link}>
+                <button className="flex gap-2 items-center">
+                  {currentHero.button} <ArrowRight />
+                </button>
+              </NavLink>
+            </div>
+            <div className="heroBorder bg-[#C9A227] hover:bg-[#E0C15A]">
+              <NavLink>
+                <button>View all</button>
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>
@@ -105,15 +115,25 @@ export default function HeroSection() {
           src={currentHero.image}
           alt={currentHero.title}
         />
-        <div className=" border  w-[90%]  left-1/2 -translate-x-1/2 items-center p-[10px] bg-white     flex justify-between absolute bottom-[20px] ">
+        <div className=" border rounded-lg  w-[90%]  left-1/2 -translate-x-1/2 items-center p-[10px] bg-white     flex justify-between absolute bottom-[20px] ">
           <div>
-            <h1>Feature</h1>
-            <h1>{currentHero.brandTile}</h1>
-            <h1>{currentHero.brand}</h1>
+            <h1 className="text-[#64748B] text-[10px]">Feature</h1>
+            <h1 className="text-[#08090B] text-[14px]">
+              {currentHero.brandTitle}
+            </h1>
+            <h1 className=" font-[400] text-[12px] text-[#64748B]">
+              {currentHero.brand}
+            </h1>
           </div>
           <div>
-            <h1> ${currentHero.price}</h1>
-            <h1> ${currentHero.actualyPrice}</h1>
+            <h1 className=" font-[700] text-[18px] text-[#08090B]">
+              {" "}
+              ${currentHero.price}
+            </h1>
+            <h1 className="text-right line-through text-[12px] text-[#64748B]">
+              {" "}
+              ${currentHero.actualPrice}
+            </h1>
           </div>
         </div>
       </div>

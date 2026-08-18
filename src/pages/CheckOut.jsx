@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CheckOutLeft from "./CheckoutLeft";
 import CheckOutRight from "./CheckOutRight";
 import CheckOutSecurity from "./CheckOutSecurity";
+import { CartContext } from "../context/CartContext";
+import { useContext } from "react";
 
 import { useParams } from "react-router-dom";
 
 export default function CheckOut() {
   const { id } = useParams();
+  const { cartItems, checkoutItems, setCheckoutItems, count } =
+    useContext(CartContext);
   const checkId = Number(id);
-  console.log("check id", checkId);
+  useEffect(() => {
+    if (id) {
+      setCheckoutItems([
+        {
+          id: checkId,
+          quantity: count,
+        },
+      ]);
+    } else {
+      setCheckoutItems(cartItems);
+    }
+  }, [id, count, cartItems]);
+
+  console.log("log out checkOutItem", checkoutItems);
 
   return (
     <div className="checkoutContainer">
@@ -22,11 +39,11 @@ export default function CheckOut() {
 
       <div className="checkoutGrid">
         <div className="checkoutLeftWrapper">
-          <CheckOutLeft id={checkId} />
+          <CheckOutLeft />
         </div>
 
         <div className="checkoutRightWrapper">
-          <CheckOutRight id={checkId} />
+          <CheckOutRight />
         </div>
       </div>
     </div>
