@@ -415,8 +415,8 @@ export const product = {
       subCategory: "Bags",
       gender: "Unisex",
 
-      sizes: ["Medium", "Large"],
-      colors: ["Black", "Brown"],
+      size: ["Medium", "Large"],
+      color: ["Black", "Brown"],
 
       images: ["https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png"],
 
@@ -2338,7 +2338,7 @@ export const product = {
       actualPrice: 24.53,
       discountPercentage: 18.52,
 
-      color: ["White"],
+      color: ["White", "red"],
       size: ["Standard", "Compact"],
 
       rating: {

@@ -1,13 +1,25 @@
 import React from "react";
 import BrandCard from "./BrandCard";
-import { product } from "../data/product";
+import { CategoriesApi } from "../Api/CategoriesApi";
+import { useQuery } from "@tanstack/react-query";
 export default function HomeFashion() {
-  const fashionData = product.productFashion;
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["product", "fashion"],
+    queryFn: () => CategoriesApi("fashion"),
+    retry: 5,
+
+    retryDelay: 10 * 60 * 1000,
+  });
+
+  console.log("log data in fashion", data);
+  const fashionData = data ?? [];
+
+  console.log("log out fashion data", fashionData);
   return (
     <div className=" ">
       <h1 className="text-[32px] font-[600] mb-[20px]">Fashion</h1>
       <div className="flex gap-[20px] overflow-hidden overflow-x-auto scrollbar-hide">
-        {fashionData.map((item) => (
+        {data?.map((item) => (
           <BrandCard key={item.id} product={item} />
         ))}
       </div>

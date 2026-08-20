@@ -38,7 +38,7 @@ export default function ProductDetails() {
       <div className="product-details">
         <div className="product-gallery">
           <img
-            src={productData?.images?.[0] || productData?.image}
+            src={productData?.images?.[0] || productData?.images}
             alt=""
             className="product-image"
           />
@@ -108,7 +108,7 @@ export default function ProductDetails() {
                 color
               </h1>
               <div className="flex gap-2">
-                {productData?.color.map((item) => (
+                {productData?.color?.map((item) => (
                   <span
                     key={item}
                     className={`w-10 h-10 rounded-full border `}
@@ -129,7 +129,7 @@ export default function ProductDetails() {
               </span>
             </div>
             <div className="flex gap-2">
-              {productData?.size.map((item) => (
+              {productData?.size?.map((item) => (
                 <div className="quantity-box">
                   <h1>{item}</h1>
                 </div>

@@ -14,7 +14,7 @@ import Orders from "../pages/Orders";
 import UserWhilelist from "../pages/UserWhisliat";
 import UserAdrees from "../pages/UserAddres";
 import UserPayment from "../pages/UserPayment";
-
+import Beauty from "./Beauty.jsx";
 import Notification from "../pages/Notification.jsx";
 import Address from "../pages/Address.jsx";
 import Delivery from "../pages/Delivery.jsx";
@@ -38,12 +38,17 @@ export const roterConfigu = [
       { path: "home", element: <Home /> },
       { path: "fashion", element: <Fashion /> },
       { path: "sneakers", element: <Sneaker /> },
+      { path: "beauty", element: <Beauty /> },
       { path: "tech", element: <Tech /> },
 
       { path: "product/:id", element: <ProductDetails /> },
       {
         path: "checkOut/:id",
-        element: <CheckOut />,
+        element: (
+          <ProtectedRount>
+            <CheckOut />
+          </ProtectedRount>
+        ),
         children: [
           { index: true, element: <Navigate to="Shipping" replace /> },
           { path: "Shipping", element: <Address /> },
@@ -62,7 +67,11 @@ export const roterConfigu = [
       },
       {
         path: "checkOut/cart",
-        element: <CheckOut />,
+        element: (
+          <ProtectedRount>
+            <CheckOut />
+          </ProtectedRount>
+        ),
         children: [
           { index: true, element: <Navigate to="Shipping" replace /> },
           { path: "Shipping", element: <Address /> },

@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import FilterSide from "../pages/Filter";
 import BrandCard from "../pages/BrandCard";
 
-export default function Fashion() {
+export default function Beauty() {
   const [selectedValue, setSelectionValue] = useState({
     brand: [],
     price: {
@@ -22,8 +22,8 @@ export default function Fashion() {
 
   const limit = 12;
 
-  // Fetch fashion products
-  const getFashionData = async () => {
+  // Fetch Beauty products
+  const getBeautyData = async () => {
     const response = await axios.get(
       "https://huncho-mart-api.onrender.com/api/products",
       {
@@ -54,19 +54,17 @@ export default function Fashion() {
   };
 
   const { data, isLoading, isError, isFetching } = useQuery({
-    queryKey: ["fashion", page, selectedValue],
+    queryKey: ["beauty", page, selectedValue],
 
-    queryFn: getFashionData,
+    queryFn: getBeautyData,
 
     placeholderData: (previousData) => previousData,
   });
 
-  console.log("Fashion API:", data);
+  console.log("BEAUTY DATA:", data);
 
-  // Products
-  const fashionData = data?.products ?? [];
+  const beautyData = data?.products ?? [];
 
-  // Pagination data from backend
   const pagination = data?.pagination;
 
   const totalProducts = pagination?.totalProducts ?? 0;
@@ -75,8 +73,7 @@ export default function Fashion() {
 
   const currentPage = pagination?.page ?? page;
 
-  // Whenever filter changes,
-  // go back to page 1
+  // Reset pagination when filter changes
   const handleFilterChange = (value) => {
     setSelectionValue(value);
     setPage(1);
@@ -85,7 +82,7 @@ export default function Fashion() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-[50vh]">
-        Loading fashion products...
+        Loading beauty products...
       </div>
     );
   }
@@ -93,7 +90,7 @@ export default function Fashion() {
   if (isError) {
     return (
       <div className="flex justify-center items-center h-[50vh]">
-        Failed to load fashion products.
+        Failed to load beauty products.
       </div>
     );
   }
@@ -104,7 +101,7 @@ export default function Fashion() {
       <div className="flex gap-2">
         <h1 className="text-[10px] text-[#8A8580]">Home</h1>
 
-        <h1 className="text-[12px] text-[#0C0C0C]">Fashion</h1>
+        <h1 className="text-[12px] text-[#0C0C0C]">BEAUTY</h1>
       </div>
 
       {/* Header */}
@@ -123,20 +120,18 @@ export default function Fashion() {
         {/* Filter */}
         <div>
           <FilterSide
+            filterData={beautyData}
             setSelectionValue={handleFilterChange}
             selectedValue={selectedValue}
-            filterData={fashionData}
           />
         </div>
 
         {/* Products */}
         <div className="catDisplay">
-          {fashionData.length > 0 ? (
-            fashionData.map((item) => (
-              <BrandCard key={item.id} product={item} />
-            ))
+          {beautyData.length > 0 ? (
+            beautyData.map((item) => <BrandCard key={item.id} product={item} />)
           ) : (
-            <p>No fashion products found.</p>
+            <p>No beauty products found.</p>
           )}
         </div>
       </div>

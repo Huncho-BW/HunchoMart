@@ -1,9 +1,19 @@
 import React from "react";
 import BrandCard from "./BrandCard";
-import { product } from "../data/product";
-import { Snail } from "lucide-react";
+import { CategoriesApi } from "../Api/CategoriesApi";
+import { useQuery } from "@tanstack/react-query";
 export default function HomeSneankers() {
-  const sneakers = product.productSneakers;
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["product", "sneakers"],
+    queryFn: () => CategoriesApi("mens-shoes"),
+    retry: 5,
+
+    retryDelay: 10 * 60 * 1000,
+  });
+
+  console.log("log data in sneaker", data);
+
+  const sneakers = data ?? [];
   return (
     <div className=" ">
       <h1 className="text-[32px] font-[600] mb-[20px]">Sneakers</h1>

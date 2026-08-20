@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaLink } from "react-icons/fa6";
 import { CiLock } from "react-icons/ci";
+import { AuthenticatonContext } from "../context/AuthenticatonContext";
+import { useLocation } from "react-router-dom";
 export default function LoginLeft() {
   const navigate = useNavigate();
-  const [formData, setFormDate] = useState({
-    email: "",
-    password: "",
-  });
-
+  const location = useLocation();
+  const { formData, setFormDate, setUser, accounts } =
+    useContext(AuthenticatonContext);
   const [error, setError] = useState({});
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,7 +25,24 @@ export default function LoginLeft() {
     setError(newError);
 
     if (Object.keys(newError).length === 0) {
-      navigate("/home");
+      setUser({ formData });
+
+      const comfirmAccount = accounts.find((account) => {
+        account.email === formData.email &&
+          account.password === formData.password;
+      });
+      if (!comfirmAccount) {
+        setError({
+          email: "Account does not exist or password is incorrect",
+        });
+        return;
+      }
+
+      setUser(comfirmAccount);
+
+      const from = location?.state?.from?.pathname || "/home";
+
+      navigate(from, { replace: true });
     }
   }
   return (

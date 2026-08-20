@@ -1,20 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CiLock, CiCreditCard1 } from "react-icons/ci";
 import { AiOutlineMail, AiOutlineHome } from "react-icons/ai";
-
+import { AuthenticatonContext } from "../context/AuthenticatonContext";
 export default function CreateAccount() {
   const navigate = useNavigate();
-
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-    comfirmPassword: "",
-    address: "",
-    card: "",
-    expireDate: "",
-    cvv: "",
-  });
+  const {
+    formDataCreateAccount,
+    setFormDataCreateAccount,
+    setUser,
+    accounts,
+    setAccounts,
+  } = useContext(AuthenticatonContext);
 
   const [error, setError] = useState({});
 
@@ -23,53 +20,81 @@ export default function CreateAccount() {
 
     let newError = {};
 
+    // First Name
+    if (formDataCreateAccount.firstName === "") {
+      newError.firstName = "First name can't be empty";
+    }
+
+    // Last Name
+    if (formDataCreateAccount.lastName === "") {
+      newError.lastName = "Last name can't be empty";
+    }
+
     // Email
-    if (formData.email === "") {
+    if (formDataCreateAccount.email === "") {
       newError.email = "Email can't be empty";
     }
 
     // Password
-    if (formData.password === "") {
+    if (formDataCreateAccount.password === "") {
       newError.password = "Check password";
-    } else if (formData.password.length < 8) {
+    } else if (formDataCreateAccount.password.length < 8) {
       newError.password = "Password must be at least 8 characters";
     }
 
     // Confirm password
-    if (formData.comfirmPassword === "") {
+    if (formDataCreateAccount.comfirmPassword === "") {
       newError.comfirmPassword = "Please confirm your password";
-    } else if (formData.comfirmPassword !== formData.password) {
+    } else if (
+      formDataCreateAccount.comfirmPassword !== formDataCreateAccount.password
+    ) {
       newError.comfirmPassword = "Passwords don't match";
     }
 
     // Address
-    if (formData.address === "") {
+    if (formDataCreateAccount.address === "") {
       newError.address = "Address can't be empty";
     }
 
     // Card
-    if (formData.card === "") {
+    if (formDataCreateAccount.card === "") {
       newError.card = "Card number can't be empty";
-    } else if (formData.card.replace(/\s/g, "").length < 16) {
+    } else if (formDataCreateAccount.card.replace(/\s/g, "").length !== 10) {
       newError.card = "Enter a valid card number";
     }
 
     // Expire date
-    if (formData.expireDate === "") {
+    if (formDataCreateAccount.expireDate === "") {
       newError.expireDate = "Required";
     }
 
     // CVV
-    if (formData.cvv === "") {
+    if (formDataCreateAccount.cvv === "") {
       newError.cvv = "Required";
-    } else if (formData.cvv.length < 3) {
+    } else if (formDataCreateAccount.cvv.length < 3) {
       newError.cvv = "Invalid CVV";
     }
 
     setError(newError);
-
+    setUser({
+      formDataCreateAccount,
+    });
     if (Object.keys(newError).length === 0) {
-      navigate("/empty");
+      const newAccout = {
+        firstName: formDataCreateAccount.firstName,
+        lastName: formDataCreateAccount.lastName,
+        email: formDataCreateAccount.email,
+        password: formDataCreateAccount.password,
+        address: formDataCreateAccount.address,
+        card: formDataCreateAccount.card,
+        expiredDate: formDataCreateAccount.expireDate,
+        cvv: formDataCreateAccount.cvv,
+      };
+
+      setAccounts([...accounts, newAccout]);
+      setUser(newAccout);
+
+      navigate("/home");
     }
   }
 
@@ -89,6 +114,66 @@ export default function CreateAccount() {
             </div>
 
             <div className="flex flex-col mt-[40px]">
+              {/* FIRST + LAST NAME */}
+              <div className="flex gap-[16px]">
+                {/* FIRST NAME */}
+                <div className="flex flex-col flex-1">
+                  <label className="text-[12px] font-[400] text-[#333333]">
+                    First Name
+                  </label>
+
+                  <div
+                    className={`inputCreateBorder ${
+                      error.firstName ? "error" : ""
+                    }`}
+                  >
+                    <input
+                      type="text"
+                      placeholder="First name"
+                      value={formDataCreateAccount.firstName}
+                      onChange={(e) => {
+                        setFormDataCreateAccount({
+                          ...formDataCreateAccount,
+                          firstName: e.target.value,
+                        });
+                      }}
+                    />
+
+                    {error.firstName && (
+                      <p className="errorMessage">{error.firstName}</p>
+                    )}
+                  </div>
+                </div>
+
+                {/* LAST NAME */}
+                <div className="flex flex-col flex-1">
+                  <label className="text-[12px] font-[400] text-[#333333]">
+                    Last Name
+                  </label>
+
+                  <div
+                    className={`inputCreateBorder ${
+                      error.lastName ? "error" : ""
+                    }`}
+                  >
+                    <input
+                      type="text"
+                      placeholder="Last name"
+                      value={formDataCreateAccount.lastName}
+                      onChange={(e) => {
+                        setFormDataCreateAccount({
+                          ...formDataCreateAccount,
+                          lastName: e.target.value,
+                        });
+                      }}
+                    />
+
+                    {error.lastName && (
+                      <p className="errorMessage">{error.lastName}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
               {/* EMAIL */}
               <label className="text-[12px] font-[400] text-[#333333]">
                 Email Address
@@ -104,10 +189,10 @@ export default function CreateAccount() {
                 <input
                   type="email"
                   placeholder="e.g. alex@email.com"
-                  value={formData.email}
+                  value={formDataCreateAccount.email}
                   onChange={(e) => {
-                    setFormData({
-                      ...formData,
+                    setFormDataCreateAccount({
+                      ...formDataCreateAccount,
                       email: e.target.value,
                     });
                   }}
@@ -131,10 +216,10 @@ export default function CreateAccount() {
                 <input
                   type="password"
                   placeholder="At least 8 characters"
-                  value={formData.password}
+                  value={formDataCreateAccount.password}
                   onChange={(e) => {
-                    setFormData({
-                      ...formData,
+                    setFormDataCreateAccount({
+                      ...formDataCreateAccount,
                       password: e.target.value,
                     });
                   }}
@@ -162,10 +247,10 @@ export default function CreateAccount() {
                 <input
                   type="password"
                   placeholder="Confirm your password"
-                  value={formData.comfirmPassword}
+                  value={formDataCreateAccount.comfirmPassword}
                   onChange={(e) => {
-                    setFormData({
-                      ...formData,
+                    setFormDataCreateAccount({
+                      ...formDataCreateAccount,
                       comfirmPassword: e.target.value,
                     });
                   }}
@@ -191,10 +276,10 @@ export default function CreateAccount() {
                 <input
                   type="text"
                   placeholder="Enter your address"
-                  value={formData.address}
+                  value={formDataCreateAccount.address}
                   onChange={(e) => {
-                    setFormData({
-                      ...formData,
+                    setFormDataCreateAccount({
+                      ...formDataCreateAccount,
                       address: e.target.value,
                     });
                   }}
@@ -218,17 +303,15 @@ export default function CreateAccount() {
                 <input
                   type="text"
                   inputMode="numeric"
-                  maxLength={19}
-                  placeholder="1234 5678 9012 3456"
-                  value={formData.card}
+                  maxLength={11}
+                  placeholder="1234 5678 91"
+                  value={formDataCreateAccount.card}
                   onChange={(e) => {
                     const value = e.target.value
                       .replace(/\D/g, "")
-                      .replace(/(.{4})/g, "$1 ")
-                      .trim();
-
-                    setFormData({
-                      ...formData,
+                      .slice(0, 10);
+                    setFormDataCreateAccount({
+                      ...formDataCreateAccount,
                       card: value,
                     });
                   }}
@@ -255,7 +338,7 @@ export default function CreateAccount() {
                       inputMode="numeric"
                       maxLength={5}
                       placeholder="MM/YY"
-                      value={formData.expireDate}
+                      value={formDataCreateAccount.expireDate}
                       onChange={(e) => {
                         let value = e.target.value.replace(/\D/g, "");
 
@@ -264,8 +347,8 @@ export default function CreateAccount() {
                             value.substring(0, 2) + "/" + value.substring(2, 4);
                         }
 
-                        setFormData({
-                          ...formData,
+                        setFormDataCreateAccount({
+                          ...formDataCreateAccount,
                           expireDate: value,
                         });
                       }}
@@ -295,12 +378,12 @@ export default function CreateAccount() {
                       inputMode="numeric"
                       maxLength={4}
                       placeholder="123"
-                      value={formData.cvv}
+                      value={formDataCreateAccount.cvv}
                       onChange={(e) => {
                         const value = e.target.value.replace(/\D/g, "");
 
-                        setFormData({
-                          ...formData,
+                        setFormDataCreateAccount({
+                          ...formDataCreateAccount,
                           cvv: value,
                         });
                       }}
@@ -330,7 +413,7 @@ export default function CreateAccount() {
                 </p>
 
                 <span
-                  onClick={() => navigate("/")}
+                  onClick={() => navigate("/login")}
                   className="text-[#633CFF] text-[16px] font-[400] cursor-pointer ml-[5px]"
                 >
                   Login
