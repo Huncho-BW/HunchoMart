@@ -3,33 +3,8 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { product } from "../data/product";
-export default function CartRight() {
-  const { cartItems } = useContext(CartContext);
-  const lenghtofCart = cartItems.length;
-  const allproductData = [
-    ...product.productBeauty,
-    ...product.productFashion,
-    ...product.productSneakers,
-    ...product.productTech,
-  ];
-
-  const productData = cartItems?.map((cartItem) => {
-    const productData = allproductData.find(
-      (product) => product.id === cartItem.id,
-    );
-
-    return {
-      ...productData,
-      quantity: cartItem.quantity,
-      size: cartItem.size,
-      color: cartItem.color,
-    };
-  });
-
-  console.log("log out cart data", productData);
-  const actualPrice = productData.map((item) => {
-    return item.actualPrice;
-  });
+export default function CartRight({ productData }) {
+  const lenghtofCart = productData.length;
 
   const price = productData.map((item) => {
     return item.price;

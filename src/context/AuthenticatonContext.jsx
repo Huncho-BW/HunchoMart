@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const AuthenticatonContext = createContext();
 export default function AuthProvider({ children }) {
@@ -21,6 +21,24 @@ export default function AuthProvider({ children }) {
     cvv: "",
   });
 
+  const [details, setDetails] = useState({
+    firstName: formDataCreateAccount.firstName,
+    lastName: formDataCreateAccount.lastName,
+    address: formDataCreateAccount.address,
+    card: formDataCreateAccount.card,
+    exp: formDataCreateAccount.expireDate,
+  });
+  useEffect(() => {
+    setDetails((prev) => ({
+      ...prev,
+      firstName: formDataCreateAccount.firstName,
+      lastName: formDataCreateAccount.lastName,
+      address: formDataCreateAccount.address,
+      card: formDataCreateAccount.card,
+      exp: formDataCreateAccount.expireDate,
+    }));
+  }, [formDataCreateAccount]);
+
   console.log("log user", user);
 
   return (
@@ -34,6 +52,7 @@ export default function AuthProvider({ children }) {
         setAccounts,
         formData,
         setFormDate,
+        details,
       }}
     >
       {children}

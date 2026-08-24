@@ -96,7 +96,7 @@ export default function HeroSection() {
             <div className="heroBorder bg-[#F5F5F3] text-[#08090B] hover:bg-[#08090B] hover:text-[#F8FAFC]">
               <NavLink className="" to={currentHero.link}>
                 <button className="flex gap-2 items-center">
-                  {currentHero.button} <ArrowRight />
+                  {currentHero.button} <ArrowRight className="arroRight" />
                 </button>
               </NavLink>
             </div>

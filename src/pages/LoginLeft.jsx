@@ -25,12 +25,12 @@ export default function LoginLeft() {
     setError(newError);
 
     if (Object.keys(newError).length === 0) {
-      setUser({ formData });
+      const comfirmAccount = accounts.find(
+        (account) =>
+          account.email === formData.email &&
+          account.password === formData.password,
+      );
 
-      const comfirmAccount = accounts.find((account) => {
-        account.email === formData.email &&
-          account.password === formData.password;
-      });
       if (!comfirmAccount) {
         setError({
           email: "Account does not exist or password is incorrect",
@@ -106,7 +106,13 @@ export default function LoginLeft() {
             <div className="flex items-center mt-[24px]  [@media(max-width:640px)]:flex-col  [@media(max-width:640px)]:justify-center ">
               <p className="">Don’t have an account?</p>
               <span
-                onClick={() => navigate("/create-account")}
+                onClick={() =>
+                  navigate("/create-account", {
+                    state: {
+                      from: location?.state?.from,
+                    },
+                  })
+                }
                 className=" text-center text-[#633CFF] cursor-pointer"
               >
                 Create account

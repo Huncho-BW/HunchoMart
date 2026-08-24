@@ -2,18 +2,25 @@
 
 
 .order-border{
-  
+  background-color: white;
     padding: 20px;
     border-radius: 12px;
     flex: 1 1 200px;
-    border: 1px solid black;
+    border: 0px solid;
 }
 
 
 
 .wishlist {
     width: 100%;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 320px;
 }
+
 
 .wishlist-header {
     display: flex;
@@ -33,14 +40,29 @@
         border-radius: 12px;
 }
 
-.overDeal img {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
+.wish-image-border{
+    max-width: 200px;
+        max-height: 200px;
+        border: 0px solid;
+        border-radius: 12px;
 }
 
-.wishlist-details {
-    flex: 1;
+.wish-image-border img {
+width: 200px;
+    max-height: 200px;
+    
+;
+       
+}
+
+
+
+
+.wishlist-display{
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr ;
+ gap: 20px;
+   
 }
 
 /* Tablet */

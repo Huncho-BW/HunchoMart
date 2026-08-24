@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   const {
+    ids,
     categories,
     brand,
     title,
@@ -15,9 +16,19 @@ router.get("/", (req, res) => {
     sort,
     page = 1,
     limit = 12,
+    rating,
   } = req.query;
 
   let filterProduct = products;
+
+  // Product IDs
+  if (ids) {
+    const productIds = ids.split(",").map((id) => Number(id));
+
+    filterProduct = filterProduct.filter((item) =>
+      productIds.includes(item.id),
+    );
+  }
 
   // Categories
   if (categories) {
@@ -74,6 +85,13 @@ router.get("/", (req, res) => {
     );
   }
 
+  if (rating) {
+    const ratings = rating.split(",");
+    filterProduct = filterProduct.filter((item) =>
+      ratings.some((rate) => item.rating.rate >= rate),
+    );
+  }
+
   // Sorting
   if (sort === "price-asc") {
     filterProduct.sort((a, b) => a.price - b.price);
@@ -89,6 +107,11 @@ router.get("/", (req, res) => {
 
   if (sort === "discount") {
     filterProduct.sort((a, b) => b.discountPercentage - a.discountPercentage);
+  }
+  // TODO: When we have a real backend/database,
+  // replace isNewArrival with createdAt and sort by actual product date.
+  if (sort === "newest") {
+    filterProduct = filterProduct.filter((item) => item.isNewArrival === true);
   }
 
   // Pagination
@@ -147,13 +170,16 @@ router.get("/search", (req, res) => {
   const search = req.query.q?.toLowerCase().trim();
 
   if (!search) {
-    res.json({
+    return res.status(400).json({
       message: "search query is required",
     });
   }
 
-  const result = products.filter((item) =>
-    item.title.toLowerCase().includes(search),
+  const result = products.filter(
+    (item) =>
+      item.title.toLowerCase().includes(search) ||
+      item.brand.toLowerCase().includes(search) ||
+      item.category.toLowerCase().includes(search),
   );
 
   if (result.length === 0) {
@@ -161,17 +187,20 @@ router.get("/search", (req, res) => {
       message: "No products found",
     });
   }
+
   return res.json(result);
 });
-
 router.get("/:id", (req, res) => {
   const id = Number(req.params.id);
+
   const product = products.find((item) => item.id === id);
+
   if (!product) {
-    res.json({
+    return res.status(404).json({
       message: "Product not found",
     });
   }
+
   res.json(product);
 });
 

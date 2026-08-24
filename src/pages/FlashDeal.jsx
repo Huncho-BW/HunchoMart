@@ -69,36 +69,51 @@ export default function FlashDeal() {
       </div>
 
       {/* Products */}
-      <div className="flex gap-[20px] overflow-hidden overflow-x-auto scrollbar-hide">
+      <div className="flex gap-[20px] overflow-hidden overflow-x-auto scrollbar-hide pb-[5px]">
         {flashData.map((item) => (
           <NavLink key={item.id} to={`/product/${item.id}`}>
-            <div className="flashDeal">
-              <img src={sneakers} alt="" />
+            <div className="flashDeal group overflow-hidden rounded-[14px] border border-[#2A2927] bg-[#181716] transition duration-300 hover:-translate-y-[3px] hover:border-[#B8965A]/50 hover:shadow-lg">
+              <div className="relative h-[220px] overflow-hidden bg-[#22201E]">
+                <img
+                  src={sneakers}
+                  alt=""
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.05]"
+                />
 
-              <div className="flex flex-col gap-[5px] px-[20px] py-[10px]">
-                <h1 className="text-[10px] text-[#8A8580]">
+                {/* Flash Badge */}
+                <div className="absolute left-[10px] top-[10px] rounded-full bg-[#B8965A] px-[9px] py-[4px]">
+                  <h1 className="text-[9px] font-[700] uppercase tracking-[1px] text-white">
+                    Flash Deal
+                  </h1>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-[6px] px-[20px] py-[12px]">
+                <h1 className="truncate text-[10px] text-[#8A8580]">
                   {item.title || item.name || "Product"}
                 </h1>
 
-                <h1 className="text-[14px] font-[400] text-[#FAF8F5]">
+                <h1 className="truncate text-[14px] font-[400] text-[#FAF8F5]">
                   {item.brand || "Brand"}
                 </h1>
 
-                <div className="flex gap-2">
+                <div className="flex items-center gap-2">
                   <div>
-                    <h1 className="text-[16px] text-[#B8965A] font-[600]">
+                    <h1 className="text-[16px] font-[600] text-[#B8965A]">
                       ${item.price ?? 230}
                     </h1>
                   </div>
 
                   <div>
-                    <h1 className="line-through text-[12px] text-[#555] font-[700]">
+                    <h1 className="text-[12px] font-[700] text-[#555] line-through">
                       ${item.oldPrice ?? 250}
                     </h1>
                   </div>
 
-                  <div className="ml-[auto] border p-1 bg-[#2D5A3D]/15">
-                    <h1 className="text-[10px] text-[#2D5A3D]">-24%</h1>
+                  <div className="ml-auto rounded-[5px] border border-[#2D5A3D]/30 bg-[#2D5A3D]/15 px-[6px] py-[3px]">
+                    <h1 className="text-[10px] font-[600] text-[#2D5A3D]">
+                      -24%
+                    </h1>
                   </div>
                 </div>
               </div>

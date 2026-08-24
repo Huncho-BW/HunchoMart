@@ -247,9 +247,31 @@
     background: #9B9B9B;
 }
 
+.size-box {
+   
+    height: 45px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+padding: 4px 8px;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.size-box:hover {
+    background: #0c0c0c;
+    color: white;
+    border-color: #0c0c0c;
+}
+
 /* ===============================
       QUANTITY BUTTON
 =================================*/
+
+
 
 .quantityBox {
     display: flex;

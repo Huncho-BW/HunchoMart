@@ -14,29 +14,29 @@ export default function Categories() {
     { name: "Beauty", pic: beauty },
   ];
   return (
-    <div className=" ">
-      <section>
-        <span className="text-[10px] text-[#B8965A] text-[DM Mono] tracking-[0.2em] font-[500]">
-          Explore
-        </span>
-        <h1 className="text-[32px] topHeader text-[#0C0C0C] font-[600] mb-[20px]">
-          Shop By Catergories
-        </h1>
-        <div className="categoriesHead ">
-          {categories.map((item) => (
-            <NavLink className="Categories" to={item.name}>
-              <img className="cat-img" src={item.pic} alt="" />
+    <div className="categoriesHead">
+      {categories.map((item) => (
+        <NavLink
+          key={item.name}
+          className="Categories group relative overflow-hidden"
+          to={item.name}
+        >
+          <img
+            className="cat-img transition-transform duration-500 group-hover:scale-110"
+            src={item.pic}
+            alt={item.name}
+          />
 
-              <h1 className="text-[12px] text-[sans-serif] text-[#ffffff] font-[700]">
-                {item.name} <br />{" "}
-                <span className="text-[10px] text-white/50 text-[sans-serif]">
-                  55
-                </span>
-              </h1>
-            </NavLink>
-          ))}
-        </div>
-      </section>
+          {/* overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+          <div className="absolute bottom-4 left-4">
+            <h1 className="text-[12px] text-white font-[700]">{item.name}</h1>
+
+            <span className="text-[10px] text-white/50">55</span>
+          </div>
+        </NavLink>
+      ))}
     </div>
   );
 }

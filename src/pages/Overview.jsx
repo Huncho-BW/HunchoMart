@@ -103,47 +103,68 @@ export default function Overview() {
   ];
 
   return (
-    <div className="px-[32px]">
+    <div className="px-[32px] flex flex-col gap-[20px] overflow-hidden">
       <div>
-        <h1>Good Morning, Michael</h1>
-        <h2>Here's what's happening with your account</h2>
+        <h1 className="text-[32px]">Good Morning, Michael</h1>
+        <h2 className="text-[14px]">
+          Here's what's happening with your account
+        </h2>
       </div>
       <div className="flex justify-between gap-[20px]">
         {orders.map((item) => (
-          <div className="order-border">
-            <h1>{item.total}</h1>
-            <h2>{item.spent}</h2>
-            <h3>{item.date}</h3>
+          <div className="order-border ">
+            <h1 className="text-[10px] tracking-[2px] font-[400]">
+              {item.total.toUpperCase()}
+            </h1>
+            <h2 className="text-[24px] font-[700]">{item.spent}</h2>
+            <h3 className="text-[10px]">{item.date}</h3>
           </div>
         ))}
       </div>
 
-      <div className="">
+      <div className="bg-[white] overflow-hidden max-h-[600px] p-[20px] flex flex-col gap-[20px] border-0 rounded-xl">
         <div className="flex justify-between">
-          <h1>Recent Order </h1>
-          <span>View all </span>
+          <h1 className="text-[16px] font-[700]">Recent Order </h1>
+          <span className="text-[12px] cursor-pointer hover:underline">
+            View all
+          </span>
         </div>
         <div className="flex flex-col">
           {orderHistory?.map((item) => {
-            console.log("log out", item?.products);
+            console.log("log out orderHistory", orderHistory);
             return item?.products?.map((product) => (
-              <div className="flex justify-between">
-                <div className="flex gap-5">
-                  <img
-                    src={product.images}
-                    className="w-[60px] h-[60px] broder rounded-lg"
-                    alt=""
-                  />
-                  <div className="">
-                    <h1>{item?.orderId}</h1>
-                    <h2>{product.quantity}</h2>
-                    <h3>dec 2020</h3>
+              <div className="flex flex-col gap-[20px]">
+                <div className="flex justify-between">
+                  <div className="flex gap-5">
+                    <div className="w-[60px] h-[60px] border-0  rounded-lg ">
+                      <img
+                        src={product.images}
+                        className="w-[60px] h-[60px] broder rounded-lg"
+                        alt=""
+                      />
+                    </div>
+
+                    <div className="">
+                      <h1 className="text-[12px] font-[300]">
+                        {item?.orderId}
+                      </h1>
+                      <h2 className="text-[14px] font-[500]">
+                        {product.quantity}
+                      </h2>
+                      <h3 className="text-[10px]">dec 2020</h3>
+                    </div>
+                  </div>
+                  <div className="flex  items-center gap-[10px]">
+                    <div className="border-0 rounded-3xl bg-[gray] px-[4px] py-[4px]">
+                      <span className="text-[green] text-[10px]">
+                        {item?.status}
+                      </span>
+                    </div>
+
+                    <h1>{product.actualPrice * product.quantity}</h1>
                   </div>
                 </div>
-                <div className="flex flex-col items-center">
-                  <span>{product?.status}</span>
-                  <h1>{product.actualPrice * product.quantity}</h1>
-                </div>
+                <div className="divider mt-[20px] mb-[20px]"></div>
               </div>
             ));
           })}
@@ -152,18 +173,23 @@ export default function Overview() {
 
       <div className="wishlist">
         <div className="wishlist-header">
-          <h1>WishList </h1>
-          <span>veiw all</span>
+          <h1 className="text-[16px] font-[700]">WishList </h1>
+          <button className="text-[12px] cursor-pointer hover:underline">
+            veiw all
+          </button>
         </div>
-        <div className="catDisplay ">
+        <div className="wishlist-display ">
           {productData.map((product) => (
-            <div className="overDeal">
-              <img src="" alt="" />
-              <div className="flex flex-col gap-[15px] px-[20px] py-[10px]">
-                <h1 className="text-[14px] font-[300]">{product.title}</h1>
+            <div className="wishlist-oreder">
+              <div className="wish-image-border">
+                <img src={product.images} alt="" />
+              </div>
+
+              <div className="flex flex-col gap-[10px]">
+                <h1 className="text-[12px] font-[300]">{product.title}</h1>
                 <div className="flex gap-2">
                   <div>
-                    <h1 className="text-[14px] font-[400]">
+                    <h1 className="text-[12px] font-[400]">
                       ${product.actualPrice}
                     </h1>
                   </div>

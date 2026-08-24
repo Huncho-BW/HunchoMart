@@ -1,10 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Heart, CircleUser, ShoppingCart, Menu, X } from "lucide-react";
 import * as Dialog from "@radix-ui/react-dialog";
 import NavlinkMobile from "./nav-link";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import { ArrowRight } from "lucide-react";
 
+import { CircleX } from "lucide-react";
 export default function Navbar() {
+  const [searchInput, setSearchInput] = useState("");
+  const [searchDebounce, setsearchDebounce] = useState("");
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setsearchDebounce(searchInput);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [searchInput]);
+
+  const searchApi = async () => {
+    const result = await axios.get(
+      "https://huncho-mart-api.onrender.com/api/products/search",
+
+      {
+        params: {
+          q: searchDebounce,
+        },
+      },
+    );
+
+    return result?.data;
+  };
+
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["search", searchDebounce],
+    queryFn: searchApi,
+    enabled: searchDebounce?.length >= 3,
+  });
+
+  const searchData = data || [];
+  console.log("log out search data", searchData);
+
   return (
     <div>
       <header className="navbar">
@@ -33,8 +71,40 @@ export default function Navbar() {
         </nav>
 
         {/* Search */}
-        <div className="search">
-          <input type="text" placeholder="Search products..." />
+        <div>
+          <div className="search relative">
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+            />
+
+            {searchInput.length > 0 && (
+              <CircleX
+                size={18}
+                className="search-clear"
+                onClick={() => setSearchInput("")}
+              />
+            )}
+          </div>
+          {searchDebounce?.length >= 3 && (
+            <div className="search-dropdown absolute shadow-lg">
+              {isLoading && <p className="search-status">Searching...</p>}
+
+              {isError && <p className="search-status">No products found</p>}
+
+              {!isLoading &&
+                !isError &&
+                searchData.map((item) => (
+                  <div key={item.id} className="search-dropdown-item group">
+                    <p>{item.title}</p>
+
+                    <ArrowRight className="search-arrow" size={16} />
+                  </div>
+                ))}
+            </div>
+          )}
         </div>
 
         {/* Actions */}
@@ -77,9 +147,47 @@ export default function Navbar() {
                 </Dialog.Close>
 
                 <div>
-                  <div className=" mobileSearch">
-                    <input type="text" placeholder="Search products..." />
+                  <div className=" mobileSearch search relative">
+                    <input
+                      type="text"
+                      placeholder="Search products..."
+                      value={searchInput}
+                      onChange={(e) => setSearchInput(e.target.value)}
+                    />
+
+                    {searchInput.length > 0 && (
+                      <CircleX
+                        size={18}
+                        className="search-clear"
+                        onClick={() => setSearchInput("")}
+                      />
+                    )}
                   </div>
+
+                  {searchDebounce?.length >= 3 && (
+                    <div className="search-dropdown absolute">
+                      {isLoading && (
+                        <p className="search-status">Searching...</p>
+                      )}
+
+                      {isError && (
+                        <p className="search-status">No products found</p>
+                      )}
+
+                      {!isLoading &&
+                        !isError &&
+                        searchData.map((item) => (
+                          <div
+                            key={item.id}
+                            className="search-dropdown-item group"
+                          >
+                            <p>{item.title}</p>
+
+                            <ArrowRight className="search-arrow" size={16} />
+                          </div>
+                        ))}
+                    </div>
+                  )}
                   <NavlinkMobile />
                 </div>
               </Dialog.Content>

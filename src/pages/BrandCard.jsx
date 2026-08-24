@@ -5,37 +5,48 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Star } from "lucide-react";
+
 export default function BrandCard({ product }) {
   if (!product) return null;
+
   const { addToCart, addToWhishList } = useContext(CartContext);
   const [click, setClick] = useState(false);
+
   return (
     <div>
       <NavLink to={`/product/${product.id}`}>
-        <div className="tranding  ">
-          <img src={product?.images?.[0] || product?.image} alt="" />
-          <div className="addCart flex justify-center p-1 ">
+        <div className="tranding group overflow-hidden transition-all duration-300 hover:-translate-y-[3px] hover:shadow-lg">
+          <img
+            src={product?.images?.[0] || product?.image}
+            alt=""
+            className="transition-transform duration-500 group-hover:scale-110 group-hover:border-b"
+          />
+
+          <div className="addCart hidden group-hover:flex justify-center p-1">
             <button
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
                 addToCart(product?.id);
               }}
-              className="text-center  "
+              className="text-center"
             >
-              Add Quikly
+              Quick Add
             </button>
           </div>
-          <div className="trending-content bg-[#FAF8F5] p-3 flex flex-col gap-1">
+
+          <div className="trending-content flex flex-col gap-1 bg-[#fff] p-3">
             <div>
-              <h1 className="text-[10px] text-[#8A8580]">{product?.title} </h1>
+              <h1 className="text-[10px] text-[#8A8580]">{product?.title}</h1>
             </div>
+
             <div>
-              <h1 className="text-[14px] font-[400] text-[#0C0C0C] ">
+              <h1 className="text-[14px] font-[400] text-[#0C0C0C]">
                 {product?.brand}
               </h1>
             </div>
-            <div className="flex gap-1 items-center">
+
+            <div className="flex items-center gap-1">
               <div className="flex gap-1">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <Star
@@ -50,30 +61,34 @@ export default function BrandCard({ product }) {
                   />
                 ))}
               </div>
+
               <div>
                 <h1 className="text-[10px]">{`(${product?.rating.count} )`}</h1>
               </div>
             </div>
+
             <div className="flex gap-2">
               <div>
-                <h1 className="text-[16px] text-[#0C0C0C] font-[600]">
+                <h1 className="text-[16px] font-[600] text-[#0C0C0C]">
                   {product?.price}
                 </h1>
               </div>
+
               <div>
-                <h1 className="text-[12px] line-through text-[#8A8580] font-[700]">
+                <h1 className="text-[12px] font-[700] text-[#8A8580] line-through">
                   {product?.actualPrice}
                 </h1>
               </div>
-              <div className="ml-[auto]  p-1 ">
-                <h1 className="text-[12px] text-[10px] text-[#2D5A3D]  ">
+
+              <div className="ml-[auto] p-1">
+                <h1 className="text-[10px] text-[#2D5A3D]">
                   - {product?.discountPercentage} %
                 </h1>
               </div>
             </div>
           </div>
 
-          <div className="absolute top-0 left-0 flex w-full justify-between p-2">
+          <div className="absolute left-0 top-0 flex w-full justify-between p-2">
             <div>
               <h1 className="text-[12px] text-[#2D5A3D]">
                 {product?.discountPercentage} %
@@ -81,7 +96,6 @@ export default function BrandCard({ product }) {
             </div>
 
             <div
-              className=""
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -94,8 +108,17 @@ export default function BrandCard({ product }) {
                   addToWhishList(product?.id);
                   setClick(true);
                 }}
+                className="flex h-[36px] w-[36px] cursor-pointer items-center justify-center rounded-full bg-white/90 shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-white"
               >
-                <Heart className={click ? "heartColor" : ""} />
+                <Heart
+                  size={19}
+                  strokeWidth={1.8}
+                  className={`transition-colors duration-300 ${
+                    click
+                      ? "fill-red-500 text-red-500"
+                      : "text-[#0C0C0C] hover:text-red-500"
+                  }`}
+                />
               </button>
             </div>
           </div>

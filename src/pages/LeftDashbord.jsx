@@ -8,29 +8,59 @@ import { Bell } from "lucide-react";
 import { CreditCard } from "lucide-react";
 import { Settings } from "lucide-react";
 import { CartContext } from "../context/CartContext";
-import { product } from "../data/product";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { AuthenticatonContext } from "../context/AuthenticatonContext";
+
+const getOrderProducts = async (ids) => {
+  const result = await axios.get(
+    "https://huncho-mart-api.onrender.com/api/products",
+    {
+      params: {
+        ids: ids.join(","),
+        limit: ids.length,
+      },
+    },
+  );
+
+  return result.data.products;
+};
+
 export default function LeftDashbord() {
   const { order } = useContext(CartContext);
-  const allproductData = [
-    ...product.productBeauty,
-    ...product.productFashion,
-    ...product.productSneakers,
-    ...product.productTech,
-  ];
+  const { details } = useContext(AuthenticatonContext);
 
+  console.log("log out formdaata", details);
+  // Get every product ID from every order
+  const productIds = order.flatMap((order) =>
+    order.items.map((item) => item.id),
+  );
+
+  // Remove duplicate IDs
+  const uniqueProductIds = [...new Set(productIds)];
+
+  const { data: products = [], isLoading } = useQuery({
+    queryKey: ["orderProducts", uniqueProductIds],
+    queryFn: () => getOrderProducts(uniqueProductIds),
+    enabled: uniqueProductIds.length > 0,
+  });
+
+  // Rebuild order history using API products
   const orderHistory = order.map((order) => {
-    const orderedProducts = order.items.map((orderItem) => {
-      const product = allproductData.find(
-        (product) => product.id === orderItem.id,
-      );
+    const orderedProducts = order.items
+      .map((orderItem) => {
+        const product = products.find((item) => item.id === orderItem.id);
 
-      return {
-        ...product,
-        quantity: orderItem.quantity,
-        size: orderItem.size,
-        color: orderItem.color,
-      };
-    });
+        if (!product) return null;
+
+        return {
+          ...product,
+          quantity: orderItem.quantity,
+          size: orderItem.size,
+          color: orderItem.color,
+        };
+      })
+      .filter(Boolean);
 
     return {
       ...order,
@@ -38,7 +68,7 @@ export default function LeftDashbord() {
     };
   });
 
-  let ccc = {
+  const ccc = {
     length: orderHistory?.flatMap((item) => item?.products ?? []).length,
 
     valuePoint: Math.round(
@@ -58,6 +88,10 @@ export default function LeftDashbord() {
     { logo: Settings, name: "setting" },
   ];
 
+  if (isLoading) {
+    return <div>Loading dashboard...</div>;
+  }
+
   return (
     <div className="flex flex-col gap-[20px]">
       <section className="borderOne">
@@ -65,7 +99,10 @@ export default function LeftDashbord() {
           <div className="div-circle">AM</div>
 
           <div className="profile-text">
-            <h1>Adenuga Michael</h1>
+            <div>
+              <span>{details.firstName.toUpperCase()}</span>{" "}
+              <span>{details.lastName.toUpperCase()}</span>
+            </div>
             <span>Gold Member</span>
           </div>
         </div>

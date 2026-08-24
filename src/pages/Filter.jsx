@@ -1,15 +1,24 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { CategoriesApi } from "../Api/CategoriesApi";
 export default function FilterSide({
-  filterData = [],
+  category,
   setSelectionValue,
   selectedValue,
 }) {
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["filter-category", category],
+    queryFn: () => CategoriesApi(category),
+  });
+
+  const result = data ?? [];
+  console.log("result", result);
+
   const priceRange = [
     {
       label: "Under ₦10,000",
-      min: 0,
-      max: 10000,
+      min: "Under",
+      max: " ₦10,000",
     },
     {
       label: "₦10,000 - ₦50,000",
@@ -28,140 +37,124 @@ export default function FilterSide({
     },
   ];
 
-  // Brands
-  const brandCate = [
-    ...new Set(filterData.map((item) => item?.brand).filter(Boolean)),
+  const ratingRange = [
+    {
+      id: 1,
+      label: "4 Stars & up",
+      value: 4,
+    },
+    {
+      id: 2,
+      label: "3 Stars & up",
+      value: 3,
+    },
+    {
+      id: 3,
+      label: "2 Stars & up",
+      value: 2,
+    },
+    {
+      id: 4,
+      label: "1 Star & up",
+      value: 1,
+    },
   ];
 
-  // Selected brands
-  const selectedBrands = brandCate.filter((brand) =>
-    selectedValue.brand.includes(brand),
-  );
-
-  // Unselected brands
-  const unselectedBrands = brandCate.filter(
-    (brand) => !selectedValue.brand.includes(brand),
-  );
-
-  // Colors
-  const colorCate = [
-    ...new Set(filterData.flatMap((item) => item?.color ?? []).filter(Boolean)),
+  let brandCate = [
+    ...new Set(
+      result?.map((item) => {
+        return item.brand;
+      }),
+    ),
   ];
 
-  // Sizes
-  const sizeCate = [
-    ...new Set(filterData.flatMap((item) => item?.size ?? []).filter(Boolean)),
-  ];
+  let colorCate = [...new Set(result?.flatMap((item) => item.color))];
 
+  let sizeCate = [...new Set(result?.flatMap((item) => item?.size))];
+
+  if (isLoading) {
+    return <div>Loading filters...</div>;
+  }
+
+  if (isError) {
+    return <div>Failed to load filters.</div>;
+  }
   return (
     <div className="filter p-3">
       <div>
-        <h1>Filter</h1>
-
-        {/* Categories */}
+        <h1>filter</h1>
         <div>
-          <h1>Categories</h1>
+          <h1>categories</h1>
         </div>
-
-        {/* Search */}
-        <div className="w-[100%] border px-[8px] py-[6px] rounded-lg">
+        <div className="w-[100%] border px-[8px] py-[6px] rounded-lg ">
           <input
             className="w-[100%]"
             type="text"
-            placeholder="Search"
-            value={selectedValue.title}
-            onChange={(e) => {
-              setSelectionValue((prev) => ({
-                ...prev,
-                title: e.target.value,
-              }));
-            }}
+            placeholder="search"
+            name=""
+            id=""
           />
         </div>
 
-        {/* BRAND */}
-        <div className="flex flex-col max-h-[300px] overflow-hidden overflow-y-auto">
-          <h1>Brand</h1>
-
-          {/* SELECTED BRANDS */}
-          {selectedBrands.length > 0 && (
-            <div className="mb-2">
-              <h2 className="text-[12px] text-[#8A8580] mb-1">Selected</h2>
-
-              {selectedBrands.map((brand) => (
-                <div className="flex items-center" key={brand}>
-                  <input
-                    type="checkbox"
-                    checked={true}
-                    value={brand}
-                    onChange={(e) => {
-                      const value = e.target.value;
-
-                      setSelectionValue((prev) => ({
-                        ...prev,
-
-                        brand: prev.brand.filter((item) => item !== value),
-                      }));
-                    }}
-                  />
-
-                  <h1>{brand}</h1>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* OTHER BRANDS */}
+        {/* SELECTED BRAND */}
+        {selectedValue?.brand?.length > 0 && (
           <div>
-            {selectedBrands.length > 0 && (
-              <h2 className="text-[12px] text-[#8A8580] mb-1">Other Brands</h2>
-            )}
+            <h1>Selected Brand</h1>
 
-            {unselectedBrands.map((brand) => (
-              <div className="flex items-center" key={brand}>
-                <input
-                  type="checkbox"
-                  checked={false}
-                  value={brand}
-                  onChange={(e) => {
-                    const value = e.target.value;
-
-                    setSelectionValue((prev) => ({
-                      ...prev,
-
-                      brand: [...prev.brand, value],
-                    }));
-                  }}
-                />
-
-                <h1>{brand}</h1>
-              </div>
+            {selectedValue?.brand?.map((brand) => (
+              <h1 key={brand}>{brand}</h1>
             ))}
           </div>
+        )}
+
+        <div className=" flex flex-col max-h-[300px] overflow-hidden overflow-y-auto ">
+          <h1>Brand</h1>
+
+          {brandCate.map((item) => (
+            <div className="flex  items-center">
+              <input
+                type="checkbox"
+                checked={selectedValue.brand.includes(item)}
+                name=""
+                id=""
+                value={item}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  setSelectionValue((prev) => ({
+                    ...prev,
+                    brand: e.target.checked
+                      ? [...prev.brand, value]
+                      : prev.brand.filter((brand) => brand !== value),
+                  }));
+                }}
+              />
+
+              <h1>{item}</h1>
+            </div>
+          ))}
         </div>
-
-        {/* PRICE */}
-        <div className="flex flex-col max-h-[300px] overflow-hidden overflow-y-auto">
+        <div className=" flex flex-col max-h-[300px] overflow-hidden overflow-y-auto ">
           <h1>Prices</h1>
-
-          {priceRange.map((item) => {
-            const isSelected =
-              selectedValue.price.min === item.min &&
-              selectedValue.price.max === item.max;
-
-            return (
-              <div key={item.label} className="flex items-center">
+          {priceRange.map((item) => (
+            <>
+              <div className="flex items-center">
                 <input
                   type="checkbox"
-                  checked={isSelected}
+                  name=""
+                  id=""
+                  checked={
+                    selectedValue.price.min === item.min &&
+                    selectedValue.price.max === item.max
+                  }
+                  value={item.label}
                   onChange={(e) => {
+                    const value = e.target.checked;
                     setSelectionValue((prev) => ({
                       ...prev,
-
-                      price: e.target.checked
+                      price: value
                         ? {
                             min: item.min,
-                            max: item.max === Infinity ? null : item.max,
+                            max: item.max,
                           }
                         : {
                             min: null,
@@ -170,68 +163,82 @@ export default function FilterSide({
                     }));
                   }}
                 />
-
-                <h1>{item.label}</h1>
+                <h1>
+                  {item.min} - {item.max}
+                </h1>
               </div>
-            );
-          })}
+            </>
+          ))}
         </div>
-
-        {/* COLOR */}
-        <div className="flex flex-col max-h-[300px] overflow-hidden overflow-y-auto">
+        <div className=" flex flex-col max-h-[300px] overflow-hidden overflow-y-auto ">
           <h1>Color</h1>
-
-          {colorCate.map((color) => (
-            <div className="flex items-center" key={color}>
+          {colorCate?.map((color) => (
+            <div>
               <input
                 type="checkbox"
+                name=""
+                id=""
                 checked={selectedValue.color.includes(color)}
                 value={color}
                 onChange={(e) => {
                   const value = e.target.value;
-
                   setSelectionValue((prev) => ({
                     ...prev,
-
                     color: e.target.checked
                       ? [...prev.color, value]
-                      : prev.color.filter((item) => item !== value),
+                      : prev.color.filter((color) => color !== value),
                   }));
                 }}
               />
-
               <h1>{color}</h1>
             </div>
           ))}
         </div>
-
-        {/* SIZE */}
-        <div className="flex flex-col max-h-[300px] overflow-hidden overflow-y-auto">
-          <h1>Size</h1>
-
-          {sizeCate.map((size) => (
-            <div className="flex items-center" key={size}>
+        <div className=" flex flex-col max-h-[300px] overflow-hidden overflow-y-auto ">
+          <h1>size</h1>
+          {sizeCate?.map((size) => (
+            <div>
               <input
                 type="checkbox"
+                name=""
+                id=""
                 value={size}
                 checked={selectedValue.size.includes(size)}
                 onChange={(e) => {
                   const value = e.target.value;
-
                   setSelectionValue((prev) => ({
                     ...prev,
-
                     size: e.target.checked
                       ? [...prev.size, value]
-                      : prev.size.filter((item) => item !== value),
+                      : prev.size.filter((size) => size !== value),
                   }));
                 }}
               />
-
               <h1>{size}</h1>
             </div>
           ))}
         </div>
+        {ratingRange.map((item) => (
+          <div key={item.id} className="flex items-center gap-2">
+            <input
+              type="checkbox"
+              value={item.value}
+              checked={selectedValue.rating === item.value}
+              onChange={(e) => {
+                const value = Number(e.target.value);
+                setSelectionValue((prev) => ({
+                  ...prev,
+                  rating: value,
+                }));
+              }}
+            />
+
+            <div className="flex items-center">
+              {"★".repeat(item.value)}
+              <span className="ml-2">{item.label}</span>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

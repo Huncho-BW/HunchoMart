@@ -1,37 +1,48 @@
 import React, { useContext, useEffect, useState } from "react";
-import fashion from "../assets/fashion.webp";
-import { Truck } from "lucide-react";
-import { Shield } from "lucide-react";
-import { product } from "../data/product";
-import { useParams } from "react-router-dom";
-import { Heart } from "lucide-react";
-import { Star } from "lucide-react";
+import { Truck, Shield, Heart, Star, RotateCcw } from "lucide-react";
+import { useParams, NavLink } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
-import { ShoppingBag } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+
 export default function ProductDetails() {
-  const { cart, addToCart, checkoutItems, count, addCount, reMoveCount } =
-    useContext(CartContext);
+  const {
+    cart,
+    addToCart,
+    checkoutItems,
+    count,
+    setCount,
+    addCount,
+    reMoveCount,
+  } = useContext(CartContext);
   const [click, setClick] = useState(false);
   console.log("log out cart", cart);
 
   const { id } = useParams();
 
-  const productDetailsData = Number(id);
-  console.log("id", productDetailsData);
-  const allProductData = [
-    ...product.productBeauty,
-    ...product.productFashion,
-    ...product.productSneakers,
-    ...product.productTech,
-  ];
+  const getProduct = async () => {
+    const result = await axios.get(
+      `https://huncho-mart-api.onrender.com/api/products/${id}`,
+    );
 
-  console.log("all product", allProductData);
+    return result.data;
+  };
 
-  const productData = allProductData.find(
-    (item) => item?.id === productDetailsData,
-  );
+  const {
+    data: productData,
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ["product", id],
+    queryFn: getProduct,
+    enabled: !!id,
+  });
+
   console.log(" product data", productData);
+
+  useEffect(() => {
+    setCount(1);
+  }, [productData?.id]);
 
   return (
     <>
@@ -130,7 +141,7 @@ export default function ProductDetails() {
             </div>
             <div className="flex gap-2">
               {productData?.size?.map((item) => (
-                <div className="quantity-box">
+                <div className="size-box">
                   <h1>{item}</h1>
                 </div>
               ))}
@@ -187,7 +198,10 @@ export default function ProductDetails() {
               <span>Authentication</span>
             </div>
             <div className="flex flex-col justify-center items-center">
-              <span className="text-center">logo</span>
+              <span className="text-center">
+                {" "}
+                <RotateCcw />
+              </span>
               <span>Free Return</span>
             </div>
           </div>
@@ -256,7 +270,7 @@ export default function ProductDetails() {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-[20px] ">
+          <div className="review-display ">
             {productData?.reviews?.map((item) => (
               <div className="border p-5">
                 <div className="flex gap-5">

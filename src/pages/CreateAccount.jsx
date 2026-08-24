@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { CiLock, CiCreditCard1 } from "react-icons/ci";
 import { AiOutlineMail, AiOutlineHome } from "react-icons/ai";
 import { AuthenticatonContext } from "../context/AuthenticatonContext";
 export default function CreateAccount() {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const {
     formDataCreateAccount,
     setFormDataCreateAccount,
@@ -94,7 +96,9 @@ export default function CreateAccount() {
       setAccounts([...accounts, newAccout]);
       setUser(newAccout);
 
-      navigate("/home");
+      const from = location?.state?.from?.pathname || "/home";
+
+      navigate(from, { replace: true });
     }
   }
 

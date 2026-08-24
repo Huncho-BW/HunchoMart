@@ -108,7 +108,7 @@ export const roterConfigu = [
           </ProtectedRount>
         ),
         children: [
-          { index: true, element: <Overview /> },
+          { index: true, element: <Navigate to="overview" replace /> },
           { path: "overview", element: <Overview /> },
           { path: "orders", element: <Orders /> },
           { path: "wishlist", element: <UserWhilelist /> },
@@ -133,6 +133,6 @@ export const roterConfigu = [
     ],
   },
 
-  { path: "/login", element: <Login /> },
-  { path: "/create-account", element: <CreateAccount /> },
+  { path: "login", element: <Login /> },
+  { path: "create-account", element: <CreateAccount /> },
 ];

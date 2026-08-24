@@ -1,32 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
-import { product } from "../data/product";
-import { useContext, useState } from "react";
-export default function CartLeft() {
-  const { cartItems, addToQuantity, reMoveQuantity } = useContext(CartContext);
 
-  const allproductData = [
-    ...product.productBeauty,
-    ...product.productFashion,
-    ...product.productSneakers,
-    ...product.productTech,
-  ];
-
-  const productData = cartItems?.map((cartItem) => {
-    const productData = allproductData.find(
-      (product) => product.id === cartItem.id,
-    );
-
-    return {
-      ...productData,
-      quantity: cartItem.quantity,
-      size: cartItem.size,
-      color: cartItem.color,
-    };
-  });
-
-  console.log("log out cart data", productData);
-
+export default function CartLeft({ productData }) {
+  const { addToQuantity, reMoveQuantity } = useContext(CartContext);
   return (
     <div className="cartProducts">
       {productData?.map((item) => (
@@ -40,10 +16,15 @@ export default function CartLeft() {
               <h1 className="cartProductName">{item.title}</h1>
 
               <h3 className="cartVariation">
-                Size: <span>US 10</span>
+                Size: <span>{item.size || "US 10"}</span>
                 <span className="cartColor">
                   Color:
-                  <span className="colorCircle"></span>
+                  <span
+                    className="colorCircle"
+                    style={{
+                      backgroundColor: item.color || "black",
+                    }}
+                  ></span>
                 </span>
               </h3>
 
@@ -52,11 +33,13 @@ export default function CartLeft() {
 
                 <div className="quantity-box flex gap-5">
                   <button onClick={() => reMoveQuantity(item.id)}>-</button>
+
                   <h1>{item.quantity}</h1>
+
                   <button onClick={() => addToQuantity(item.id)}>+</button>
                 </div>
 
-                <span className="text-[10px] text-[#2D5A3D] ">
+                <span className="text-[10px] text-[#2D5A3D]">
                   In stock · Ships today
                 </span>
               </div>
@@ -74,6 +57,7 @@ export default function CartLeft() {
               <div>
                 <h1>Save</h1>
               </div>
+
               <div>
                 <h1>Remove</h1>
               </div>

@@ -434,39 +434,22 @@
 }
 
 .de-border {
-    height: 80px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 0 16px;
-
-    display: flex;
-    align-items: center;
-    gap: 15px;
+   
 }
 
 
 .delivery-content {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    
 }
 
 
 .delivery-logo {
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-    background: #eee;
+    
 }
 
 
 .delivery-text h1 {
-    font-size: 16px;
-    margin: 0;
+   
 }
 
 
@@ -477,13 +460,12 @@
 
 
 .delivery-price {
-    margin-left: auto;
+   
 }
 
 
 .delivery-price h1 {
-    font-size: 16px;
-    margin: 0;
+    
 }
 
 /*==========================

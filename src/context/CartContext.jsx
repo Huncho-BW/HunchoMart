@@ -64,6 +64,7 @@ export default function CartProvider({ children }) {
 
   const [checkoutItems, setCheckoutItems] = useState([]);
   const [count, setCount] = useState(1);
+
   const addCount = () => {
     setCount((prev) => prev + 1);
   };
