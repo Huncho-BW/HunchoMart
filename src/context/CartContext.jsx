@@ -51,6 +51,10 @@ export default function CartProvider({ children }) {
     });
   };
 
+  const removeFromCart = (id) => {
+    setCartItems((prev) => prev.filter((item) => item.id !== Number(id)));
+  };
+
   const addToWhishList = (id) => {
     setWhileList((prev) => {
       const whillistId = Number(id);
@@ -61,16 +65,29 @@ export default function CartProvider({ children }) {
       return [...prev, whillistId];
     });
   };
-
+  const removeWhishList = (id) => {
+    setWhileList((prev) => prev.filter((item) => item !== Number(id)));
+  };
   const [checkoutItems, setCheckoutItems] = useState([]);
-  const [count, setCount] = useState(1);
+
+  const [productDetailsData, setproductDetailsData] = useState({
+    count: 1,
+    color: "",
+    size: "",
+  });
 
   const addCount = () => {
-    setCount((prev) => prev + 1);
+    setproductDetailsData((prev) => ({
+      ...prev,
+      count: prev.count + 1,
+    }));
   };
 
   const reMoveCount = () => {
-    setCount((prev) => prev - 1);
+    setproductDetailsData((prev) => ({
+      ...prev,
+      count: Math.max(1, prev.count - 1),
+    }));
   };
 
   const addToQuantity = (id) => {
@@ -120,7 +137,10 @@ export default function CartProvider({ children }) {
       value={{
         cartItems,
         addToCart,
+        removeFromCart,
         addToWhishList,
+        removeWhishList,
+
         whishlist,
         fillDetails,
         setFillDetails,
@@ -130,8 +150,7 @@ export default function CartProvider({ children }) {
         setchooseinput,
         checkoutItems,
         setCheckoutItems,
-        count,
-        setCount,
+
         addCount,
         reMoveCount,
         addToQuantity,
@@ -140,6 +159,8 @@ export default function CartProvider({ children }) {
         createOder,
         notification,
         createNotification,
+        productDetailsData,
+        setproductDetailsData,
       }}
     >
       {children}

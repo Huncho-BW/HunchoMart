@@ -3,9 +3,10 @@ import { CiClock2 } from "react-icons/ci";
 import { IoIosFlash } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import sneakers from "../assets/sneaker.webp";
-
+import FLSk from "../skeletonComponenet/FlashDealsSkeleton";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import { motion, useAnimation } from "motion/react";
 
 export default function FlashDeal() {
   const getFlashData = async () => {
@@ -29,7 +30,11 @@ export default function FlashDeal() {
   console.log("FLASH DATA:", flashData);
 
   if (isLoading) {
-    return <div>Loading products...</div>;
+    return (
+      <div>
+        <FLSk />
+      </div>
+    );
   }
 
   if (isError) {
@@ -37,8 +42,23 @@ export default function FlashDeal() {
   }
 
   return (
-    <div className="bg-[#0C0C0C] home">
-      <div className="flex gap-[20px] mb-[20px]">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 1,
+      }}
+      className="bg-[#0C0C0C] home"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1,
+          delay: 1,
+        }}
+        className="flex gap-[20px] mb-[20px]"
+      >
         {/* Header */}
         <div className="flex items-center gap-2">
           <div>
@@ -66,13 +86,21 @@ export default function FlashDeal() {
             05 45 9
           </h1>
         </div>
-      </div>
+      </motion.div>
 
       {/* Products */}
       <div className="flex gap-[20px] overflow-hidden overflow-x-auto scrollbar-hide pb-[5px]">
         {flashData.map((item) => (
           <NavLink key={item.id} to={`/product/${item.id}`}>
-            <div className="flashDeal group overflow-hidden rounded-[14px] border border-[#2A2927] bg-[#181716] transition duration-300 hover:-translate-y-[3px] hover:border-[#B8965A]/50 hover:shadow-lg">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 2,
+                delay: 1,
+              }}
+              className="flashDeal group overflow-hidden rounded-[14px] border border-[#2A2927] bg-[#181716] transition duration-300 hover:-translate-y-[3px] hover:border-[#B8965A]/50 hover:shadow-lg"
+            >
               <div className="relative h-[220px] overflow-hidden bg-[#22201E]">
                 <img
                   src={sneakers}
@@ -117,10 +145,10 @@ export default function FlashDeal() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </NavLink>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -111,7 +111,7 @@ export const roterConfigu = [
           { index: true, element: <Navigate to="overview" replace /> },
           { path: "overview", element: <Overview /> },
           { path: "orders", element: <Orders /> },
-          { path: "wishlist", element: <UserWhilelist /> },
+
           {
             path: "Address",
             element: <UserAdrees />,

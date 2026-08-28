@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import CartLeft from "./CartLeft";
 import CartRight from "./CartRight";
 import { CartContext } from "../context/CartContext";
-import { useLocation } from "react-router-dom";
+import { useLocation, NavLink } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
@@ -21,11 +21,11 @@ const getCartProducts = async (ids) => {
 };
 
 export default function Cart() {
-  const { cartItems, setCheckoutItems } = useContext(CartContext);
+  const { cartItems } = useContext(CartContext);
 
   const location = useLocation();
 
-  const lenghtofCart = cartItems.length;
+  const lengthOfCart = cartItems.length;
 
   const productIds = cartItems.map((item) => item.id);
 
@@ -44,8 +44,6 @@ export default function Cart() {
       return {
         ...product,
         quantity: cartItem.quantity,
-        size: cartItem.size,
-        color: cartItem.color,
       };
     })
     .filter(Boolean);
@@ -54,8 +52,25 @@ export default function Cart() {
   console.log("cart inside Cart page:", cartItems);
   console.log("cart product data:", productData);
 
-  if (isLoading) {
-    return <div>Loading cart...</div>;
+  // Empty cart
+  if (lengthOfCart === 0) {
+    return (
+      <div className="min-h-[500px] flex flex-col justify-center items-center text-center px-5">
+        <div className="mb-5">
+          <h1 className="text-[28px] font-medium">Your Cart is Empty</h1>
+
+          <p className="text-[#8A8580] mt-2">
+            You haven't added any products to your cart yet.
+          </p>
+        </div>
+
+        <NavLink to="/">
+          <button className="px-8 py-3 bg-[#0C0C0C] text-white">
+            Continue Shopping
+          </button>
+        </NavLink>
+      </div>
+    );
   }
 
   return (
@@ -63,17 +78,17 @@ export default function Cart() {
       <header className="flex justify-between items-center cartHeader">
         <div>
           <h1 className="cartTitle">Shopping Cart</h1>
-          <span className="cartItems">{lenghtofCart} Items</span>
+          <span className="cartItems">{lengthOfCart} Items</span>
         </div>
 
         <div>
-          <a href="#">Continue Shopping</a>
+          <NavLink to="/">Continue Shopping</NavLink>
         </div>
       </header>
 
       <div className="cartGrid">
         <div className="cartLeftWrapper">
-          <CartLeft productData={productData} />
+          <CartLeft productData={productData} isLoading={isLoading} />
         </div>
 
         <div className="cartRightWrapper">

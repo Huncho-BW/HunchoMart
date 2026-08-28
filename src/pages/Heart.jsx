@@ -4,7 +4,7 @@ import { Heart } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-
+import HeartSkeleton from "../skeletonComponenet/heartSkeleton";
 const getWishlistProducts = async (ids) => {
   const result = await axios.get(
     "https://huncho-mart-api.onrender.com/api/products",
@@ -20,7 +20,8 @@ const getWishlistProducts = async (ids) => {
 };
 
 export default function HeartWish() {
-  const { whishlist, addToWhishList } = useContext(CartContext);
+  const { whishlist, addToWhishList, removeWhishList } =
+    useContext(CartContext);
 
   const { data: productData = [], isLoading } = useQuery({
     queryKey: ["wishlistProducts", whishlist],
@@ -28,8 +29,35 @@ export default function HeartWish() {
     enabled: whishlist.length > 0,
   });
 
+  if (whishlist.length === 0) {
+    return (
+      <div className="min-h-[500px] flex flex-col justify-center items-center text-center px-5">
+        {" "}
+        <h1 className="text-[28px] font-medium">
+          {" "}
+          Your Wishlist is Empty
+        </h1>{" "}
+        <p className="text-[#8A8580] mt-2">
+          {" "}
+          You haven't added any products to your wishlist yet.{" "}
+        </p>{" "}
+        <NavLink to="/">
+          {" "}
+          <button className="mt-5 px-8 py-3 bg-[#0C0C0C] text-white">
+            {" "}
+            Continue Shopping{" "}
+          </button>{" "}
+        </NavLink>{" "}
+      </div>
+    );
+  }
+
   if (isLoading) {
-    return <div>Loading wishlist...</div>;
+    return (
+      <div>
+        <HeartSkeleton />
+      </div>
+    );
   }
 
   return (
@@ -37,6 +65,12 @@ export default function HeartWish() {
       <div className="flex justify-center">
         <h1>Whish List</h1>
       </div>
+
+      {isLoading && (
+        <div>
+          <HeartSkeleton />
+        </div>
+      )}
 
       <div className="catDisplay">
         {productData.map((product) => (
@@ -90,10 +124,24 @@ export default function HeartWish() {
                       onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        addToWhishList(product?.id);
+
+                        const productId = Number(product?.id);
+
+                        if (whishlist.includes(productId)) {
+                          removeWhishList(productId);
+                        } else {
+                          addToWhishList(productId);
+                        }
                       }}
                     >
-                      <Heart />
+                      <Heart
+                        size={19}
+                        className={
+                          whishlist.includes(Number(product?.id))
+                            ? "fill-red-500 text-red-500"
+                            : "text-[#0C0C0C]"
+                        }
+                      />
                     </button>
                   </div>
                 </div>

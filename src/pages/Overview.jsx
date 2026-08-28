@@ -105,7 +105,7 @@ export default function Overview() {
   return (
     <div className="px-[32px] flex flex-col gap-[20px] overflow-hidden">
       <div>
-        <h1 className="text-[32px]">Good Morning, Michael</h1>
+        <h1 className="text-[32px] topHeader">Good Morning, Michael</h1>
         <h2 className="text-[14px]">
           Here's what's happening with your account
         </h2>

@@ -13,9 +13,14 @@ export default function Delivery() {
   };
 
   return (
-    <div className="flex flex-col gap-[20px]">
+    <div className="flex flex-col gap-[20px] p-[20px]">
       {/* Pickup Station */}
-      <div className="de-border">
+      <div
+        className={`de-border ${
+          chooseinput.type === "pickup" ? "delivery-selected" : ""
+        }`}
+        onClick={() => handleDeliveryChange("pickup", 800)}
+      >
         <input
           type="radio"
           name="delivery"
@@ -38,7 +43,12 @@ export default function Delivery() {
       </div>
 
       {/* Doorstep */}
-      <div className="de-border">
+      <div
+        className={`de-border ${
+          chooseinput.type === "doorstep" ? "delivery-selected" : ""
+        }`}
+        onClick={() => handleDeliveryChange("doorstep", 1000)}
+      >
         <input
           type="radio"
           name="delivery"
@@ -61,7 +71,12 @@ export default function Delivery() {
       </div>
 
       {/* Express */}
-      <div className="de-border">
+      <div
+        className={`de-border ${
+          chooseinput.type === "express" ? "delivery-selected" : ""
+        }`}
+        onClick={() => handleDeliveryChange("express", 1500)}
+      >
         <input
           type="radio"
           name="delivery"

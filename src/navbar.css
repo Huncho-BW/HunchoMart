@@ -37,6 +37,9 @@
     .nav-text:hover{
         color: #B8965A ;
     }
+    .nav-text.active{
+        color: #B8965A;
+    }
 
     .nav-links{
         display: flex;

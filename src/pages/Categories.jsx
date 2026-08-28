@@ -6,6 +6,7 @@ import tech from "../assets/tech.webp";
 import sneakers from "../assets/sneaker.webp";
 import beauty from "../assets/beauty.webp";
 import { NavLink } from "react-router-dom";
+import { motion, useAnimation } from "motion/react";
 export default function Categories() {
   const categories = [
     { name: "Fashion", pic: fashion },
@@ -21,20 +22,36 @@ export default function Categories() {
           className="Categories group relative overflow-hidden"
           to={item.name}
         >
-          <img
-            className="cat-img transition-transform duration-500 group-hover:scale-110"
-            src={item.pic}
-            alt={item.name}
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1,
+            }}
+          >
+            <img
+              className="cat-img transition-transform duration-500 group-hover:scale-110"
+              src={item.pic}
+              alt={item.name}
+            />
 
-          {/* overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            {/* overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-          <div className="absolute bottom-4 left-4">
-            <h1 className="text-[12px] text-white font-[700]">{item.name}</h1>
+            <motion.div
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1,
+                delay: 1,
+              }}
+              className="absolute bottom-4 left-4"
+            >
+              <h1 className="text-[12px] text-white font-[700]">{item.name}</h1>
 
-            <span className="text-[10px] text-white/50">55</span>
-          </div>
+              <span className="text-[10px] text-white/50">55</span>
+            </motion.div>
+          </motion.div>
         </NavLink>
       ))}
     </div>

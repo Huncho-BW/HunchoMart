@@ -9,7 +9,7 @@ import { useParams } from "react-router-dom";
 
 export default function CheckOut() {
   const { id } = useParams();
-  const { cartItems, checkoutItems, setCheckoutItems, count } =
+  const { cartItems, checkoutItems, setCheckoutItems, productDetailsData } =
     useContext(CartContext);
   const checkId = Number(id);
   useEffect(() => {
@@ -17,13 +17,15 @@ export default function CheckOut() {
       setCheckoutItems([
         {
           id: checkId,
-          quantity: count,
+          quantity: productDetailsData.count,
+          size: productDetailsData.size,
+          color: productDetailsData.color,
         },
       ]);
     } else {
       setCheckoutItems(cartItems);
     }
-  }, [id, count, cartItems]);
+  }, [id, cartItems]);
 
   console.log("log out checkOutItem", checkoutItems);
 

@@ -81,7 +81,7 @@ export default function LeftDashbord() {
   const section = [
     { logo: User, name: "overview" },
     { logo: Package, name: "orders" },
-    { logo: Heart, name: "wishlist" },
+
     { logo: MapPin, name: "Address" },
     { logo: CreditCard, name: "payment" },
     { logo: Bell, name: "Notification" },

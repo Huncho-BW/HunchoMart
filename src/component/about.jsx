@@ -131,7 +131,7 @@ export default function Fashion() {
       </div>
 
       {/* Category Layout */}
-      <div className=" bg-[#fff] px-[40px]  py-[20px]">
+      <div className=" bg-[#fff] px-[40px] mt-[20px] py-[20px]">
         <div className=" flex items-center justify-end w-full gap-5">
           {/* Sort*/}
           <div className="flex items-center ">

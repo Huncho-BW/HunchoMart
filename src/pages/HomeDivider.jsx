@@ -3,6 +3,7 @@ import { Truck } from "lucide-react";
 import { Shield } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import { Award } from "lucide-react";
+import { motion, useAnimation } from "motion/react";
 export default function HomeDivider() {
   const defaul = [
     {
@@ -27,10 +28,23 @@ export default function HomeDivider() {
     },
   ];
   return (
-    <div className=" home flex flex-col justify-center border h-[95px] bg-[#0C0C0C]">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 1,
+      }}
+      className=" home flex flex-col justify-center border h-[95px] bg-[#0C0C0C]"
+    >
       <div className="flex justify-between">
         {defaul.map((item) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1,
+              delay: 1,
+            }}
             className="flex
         gap-2 items-center"
           >
@@ -41,9 +55,9 @@ export default function HomeDivider() {
               </h1>
               <p className="text-[10px] text-[#8A8580]">{item.name}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

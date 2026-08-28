@@ -53,19 +53,44 @@ export default function Navbar() {
 
         {/* Navigation */}
         <nav className="nav-links ">
-          <NavLink className={"nav-text"} to="/">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "nav-text active" : "nav-text"
+            }
+            to="/"
+          >
             Home
           </NavLink>
-          <NavLink className="nav-text" to="fashion">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "nav-text active" : "nav-text"
+            }
+            to="fashion"
+          >
             Fashion
           </NavLink>
-          <NavLink className="nav-text" to="sneakers">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "nav-text active" : "nav-text"
+            }
+            to="sneakers"
+          >
             Sneakers
           </NavLink>
-          <NavLink className="nav-text" to="tech">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "nav-text active" : "nav-text"
+            }
+            to="tech"
+          >
             Tech
           </NavLink>
-          <NavLink className="nav-text" to="beauty">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "nav-text active" : "nav-text"
+            }
+            to="beauty"
+          >
             Beauty
           </NavLink>
         </nav>
@@ -109,21 +134,25 @@ export default function Navbar() {
 
         {/* Actions */}
         <div className="actions">
-          <NavLink to={"/heart"}>
-            <button>
-              <Heart className="nav-text" />
-            </button>
+          <NavLink to="/heart">
+            {({ isActive }) => (
+              <Heart className={isActive ? "nav-text active" : "nav-text"} />
+            )}
           </NavLink>
 
           <NavLink to="/cart">
-            <button>
-              <ShoppingCart className="nav-text" />
-            </button>
+            {({ isActive }) => (
+              <ShoppingCart
+                className={isActive ? "nav-text active" : "nav-text"}
+              />
+            )}
           </NavLink>
           <NavLink to="/userDash">
-            <button>
-              <CircleUser className="nav-text" />
-            </button>
+            {({ isActive }) => (
+              <CircleUser
+                className={isActive ? "nav-text active" : "nav-text"}
+              />
+            )}
           </NavLink>
         </div>
 

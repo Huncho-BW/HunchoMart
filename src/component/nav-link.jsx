@@ -16,7 +16,11 @@ export default function NavlinkMobile() {
         <div className="">
           <NavLink
             to={link.path}
-            className="flex mb-[20px] items-center justify-between mobileNav-text"
+            className={({ isActive }) =>
+              isActive
+                ? "nav-text active flex mb-[20px] items-center justify-between mobileNav-text"
+                : "nav-text flex mb-[20px] items-center justify-between mobileNav-text "
+            }
           >
             <Dialog.Close asChild key={link.path}>
               <h1 className="">{link.name}</h1>

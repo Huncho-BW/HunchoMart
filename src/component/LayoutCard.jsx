@@ -73,14 +73,14 @@ export default function LayoutCard({ product }) {
             </div>
 
             {/* Add To Cart */}
-            <div className="px-4 py-4 LayCart hidden group-hover:">
+            <div className="px-4 py-2 LayCart hidden group-hover:flex justify-center">
               <button
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
                   addToCart(product?.id);
                 }}
-                className=" "
+                className=" cursor-pointer "
               >
                 Quick Add
               </button>

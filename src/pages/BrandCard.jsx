@@ -5,13 +5,23 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Star } from "lucide-react";
-
+import BrandSke from "../skeletonComponenet/BrandCardSkeleton";
 export default function BrandCard({ product }) {
   if (!product) return null;
 
-  const { addToCart, addToWhishList } = useContext(CartContext);
+  const { addToCart, addToWhishList, removeWhishList, whishlist } =
+    useContext(CartContext);
   const [click, setClick] = useState(false);
 
+  const handleClick = (id) => {
+    const productId = Number(id);
+
+    if (whishlist.includes(productId)) {
+      removeWhishList(productId);
+    } else {
+      addToWhishList(productId);
+    }
+  };
   return (
     <div>
       <NavLink to={`/product/${product.id}`}>
@@ -29,7 +39,7 @@ export default function BrandCard({ product }) {
                 e.stopPropagation();
                 addToCart(product?.id);
               }}
-              className="text-center"
+              className="text-center cursor-pointer"
             >
               Quick Add
             </button>
@@ -95,18 +105,12 @@ export default function BrandCard({ product }) {
               </h1>
             </div>
 
-            <div
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-              }}
-            >
+            <div>
               <button
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
-                  addToWhishList(product?.id);
-                  setClick(true);
+                  handleClick(product?.id);
                 }}
                 className="flex h-[36px] w-[36px] cursor-pointer items-center justify-center rounded-full bg-white/90 shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-white"
               >
@@ -114,7 +118,7 @@ export default function BrandCard({ product }) {
                   size={19}
                   strokeWidth={1.8}
                   className={`transition-colors duration-300 ${
-                    click
+                    whishlist.includes(Number(product?.id))
                       ? "fill-red-500 text-red-500"
                       : "text-[#0C0C0C] hover:text-red-500"
                   }`}

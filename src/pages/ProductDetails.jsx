@@ -3,19 +3,23 @@ import { Truck, Shield, Heart, Star, RotateCcw } from "lucide-react";
 import { useParams, NavLink } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import axios from "axios";
+import ProductDetailsSkeleton from "../skeletonComponenet/productDetailsSkeleton";
 import { useQuery } from "@tanstack/react-query";
 
 export default function ProductDetails() {
   const {
     cart,
     addToCart,
-    checkoutItems,
-    count,
-    setCount,
+
     addCount,
     reMoveCount,
+
+    productDetailsData,
+    setproductDetailsData,
   } = useContext(CartContext);
+
   const [click, setClick] = useState(false);
+
   console.log("log out cart", cart);
 
   const { id } = useParams();
@@ -38,11 +42,30 @@ export default function ProductDetails() {
     enabled: !!id,
   });
 
-  console.log(" product data", productData);
-
   useEffect(() => {
-    setCount(1);
-  }, [productData?.id]);
+    setproductDetailsData((prev) => ({
+      ...prev,
+      count: 1,
+      color: "",
+      size: "",
+    }));
+  }, [id]);
+
+  // Loading state
+  if (isLoading) {
+    return <ProductDetailsSkeleton />;
+  }
+
+  // Error state
+  if (isError) {
+    return (
+      <div className="flex justify-center items-center min-h-[400px]">
+        <h1>Something went wrong while loading this product.</h1>
+      </div>
+    );
+  }
+
+  console.log("product data", productData);
 
   return (
     <>
@@ -64,14 +87,16 @@ export default function ProductDetails() {
             <h1 className="text-[10px] text-[#B8965A] font-[400]">
               {productData?.brand}
             </h1>
+
             <span>
               <Heart />
             </span>
           </div>
+
           <div>
             <h1 className="topHeader text-[32px]">{productData?.title}</h1>
+
             <div className="flex items-center gap-5">
-              {" "}
               <div className="flex gap-5">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <Star
@@ -86,24 +111,27 @@ export default function ProductDetails() {
                   />
                 ))}
               </div>
+
               <div>
                 <h1 className="text-[14px] text-[#0C0C0C]">
                   {productData?.rating?.rate}{" "}
                   <span className="text-[#8A8580]">
-                    {" "}
-                    {`(${productData?.rating.count} reviews)`}
+                    {`(${productData?.rating?.count} reviews)`}
                   </span>
                 </h1>
               </div>
             </div>
           </div>
+
           <div className="product-price">
-            <h1 className="text-[30px] text-[#0C0C0C] ">
+            <h1 className="text-[30px] text-[#0C0C0C]">
               $ {productData?.price}
             </h1>
+
             <h1 className="text-[18px] line-through text-[#8A8580]">
               $ {productData?.actualPrice}
             </h1>
+
             <h1 className="text-[14px] text-[#2D5A3D]">
               {productData?.discountPercentage}%
             </h1>
@@ -118,13 +146,24 @@ export default function ProductDetails() {
               <h1 className="text-[12px] tracking-[0.08em] text-[#0C0C0C]">
                 color
               </h1>
+
               <div className="flex gap-2">
                 {productData?.color?.map((item) => (
-                  <span
+                  <button
+                    onClick={() => {
+                      setproductDetailsData((prev) => ({
+                        ...prev,
+                        color: item,
+                      }));
+                    }}
                     key={item}
-                    className={`w-10 h-10 rounded-full border `}
+                    className={`w-10 h-10 rounded-full border ${
+                      productDetailsData.color === item
+                        ? "ring-2 ring-[#B8965A] ring-offset-2"
+                        : ""
+                    }`}
                     style={{ backgroundColor: item }}
-                  ></span>
+                  ></button>
                 ))}
               </div>
             </div>
@@ -135,14 +174,28 @@ export default function ProductDetails() {
               <h1 className="text-[12px] tracking-[0.08em] text-[#0C0C0C]">
                 size
               </h1>
+
               <span className="text-[12px] tracking-[0.08em] text-[#B8965A]">
                 Size Guide
               </span>
             </div>
+
             <div className="flex gap-2">
               {productData?.size?.map((item) => (
-                <div className="size-box">
-                  <h1>{item}</h1>
+                <div
+                  className={`${productDetailsData.size === item ? " bg-[#0c0c0c] text-white size-box " : " size-box"}`}
+                  key={item}
+                >
+                  <button
+                    onClick={() => {
+                      setproductDetailsData((prev) => ({
+                        ...prev,
+                        size: item,
+                      }));
+                    }}
+                  >
+                    {item}
+                  </button>
                 </div>
               ))}
             </div>
@@ -153,21 +206,24 @@ export default function ProductDetails() {
 
             <div className="quantity-box flex gap-5">
               <button onClick={reMoveCount}>-</button>
-              <h1>{count}</h1>
+
+              <span>{productDetailsData.count}</span>
+
               <button onClick={addCount}>+</button>
             </div>
 
-            <span className="text-[10px] text-[#2D5A3D] ">
+            <span className="text-[10px] text-[#2D5A3D]">
               In stock · Ships today
             </span>
           </div>
 
           <div className="product-actions">
-            <div className="cart-btn ">
+            <div className="cart-btn">
               <button
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
+
                   addToCart(productData?.id);
                   setClick(true);
                 }}
@@ -188,23 +244,27 @@ export default function ProductDetails() {
               <span>
                 <Truck />
               </span>
+
               <span>Free Delivery</span>
             </div>
+
             <div className="flex flex-col justify-center items-center">
               <span>
-                {" "}
                 <Shield />
               </span>
+
               <span>Authentication</span>
             </div>
+
             <div className="flex flex-col justify-center items-center">
               <span className="text-center">
-                {" "}
                 <RotateCcw />
               </span>
+
               <span>Free Return</span>
             </div>
           </div>
+
           <span className="divider"></span>
 
           <div className="delivery-info">
@@ -216,7 +276,9 @@ export default function ProductDetails() {
               original tags.
             </p>
           </div>
+
           <span className="divider"></span>
+
           <div>
             <details>
               <summary>Specifications</summary>
@@ -234,20 +296,21 @@ export default function ProductDetails() {
               wide-footers should consider going up half a size.
             </details>
           </div>
+
           <span className="divider"></span>
         </div>
       </div>
 
       <section className="p-[40px]">
         <span className="divider"></span>
-        <div className=" flex flex-col gap-[20px] ">
+
+        <div className="flex flex-col gap-[20px]">
           <div>
             <h1>Customer Reviews</h1>
           </div>
 
           <div>
             <div className="flex items-center gap-5">
-              {" "}
               <div className="flex gap-5">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <Star
@@ -261,18 +324,20 @@ export default function ProductDetails() {
                   />
                 ))}
               </div>
+
               <div>
                 <h1>
                   {productData?.rating?.rate}
                   {" Out Of 5 "}
-                  {`(${productData?.rating.count} reviews)`}
+                  {`(${productData?.rating?.count} reviews)`}
                 </h1>
               </div>
             </div>
           </div>
-          <div className="review-display ">
-            {productData?.reviews?.map((item) => (
-              <div className="border p-5">
+
+          <div className="review-display">
+            {productData?.reviews?.map((item, index) => (
+              <div className="border p-5" key={index}>
                 <div className="flex gap-5">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star
@@ -282,6 +347,7 @@ export default function ProductDetails() {
                     />
                   ))}
                 </div>
+
                 <div>
                   <h1>{item.comment}</h1>
                 </div>

@@ -5,7 +5,7 @@ export default function EmailLongin() {
     <div className="emailBorder bg-[#0C0C0C] ">
       <div>
         <h1 className="text-[10px] text-[#B8965A] tracking-[0.2em]">
-          name of componey
+          Huncho Mart
         </h1>
       </div>
       <div>
@@ -21,7 +21,13 @@ export default function EmailLongin() {
       </div>
       <div className="emBt">
         <div className="emailInput">
-          <input type="email" name="" id="" placeholder="Enter Email" />
+          <input
+            type="email"
+            className="text-white"
+            name=""
+            id=""
+            placeholder="Enter Email"
+          />
         </div>
         <div className="eamilBut">
           <button>join </button>

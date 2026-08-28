@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import beauty from "../assets/beauty.webp";
 import sneakers from "../assets/sneaker.webp";
 import { ArrowRight } from "lucide-react";
+import { motion, useAnimation } from "motion/react";
 export default function HeroSection() {
   const heroData = [
     {
@@ -69,53 +70,88 @@ export default function HeroSection() {
     },
   ];
 
+  const textControls = useAnimation();
+  const imageControls = useAnimation();
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % heroData.length);
-    }, 20000);
+    }, 5000);
 
     return () => clearInterval(timer);
   }, []);
 
   const currentHero = heroData[currentIndex];
+
+  useEffect(() => {
+    const animateHero = async () => {
+      await Promise.all([
+        textControls.set({ opacity: 0, x: 30 }),
+        imageControls.set({ opacity: 0, x: -30 }),
+      ]);
+
+      textControls.start({
+        opacity: 1,
+        x: 0,
+        transition: {
+          duration: 0.8,
+          ease: "easeOut",
+        },
+      });
+
+      imageControls.start({
+        opacity: 1,
+        x: 0,
+        transition: {
+          duration: 0.8,
+          ease: "easeOut",
+        },
+      });
+    };
+
+    animateHero();
+  }, [currentIndex]);
+
   return (
     <div className="hero">
-      <div className="hero-text">
+      <motion.div animate={textControls} className="hero-text">
         <div className="subText">
           <h1 className="text-[10px] text-[#C9A227]"> {currentHero.title}</h1>
-          <h2 className="text-[72px] text-[600] topHeader text-[#F8FAFC]">
+          <h2 className="text-[72px] font-[600] topHeader ">
             {currentHero.subtitle}
           </h2>
-          <p className="text-[14px] text-[#64748B]">
+          <p className="text-[16px] leading-[1.7] text-[#555] ">
             {currentHero.description}
           </p>
 
-          <div className=" flex  gap-[20px] ">
-            <div className="heroBorder bg-[#F5F5F3] text-[#08090B] hover:bg-[#08090B] hover:text-[#F8FAFC]">
-              <NavLink className="" to={currentHero.link}>
+          <div className="flex gap-[20px]">
+            <div className="heroBorder bg-[#08090B] text-white hover:bg-[#1C1D20]">
+              <NavLink to={currentHero.link}>
                 <button className="flex gap-2 items-center">
-                  {currentHero.button} <ArrowRight className="arroRight" />
+                  {currentHero.button}
+                  <ArrowRight className="arroRight" />
                 </button>
               </NavLink>
             </div>
-            <div className="heroBorder bg-[#C9A227] hover:bg-[#E0C15A]">
+
+            <div className="heroBorder bg-[#E0C15A] text-[#08090B] hover:bg-[#C9A943]">
               <NavLink>
                 <button>View all</button>
               </NavLink>
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="hero-image  relative">
+      <motion.div animate={imageControls} className="hero-image  relative">
         <img
           className="image   "
           src={currentHero.image}
           alt={currentHero.title}
         />
-        <div className=" border rounded-lg  w-[90%]  left-1/2 -translate-x-1/2 items-center p-[10px] bg-white     flex justify-between absolute bottom-[20px] ">
+        <div className=" border rounded-lg  w-[90%]  left-1/2 -translate-x-1/2 items-center p-[10px] bg-white     flex justify-between absolute bottom-[20px] hover:-translate-y-4 transition-transform duration-300 ">
           <div>
             <h1 className="text-[#64748B] text-[10px]">Feature</h1>
             <h1 className="text-[#08090B] text-[14px]">
@@ -136,7 +172,7 @@ export default function HeroSection() {
             </h1>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
