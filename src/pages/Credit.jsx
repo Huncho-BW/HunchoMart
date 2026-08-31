@@ -6,7 +6,12 @@ export default function Credit() {
       <div className="credit flex flex-col gap-[30px]">
         <label>Card</label>
         <div className="input-box">
-          <input type="number" placeholder="123456789" />
+          <input
+            type="number"
+            placeholder="123456789"
+            onWheel={(e) => e.currentTarget.blur()}
+            className="[appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+          />
         </div>
 
         <label>Name of Card</label>
@@ -40,7 +45,6 @@ export default function Credit() {
           <p>Your payment information is encrypted and secure</p>
         </div>
       </div>
-      ;
     </>
   );
 }

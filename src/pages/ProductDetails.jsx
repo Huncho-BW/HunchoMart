@@ -5,6 +5,8 @@ import { CartContext } from "../context/CartContext";
 import axios from "axios";
 import ProductDetailsSkeleton from "../skeletonComponenet/productDetailsSkeleton";
 import { useQuery } from "@tanstack/react-query";
+import { Check } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 
 export default function ProductDetails() {
   const {
@@ -16,6 +18,9 @@ export default function ProductDetails() {
 
     productDetailsData,
     setproductDetailsData,
+    addToWhishList,
+    removeWhishList,
+    whishlist,
   } = useContext(CartContext);
 
   const [click, setClick] = useState(false);
@@ -51,6 +56,25 @@ export default function ProductDetails() {
     }));
   }, [id]);
 
+  useEffect(() => {
+    if (!click) return;
+    const timer = setTimeout(() => {
+      setClick(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [click]);
+
+  const handleClick = (id) => {
+    const productId = Number(id);
+
+    if (whishlist.includes(productId)) {
+      removeWhishList(productId);
+    } else {
+      addToWhishList(productId);
+    }
+  };
+
   // Loading state
   if (isLoading) {
     return <ProductDetailsSkeleton />;
@@ -84,13 +108,27 @@ export default function ProductDetails() {
 
         <div className="product-info">
           <div className="product-header">
-            <h1 className="text-[10px] text-[#B8965A] font-[400]">
+            <h1 className="text-[15px] text-[#B8965A] font-[400]">
               {productData?.brand}
             </h1>
 
-            <span>
-              <Heart />
-            </span>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleClick(productData?.id);
+              }}
+            >
+              <Heart
+                size={19}
+                strokeWidth={1.8}
+                className={`transition-colors duration-300 ${
+                  whishlist.includes(Number(productData?.id))
+                    ? "fill-red-500 text-red-500"
+                    : "text-[#0C0C0C] hover:text-red-500"
+                }`}
+              />
+            </button>
           </div>
 
           <div>
@@ -144,7 +182,11 @@ export default function ProductDetails() {
           <div className="product-color">
             <div className="section-header">
               <h1 className="text-[12px] tracking-[0.08em] text-[#0C0C0C]">
-                color
+                color:
+                <span className="ml-1">
+                  {" "}
+                  {productDetailsData.color || "Select a color"}
+                </span>
               </h1>
 
               <div className="flex gap-2">
@@ -157,12 +199,16 @@ export default function ProductDetails() {
                       }));
                     }}
                     key={item}
-                    className={`w-10 h-10 rounded-full border ${
-                      productDetailsData.color === item
-                        ? "ring-2 ring-[#B8965A] ring-offset-2"
-                        : ""
-                    }`}
-                    style={{ backgroundColor: item }}
+                    className={`w-10 h-10 rounded-full border  hover:ring-2
+        hover:ring-offset-2
+        hover:ring-[var(--ring-color)] 
+
+          ${
+            productDetailsData.color === item
+              ? "ring-2 ring-offset-2 ring-[var(--ring-color)]"
+              : ""
+          }`}
+                    style={{ backgroundColor: item, "--ring-color": item }}
                   ></button>
                 ))}
               </div>
@@ -172,7 +218,11 @@ export default function ProductDetails() {
           <div className="product-size">
             <div className="flex justify-between">
               <h1 className="text-[12px] tracking-[0.08em] text-[#0C0C0C]">
-                size
+                size:
+                <span className="ml-1">
+                  {" "}
+                  {productDetailsData.size || "Select a size"}
+                </span>
               </h1>
 
               <span className="text-[12px] tracking-[0.08em] text-[#B8965A]">
@@ -227,8 +277,12 @@ export default function ProductDetails() {
                   addToCart(productData?.id);
                   setClick(true);
                 }}
+                className={
+                  click ? "bg-[#22C55E]" : "bg-[#2563eb] hover:bg-[#1f2937]"
+                }
               >
-                <Shield /> Add to Cart
+                <ShoppingBag />
+                {click ? "✓ Added to Cart " : "Add to Cart"}
               </button>
             </div>
 
@@ -306,14 +360,17 @@ export default function ProductDetails() {
 
         <div className="flex flex-col gap-[20px]">
           <div>
-            <h1>Customer Reviews</h1>
+            <h1 className="text-[24px] topHeader font-[700] ">
+              Customer Reviews
+            </h1>
           </div>
 
           <div>
-            <div className="flex items-center gap-5">
-              <div className="flex gap-5">
+            <div className="flex items-center gap-3">
+              <div className="flex gap-3">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <Star
+                    size={18}
                     key={star}
                     className="text-yellow-400"
                     fill={
@@ -326,10 +383,10 @@ export default function ProductDetails() {
               </div>
 
               <div>
-                <h1>
+                <h1 className="text-[16px] font-[700]">
                   {productData?.rating?.rate}
                   {" Out Of 5 "}
-                  {`(${productData?.rating?.count} reviews)`}
+                  <span className="text-[14px] text-[#8a8580]">{`(${productData?.rating?.count} reviews)`}</span>
                 </h1>
               </div>
             </div>
@@ -337,19 +394,25 @@ export default function ProductDetails() {
 
           <div className="review-display">
             {productData?.reviews?.map((item, index) => (
-              <div className="border p-5" key={index}>
-                <div className="flex gap-5">
+              <div
+                className="border border-gray-200 bg-white p-5 rounded-xl shadow-sm 
+             transition-all duration-200 
+             hover:-translate-y-1 hover:shadow-md"
+                key={index}
+              >
+                <div className="flex gap-1">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star
                       key={star}
+                      size={12}
                       className="text-yellow-400"
                       fill={star <= Math.round(item?.rating) ? "gold" : "none"}
                     />
                   ))}
                 </div>
 
-                <div>
-                  <h1>{item.comment}</h1>
+                <div className="mt-3">
+                  <h1 className="text-sm text-gray-700">{item.comment}</h1>
                 </div>
               </div>
             ))}

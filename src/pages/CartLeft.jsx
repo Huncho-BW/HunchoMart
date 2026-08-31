@@ -1,9 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import CartLeftSkeleton from "../skeletonComponenet/CartSkeleton";
+import { Trash } from "lucide-react";
+
 export default function CartLeft({ productData, isLoading }) {
-  const { addToQuantity, reMoveQuantity, removeFromCart } =
+  const { addToQuantity, reMoveQuantity, removeFromCart, setCartItems } =
     useContext(CartContext);
+
+  const [colorClick, setColorClick] = useState(null);
+  const [sizeClick, SetSizeClick] = useState(null);
 
   if (isLoading) {
     return <CartLeftSkeleton />;
@@ -28,18 +33,91 @@ export default function CartLeft({ productData, isLoading }) {
 
               <h1 className="cartProductName text-[16px]">{item.title}</h1>
 
-              <h3 className="cartVariation text-[11px]">
-                Size: <span>{item.size[0] || "US 10"}</span>
-                <span className="cartColor">
-                  Color:
+              <div className="cartVariation relative text-[11px]">
+                {sizeClick === item.id && (
+                  <div className="absolute bottom-full left-1/2 z-20 mb-1 flex -translate-x-1/2 gap-1 whitespace-nowrap bg-white border border-gray-200 shadow-md p-1">
+                    {item.size.map((size, index) => (
+                      <button
+                        className="whitespace-nowrap px-3 py-2 hover:bg-gray-100"
+                        onClick={() => {
+                          setCartItems((prev) =>
+                            prev.map((cartItem) =>
+                              cartItem.id === item.id
+                                ? { ...cartItem, size: size }
+                                : cartItem,
+                            ),
+                          );
+
+                          SetSizeClick(null);
+                        }}
+                        key={index}
+                      >
+                        {size}
+                      </button>
+                    ))}
+                  </div>
+                )}
+
+                <h1 className="whitespace-nowrap">
+                  Size:{" "}
                   <span
-                    className="colorCircle"
-                    style={{
-                      backgroundColor: item.color[0] || "black",
+                    className="cursor-pointer whitespace-nowrap"
+                    onClick={() => {
+                      SetSizeClick((prev) =>
+                        prev === item.id ? null : item.id,
+                      );
                     }}
-                  ></span>
+                  >
+                    {item.selectedSize || "select size"}
+                  </span>
+                </h1>
+
+                {colorClick === item.id && (
+                  <div className="absolute bottom-full left-1/2 z-20 mb-1 flex -translate-x-1/2 items-center justify-center gap-2 whitespace-nowrap bg-white border border-gray-200 shadow-md p-2">
+                    {item.color.map((color, index) => (
+                      <span
+                        onClick={() => {
+                          setCartItems((prev) =>
+                            prev.map((cartitem) =>
+                              cartitem.id === item.id
+                                ? { ...cartitem, color: color }
+                                : cartitem,
+                            ),
+                          );
+
+                          setColorClick(null);
+                        }}
+                        key={index}
+                        className="colorCircle cursor-pointer"
+                        style={{
+                          backgroundColor: color,
+                        }}
+                      ></span>
+                    ))}
+                  </div>
+                )}
+
+                <span className="cartColor whitespace-nowrap">
+                  Color:{" "}
+                  <span
+                    onClick={() => {
+                      setColorClick((prev) =>
+                        prev === item.id ? null : item.id,
+                      );
+                    }}
+                    className={`${
+                      item.selectedColor
+                        ? "colorCircle cursor-pointer"
+                        : "cursor-pointer whitespace-nowrap"
+                    }`}
+                    style={{
+                      backgroundColor: item.selectedColor || "transparent",
+                    }}
+                  >
+                    {!item.selectedColor && "select color"}
+                  </span>
                 </span>
-              </h3>
+              </div>
 
               <div className="product-quantity">
                 <h1 className="text-[11px]">QTY</h1>
@@ -77,10 +155,7 @@ export default function CartLeft({ productData, isLoading }) {
             </div>
 
             <div className="cartActions">
-              <div className="">
-                <h1 className="text-[11px] cursor-pointer">Save</h1>
-              </div>
-
+              <Trash size={16} />
               <div className="">
                 <button
                   onClick={(e) => {

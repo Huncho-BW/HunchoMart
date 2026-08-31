@@ -44,6 +44,8 @@ export default function Cart() {
       return {
         ...product,
         quantity: cartItem.quantity,
+        selectedSize: cartItem.size,
+        selectedColor: cartItem.color,
       };
     })
     .filter(Boolean);

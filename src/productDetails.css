@@ -80,7 +80,7 @@ details[open] summary {
 
 
 
-.product-header span {
+.product-header button {
     cursor: pointer;
 }
 
@@ -105,9 +105,9 @@ details[open] summary {
 
 /* Heart */
 
-.product-header span {
-    width: 42px;
-    height: 42px;
+.product-header button {
+    width: 36px;
+    height: 36px;
 
     display: flex;
     align-items: center;
@@ -119,15 +119,11 @@ details[open] summary {
     transition: all 0.25s ease;
 }
 
-.product-header span:hover {
+.product-header button:hover {
     background: #f8f8f8;
     transform: scale(1.05);
 }
 
-.product-header span svg {
-    width: 18px;
-    height: 18px;
-}
 
 
 /* Divider */
@@ -233,7 +229,8 @@ details[open] summary {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 14px;
+    font-weight: 700;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -241,7 +238,7 @@ details[open] summary {
 }
 
 .cart-btn button {
-    background: #2563eb;
+
     color: #fff;
 }
 
@@ -256,7 +253,7 @@ details[open] summary {
 }
 
 .cart-btn button:hover {
-    background: #1f2937;
+   
     transform: translateY(-2px);
 }
 

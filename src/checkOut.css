@@ -148,30 +148,15 @@
 ======================================*/
 
 .progressCircle {
-
-    width: 48px;
-
-    height: 48px;
-
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-
-    border: 1px solid #E6DED4;
-
     background: #fff;
+    color: #7A7A7A;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
-    font-size: 20px;
-
-    font-weight: 600;
-
-    color: #444;
-
-    flex-shrink: 0;
 }
 
 /*=====================================
@@ -180,11 +165,12 @@
 
 .activeCircle {
 
-    background: #111;
-
-    color: #fff;
+   
 
     border-color: #111;
+    background: #22C55E;
+        color: #fff;
+    
 }
 
 /*=====================================
@@ -207,20 +193,17 @@
 ======================================*/
 
 .progressTitle {
-
     margin-top: 14px;
-
     font-size: 12px;
-
     letter-spacing: 3px;
-
     text-transform: uppercase;
-
     color: #7A7A7A;
-
     width: 48px;
-
     white-space: nowrap;
+}
+
+.activeTitle {
+    color: #22C55E;
 }
 
 /*=====================================
@@ -239,13 +222,7 @@
 ===========================*/
 .shippingForm {
 
-    background: #fff;
-
-    border: 1px solid #ECE8E1;
-
-    border-radius: 24px;
-
-    padding: 32px;
+  
 }
 
 
@@ -515,6 +492,24 @@
     font-size: 13px;
 }
 
+
+  .checkoutLeftWrapper {
+
+    border: 1px solid gray;
+    background:white;
+    border-radius: 12px;
+padding: 20px;
+      overflow: visible;
+  }
+
+  .checkoutRightWrapper {
+
+    border: 1px solid gray;
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+  }
+
 /*==========================
         TABLET
 ===========================*/
@@ -529,6 +524,7 @@
     }
 
 }
+
 
 /*==========================
         MOBILE
@@ -546,17 +542,7 @@
         grid-template-columns: 1fr;
     }
 
-    .checkoutLeftWrapper {
-
-        max-height: none;
-
-        overflow: visible;
-    }
-
-    .checkoutRightWrapper {
-
-        margin-top: 24px;
-    }
+  
 
         .formGrid {
     

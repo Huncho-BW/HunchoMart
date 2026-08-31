@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { CartContext } from "../context/CartContext";
-import { useContext } from "react";
+import { Truck } from "lucide-react";
 
 export default function Delivery() {
   const { chooseinput, setchooseinput, errors } = useContext(CartContext);
+
+  const deliveryOptions = [
+    {
+      type: "pickup",
+      title: "Pickup Station",
+      duration: "3-5 business days",
+      price: 800,
+      icon: <Truck />,
+    },
+    {
+      type: "doorstep",
+      title: "Doorstep Delivery",
+      duration: "2-4 business days",
+      price: 1000,
+      icon: <Truck />,
+    },
+    {
+      type: "express",
+      title: "Express Doorstep",
+      duration: "1-2 business days",
+      price: 1500,
+      icon: <Truck />,
+    },
+  ];
 
   const handleDeliveryChange = (type, price) => {
     setchooseinput({
@@ -12,93 +36,45 @@ export default function Delivery() {
     });
   };
 
+  useEffect(() => {
+    setchooseinput({
+      type: "",
+      price: "",
+    });
+  }, []);
+
   return (
-    <div className="flex flex-col gap-[20px] p-[20px]">
-      {/* Pickup Station */}
-      <div
-        className={`de-border ${
-          chooseinput.type === "pickup" ? "delivery-selected" : ""
-        }`}
-        onClick={() => handleDeliveryChange("pickup", 800)}
-      >
-        <input
-          type="radio"
-          name="delivery"
-          checked={chooseinput.type === "pickup"}
-          onChange={() => handleDeliveryChange("pickup", 800)}
-        />
+    <div className="flex flex-col gap-[20px]">
+      {deliveryOptions.map((item) => (
+        <div
+          key={item.type}
+          className={`de-border ${
+            chooseinput.type === item.type ? "delivery-selected" : ""
+          }`}
+          onClick={() => handleDeliveryChange(item.type, item.price)}
+        >
+          <input
+            type="radio"
+            name="delivery"
+            checked={chooseinput.type === item.type}
+            onChange={() => handleDeliveryChange(item.type, item.price)}
+          />
 
-        <div className="delivery-content">
-          <span className="delivery-logo">logo</span>
+          <div className="delivery-content">
+            <span className="delivery-logo ">{item.icon}</span>
 
-          <div className="delivery-text">
-            <h1>Pickup Station</h1>
-            <span>3-5 business days</span>
+            <div className="delivery-text">
+              <h1>{item.title}</h1>
+              <span>{item.duration}</span>
+            </div>
+          </div>
+
+          <div className="delivery-price">
+            <h1>₦{item.price.toLocaleString()}</h1>
           </div>
         </div>
+      ))}
 
-        <div className="delivery-price">
-          <h1>₦800</h1>
-        </div>
-      </div>
-
-      {/* Doorstep */}
-      <div
-        className={`de-border ${
-          chooseinput.type === "doorstep" ? "delivery-selected" : ""
-        }`}
-        onClick={() => handleDeliveryChange("doorstep", 1000)}
-      >
-        <input
-          type="radio"
-          name="delivery"
-          checked={chooseinput.type === "doorstep"}
-          onChange={() => handleDeliveryChange("doorstep", 1000)}
-        />
-
-        <div className="delivery-content">
-          <span className="delivery-logo">logo</span>
-
-          <div className="delivery-text">
-            <h1>Doorstep Delivery</h1>
-            <span>2-4 business days</span>
-          </div>
-        </div>
-
-        <div className="delivery-price">
-          <h1>₦1,000</h1>
-        </div>
-      </div>
-
-      {/* Express */}
-      <div
-        className={`de-border ${
-          chooseinput.type === "express" ? "delivery-selected" : ""
-        }`}
-        onClick={() => handleDeliveryChange("express", 1500)}
-      >
-        <input
-          type="radio"
-          name="delivery"
-          checked={chooseinput.type === "express"}
-          onChange={() => handleDeliveryChange("express", 1500)}
-        />
-
-        <div className="delivery-content">
-          <span className="delivery-logo">logo</span>
-
-          <div className="delivery-text">
-            <h1>Express Doorstep</h1>
-            <span>1-2 business days</span>
-          </div>
-        </div>
-
-        <div className="delivery-price">
-          <h1>₦1,500</h1>
-        </div>
-      </div>
-
-      {/* Delivery error */}
       {errors.delivery && (
         <div className="deliveryError">{errors.delivery}</div>
       )}

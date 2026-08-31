@@ -18,7 +18,7 @@ const getCheckoutProducts = async (ids) => {
 };
 
 export default function CheckOutRight() {
-  const { checkoutItems } = useContext(CartContext);
+  const { checkoutItems, chooseinput } = useContext(CartContext);
 
   console.log("log out check", checkoutItems);
 
@@ -41,6 +41,8 @@ export default function CheckOutRight() {
       return {
         ...product,
         quantity: checkoutItem.quantity,
+        size: checkoutItem.size,
+        color: checkoutItem.color,
       };
     })
     .filter(Boolean);
@@ -50,12 +52,17 @@ export default function CheckOutRight() {
     0,
   );
 
+  const deliveryPrice = chooseinput?.price;
+
   const totalPrice = productData.reduce(
-    (acc, item) => acc + item.price * item.quantity,
+    (acc, item) => Math.round(acc + deliveryPrice + item.price * item.quantity),
     0,
   );
 
-  const savingPrice = Math.round(actualTotalPrice - totalPrice);
+  const subTotal = productData.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0,
+  );
 
   if (isLoading) {
     return <div>Loading order summary...</div>;
@@ -64,7 +71,7 @@ export default function CheckOutRight() {
   return (
     <div className="flex flex-col gap-[20px]">
       <div>
-        <h1>Order Summary</h1>
+        <h1 className="text-[16px] font-[400]">Order Summary</h1>
       </div>
 
       {productData.map((item) => (
@@ -73,17 +80,21 @@ export default function CheckOutRight() {
             <img src={item.images} alt="" className="checkOutProductImage" />
 
             <div className="checkOutProductContent">
-              <h2>{item.brand}</h2>
+              <h2 className="text-[12px] font-[700]">{item.brand}</h2>
 
-              <h1>{item.title}</h1>
+              <div className="flex gap-[10px] text-[12px] text-gray-400">
+                <span>Qty: {item.quantity}</span>
+
+                {item.size && <span>Size: {item.size}</span>}
+
+                {item.color && <span>Color: {item.color}</span>}
+              </div>
             </div>
           </div>
 
           <div className="checkOutProductRight">
             <div className="priceBox">
-              <h1>${item.price}</h1>
-
-              <h1>${item.actualPrice}</h1>
+              <h1 className="text-[12px] font-[700]">${item.price}</h1>
             </div>
           </div>
         </div>
@@ -95,13 +106,13 @@ export default function CheckOutRight() {
 
       <div>
         <div className="flex justify-between">
-          <h1>SubTotal</h1>
-          <h1>{totalPrice}</h1>
+          <h1 className="text-[14px]">SubTotal</h1>
+          <h1 className="text-[14px]">{subTotal}</h1>
         </div>
 
         <div className="flex justify-between">
-          <h1>Delivery</h1>
-          <h1>free</h1>
+          <h1 className="text-[14px]">Delivery</h1>
+          <h1 className="text-[14px]">{deliveryPrice}</h1>
         </div>
       </div>
 
@@ -110,8 +121,8 @@ export default function CheckOutRight() {
       </div>
 
       <div className="flex justify-between">
-        <h1>Total</h1>
-        <h1>{totalPrice}</h1>
+        <h1 className="text-[16px] font-[700]">Total</h1>
+        <h1 className="text-[16px] font-[700]">{totalPrice}</h1>
       </div>
     </div>
   );

@@ -149,6 +149,7 @@ export default function CartProvider({ children }) {
         chooseinput,
         setchooseinput,
         checkoutItems,
+        setCartItems,
         setCheckoutItems,
 
         addCount,

@@ -2,9 +2,21 @@ import React, { useContext } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
+import { AuthenticatonContext } from "../context/AuthenticatonContext";
 export default function Comfirmation() {
   const { order, createNotification } = useContext(CartContext);
-  console.log("log out our oder", order);
+  const { details } = useContext(AuthenticatonContext);
+
+  const currentDay = new Date();
+
+  const estimatedDate = new Date(currentDay);
+  estimatedDate.setDate(estimatedDate.getDate() + 3);
+
+  const formattedDate = estimatedDate.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "2-digit",
+  });
 
   return (
     <div>
@@ -20,7 +32,7 @@ export default function Comfirmation() {
             </div>
 
             <div className="confirmation-message">
-              <h1>Thank you Huncho</h1>
+              <h1>Thank you {details.firstName}</h1>
 
               <h1>
                 Your order <span>#{item.orderId}</span> has been confirmed.
@@ -40,7 +52,7 @@ export default function Comfirmation() {
 
               <div>
                 <p>Estimated delivery</p>
-                <h2>Dec 18–20</h2>
+                <h2>{formattedDate}</h2>
               </div>
 
               <div>

@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import ComfirmationPage from "./comfiremationPage";
+import CheckOutSecurity from "./CheckOutSecurity";
+import { Outlet } from "react-router-dom";
 import CheckOutLeft from "./CheckoutLeft";
 import CheckOutRight from "./CheckOutRight";
-import CheckOutSecurity from "./CheckOutSecurity";
+
 import { CartContext } from "../context/CartContext";
 import { useContext } from "react";
 
@@ -37,11 +40,15 @@ export default function CheckOut() {
 
           <h1 className="">Security Checkout</h1>
         </div>
+        <div>
+          <CheckOutSecurity />
+        </div>
       </header>
 
       <div className="checkoutGrid">
         <div className="checkoutLeftWrapper">
-          <CheckOutLeft />
+          <Outlet />
+          <ComfirmationPage />
         </div>
 
         <div className="checkoutRightWrapper">

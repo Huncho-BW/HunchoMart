@@ -123,7 +123,7 @@ export default function ComfirmationPage() {
     : isDelivery
       ? "Continue to Payment"
       : isPayment
-        ? "Submit Payment"
+        ? "Place Order"
         : "";
   return (
     <div>

@@ -21,23 +21,13 @@ export default function AuthProvider({ children }) {
     cvv: "",
   });
 
-  const [details, setDetails] = useState({
+  const details = {
     firstName: formDataCreateAccount.firstName,
     lastName: formDataCreateAccount.lastName,
     address: formDataCreateAccount.address,
     card: formDataCreateAccount.card,
     exp: formDataCreateAccount.expireDate,
-  });
-  useEffect(() => {
-    setDetails((prev) => ({
-      ...prev,
-      firstName: formDataCreateAccount.firstName,
-      lastName: formDataCreateAccount.lastName,
-      address: formDataCreateAccount.address,
-      card: formDataCreateAccount.card,
-      exp: formDataCreateAccount.expireDate,
-    }));
-  }, [formDataCreateAccount]);
+  };
 
   console.log("log user", user);
 

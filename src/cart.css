@@ -319,8 +319,8 @@
 
 .cartActions {
     display: flex;
-
-    gap: 20px;
+gap: 5px;
+    align-items: center;
 
     color: #666;
 
