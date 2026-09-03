@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CiClock2 } from "react-icons/ci";
 import { IoIosFlash } from "react-icons/io";
 import { NavLink } from "react-router-dom";
@@ -9,6 +9,8 @@ import { useQuery } from "@tanstack/react-query";
 import { motion, useAnimation } from "motion/react";
 
 export default function FlashDeal() {
+  const [timeLeft, setTimeLeft] = useState(0);
+
   const getFlashData = async () => {
     const result = await axios.get(
       "https://huncho-mart-api.onrender.com/api/products/flash-deals",
@@ -24,12 +26,27 @@ export default function FlashDeal() {
     retryDelay: 1000,
   });
 
-  const flashData = [...(data?.data ?? [])]
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 14);
+  const flashData = data?.data ?? [];
 
   console.log("RAW DATA:", data);
   console.log("FLASH DATA:", flashData);
+
+  const endAtTime = data?.endsAt;
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const remaining = endAtTime - Date.now();
+
+      setTimeLeft(Math.max(remaining, 0));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [endAtTime]);
+
+  const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+
+  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+
+  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
   if (isLoading) {
     return (
@@ -85,7 +102,9 @@ export default function FlashDeal() {
               <CiClock2 color="#8A8580" />
             </span>
             <span className="text-[14px] text-[#8A8580]">ending in</span>
-            05 45 9
+            <span>{String(hours).padStart(2, "0")} </span>{" "}
+            <span>{String(minutes).padStart(2, "0")}</span>{" "}
+            <span>{String(seconds).padStart(2, "0")}</span>
           </h1>
         </div>
       </motion.div>
