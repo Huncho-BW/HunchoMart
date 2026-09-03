@@ -88,6 +88,12 @@ export default function LeftDashbord() {
     { logo: Settings, name: "setting" },
   ];
 
+  const firstLetter = details?.firstName[0].toUpperCase();
+
+  const lastLetter = details?.lastName[0].toUpperCase();
+
+  console.log("log letter", firstLetter, lastLetter);
+
   if (isLoading) {
     return <div>Loading dashboard...</div>;
   }
@@ -96,7 +102,9 @@ export default function LeftDashbord() {
     <div className="flex flex-col gap-[20px]">
       <section className="borderOne">
         <div className="profile-info">
-          <div className="div-circle">AM</div>
+          <div className="div-circle">
+            {firstLetter} {lastLetter}
+          </div>
 
           <div className="profile-text">
             <div>

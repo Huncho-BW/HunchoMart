@@ -1,479 +1,4243 @@
 const products = [
   {
-    id: 1,
-    title: "Essence Mascara Lash Princess",
+    id: 50,
+    title: "Nike Air Max Red Runner",
     description:
-      "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
-    category: "beauty",
+      "A stylish Nike sneaker designed for everyday comfort, casual wear, and active lifestyles.",
+    category: "sneaker",
 
     price: 8500,
     actualPrice: 10000,
-    discountPercentage: 15.0,
+    discountPercentage: 15,
 
-    color: ["Black", "Black Brown"],
-    size: ["8ml", "12ml"],
+    isFlashDeal: true,
 
     rating: {
-      rate: 2.56,
-      count: 60,
+      rate: 4.7,
+      count: 324,
     },
-    stock: 99,
-    tags: ["beauty", "mascara"],
-    brand: "Essence",
-    sku: "BEA-ESS-ESS-001",
-    weight: 4,
+
+    stock: 12,
+
+    tags: ["footwear", "sneakers", "nike", "running"],
+    brand: "Nike",
+    sku: "SNK-NIK-050",
+
+    weight: 1.2,
+
     dimensions: {
-      width: 15.14,
-      height: 13.08,
-      depth: 22.99,
+      width: 18,
+      height: 11,
+      depth: 30,
     },
-    warrantyInformation: "1 week warranty",
-    shippingInformation: "Ships in 3-5 business days",
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
     availabilityStatus: "In Stock",
-    reviews: [
-      {
-        rating: 3,
-        comment: "Would not recommend!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Eleanor Collins",
-        reviewerEmail: "eleanor.collins@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Very satisfied!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Lucas Gordon",
-        reviewerEmail: "lucas.gordon@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Highly impressed!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Eleanor Collins",
-        reviewerEmail: "eleanor.collins@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "No return policy",
-    minimumOrderQuantity: 48,
+
+    sizes: [40, 41, 42, 43, 44, 45],
+    colors: ["Red", "White", "Black"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
     meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "5784719087687",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+      createdAt: "2026-08-20T09:00:00.000Z",
+      updatedAt: "2026-08-20T09:00:00.000Z",
     },
+
     images: [
-      "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp",
+      "https://i.pinimg.com/736x/83/27/9b/83279bc6dda339a963de80f2f4709b5e.jpg",
     ],
+
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp",
+      "https://i.pinimg.com/736x/83/27/9b/83279bc6dda339a963de80f2f4709b5e.jpg",
   },
 
   {
-    id: 2,
-    title: "Eyeshadow Palette with Mirror",
+    id: 51,
+    title: "Nike Air Force Classic White",
     description:
-      "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
-    category: "beauty",
+      "A clean and versatile Nike sneaker with a classic white design suitable for everyday outfits.",
+    category: "sneaker",
 
-    price: 16900,
-    actualPrice: 20000,
-    discountPercentage: 15.5,
+    price: 15000,
+    actualPrice: 18000,
+    discountPercentage: 16.67,
 
-    color: ["Nude", "Brown", "Pink", "Purple"],
-    size: ["9g", "12g", "18g"],
+    isFlashDeal: false,
 
     rating: {
-      rate: 2.56,
-      count: 70,
+      rate: 4.5,
+      count: 287,
     },
-    stock: 34,
-    tags: ["beauty", "eyeshadow"],
-    brand: "Glamour Beauty",
-    sku: "BEA-GLA-EYE-002",
-    weight: 9,
+
+    stock: 18,
+
+    tags: ["footwear", "sneakers", "nike", "casual"],
+    brand: "Nike",
+    sku: "SNK-NIK-051",
+
+    weight: 1.3,
+
     dimensions: {
-      width: 9.26,
-      height: 22.47,
-      depth: 27.67,
+      width: 18,
+      height: 11,
+      depth: 30,
     },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [39, 40, 41, 42, 43, 44],
+    colors: ["White", "Black"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-21T09:00:00.000Z",
+      updatedAt: "2026-08-21T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/af/89/88/af8988f60161559ee2b919376dd42077.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/af/89/88/af8988f60161559ee2b919376dd42077.jpg",
+  },
+
+  {
+    id: 52,
+    title: "Nike Air Max Black Sport",
+    description:
+      "A modern Nike sneaker combining a sporty appearance with a comfortable design for daily use.",
+    category: "sneaker",
+
+    price: 22500,
+    actualPrice: 27000,
+    discountPercentage: 16.67,
+
+    isFlashDeal: false,
+
+    rating: {
+      rate: 4.4,
+      count: 198,
+    },
+
+    stock: 9,
+
+    tags: ["footwear", "sports", "sneakers", "nike"],
+    brand: "Nike",
+    sku: "SNK-NIK-052",
+
+    weight: 1.2,
+
+    dimensions: {
+      width: 18,
+      height: 11,
+      depth: 30,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [40, 41, 42, 43, 44],
+    colors: ["Black", "White"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-22T09:00:00.000Z",
+      updatedAt: "2026-08-22T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/ec/f5/77/ecf577233a1bf3d0ee490e67aae84532.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/ec/f5/77/ecf577233a1bf3d0ee490e67aae84532.jpg",
+  },
+
+  {
+    id: 53,
+    title: "Nike Dunk Low Blue Edition",
+    description:
+      "A stylish Nike low-top sneaker featuring a bold color combination and a comfortable everyday fit.",
+    category: "sneaker",
+
+    price: 29999,
+    actualPrice: 35000,
+    discountPercentage: 14.29,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.8,
+      count: 412,
+    },
+
+    stock: 6,
+
+    tags: ["footwear", "dunk", "sneakers", "nike"],
+    brand: "Nike",
+    sku: "SNK-NIK-053",
+
+    weight: 1.1,
+
+    dimensions: {
+      width: 18,
+      height: 10,
+      depth: 29,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [40, 41, 42, 43, 44, 45],
+    colors: ["Blue", "White", "Black"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-23T09:00:00.000Z",
+      updatedAt: "2026-08-23T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/1200x/e6/01/7e/e6017ebb46111d34aef356455279aab1.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/1200x/e6/01/7e/e6017ebb46111d34aef356455279aab1.jpg",
+  },
+
+  {
+    id: 54,
+    title: "Nike Air Jordan Street Black",
+    description:
+      "A premium-looking Nike sneaker with a bold streetwear design made for casual and everyday styling.",
+    category: "sneaker",
+
+    price: 39999,
+    actualPrice: 45000,
+    discountPercentage: 11.11,
+
+    isFlashDeal: false,
+
+    rating: {
+      rate: 4.6,
+      count: 356,
+    },
+
+    stock: 11,
+
+    tags: ["footwear", "jordan", "streetwear", "nike"],
+    brand: "Nike",
+    sku: "SNK-NIK-054",
+
+    weight: 1.3,
+
+    dimensions: {
+      width: 19,
+      height: 11,
+      depth: 30,
+    },
+
     warrantyInformation: "1 year warranty",
-    shippingInformation: "Ships in 2 weeks",
+    shippingInformation: "Ships in 2-4 days",
     availabilityStatus: "In Stock",
-    reviews: [
-      {
-        rating: 5,
-        comment: "Great product!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Savannah Gomez",
-        reviewerEmail: "savannah.gomez@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Awesome product!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Christian Perez",
-        reviewerEmail: "christian.perez@x.dummyjson.com",
-      },
-      {
-        rating: 1,
-        comment: "Poor quality!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Nicholas Bailey",
-        reviewerEmail: "nicholas.bailey@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "7 days return policy",
-    minimumOrderQuantity: 20,
+
+    sizes: [40, 41, 42, 43, 44, 45],
+    colors: ["Black", "White", "Grey"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
     meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "9170275171413",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+      createdAt: "2026-08-24T09:00:00.000Z",
+      updatedAt: "2026-08-24T09:00:00.000Z",
     },
+
     images: [
-      "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/1.webp",
+      "https://i.pinimg.com/1200x/bd/1b/e5/bd1be5cd9b0da8d088f63eca8995f156.jpg",
     ],
+
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/thumbnail.webp",
+      "https://i.pinimg.com/1200x/bd/1b/e5/bd1be5cd9b0da8d088f63eca8995f156.jpg",
   },
 
   {
-    id: 3,
-    title: "Powder Canister",
+    id: 55,
+    title: "Nike Court Vision White Red",
     description:
-      "The Powder Canister is a finely milled setting powder designed to set makeup and control shine. With a lightweight and translucent formula, it provides a smooth and matte finish.",
-    category: "beauty",
+      "A classic Nike sneaker with a clean silhouette and contrasting details for casual everyday wear.",
+    category: "sneaker",
 
-    price: 12750,
-    actualPrice: 15000,
-    discountPercentage: 15.0,
+    price: 45000,
+    actualPrice: 52000,
+    discountPercentage: 13.46,
 
-    color: ["Translucent", "Light Beige", "Medium Beige"],
-    size: ["10g", "20g", "30g"],
+    isFlashDeal: true,
 
     rating: {
-      rate: 4.64,
-      count: 160,
+      rate: 4.3,
+      count: 265,
     },
-    stock: 89,
-    tags: ["beauty", "face powder"],
-    brand: "Velvet Touch",
-    sku: "BEA-VEL-POW-003",
-    weight: 8,
+
+    stock: 8,
+
+    tags: ["footwear", "casual", "sneakers", "nike"],
+    brand: "Nike",
+    sku: "SNK-NIK-055",
+
+    weight: 1.2,
+
     dimensions: {
-      width: 29.27,
-      height: 27.93,
-      depth: 20.59,
+      width: 18,
+      height: 10,
+      depth: 29,
     },
-    warrantyInformation: "3 months warranty",
-    shippingInformation: "Ships in 1-2 business days",
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
     availabilityStatus: "In Stock",
-    reviews: [
-      {
-        rating: 4,
-        comment: "Would buy again!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Alexander Jones",
-        reviewerEmail: "alexander.jones@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Highly impressed!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Elijah Cruz",
-        reviewerEmail: "elijah.cruz@x.dummyjson.com",
-      },
-      {
-        rating: 1,
-        comment: "Very dissatisfied!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Avery Perez",
-        reviewerEmail: "avery.perez@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "No return policy",
-    minimumOrderQuantity: 22,
+
+    sizes: [39, 40, 41, 42, 43, 44],
+    colors: ["White", "Red", "Black"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
     meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "8418883906837",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+      createdAt: "2026-08-25T09:00:00.000Z",
+      updatedAt: "2026-08-25T09:00:00.000Z",
     },
+
     images: [
-      "https://cdn.dummyjson.com/product-images/beauty/powder-canister/1.webp",
+      "https://i.pinimg.com/736x/35/8a/ac/358aaca0ed55bab9338d96cdbce1c488.jpg",
     ],
+
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/beauty/powder-canister/thumbnail.webp",
+      "https://i.pinimg.com/736x/35/8a/ac/358aaca0ed55bab9338d96cdbce1c488.jpg",
   },
 
   {
-    id: 4,
-    title: "Red Lipstick",
+    id: 56,
+    title: "Nike Air Max Grey Runner",
     description:
-      "The Red Lipstick is a classic and bold choice for adding a pop of color to your lips. With a creamy and pigmented formula, it provides a vibrant and long-lasting finish.",
-    category: "beauty",
+      "A lightweight Nike sneaker designed with a modern running-inspired appearance and comfortable everyday feel.",
+    category: "sneaker",
 
-    price: 11000,
-    actualPrice: 13000,
+    price: 55000,
+    actualPrice: 65000,
     discountPercentage: 15.38,
 
-    color: ["Red", "Dark Red", "Wine", "Burgundy"],
-    size: ["3.5g", "4g", "5g"],
+    isFlashDeal: false,
 
     rating: {
-      rate: 2.56,
-      count: 60,
+      rate: 4.2,
+      count: 174,
     },
-    stock: 91,
-    tags: ["beauty", "lipstick"],
-    brand: "Chic Cosmetics",
-    sku: "BEA-CHI-LIP-004",
-    weight: 1,
+
+    stock: 14,
+
+    tags: ["footwear", "running", "sports", "nike"],
+    brand: "Nike",
+    sku: "SNK-NIK-056",
+
+    weight: 1.1,
+
     dimensions: {
-      width: 18.11,
-      height: 28.38,
-      depth: 22.17,
+      width: 18,
+      height: 10,
+      depth: 30,
     },
-    warrantyInformation: "3 year warranty",
-    shippingInformation: "Ships in 1 week",
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
     availabilityStatus: "In Stock",
-    reviews: [
-      {
-        rating: 4,
-        comment: "Great product!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Liam Garcia",
-        reviewerEmail: "liam.garcia@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Great product!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Ruby Andrews",
-        reviewerEmail: "ruby.andrews@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Would buy again!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Clara Berry",
-        reviewerEmail: "clara.berry@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "7 days return policy",
-    minimumOrderQuantity: 40,
+
+    sizes: [40, 41, 42, 43, 44],
+    colors: ["Grey", "White", "Black"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
     meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "9467746727219",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+      createdAt: "2026-08-26T09:00:00.000Z",
+      updatedAt: "2026-08-26T09:00:00.000Z",
     },
+
     images: [
-      "https://cdn.dummyjson.com/product-images/beauty/red-lipstick/1.webp",
+      "https://i.pinimg.com/1200x/c1/47/d7/c147d75d161d89ee196b1e3622fecb8c.jpg",
     ],
+
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/beauty/red-lipstick/thumbnail.webp",
+      "https://i.pinimg.com/1200x/c1/47/d7/c147d75d161d89ee196b1e3622fecb8c.jpg",
   },
 
   {
-    id: 5,
-    title: "Red Nail Polish",
+    id: 57,
+    title: "Nike Dunk Classic White Black",
     description:
-      "The Red Nail Polish offers a rich and glossy red hue for vibrant and polished nails. With a quick-drying formula, it provides a salon-quality finish at home.",
-    category: "beauty",
+      "A versatile Nike sneaker featuring a timeless two-tone design suitable for casual streetwear outfits.",
+    category: "sneaker",
+
+    price: 68000,
+    actualPrice: 78000,
+    discountPercentage: 12.82,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.9,
+      count: 521,
+    },
+
+    stock: 5,
+
+    tags: ["footwear", "dunk", "streetwear", "nike"],
+    brand: "Nike",
+    sku: "SNK-NIK-057",
+
+    weight: 1.2,
+
+    dimensions: {
+      width: 18,
+      height: 10,
+      depth: 29,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [40, 41, 42, 43, 44, 45],
+    colors: ["White", "Black"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-27T09:00:00.000Z",
+      updatedAt: "2026-08-27T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/1200x/06/af/68/06af68ba950f56342ce76c959b6b01e7.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/1200x/06/af/68/06af68ba950f56342ce76c959b6b01e7.jpg",
+  },
+
+  {
+    id: 58,
+    title: "Nike Sport Runner Green",
+    description:
+      "A sporty Nike sneaker with a fresh color combination designed for active casual outfits and everyday use.",
+    category: "sneaker",
+
+    price: 85000,
+    actualPrice: 95000,
+    discountPercentage: 10.53,
+
+    isFlashDeal: false,
+
+    rating: {
+      rate: 4.5,
+      count: 231,
+    },
+
+    stock: 16,
+
+    tags: ["footwear", "sports", "running", "nike"],
+    brand: "Nike",
+    sku: "SNK-NIK-058",
+
+    weight: 1.1,
+
+    dimensions: {
+      width: 18,
+      height: 10,
+      depth: 30,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [40, 41, 42, 43, 44],
+    colors: ["Green", "White", "Black"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-28T09:00:00.000Z",
+      updatedAt: "2026-08-28T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/1200x/09/76/3b/09763bbdec41f76ba99aa2669c238ea5.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/1200x/09/76/3b/09763bbdec41f76ba99aa2669c238ea5.jpg",
+  },
+
+  {
+    id: 59,
+    title: "Nike Air Street White Grey",
+    description:
+      "A modern Nike sneaker with a clean streetwear-inspired design that works well for everyday casual outfits.",
+    category: "sneaker",
+
+    price: 120000,
+    actualPrice: 140000,
+    discountPercentage: 14.29,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.7,
+      count: 389,
+    },
+
+    stock: 7,
+
+    tags: ["footwear", "streetwear", "sneakers", "nike"],
+    brand: "Nike",
+    sku: "SNK-NIK-059",
+
+    weight: 1.2,
+
+    dimensions: {
+      width: 18,
+      height: 10,
+      depth: 29,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [40, 41, 42, 43, 44, 45],
+    colors: ["White", "Grey", "Black"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-29T09:00:00.000Z",
+      updatedAt: "2026-08-29T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/03/68/08/036808f50e0dc0bca1dba721638c43cb.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/03/68/08/036808f50e0dc0bca1dba721638c43cb.jpg",
+  },
+
+  {
+    id: 60,
+    title: "Puma Street Runner Black",
+    description:
+      "A stylish Puma sneaker designed for everyday comfort with a modern streetwear-inspired look.",
+    category: "sneaker",
 
     price: 7500,
     actualPrice: 9000,
     discountPercentage: 16.67,
 
-    color: ["Red", "Dark Red", "Pink", "Burgundy"],
-    size: ["8ml", "10ml", "15ml"],
+    isFlashDeal: false,
 
     rating: {
-      rate: 2.56,
-      count: 60,
+      rate: 4.3,
+      count: 186,
     },
-    stock: 79,
-    tags: ["beauty", "nail polish"],
-    brand: "Nail Couture",
-    sku: "BEA-NAI-NAI-005",
-    weight: 8,
+
+    stock: 15,
+
+    tags: ["footwear", "sneakers", "puma", "casual"],
+    brand: "Puma",
+    sku: "SNK-PUM-060",
+
+    weight: 1.1,
+
     dimensions: {
-      width: 21.63,
-      height: 16.48,
-      depth: 29.84,
+      width: 18,
+      height: 10,
+      depth: 29,
     },
-    warrantyInformation: "1 month warranty",
-    shippingInformation: "Ships overnight",
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
     availabilityStatus: "In Stock",
-    reviews: [
-      {
-        rating: 2,
-        comment: "Poor quality!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Benjamin Wilson",
-        reviewerEmail: "benjamin.wilson@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Great product!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Liam Smith",
-        reviewerEmail: "liam.smith@x.dummyjson.com",
-      },
-      {
-        rating: 1,
-        comment: "Very unhappy with my purchase!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Clara Berry",
-        reviewerEmail: "clara.berry@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "No return policy",
-    minimumOrderQuantity: 22,
+
+    sizes: [39, 40, 41, 42, 43, 44],
+    colors: ["Black", "White"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
     meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "4063010628104",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+      createdAt: "2026-08-20T09:00:00.000Z",
+      updatedAt: "2026-08-20T09:00:00.000Z",
     },
+
     images: [
-      "https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/1.webp",
+      "https://i.pinimg.com/736x/19/25/50/1925503471a7a73eedd82e8e9fcf2ea1.jpg",
     ],
+
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/thumbnail.webp",
+      "https://i.pinimg.com/736x/19/25/50/1925503471a7a73eedd82e8e9fcf2ea1.jpg",
   },
 
   {
-    id: 6,
-    title: "Fjallraven Foldsack Backpack",
+    id: 61,
+    title: "Puma Classic White Trainer",
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop up to 15 inches in the padded sleeve.",
-    category: "Fashion",
+      "A clean Puma trainer featuring a simple design that works well with casual everyday outfits.",
+    category: "sneaker",
+
+    price: 14500,
+    actualPrice: 18000,
+    discountPercentage: 19.44,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.6,
+      count: 241,
+    },
+
+    stock: 9,
+
+    tags: ["footwear", "trainer", "puma", "casual"],
+    brand: "Puma",
+    sku: "SNK-PUM-061",
+
+    weight: 1.2,
+
+    dimensions: {
+      width: 18,
+      height: 10,
+      depth: 29,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [40, 41, 42, 43, 44, 45],
+    colors: ["White", "Black"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-21T09:00:00.000Z",
+      updatedAt: "2026-08-21T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/32/d2/30/32d2304ce4ba2c6c60b6fe5d62349b5e.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/32/d2/30/32d2304ce4ba2c6c60b6fe5d62349b5e.jpg",
+  },
+
+  {
+    id: 62,
+    title: "Puma Sport Black Red",
+    description:
+      "A sporty Puma sneaker combining a bold color design with a comfortable fit for active everyday use.",
+    category: "sneaker",
+
+    price: 22500,
+    actualPrice: 28000,
+    discountPercentage: 19.64,
+
+    isFlashDeal: false,
+
+    rating: {
+      rate: 4.1,
+      count: 153,
+    },
+
+    stock: 13,
+
+    tags: ["footwear", "sports", "puma", "running"],
+    brand: "Puma",
+    sku: "SNK-PUM-062",
+
+    weight: 1.2,
+
+    dimensions: {
+      width: 18,
+      height: 11,
+      depth: 30,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [40, 41, 42, 43, 44],
+    colors: ["Black", "Red", "White"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-22T09:00:00.000Z",
+      updatedAt: "2026-08-22T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/1200x/a3/1b/c4/a31bc4d1387b6ec2363f318f0c3f2cec.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/1200x/a3/1b/c4/a31bc4d1387b6ec2363f318f0c3f2cec.jpg",
+  },
+
+  {
+    id: 63,
+    title: "Puma Suede Classic Blue",
+    description:
+      "A classic Puma sneaker with a stylish blue design made for casual outfits and everyday streetwear.",
+    category: "sneaker",
+
+    price: 29999,
+    actualPrice: 36000,
+    discountPercentage: 16.67,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.8,
+      count: 367,
+    },
+
+    stock: 7,
+
+    tags: ["footwear", "suede", "streetwear", "puma"],
+    brand: "Puma",
+    sku: "SNK-PUM-063",
+
+    weight: 1.1,
+
+    dimensions: {
+      width: 18,
+      height: 10,
+      depth: 29,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [39, 40, 41, 42, 43, 44],
+    colors: ["Blue", "White", "Black"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-23T09:00:00.000Z",
+      updatedAt: "2026-08-23T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/9e/ba/f3/9ebaf3b7af3a318a2604af7a6dd34dac.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/9e/ba/f3/9ebaf3b7af3a318a2604af7a6dd34dac.jpg",
+  },
+
+  {
+    id: 64,
+    title: "Puma Urban White Black",
+    description:
+      "A versatile Puma sneaker featuring a clean white and black color combination for everyday casual wear.",
+    category: "sneaker",
+
+    price: 39999,
+    actualPrice: 47000,
+    discountPercentage: 14.89,
+
+    isFlashDeal: false,
+
+    rating: {
+      rate: 4.5,
+      count: 294,
+    },
+
+    stock: 10,
+
+    tags: ["footwear", "urban", "sneakers", "puma"],
+    brand: "Puma",
+    sku: "SNK-PUM-064",
+
+    weight: 1.2,
+
+    dimensions: {
+      width: 18,
+      height: 11,
+      depth: 30,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [40, 41, 42, 43, 44, 45],
+    colors: ["White", "Black", "Grey"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-24T09:00:00.000Z",
+      updatedAt: "2026-08-24T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/4e/86/f0/4e86f07e928f9123798ce3e0a1ed4a7a.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/4e/86/f0/4e86f07e928f9123798ce3e0a1ed4a7a.jpg",
+  },
+
+  {
+    id: 65,
+    title: "Puma Running Pro Grey",
+    description:
+      "A lightweight Puma running-inspired sneaker designed for comfortable everyday movement and casual wear.",
+    category: "sneaker",
+
+    price: 45000,
+    actualPrice: 54000,
+    discountPercentage: 16.67,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.7,
+      count: 318,
+    },
+
+    stock: 6,
+
+    tags: ["footwear", "running", "sports", "puma"],
+    brand: "Puma",
+    sku: "SNK-PUM-065",
+
+    weight: 1.1,
+
+    dimensions: {
+      width: 18,
+      height: 10,
+      depth: 30,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [40, 41, 42, 43, 44],
+    colors: ["Grey", "Black", "White"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-25T09:00:00.000Z",
+      updatedAt: "2026-08-25T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/2f/35/30/2f35305332f4452d65eecffeff3ee9f2.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/2f/35/30/2f35305332f4452d65eecffeff3ee9f2.jpg",
+  },
+
+  {
+    id: 66,
+    title: "Puma Rider Sport Green",
+    description:
+      "A modern Puma sneaker with a sporty silhouette and fresh color combination for casual streetwear.",
+    category: "sneaker",
+
+    price: 58000,
+    actualPrice: 68000,
+    discountPercentage: 14.71,
+
+    isFlashDeal: false,
+
+    rating: {
+      rate: 4.4,
+      count: 205,
+    },
+
+    stock: 14,
+
+    tags: ["footwear", "rider", "sports", "puma"],
+    brand: "Puma",
+    sku: "SNK-PUM-066",
+
+    weight: 1.2,
+
+    dimensions: {
+      width: 19,
+      height: 11,
+      depth: 30,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [40, 41, 42, 43, 44, 45],
+    colors: ["Green", "White", "Black"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-26T09:00:00.000Z",
+      updatedAt: "2026-08-26T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/1200x/6f/c6/72/6fc67248afba71e516d33dd8a5d3be33.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/1200x/6f/c6/72/6fc67248afba71e516d33dd8a5d3be33.jpg",
+  },
+
+  {
+    id: 67,
+    title: "Puma Street Rider Black White",
+    description:
+      "A bold Puma street sneaker designed with a modern silhouette for casual outfits and everyday use.",
+    category: "sneaker",
+
+    price: 72000,
+    actualPrice: 82000,
+    discountPercentage: 12.2,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.8,
+      count: 433,
+    },
+
+    stock: 5,
+
+    tags: ["footwear", "streetwear", "rider", "puma"],
+    brand: "Puma",
+    sku: "SNK-PUM-067",
+
+    weight: 1.3,
+
+    dimensions: {
+      width: 19,
+      height: 11,
+      depth: 30,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [40, 41, 42, 43, 44, 45],
+    colors: ["Black", "White", "Grey"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-27T09:00:00.000Z",
+      updatedAt: "2026-08-27T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/2d/80/84/2d80846848853711e773db248a197bd8.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/2d/80/84/2d80846848853711e773db248a197bd8.jpg",
+  },
+
+  {
+    id: 68,
+    title: "Puma Future Sport White",
+    description:
+      "A premium Puma sneaker featuring a clean modern design with a sporty look for everyday wear.",
+    category: "sneaker",
+
+    price: 88000,
+    actualPrice: 98000,
+    discountPercentage: 10.2,
+
+    isFlashDeal: false,
+
+    rating: {
+      rate: 4.6,
+      count: 276,
+    },
+
+    stock: 8,
+
+    tags: ["footwear", "sports", "premium", "puma"],
+    brand: "Puma",
+    sku: "SNK-PUM-068",
+
+    weight: 1.2,
+
+    dimensions: {
+      width: 18,
+      height: 11,
+      depth: 30,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [40, 41, 42, 43, 44],
+    colors: ["White", "Black", "Grey"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-28T09:00:00.000Z",
+      updatedAt: "2026-08-28T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/ac/d9/2a/acd92a53474a42e566fa5474555634b9.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/ac/d9/2a/acd92a53474a42e566fa5474555634b9.jpg",
+  },
+
+  {
+    id: 69,
+    title: "Puma Premium Street Black",
+    description:
+      "A premium-looking Puma sneaker with a bold streetwear design created for everyday fashion and casual styling.",
+    category: "sneaker",
+
+    price: 115000,
+    actualPrice: 135000,
+    discountPercentage: 14.81,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.9,
+      count: 487,
+    },
+
+    stock: 4,
+
+    tags: ["footwear", "streetwear", "premium", "puma"],
+    brand: "Puma",
+    sku: "SNK-PUM-069",
+
+    weight: 1.3,
+
+    dimensions: {
+      width: 19,
+      height: 11,
+      depth: 31,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [40, 41, 42, 43, 44, 45],
+    colors: ["Black", "White", "Grey"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-29T09:00:00.000Z",
+      updatedAt: "2026-08-29T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/76/22/c7/7622c7efc0a039f093b8320d61cacbe5.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/76/22/c7/7622c7efc0a039f093b8320d61cacbe5.jpg",
+  },
+
+  {
+    id: 70,
+    title: "Wireless Bluetooth Headphones",
+    description:
+      "Comfortable wireless headphones with a modern design, suitable for music, videos, gaming, and everyday use.",
+    category: "tech",
+
+    price: 18500,
+    actualPrice: 23000,
+    discountPercentage: 19.57,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.4,
+      count: 214,
+    },
+
+    stock: 18,
+
+    tags: ["audio", "headphones", "wireless", "bluetooth"],
+    brand: "Generic",
+    sku: "TECH-AUD-070",
+
+    weight: 0.4,
+
+    dimensions: {
+      width: 18,
+      height: 20,
+      depth: 8,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Black", "White"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-20T09:00:00.000Z",
+      updatedAt: "2026-08-20T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/ea/e4/3f/eae43ffb5871992f557ec0340779a4d7.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/ea/e4/3f/eae43ffb5871992f557ec0340779a4d7.jpg",
+  },
+
+  {
+    id: 71,
+    title: "Wireless Gaming Headset",
+    description:
+      "A stylish wireless gaming headset designed for immersive gaming, music, and everyday entertainment.",
+    category: "tech",
+
+    price: 32000,
+    actualPrice: 40000,
+    discountPercentage: 20,
+
+    isFlashDeal: false,
+
+    rating: {
+      rate: 4.6,
+      count: 328,
+    },
+
+    stock: 12,
+
+    tags: ["gaming", "headset", "wireless", "audio"],
+    brand: "Generic",
+    sku: "TECH-GAM-071",
+
+    weight: 0.5,
+
+    dimensions: {
+      width: 20,
+      height: 22,
+      depth: 10,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Black", "Blue"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-21T09:00:00.000Z",
+      updatedAt: "2026-08-21T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/07/95/77/079577cd1e880a27e38cca57b98e604c.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/07/95/77/079577cd1e880a27e38cca57b98e604c.jpg",
+  },
+
+  {
+    id: 72,
+    title: "Premium Wireless Earbuds",
+    description:
+      "Compact wireless earbuds with a sleek charging case designed for convenient listening throughout the day.",
+    category: "tech",
+
+    price: 14500,
+    actualPrice: 19000,
+    discountPercentage: 23.68,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.2,
+      count: 267,
+    },
+
+    stock: 20,
+
+    tags: ["earbuds", "wireless", "bluetooth", "audio"],
+    brand: "Generic",
+    sku: "TECH-EAR-072",
+
+    weight: 0.08,
+
+    dimensions: {
+      width: 5,
+      height: 6,
+      depth: 3,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["White", "Black"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-22T09:00:00.000Z",
+      updatedAt: "2026-08-22T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/67/2a/2e/672a2eca2b68c1ab9d960e8a864e3e17.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/67/2a/2e/672a2eca2b68c1ab9d960e8a864e3e17.jpg",
+  },
+
+  {
+    id: 73,
+    title: "Smart Watch Series",
+    description:
+      "A modern smartwatch designed to complement everyday activities with a clean digital display and useful smart features.",
+    category: "tech",
+
+    price: 28000,
+    actualPrice: 35000,
+    discountPercentage: 20,
+
+    isFlashDeal: false,
+
+    rating: {
+      rate: 4.3,
+      count: 192,
+    },
+
+    stock: 14,
+
+    tags: ["smartwatch", "wearable", "technology", "watch"],
+    brand: "Generic",
+    sku: "TECH-WAT-073",
+
+    weight: 0.12,
+
+    dimensions: {
+      width: 4,
+      height: 5,
+      depth: 1,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Black", "Silver"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-23T09:00:00.000Z",
+      updatedAt: "2026-08-23T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/ae/79/08/ae79083e5ae4dacaedfbc804fadd75c4.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/ae/79/08/ae79083e5ae4dacaedfbc804fadd75c4.jpg",
+  },
+
+  {
+    id: 74,
+    title: "Smartphone Pro Max",
+    description:
+      "A modern smartphone with a large display and premium design built for communication, entertainment, photography, and everyday productivity.",
+    category: "tech",
+
+    price: 185000,
+    actualPrice: 215000,
+    discountPercentage: 13.95,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.8,
+      count: 451,
+    },
+
+    stock: 6,
+
+    tags: ["smartphone", "phone", "mobile", "technology"],
+    brand: "Generic",
+    sku: "TECH-PHO-074",
+
+    weight: 0.22,
+
+    dimensions: {
+      width: 8,
+      height: 16,
+      depth: 1,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Black", "Silver", "Blue"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-24T09:00:00.000Z",
+      updatedAt: "2026-08-24T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/1200x/e0/95/bf/e095bf8dfc9e550a9a32f3e26c32bac1.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/1200x/e0/95/bf/e095bf8dfc9e550a9a32f3e26c32bac1.jpg",
+  },
+
+  {
+    id: 75,
+    title: "Premium Smartphone",
+    description:
+      "A premium smartphone designed with a sleek body, large display, and modern features for everyday users.",
+    category: "tech",
+
+    price: 245000,
+    actualPrice: 280000,
+    discountPercentage: 12.5,
+
+    isFlashDeal: false,
+
+    rating: {
+      rate: 4.7,
+      count: 376,
+    },
+
+    stock: 5,
+
+    tags: ["smartphone", "mobile", "premium", "technology"],
+    brand: "Generic",
+    sku: "TECH-PHO-075",
+
+    weight: 0.21,
+
+    dimensions: {
+      width: 8,
+      height: 16,
+      depth: 1,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Black", "White", "Blue"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-25T09:00:00.000Z",
+      updatedAt: "2026-08-25T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/1200x/8e/30/01/8e3001138727068c5850d33a467a83d6.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/1200x/8e/30/01/8e3001138727068c5850d33a467a83d6.jpg",
+  },
+
+  {
+    id: 76,
+    title: "Wireless Bluetooth Speaker",
+    description:
+      "A portable wireless speaker designed for music and entertainment with a compact modern appearance.",
+    category: "tech",
+
+    price: 12500,
+    actualPrice: 16000,
+    discountPercentage: 21.88,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.1,
+      count: 173,
+    },
+
+    stock: 22,
+
+    tags: ["speaker", "bluetooth", "wireless", "audio"],
+    brand: "Generic",
+    sku: "TECH-SPK-076",
+
+    weight: 0.7,
+
+    dimensions: {
+      width: 10,
+      height: 8,
+      depth: 10,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Black", "Blue", "Red"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-26T09:00:00.000Z",
+      updatedAt: "2026-08-26T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/01/25/11/01251172996a8bb811c24441acbd5df9.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/01/25/11/01251172996a8bb811c24441acbd5df9.jpg",
+  },
+
+  {
+    id: 77,
+    title: "Smartphone Camera Edition",
+    description:
+      "A stylish smartphone focused on everyday photography, communication, entertainment, and mobile productivity.",
+    category: "tech",
+
+    price: 95000,
+    actualPrice: 115000,
+    discountPercentage: 17.39,
+
+    isFlashDeal: false,
+
+    rating: {
+      rate: 4.5,
+      count: 286,
+    },
+
+    stock: 8,
+
+    tags: ["smartphone", "camera", "mobile", "phone"],
+    brand: "Generic",
+    sku: "TECH-PHO-077",
+
+    weight: 0.21,
+
+    dimensions: {
+      width: 8,
+      height: 16,
+      depth: 1,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Black", "Blue"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-27T09:00:00.000Z",
+      updatedAt: "2026-08-27T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/ac/df/7e/acdf7eb60e5d72b8120be562ddf474b0.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/ac/df/7e/acdf7eb60e5d72b8120be562ddf474b0.jpg",
+  },
+
+  {
+    id: 78,
+    title: "Modern Tablet",
+    description:
+      "A slim tablet designed for browsing, streaming, studying, reading, and everyday digital activities.",
+    category: "tech",
+
+    price: 78000,
+    actualPrice: 95000,
+    discountPercentage: 17.89,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.4,
+      count: 231,
+    },
+
+    stock: 10,
+
+    tags: ["tablet", "technology", "mobile", "device"],
+    brand: "Generic",
+    sku: "TECH-TAB-078",
+
+    weight: 0.5,
+
+    dimensions: {
+      width: 17,
+      height: 25,
+      depth: 1,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Silver", "Black"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-28T09:00:00.000Z",
+      updatedAt: "2026-08-28T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/be/12/0f/be120fa45b0804706be487ba95b5a582.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/be/12/0f/be120fa45b0804706be487ba95b5a582.jpg",
+  },
+
+  {
+    id: 79,
+    title: "Portable Bluetooth Speaker Pro",
+    description:
+      "A portable speaker with a stylish design made for music, outdoor entertainment, and everyday listening.",
+    category: "tech",
+
+    price: 24500,
+    actualPrice: 30000,
+    discountPercentage: 18.33,
+
+    isFlashDeal: false,
+
+    rating: {
+      rate: 4.4,
+      count: 198,
+    },
+
+    stock: 16,
+
+    tags: ["speaker", "bluetooth", "portable", "audio"],
+    brand: "Generic",
+    sku: "TECH-SPK-079",
+
+    weight: 0.8,
+
+    dimensions: {
+      width: 12,
+      height: 10,
+      depth: 12,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Black", "Grey"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-29T09:00:00.000Z",
+      updatedAt: "2026-08-29T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/44/ba/07/44ba070e3ce7f45a73634342bf57191f.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/44/ba/07/44ba070e3ce7f45a73634342bf57191f.jpg",
+  },
+
+  {
+    id: 80,
+    title: "Smart Watch Ultra",
+    description:
+      "A premium smartwatch with a bold design made for everyday wear and modern digital lifestyles.",
+    category: "tech",
+
+    price: 42000,
+    actualPrice: 52000,
+    discountPercentage: 19.23,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.7,
+      count: 344,
+    },
+
+    stock: 9,
+
+    tags: ["smartwatch", "wearable", "watch", "technology"],
+    brand: "Generic",
+    sku: "TECH-WAT-080",
+
+    weight: 0.15,
+
+    dimensions: {
+      width: 5,
+      height: 5,
+      depth: 1,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Black", "Orange", "Silver"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-30T09:00:00.000Z",
+      updatedAt: "2026-08-30T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/bb/31/c2/bb31c26fcffdf72b62c5895e96d42b7a.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/bb/31/c2/bb31c26fcffdf72b62c5895e96d42b7a.jpg",
+  },
+
+  {
+    id: 81,
+    title: "Modern Wireless Keyboard",
+    description:
+      "A clean wireless keyboard designed for computers, laptops, workspaces, and everyday typing.",
+    category: "tech",
+
+    price: 18000,
+    actualPrice: 22000,
+    discountPercentage: 18.18,
+
+    isFlashDeal: false,
+
+    rating: {
+      rate: 4.4,
+      count: 156,
+    },
+
+    stock: 19,
+
+    tags: ["keyboard", "wireless", "computer", "accessories"],
+    brand: "Generic",
+    sku: "TECH-KEY-081",
+
+    weight: 0.6,
+
+    dimensions: {
+      width: 14,
+      height: 43,
+      depth: 3,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Black", "White"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-08-31T09:00:00.000Z",
+      updatedAt: "2026-08-31T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/ba/94/0f/ba940f2393bfb0194fdc928cf346d241.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/ba/94/0f/ba940f2393bfb0194fdc928cf346d241.jpg",
+  },
+
+  {
+    id: 82,
+    title: "Premium Laptop",
+    description:
+      "A modern laptop designed for productivity, studying, browsing, programming, and everyday computing.",
+    category: "tech",
+
+    price: 285000,
+    actualPrice: 320000,
+    discountPercentage: 10.94,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.8,
+      count: 412,
+    },
+
+    stock: 5,
+
+    tags: ["laptop", "computer", "productivity", "technology"],
+    brand: "Generic",
+    sku: "TECH-LAP-082",
+
+    weight: 1.5,
+
+    dimensions: {
+      width: 23,
+      height: 33,
+      depth: 2,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 3-5 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Silver", "Black"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-09-01T09:00:00.000Z",
+      updatedAt: "2026-09-01T09:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/1200x/d8/61/59/d861596e77d84dd2333181493ab928b5.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/1200x/d8/61/59/d861596e77d84dd2333181493ab928b5.jpg",
+  },
+
+  {
+    id: 83,
+    title: "Compact Wireless Mouse",
+    description:
+      "A compact wireless mouse with a simple modern design for laptops, desktops, offices, and study spaces.",
+    category: "tech",
+
+    price: 8500,
+    actualPrice: 11000,
+    discountPercentage: 22.73,
+
+    isFlashDeal: false,
+
+    rating: {
+      rate: 4.3,
+      count: 143,
+    },
+
+    stock: 25,
+
+    tags: ["mouse", "wireless", "computer", "accessories"],
+    brand: "Generic",
+    sku: "TECH-MOU-083",
+
+    weight: 0.1,
+
+    dimensions: {
+      width: 6,
+      height: 4,
+      depth: 10,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Black", "White", "Grey"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-09-01T10:00:00.000Z",
+      updatedAt: "2026-09-01T10:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/21/5f/e1/215fe14e6544dc1048dd60070037efb4.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/21/5f/e1/215fe14e6544dc1048dd60070037efb4.jpg",
+  },
+
+  {
+    id: 84,
+    title: "Tablet Pro",
+    description:
+      "A premium tablet designed for entertainment, browsing, studying, reading, and everyday digital tasks.",
+    category: "tech",
+
+    price: 110000,
+    actualPrice: 130000,
+    discountPercentage: 15.38,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.7,
+      count: 298,
+    },
+
+    stock: 7,
+
+    tags: ["tablet", "technology", "device", "mobile"],
+    brand: "Generic",
+    sku: "TECH-TAB-084",
+
+    weight: 0.55,
+
+    dimensions: {
+      width: 18,
+      height: 26,
+      depth: 1,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Silver", "Black", "Blue"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-09-01T11:00:00.000Z",
+      updatedAt: "2026-09-01T11:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/1200x/50/e8/33/50e833110c432c3acf8ea203450a3371.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/1200x/50/e8/33/50e833110c432c3acf8ea203450a3371.jpg",
+  },
+
+  {
+    id: 85,
+    title: "Portable Gaming Console",
+    description:
+      "A compact gaming device designed for portable entertainment and casual gaming sessions.",
+    category: "tech",
+
+    price: 65000,
+    actualPrice: 78000,
+    discountPercentage: 16.67,
+
+    isFlashDeal: false,
+
+    rating: {
+      rate: 4.6,
+      count: 235,
+    },
+
+    stock: 8,
+
+    tags: ["gaming", "console", "portable", "technology"],
+    brand: "Generic",
+    sku: "TECH-GAM-085",
+
+    weight: 0.4,
+
+    dimensions: {
+      width: 9,
+      height: 20,
+      depth: 3,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Black", "White"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-09-01T12:00:00.000Z",
+      updatedAt: "2026-09-01T12:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/6d/17/6e/6d176e160604ed8bb0a437cb7a5f26ab.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/6d/17/6e/6d176e160604ed8bb0a437cb7a5f26ab.jpg",
+  },
+
+  {
+    id: 86,
+    title: "Premium Gaming Controller",
+    description:
+      "A modern gaming controller designed for comfortable gameplay and compatibility with popular gaming setups.",
+    category: "tech",
+
+    price: 35000,
+    actualPrice: 42000,
+    discountPercentage: 16.67,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.5,
+      count: 187,
+    },
+
+    stock: 11,
+
+    tags: ["gaming", "controller", "console", "accessories"],
+    brand: "Generic",
+    sku: "TECH-GAM-086",
+
+    weight: 0.3,
+
+    dimensions: {
+      width: 16,
+      height: 10,
+      depth: 6,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Black", "White"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-09-01T13:00:00.000Z",
+      updatedAt: "2026-09-01T13:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/1200x/35/9d/56/359d56aa296b101094588c7076d87275.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/1200x/35/9d/56/359d56aa296b101094588c7076d87275.jpg",
+  },
+
+  {
+    id: 87,
+    title: "Modern Desktop Monitor",
+    description:
+      "A modern display designed for work, entertainment, gaming, and everyday computer use.",
+    category: "tech",
+
+    price: 89000,
+    actualPrice: 105000,
+    discountPercentage: 15.24,
+
+    isFlashDeal: false,
+
+    rating: {
+      rate: 4.6,
+      count: 264,
+    },
+
+    stock: 9,
+
+    tags: ["monitor", "display", "computer", "technology"],
+    brand: "Generic",
+    sku: "TECH-MON-087",
+
+    weight: 3.5,
+
+    dimensions: {
+      width: 45,
+      height: 36,
+      depth: 20,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 3-5 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Black", "Silver"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-09-01T14:00:00.000Z",
+      updatedAt: "2026-09-01T14:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/b1/45/e3/b145e37390636434c36b9f9f6be0c751.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/b1/45/e3/b145e37390636434c36b9f9f6be0c751.jpg",
+  },
+
+  {
+    id: 88,
+    title: "Premium Smartphone Pro",
+    description:
+      "A premium smartphone featuring a sleek modern design intended for users who want a powerful everyday mobile device.",
+    category: "tech",
+
+    price: 175000,
+    actualPrice: 205000,
+    discountPercentage: 14.63,
+
+    isFlashDeal: true,
+
+    rating: {
+      rate: 4.9,
+      count: 521,
+    },
+
+    stock: 4,
+
+    tags: ["smartphone", "phone", "premium", "mobile"],
+    brand: "Generic",
+    sku: "TECH-PHO-088",
+
+    weight: 0.22,
+
+    dimensions: {
+      width: 8,
+      height: 16,
+      depth: 1,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: [],
+    colors: ["Black", "Silver", "Blue"],
+
+    reviews: [],
+
+    returnPolicy: "30 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-09-01T15:00:00.000Z",
+      updatedAt: "2026-09-01T15:00:00.000Z",
+    },
+
+    images: [
+      "https://i.pinimg.com/1200x/bb/23/d6/bb23d6befc0efe27807a95b03af69f47.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/1200x/bb/23/d6/bb23d6befc0efe27807a95b03af69f47.jpg",
+  },
+
+  {
+    id: 89,
+    title: "Luxury Glow Face Serum",
+    description:
+      "A lightweight facial serum designed to support a smooth, hydrated and naturally glowing appearance.",
+    category: "beauty",
+
+    price: 18500,
+    actualPrice: 22000,
+
+    discountPercentage: 15.91,
+
+    rating: {
+      rate: 4.6,
+      count: 184,
+    },
+
+    stock: 18,
+
+    tags: ["skincare", "serum", "glow"],
+    brand: "Glow Essentials",
+    sku: "BEA-GLO-SER-089",
+
+    weight: 0.25,
+
+    dimensions: {
+      width: 6,
+      height: 12,
+      depth: 6,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["30ml", "50ml"],
+    colors: ["Clear"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Really nice texture and easy to use.",
+        date: "2026-01-15T09:41:02.053Z",
+        reviewerName: "Amara James",
+        reviewerEmail: "amara@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: true,
+
+    meta: {
+      createdAt: "2026-01-15T09:41:02.053Z",
+      updatedAt: "2026-01-15T09:41:02.053Z",
+      barcode: "8901000000089",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/a0/0e/07/a00e072a1b1288010186291bcf13425d.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/a0/0e/07/a00e072a1b1288010186291bcf13425d.jpg",
+  },
+
+  {
+    id: 90,
+    title: "Hydrating Facial Moisturizer",
+    description:
+      "A daily moisturizer formulated to help keep the skin feeling soft, comfortable and hydrated.",
+    category: "beauty",
+
+    price: 12500,
+    actualPrice: 15000,
+
+    discountPercentage: 16.67,
+
+    rating: {
+      rate: 4.4,
+      count: 126,
+    },
+
+    stock: 24,
+
+    tags: ["skincare", "moisturizer", "hydration"],
+    brand: "Pure Skin",
+    sku: "BEA-PUR-MOI-090",
+
+    weight: 0.3,
+
+    dimensions: {
+      width: 7,
+      height: 8,
+      depth: 7,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["50ml", "100ml"],
+    colors: ["White"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Feels light on my skin.",
+        date: "2026-01-18T09:41:02.053Z",
+        reviewerName: "Blessing Cole",
+        reviewerEmail: "blessing@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: false,
+
+    meta: {
+      createdAt: "2026-01-18T09:41:02.053Z",
+      updatedAt: "2026-01-18T09:41:02.053Z",
+      barcode: "8901000000090",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/28/dd/6a/28dd6a1f6a3d6b84a1b5aa112d617972.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/28/dd/6a/28dd6a1f6a3d6b84a1b5aa112d617972.jpg",
+  },
+
+  {
+    id: 91,
+    title: "Vitamin C Brightening Cream",
+    description:
+      "A nourishing facial cream designed to complement a simple daily skincare routine.",
+    category: "beauty",
+
+    price: 22000,
+    actualPrice: 28000,
+
+    discountPercentage: 21.43,
+
+    rating: {
+      rate: 4.7,
+      count: 219,
+    },
+
+    stock: 15,
+
+    tags: ["skincare", "vitamin c", "cream"],
+    brand: "Radiant Care",
+    sku: "BEA-RAD-CRE-091",
+
+    weight: 0.28,
+
+    dimensions: {
+      width: 7,
+      height: 9,
+      depth: 7,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["30ml", "50ml"],
+    colors: ["Cream"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Very smooth and easy to apply.",
+        date: "2026-02-01T09:41:02.053Z",
+        reviewerName: "Dami Wilson",
+        reviewerEmail: "dami@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: true,
+
+    meta: {
+      createdAt: "2026-02-01T09:41:02.053Z",
+      updatedAt: "2026-02-01T09:41:02.053Z",
+      barcode: "8901000000091",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/aa/d3/e2/aad3e2cb0ae987a8bd37632a4e198c01.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/aa/d3/e2/aad3e2cb0ae987a8bd37632a4e198c01.jpg",
+  },
+
+  {
+    id: 92,
+    title: "Matte Lipstick Collection",
+    description:
+      "A stylish collection of creamy matte lip colors suitable for everyday makeup looks.",
+    category: "beauty",
+
+    price: 9500,
+    actualPrice: 12000,
+
+    discountPercentage: 20.83,
+
+    rating: {
+      rate: 4.5,
+      count: 173,
+    },
+
+    stock: 32,
+
+    tags: ["makeup", "lipstick", "matte"],
+    brand: "Velvet Beauty",
+    sku: "BEA-VEL-LIP-092",
+
+    weight: 0.15,
+
+    dimensions: {
+      width: 5,
+      height: 9,
+      depth: 5,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["3.5g"],
+    colors: ["Red", "Nude", "Pink", "Brown"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "The colors are beautiful.",
+        date: "2026-02-04T09:41:02.053Z",
+        reviewerName: "Tolu Smith",
+        reviewerEmail: "tolu@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: false,
+
+    meta: {
+      createdAt: "2026-02-04T09:41:02.053Z",
+      updatedAt: "2026-02-04T09:41:02.053Z",
+      barcode: "8901000000092",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/1200x/3e/97/9e/3e979e954c93e0a0fc641d830e09b136.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/1200x/3e/97/9e/3e979e954c93e0a0fc641d830e09b136.jpg",
+  },
+
+  {
+    id: 93,
+    title: "Professional Makeup Brush Set",
+    description:
+      "A versatile set of makeup brushes designed for applying and blending different makeup products.",
+    category: "beauty",
+
+    price: 16500,
+    actualPrice: 20000,
+
+    discountPercentage: 17.5,
+
+    rating: {
+      rate: 4.6,
+      count: 201,
+    },
+
+    stock: 21,
+
+    tags: ["makeup", "brushes", "beauty tools"],
+    brand: "Beauty Pro",
+    sku: "BEA-BEP-BRU-093",
+
+    weight: 0.4,
+
+    dimensions: {
+      width: 10,
+      height: 20,
+      depth: 5,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["8-piece", "12-piece"],
+    colors: ["Black", "Pink"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Great brush set for the price.",
+        date: "2026-02-08T09:41:02.053Z",
+        reviewerName: "Sarah Ade",
+        reviewerEmail: "sarah@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: true,
+
+    meta: {
+      createdAt: "2026-02-08T09:41:02.053Z",
+      updatedAt: "2026-02-08T09:41:02.053Z",
+      barcode: "8901000000093",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/d2/0d/e4/d20de4bb9e3d82d4395ba7d863716c5a.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/d2/0d/e4/d20de4bb9e3d82d4395ba7d863716c5a.jpg",
+  },
+
+  {
+    id: 94,
+    title: "Luxury Perfume For Women",
+    description:
+      "A sophisticated fragrance with a modern scent profile designed for everyday and special occasions.",
+    category: "beauty",
+
+    price: 42000,
+    actualPrice: 50000,
+
+    discountPercentage: 16,
+
+    rating: {
+      rate: 4.8,
+      count: 347,
+    },
+
+    stock: 12,
+
+    tags: ["perfume", "fragrance", "women"],
+    brand: "Aurelia",
+    sku: "BEA-AUR-PER-094",
+
+    weight: 0.5,
+
+    dimensions: {
+      width: 8,
+      height: 15,
+      depth: 6,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["50ml", "100ml"],
+    colors: ["Gold"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Beautiful fragrance.",
+        date: "2026-02-11T09:41:02.053Z",
+        reviewerName: "Maya Brown",
+        reviewerEmail: "maya@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: false,
+
+    meta: {
+      createdAt: "2026-02-11T09:41:02.053Z",
+      updatedAt: "2026-02-11T09:41:02.053Z",
+      barcode: "8901000000094",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/74/88/d7/7488d7bac79b5bd42e8fb56b5bb62ae9.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/74/88/d7/7488d7bac79b5bd42e8fb56b5bb62ae9.jpg",
+  },
+
+  {
+    id: 95,
+    title: "Hydrating Body Lotion",
+    description:
+      "A nourishing body lotion designed to leave the skin feeling soft and moisturized.",
+    category: "beauty",
+
+    price: 11000,
+    actualPrice: 14000,
+
+    discountPercentage: 21.43,
+
+    rating: {
+      rate: 4.3,
+      count: 142,
+    },
+
+    stock: 27,
+
+    tags: ["body care", "lotion", "hydration"],
+    brand: "Soft Touch",
+    sku: "BEA-SOF-LOT-095",
+
+    weight: 0.5,
+
+    dimensions: {
+      width: 8,
+      height: 18,
+      depth: 6,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["250ml", "500ml"],
+    colors: ["White"],
+
+    reviews: [
+      {
+        rating: 4,
+        comment: "Nice and moisturizing.",
+        date: "2026-02-15T09:41:02.053Z",
+        reviewerName: "Joy Adams",
+        reviewerEmail: "joy@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: true,
+
+    meta: {
+      createdAt: "2026-02-15T09:41:02.053Z",
+      updatedAt: "2026-02-15T09:41:02.053Z",
+      barcode: "8901000000095",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/11/7e/6f/117e6f543486b133c73f60ee3f56c423.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/11/7e/6f/117e6f543486b133c73f60ee3f56c423.jpg",
+  },
+
+  {
+    id: 96,
+    title: "Rose Face Mask",
+    description:
+      "A refreshing facial mask designed as an easy addition to a relaxing skincare routine.",
+    category: "beauty",
+
+    price: 7500,
+    actualPrice: 9500,
+
+    discountPercentage: 21.05,
+
+    rating: {
+      rate: 4.4,
+      count: 118,
+    },
+
+    stock: 30,
+
+    tags: ["skincare", "face mask", "rose"],
+    brand: "Bloom Beauty",
+    sku: "BEA-BLO-MAS-096",
+
+    weight: 0.2,
+
+    dimensions: {
+      width: 7,
+      height: 10,
+      depth: 5,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["50g", "100g"],
+    colors: ["Pink"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Feels refreshing.",
+        date: "2026-02-18T09:41:02.053Z",
+        reviewerName: "Nina Paul",
+        reviewerEmail: "nina@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: false,
+
+    meta: {
+      createdAt: "2026-02-18T09:41:02.053Z",
+      updatedAt: "2026-02-18T09:41:02.053Z",
+      barcode: "8901000000096",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/74/f8/0d/74f80df7a6f42c85f546adf60c025050.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/74/f8/0d/74f80df7a6f42c85f546adf60c025050.jpg",
+  },
+
+  {
+    id: 97,
+    title: "Complete Makeup Kit",
+    description:
+      "A convenient makeup collection containing essential products for creating different everyday looks.",
+    category: "beauty",
+
+    price: 28500,
+    actualPrice: 35000,
+
+    discountPercentage: 18.57,
+
+    rating: {
+      rate: 4.7,
+      count: 256,
+    },
+
+    stock: 14,
+
+    tags: ["makeup", "makeup kit", "cosmetics"],
+    brand: "Glam House",
+    sku: "BEA-GLA-KIT-097",
+
+    weight: 0.7,
+
+    dimensions: {
+      width: 18,
+      height: 12,
+      depth: 8,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["Standard"],
+    colors: ["Multi"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Everything I needed in one kit.",
+        date: "2026-02-20T09:41:02.053Z",
+        reviewerName: "Ella Green",
+        reviewerEmail: "ella@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: true,
+
+    meta: {
+      createdAt: "2026-02-20T09:41:02.053Z",
+      updatedAt: "2026-02-20T09:41:02.053Z",
+      barcode: "8901000000097",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/4c/10/78/4c1078c44bc4a0c4590cd848523ef8ac.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/4c/10/78/4c1078c44bc4a0c4590cd848523ef8ac.jpg",
+  },
+
+  {
+    id: 98,
+    title: "Daily Sunscreen SPF 50",
+    description:
+      "A lightweight daily sunscreen designed to fit easily into a regular skincare routine.",
+    category: "beauty",
+
+    price: 13500,
+    actualPrice: 17000,
+
+    discountPercentage: 20.59,
+
+    rating: {
+      rate: 4.6,
+      count: 193,
+    },
+
+    stock: 25,
+
+    tags: ["skincare", "sunscreen", "spf"],
+    brand: "Sun Shield",
+    sku: "BEA-SUN-SPF-098",
+
+    weight: 0.2,
+
+    dimensions: {
+      width: 6,
+      height: 14,
+      depth: 5,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["30ml", "50ml"],
+    colors: ["White"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Lightweight and comfortable.",
+        date: "2026-02-22T09:41:02.053Z",
+        reviewerName: "Kemi Johnson",
+        reviewerEmail: "kemi@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: false,
+
+    meta: {
+      createdAt: "2026-02-22T09:41:02.053Z",
+      updatedAt: "2026-02-22T09:41:02.053Z",
+      barcode: "8901000000098",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/c3/65/0c/c3650c6633a7d8634e1f0a625c1fd2a9.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/c3/65/0c/c3650c6633a7d8634e1f0a625c1fd2a9.jpg",
+  },
+
+  {
+    id: 99,
+    title: "Luxury Eyeshadow Palette",
+    description:
+      "A versatile eyeshadow palette featuring a selection of shades for creating different makeup styles.",
+    category: "beauty",
+
+    price: 19500,
+    actualPrice: 24000,
+
+    discountPercentage: 18.75,
+
+    rating: {
+      rate: 4.8,
+      count: 291,
+    },
+
+    stock: 16,
+
+    tags: ["makeup", "eyeshadow", "cosmetics"],
+    brand: "Glam House",
+    sku: "BEA-GLA-EYE-099",
+
+    weight: 0.35,
+
+    dimensions: {
+      width: 12,
+      height: 10,
+      depth: 2,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["12 shades", "18 shades"],
+    colors: ["Brown", "Pink", "Gold"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Beautiful range of colors.",
+        date: "2026-02-25T09:41:02.053Z",
+        reviewerName: "Lara White",
+        reviewerEmail: "lara@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: true,
+
+    meta: {
+      createdAt: "2026-02-25T09:41:02.053Z",
+      updatedAt: "2026-02-25T09:41:02.053Z",
+      barcode: "8901000000099",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/4c/28/85/4c28853279afbfbaad098dab66a55e19.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/4c/28/85/4c28853279afbfbaad098dab66a55e19.jpg",
+  },
+
+  {
+    id: 100,
+    title: "Nourishing Hair Care Set",
+    description:
+      "A complete hair care set designed to support a simple and refreshing hair care routine.",
+    category: "beauty",
+
+    price: 24500,
+    actualPrice: 30000,
+
+    discountPercentage: 18.33,
+
+    rating: {
+      rate: 4.5,
+      count: 164,
+    },
+
+    stock: 19,
+
+    tags: ["hair care", "shampoo", "conditioner"],
+    brand: "Nature Glow",
+    sku: "BEA-NAT-HAI-100",
+
+    weight: 0.9,
+
+    dimensions: {
+      width: 15,
+      height: 22,
+      depth: 8,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["250ml", "500ml"],
+    colors: ["Green", "White"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Good value as a set.",
+        date: "2026-02-28T09:41:02.053Z",
+        reviewerName: "Ife Brown",
+        reviewerEmail: "ife@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: false,
+
+    meta: {
+      createdAt: "2026-02-28T09:41:02.053Z",
+      updatedAt: "2026-02-28T09:41:02.053Z",
+      barcode: "8901000000100",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/8d/00/8a/8d008a81d7ec7e65218e4a3d8859e76c.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/8d/00/8a/8d008a81d7ec7e65218e4a3d8859e76c.jpg",
+  },
+
+  {
+    id: 101,
+    title: "Rose Gold Makeup Set",
+    description:
+      "A stylish collection of everyday makeup essentials presented in a compact beauty set.",
+    category: "beauty",
+
+    price: 32000,
+    actualPrice: 40000,
+
+    discountPercentage: 20,
+
+    rating: {
+      rate: 4.7,
+      count: 238,
+    },
+
+    stock: 13,
+
+    tags: ["makeup", "beauty set", "cosmetics"],
+    brand: "Velvet Beauty",
+    sku: "BEA-VEL-SET-101",
+
+    weight: 0.65,
+
+    dimensions: {
+      width: 18,
+      height: 14,
+      depth: 6,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["Standard"],
+    colors: ["Rose Gold"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Looks premium and works well.",
+        date: "2026-03-01T09:41:02.053Z",
+        reviewerName: "Ada King",
+        reviewerEmail: "ada@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: true,
+
+    meta: {
+      createdAt: "2026-03-01T09:41:02.053Z",
+      updatedAt: "2026-03-01T09:41:02.053Z",
+      barcode: "8901000000101",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/1200x/a6/3b/20/a63b20b9bb72d2f7fdd411dc321ccb47.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/1200x/a6/3b/20/a63b20b9bb72d2f7fdd411dc321ccb47.jpg",
+  },
+
+  {
+    id: 102,
+    title: "Gentle Facial Cleanser",
+    description:
+      "A gentle facial cleanser made for a simple daily skincare routine.",
+    category: "beauty",
+
+    price: 8500,
+    actualPrice: 11000,
+
+    discountPercentage: 22.73,
+
+    rating: {
+      rate: 4.4,
+      count: 151,
+    },
+
+    stock: 28,
+
+    tags: ["skincare", "cleanser", "face wash"],
+    brand: "Pure Skin",
+    sku: "BEA-PUR-CLE-102",
+
+    weight: 0.3,
+
+    dimensions: {
+      width: 6,
+      height: 16,
+      depth: 5,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["150ml", "250ml"],
+    colors: ["White"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Gentle and easy to use.",
+        date: "2026-03-04T09:41:02.053Z",
+        reviewerName: "Mariam Lee",
+        reviewerEmail: "mariam@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: false,
+
+    meta: {
+      createdAt: "2026-03-04T09:41:02.053Z",
+      updatedAt: "2026-03-04T09:41:02.053Z",
+      barcode: "8901000000102",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/fb/54/39/fb543907ca76bad97915e893d1caad3c.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/fb/54/39/fb543907ca76bad97915e893d1caad3c.jpg",
+  },
+
+  {
+    id: 103,
+    title: "Premium Facial Care Collection",
+    description:
+      "A premium collection of facial care products designed to complement a complete skincare routine.",
+    category: "beauty",
+
+    price: 46000,
+    actualPrice: 55000,
+
+    discountPercentage: 16.36,
+
+    rating: {
+      rate: 4.9,
+      count: 312,
+    },
+
+    stock: 10,
+
+    tags: ["skincare", "facial care", "premium"],
+    brand: "Radiant Care",
+    sku: "BEA-RAD-COL-103",
+
+    weight: 1,
+
+    dimensions: {
+      width: 22,
+      height: 18,
+      depth: 10,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["Standard"],
+    colors: ["White", "Gold"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Feels like a premium collection.",
+        date: "2026-03-07T09:41:02.053Z",
+        reviewerName: "Rita Young",
+        reviewerEmail: "rita@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: true,
+
+    meta: {
+      createdAt: "2026-03-07T09:41:02.053Z",
+      updatedAt: "2026-03-07T09:41:02.053Z",
+      barcode: "8901000000103",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/95/77/98/957798fd49af8580db5d9f39cac75603.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/95/77/98/957798fd49af8580db5d9f39cac75603.jpg",
+  },
+
+  {
+    id: 104,
+    title: "Natural Hair Styling Cream",
+    description:
+      "A lightweight styling cream designed to help with everyday hair styling and finishing.",
+    category: "beauty",
+
+    price: 10500,
+    actualPrice: 13000,
+
+    discountPercentage: 19.23,
+
+    rating: {
+      rate: 4.3,
+      count: 109,
+    },
+
+    stock: 22,
+
+    tags: ["hair care", "styling", "hair cream"],
+    brand: "Nature Glow",
+    sku: "BEA-NAT-STY-104",
+
+    weight: 0.25,
+
+    dimensions: {
+      width: 7,
+      height: 9,
+      depth: 7,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["100g", "200g"],
+    colors: ["White"],
+
+    reviews: [
+      {
+        rating: 4,
+        comment: "Works nicely for everyday styling.",
+        date: "2026-03-10T09:41:02.053Z",
+        reviewerName: "Tina Mark",
+        reviewerEmail: "tina@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: false,
+
+    meta: {
+      createdAt: "2026-03-10T09:41:02.053Z",
+      updatedAt: "2026-03-10T09:41:02.053Z",
+      barcode: "8901000000104",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/da/76/38/da7638166d98539321a839dce65a1c41.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/da/76/38/da7638166d98539321a839dce65a1c41.jpg",
+  },
+
+  {
+    id: 105,
+    title: "Elegant Beauty Perfume",
+    description:
+      "An elegant fragrance designed with a modern profile suitable for everyday wear.",
+    category: "beauty",
+
+    price: 38000,
+    actualPrice: 45000,
+
+    discountPercentage: 15.56,
+
+    rating: {
+      rate: 4.6,
+      count: 227,
+    },
+
+    stock: 11,
+
+    tags: ["perfume", "fragrance", "beauty"],
+    brand: "Aurelia",
+    sku: "BEA-AUR-PER-105",
+
+    weight: 0.45,
+
+    dimensions: {
+      width: 8,
+      height: 15,
+      depth: 6,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["50ml", "100ml"],
+    colors: ["Pink", "Gold"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Very elegant packaging.",
+        date: "2026-03-13T09:41:02.053Z",
+        reviewerName: "Grace Kim",
+        reviewerEmail: "grace@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: true,
+
+    meta: {
+      createdAt: "2026-03-13T09:41:02.053Z",
+      updatedAt: "2026-03-13T09:41:02.053Z",
+      barcode: "8901000000105",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/69/cc/7d/69cc7dfdc1bae016e5f65fe2effcf411.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/69/cc/7d/69cc7dfdc1bae016e5f65fe2effcf411.jpg",
+  },
+
+  {
+    id: 106,
+    title: "Luxury Makeup Organizer",
+    description:
+      "A stylish organizer designed to keep makeup and beauty essentials neatly arranged.",
+    category: "beauty",
+
+    price: 14500,
+    actualPrice: 18000,
+
+    discountPercentage: 19.44,
+
+    rating: {
+      rate: 4.5,
+      count: 137,
+    },
+
+    stock: 17,
+
+    tags: ["beauty tools", "organizer", "makeup"],
+    brand: "Beauty Pro",
+    sku: "BEA-BEP-ORG-106",
+
+    weight: 0.8,
+
+    dimensions: {
+      width: 25,
+      height: 15,
+      depth: 18,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["Medium", "Large"],
+    colors: ["Clear", "Pink"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Very useful for organizing products.",
+        date: "2026-03-16T09:41:02.053Z",
+        reviewerName: "Lola Ade",
+        reviewerEmail: "lola@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: false,
+
+    meta: {
+      createdAt: "2026-03-16T09:41:02.053Z",
+      updatedAt: "2026-03-16T09:41:02.053Z",
+      barcode: "8901000000106",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/ec/9d/0c/ec9d0c390040164b43afdf2f5c1857cd.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/ec/9d/0c/ec9d0c390040164b43afdf2f5c1857cd.jpg",
+  },
+
+  {
+    id: 107,
+    title: "Complete Skincare Starter Kit",
+    description:
+      "A convenient skincare starter collection containing everyday facial care essentials.",
+    category: "beauty",
+
+    price: 35000,
+    actualPrice: 42000,
+
+    discountPercentage: 16.67,
+
+    rating: {
+      rate: 4.8,
+      count: 274,
+    },
+
+    stock: 14,
+
+    tags: ["skincare", "starter kit", "beauty"],
+    brand: "Glow Essentials",
+    sku: "BEA-GLO-KIT-107",
+
+    weight: 0.8,
+
+    dimensions: {
+      width: 20,
+      height: 18,
+      depth: 9,
+    },
+
+    warrantyInformation: "6 months warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["Standard"],
+    colors: ["White", "Pink"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Great starter collection.",
+        date: "2026-03-18T09:41:02.053Z",
+        reviewerName: "Mimi James",
+        reviewerEmail: "mimi@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: true,
+
+    meta: {
+      createdAt: "2026-03-18T09:41:02.053Z",
+      updatedAt: "2026-03-18T09:41:02.053Z",
+      barcode: "8901000000107",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/03/cb/10/03cb10f29ef831f832cdfde437d917c8.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/03/cb/10/03cb10f29ef831f832cdfde437d917c8.jpg",
+  },
+
+  {
+    id: 108,
+    title: "Premium Beauty Essentials Set",
+    description:
+      "A premium collection of beauty essentials designed for a complete everyday beauty routine.",
+    category: "beauty",
+
+    price: 48000,
+    actualPrice: 60000,
+
+    discountPercentage: 20,
+
+    rating: {
+      rate: 4.9,
+      count: 356,
+    },
+
+    stock: 9,
+
+    tags: ["beauty", "premium", "cosmetics"],
+    brand: "Velvet Beauty",
+    sku: "BEA-VEL-PRE-108",
+
+    weight: 1,
+
+    dimensions: {
+      width: 24,
+      height: 20,
+      depth: 10,
+    },
+
+    warrantyInformation: "1 year warranty",
+    shippingInformation: "Ships in 2-3 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["Standard"],
+    colors: ["Gold", "Pink", "White"],
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Beautiful collection and presentation.",
+        date: "2026-03-20T09:41:02.053Z",
+        reviewerName: "Aisha Brown",
+        reviewerEmail: "aisha@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    flashDeal: false,
+
+    meta: {
+      createdAt: "2026-03-20T09:41:02.053Z",
+      updatedAt: "2026-03-20T09:41:02.053Z",
+      barcode: "8901000000108",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/08/69/e3/0869e3f0f456dcb80463987516c85dfe.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/08/69/e3/0869e3f0f456dcb80463987516c85dfe.jpg",
+  },
+
+  {
+    id: 109,
+    title: "Classic Black Casual T-Shirt",
+    description:
+      "A clean and versatile black casual T-shirt designed for everyday comfort and easy styling.",
+    category: "fashion",
+
+    price: 8500,
+    actualPrice: 10000,
+    discountPercentage: 15,
+
+    rating: {
+      rate: 4.5,
+      count: 184,
+    },
+
+    stock: 18,
+
+    tags: ["fashion", "t-shirt", "casual", "mens-wear"],
+    brand: "UrbanStyle",
+    sku: "FAS-URB-001",
+
+    weight: 0.3,
+
+    dimensions: {
+      width: 30,
+      height: 2,
+      depth: 25,
+    },
+
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: ["Black"],
+
+    flashDeal: true,
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Very comfortable and fits well.",
+        date: "2026-05-10T09:41:02.053Z",
+        reviewerName: "Daniel Smith",
+        reviewerEmail: "daniel@example.com",
+      },
+      {
+        rating: 4,
+        comment: "Good quality for the price.",
+        date: "2026-05-15T09:41:02.053Z",
+        reviewerName: "James Brown",
+        reviewerEmail: "james@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-05-01T09:41:02.053Z",
+      updatedAt: "2026-05-01T09:41:02.053Z",
+      barcode: "89000000109",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/7d/20/17/7d2017c9ef0e484e0ae15bdc54f26285.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/7d/20/17/7d2017c9ef0e484e0ae15bdc54f26285.jpg",
+  },
+
+  {
+    id: 110,
+    title: "White Oversized Casual T-Shirt",
+    description:
+      "A modern oversized white T-shirt with a relaxed fit for casual everyday outfits.",
+    category: "fashion",
+
+    price: 12000,
+    actualPrice: 15000,
+    discountPercentage: 20,
+
+    rating: {
+      rate: 4.6,
+      count: 231,
+    },
+
+    stock: 24,
+
+    tags: ["fashion", "oversized", "t-shirt", "casual"],
+    brand: "UrbanStyle",
+    sku: "FAS-URB-002",
+
+    weight: 0.35,
+
+    dimensions: {
+      width: 32,
+      height: 2,
+      depth: 27,
+    },
+
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["White"],
+
+    flashDeal: false,
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "The oversized fit is really nice.",
+        date: "2026-05-12T09:41:02.053Z",
+        reviewerName: "Michael Johnson",
+        reviewerEmail: "michael@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-05-02T09:41:02.053Z",
+      updatedAt: "2026-05-02T09:41:02.053Z",
+      barcode: "89000000110",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/ea/2c/f0/ea2cf073fc9a8daabd8b157cd33b9bbb.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/ea/2c/f0/ea2cf073fc9a8daabd8b157cd33b9bbb.jpg",
+  },
+
+  {
+    id: 111,
+    title: "Premium Beige Casual Shirt",
+    description:
+      "A premium beige casual shirt with a simple design suitable for relaxed and smart-casual occasions.",
+    category: "fashion",
+
+    price: 28000,
+    actualPrice: 35000,
+    discountPercentage: 20,
+
+    rating: {
+      rate: 4.7,
+      count: 167,
+    },
+
+    stock: 12,
+
+    tags: ["shirt", "casual", "premium", "mens-wear"],
+    brand: "ClassicFit",
+    sku: "FAS-CLA-003",
+
+    weight: 0.45,
+
+    dimensions: {
+      width: 34,
+      height: 3,
+      depth: 28,
+    },
+
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 3-5 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["M", "L", "XL", "XXL"],
+    colors: ["Beige"],
+
+    flashDeal: true,
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Looks premium and feels comfortable.",
+        date: "2026-05-14T09:41:02.053Z",
+        reviewerName: "Chris Adams",
+        reviewerEmail: "chris@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-05-03T09:41:02.053Z",
+      updatedAt: "2026-05-03T09:41:02.053Z",
+      barcode: "89000000111",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/1200x/76/a8/ca/76a8ca453c6d0f18972bd99ca27279e5.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/1200x/76/a8/ca/76a8ca453c6d0f18972bd99ca27279e5.jpg",
+  },
+
+  {
+    id: 112,
+    title: "Brown Relaxed Fit Shirt",
+    description:
+      "A relaxed-fit brown shirt designed for comfortable everyday wear with a modern appearance.",
+    category: "fashion",
+
+    price: 18500,
+    actualPrice: 22000,
+    discountPercentage: 15.91,
+
+    rating: {
+      rate: 4.3,
+      count: 143,
+    },
+
+    stock: 15,
+
+    tags: ["shirt", "brown", "casual", "fashion"],
+    brand: "ClassicFit",
+    sku: "FAS-CLA-004",
+
+    weight: 0.42,
+
+    dimensions: {
+      width: 33,
+      height: 3,
+      depth: 27,
+    },
+
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Brown"],
+
+    flashDeal: false,
+
+    reviews: [
+      {
+        rating: 4,
+        comment: "Nice shirt and good material.",
+        date: "2026-05-16T09:41:02.053Z",
+        reviewerName: "Alex White",
+        reviewerEmail: "alex@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-05-04T09:41:02.053Z",
+      updatedAt: "2026-05-04T09:41:02.053Z",
+      barcode: "89000000112",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/d9/6e/36/d96e366c11cc8d390fce2c812e02a503.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/d9/6e/36/d96e366c11cc8d390fce2c812e02a503.jpg",
+  },
+
+  {
+    id: 113,
+    title: "Modern Grey Streetwear Outfit",
+    description:
+      "A modern grey streetwear outfit combining comfort and contemporary fashion for casual occasions.",
+    category: "fashion",
+
+    price: 42000,
+    actualPrice: 50000,
+    discountPercentage: 16,
+
+    rating: {
+      rate: 4.8,
+      count: 205,
+    },
+
+    stock: 9,
+
+    tags: ["streetwear", "outfit", "grey", "modern"],
+    brand: "StreetMode",
+    sku: "FAS-STR-005",
+
+    weight: 0.8,
+
+    dimensions: {
+      width: 38,
+      height: 5,
+      depth: 30,
+    },
+
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 3-5 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Grey"],
+
+    flashDeal: true,
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Great streetwear piece.",
+        date: "2026-05-18T09:41:02.053Z",
+        reviewerName: "Kevin Wilson",
+        reviewerEmail: "kevin@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-05-05T09:41:02.053Z",
+      updatedAt: "2026-05-05T09:41:02.053Z",
+      barcode: "89000000113",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/e7/7e/f9/e77ef932bd767eb1cc52494156777700.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/e7/7e/f9/e77ef932bd767eb1cc52494156777700.jpg",
+  },
+
+  {
+    id: 114,
+    title: "Cream Premium Hoodie",
+    description:
+      "A comfortable cream hoodie featuring a clean design and relaxed fit for everyday wear.",
+    category: "fashion",
+
+    price: 35000,
+    actualPrice: 45000,
+    discountPercentage: 22.22,
+
+    rating: {
+      rate: 4.7,
+      count: 276,
+    },
+
+    stock: 11,
+
+    tags: ["hoodie", "cream", "casual", "streetwear"],
+    brand: "StreetMode",
+    sku: "FAS-STR-006",
+
+    weight: 0.7,
+
+    dimensions: {
+      width: 38,
+      height: 5,
+      depth: 30,
+    },
+
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 3-5 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["M", "L", "XL", "XXL"],
+    colors: ["Cream"],
+
+    flashDeal: false,
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Very comfortable hoodie.",
+        date: "2026-05-19T09:41:02.053Z",
+        reviewerName: "Ryan Clark",
+        reviewerEmail: "ryan@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-05-06T09:41:02.053Z",
+      updatedAt: "2026-05-06T09:41:02.053Z",
+      barcode: "89000000114",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/1200x/aa/3c/30/aa3c304a1814fc9b35579e3ccb4459ba.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/1200x/aa/3c/30/aa3c304a1814fc9b35579e3ccb4459ba.jpg",
+  },
+
+  {
+    id: 115,
+    title: "Black Minimalist Jacket",
+    description:
+      "A minimalist black jacket with a clean silhouette suitable for modern casual styling.",
+    category: "fashion",
+
+    price: 55000,
+    actualPrice: 70000,
+    discountPercentage: 21.43,
+
+    rating: {
+      rate: 4.6,
+      count: 198,
+    },
+
+    stock: 8,
+
+    tags: ["jacket", "black", "minimalist", "fashion"],
+    brand: "UrbanStyle",
+    sku: "FAS-URB-007",
+
+    weight: 0.9,
+
+    dimensions: {
+      width: 40,
+      height: 6,
+      depth: 32,
+    },
+
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 3-5 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["M", "L", "XL"],
+    colors: ["Black"],
+
+    flashDeal: true,
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Simple and stylish jacket.",
+        date: "2026-05-20T09:41:02.053Z",
+        reviewerName: "Samuel Green",
+        reviewerEmail: "samuel@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-05-07T09:41:02.053Z",
+      updatedAt: "2026-05-07T09:41:02.053Z",
+      barcode: "89000000115",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/70/44/00/7044009ea372580578c53776628be5bf.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/70/44/00/7044009ea372580578c53776628be5bf.jpg",
+  },
+
+  {
+    id: 116,
+    title: "White Long Sleeve Casual Top",
+    description:
+      "A clean white long-sleeve top designed for simple everyday outfits and layering.",
+    category: "fashion",
+
+    price: 15000,
+    actualPrice: 18000,
+    discountPercentage: 16.67,
+
+    rating: {
+      rate: 4.4,
+      count: 121,
+    },
+
+    stock: 21,
+
+    tags: ["long-sleeve", "white", "casual", "top"],
+    brand: "DailyWear",
+    sku: "FAS-DAI-008",
+
+    weight: 0.35,
+
+    dimensions: {
+      width: 32,
+      height: 2,
+      depth: 26,
+    },
+
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["White"],
+
+    flashDeal: false,
+
+    reviews: [
+      {
+        rating: 4,
+        comment: "Good everyday top.",
+        date: "2026-05-21T09:41:02.053Z",
+        reviewerName: "David King",
+        reviewerEmail: "david@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-05-08T09:41:02.053Z",
+      updatedAt: "2026-05-08T09:41:02.053Z",
+      barcode: "89000000116",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/1d/d9/95/1dd9957fc589aee9b767af3ec92abc50.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/1d/d9/95/1dd9957fc589aee9b767af3ec92abc50.jpg",
+  },
+
+  {
+    id: 117,
+    title: "Blue Denim Casual Jacket",
+    description:
+      "A classic blue denim jacket that works well with casual outfits throughout the year.",
+    category: "fashion",
+
+    price: 48000,
+    actualPrice: 60000,
+    discountPercentage: 20,
+
+    rating: {
+      rate: 4.8,
+      count: 314,
+    },
+
+    stock: 10,
+
+    tags: ["denim", "jacket", "blue", "casual"],
+    brand: "DenimWorks",
+    sku: "FAS-DEN-009",
+
+    weight: 0.85,
+
+    dimensions: {
+      width: 40,
+      height: 6,
+      depth: 32,
+    },
+
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 3-5 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Blue"],
+
+    flashDeal: true,
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Excellent denim jacket.",
+        date: "2026-05-22T09:41:02.053Z",
+        reviewerName: "Mark Allen",
+        reviewerEmail: "mark@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-05-09T09:41:02.053Z",
+      updatedAt: "2026-05-09T09:41:02.053Z",
+      barcode: "89000000117",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/1d/82/eb/1d82eb2e75bed15755cae36a2aa8f105.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/1d/82/eb/1d82eb2e75bed15755cae36a2aa8f105.jpg",
+  },
+
+  {
+    id: 118,
+    title: "Elegant Black Evening Outfit",
+    description:
+      "A sophisticated black outfit designed for evening occasions and stylish formal appearances.",
+    category: "fashion",
 
     price: 85000,
     actualPrice: 100000,
     discountPercentage: 15,
 
     rating: {
-      rate: 3.9,
-      count: 120,
+      rate: 4.9,
+      count: 186,
     },
 
-    stock: 45,
-    tags: ["fashion", "bags", "backpack", "travel"],
-    brand: "Fjallraven",
-    sku: "FAS-FJA-BAG-005",
-    weight: 650,
+    stock: 6,
+
+    tags: ["formal", "evening", "black", "premium"],
+    brand: "EliteWear",
+    sku: "FAS-ELI-010",
+
+    weight: 0.75,
+
     dimensions: {
-      width: 32.5,
-      height: 45.0,
-      depth: 15.0,
+      width: 40,
+      height: 7,
+      depth: 32,
     },
 
-    warrantyInformation: "1 year warranty",
-    shippingInformation: "Ships in 3-5 business days",
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 4-6 days",
     availabilityStatus: "In Stock",
+
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Black"],
+
+    flashDeal: false,
 
     reviews: [
       {
         rating: 5,
-        comment: "Excellent backpack with plenty of space.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Daniel Wilson",
-        reviewerEmail: "daniel.wilson@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Very comfortable and durable.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Sarah Mitchell",
-        reviewerEmail: "sarah.mitchell@x.dummyjson.com",
-      },
-      {
-        rating: 3,
-        comment: "Good bag but slightly smaller than expected.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Michael Carter",
-        reviewerEmail: "michael.carter@x.dummyjson.com",
-      },
-    ],
-
-    returnPolicy: "30 days return policy",
-    minimumOrderQuantity: 1,
-
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "5784719087688",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-
-    subCategory: "Bags",
-    gender: "Unisex",
-
-    size: ["Medium", "Large"],
-    color: ["Black", "Brown"],
-
-    images: ["https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png"],
-
-    thumbnail: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
-
-    isFeatured: true,
-    isNewArrival: false,
-  },
-  {
-    id: 7,
-    title: "Premium Slim Fit T-Shirt",
-    description:
-      "Slim-fitting casual t-shirt with soft breathable fabric designed for comfortable everyday fashion wear.",
-    category: "Fashion",
-
-    price: 12750,
-    actualPrice: 15000,
-    discountPercentage: 15,
-
-    rating: {
-      rate: 4.1,
-      count: 259,
-    },
-
-    stock: 80,
-    tags: ["fashion", "t-shirt", "men", "casual"],
-    brand: "Urban Edge",
-    sku: "FAS-URB-TSH-006",
-    weight: 220,
-    dimensions: {
-      width: 25.0,
-      height: 30.0,
-      depth: 2.0,
-    },
-
-    warrantyInformation: "6 months warranty",
-    shippingInformation: "Ships in 2-4 business days",
-    availabilityStatus: "In Stock",
-
-    reviews: [
-      {
-        rating: 5,
-        comment: "The fabric feels really comfortable.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "James Anderson",
-        reviewerEmail: "james.anderson@x.dummyjson.com",
-      },
-      {
-        rating: 4.34,
-        comment: "Nice fit and good quality.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Robert Williams",
-        reviewerEmail: "robert.williams@x.dummyjson.com",
-      },
-      {
-        rating: 2.2,
-        comment: "Good shirt for everyday use.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "David Thomas",
-        reviewerEmail: "david.thomas@x.dummyjson.com",
+        comment: "Looks elegant and expensive.",
+        date: "2026-05-23T09:41:02.053Z",
+        reviewerName: "Anthony Cole",
+        reviewerEmail: "anthony@example.com",
       },
     ],
 
@@ -481,158 +4245,66 @@ const products = [
     minimumOrderQuantity: 1,
 
     meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "5784719087689",
+      createdAt: "2026-05-10T09:41:02.053Z",
+      updatedAt: "2026-05-10T09:41:02.053Z",
+      barcode: "89000000118",
       qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
     },
 
-    subCategory: "Men Clothing",
-    gender: "Men",
-
-    size: ["S", "M", "L", "XL"],
-    color: ["Black", "White", "Blue"],
-
     images: [
-      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png",
+      "https://i.pinimg.com/736x/1c/3b/ae/1c3bae5e86dfbbb3967757565cc3320b.jpg",
     ],
 
     thumbnail:
-      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png",
-
-    isFeatured: true,
-    isNewArrival: true,
+      "https://i.pinimg.com/736x/1c/3b/ae/1c3bae5e86dfbbb3967757565cc3320b.jpg",
   },
-  {
-    id: 8,
-    title: "Classic Cotton Jacket",
-    description:
-      "Premium cotton jacket suitable for outdoor activities, travel, casual occasions, and everyday style.",
-    category: "Fashion",
 
-    price: 47500,
-    actualPrice: 55000,
-    discountPercentage: 14,
+  {
+    id: 119,
+    title: "Casual Green Streetwear Set",
+    description:
+      "A stylish green streetwear set made for comfortable everyday use and modern casual looks.",
+    category: "fashion",
+
+    price: 39000,
+    actualPrice: 48000,
+    discountPercentage: 18.75,
 
     rating: {
-      rate: 4.7,
-      count: 500,
+      rate: 4.5,
+      count: 159,
     },
 
-    stock: 35,
-    tags: ["fashion", "jacket", "men", "cotton"],
-    brand: "North Avenue",
-    sku: "FAS-NOR-JAC-007",
-    weight: 850,
+    stock: 13,
+
+    tags: ["streetwear", "green", "casual", "set"],
+    brand: "StreetMode",
+    sku: "FAS-STR-011",
+
+    weight: 0.75,
+
     dimensions: {
-      width: 35.0,
-      height: 50.0,
-      depth: 8.0,
+      width: 38,
+      height: 5,
+      depth: 30,
     },
 
-    warrantyInformation: "1 year warranty",
-    shippingInformation: "Ships in 3-5 business days",
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 3-5 days",
     availabilityStatus: "In Stock",
+
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Green"],
+
+    flashDeal: true,
 
     reviews: [
       {
         rating: 5,
-        comment: "Amazing quality and very comfortable.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Ethan Brown",
-        reviewerEmail: "ethan.brown@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Looks exactly like the pictures.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Noah Davis",
-        reviewerEmail: "noah.davis@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Great jacket for casual outfits.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Liam Miller",
-        reviewerEmail: "liam.miller@x.dummyjson.com",
-      },
-    ],
-
-    returnPolicy: "30 days return policy",
-    minimumOrderQuantity: 1,
-
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "5784719087690",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-
-    subCategory: "Men Clothing",
-    gender: "Men",
-
-    size: ["M", "L", "XL"],
-    color: ["Brown", "Black"],
-
-    images: ["https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png"],
-
-    thumbnail: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
-
-    isFeatured: true,
-    isNewArrival: false,
-  },
-  {
-    id: 9,
-    title: "Casual Slim Fit Shirt",
-    description:
-      "A comfortable slim fit casual shirt designed with a modern style for everyday wear.",
-    category: "Fashion",
-
-    price: 13500,
-    actualPrice: 15000,
-    discountPercentage: 10,
-
-    rating: {
-      rate: 2.1,
-      count: 430,
-    },
-
-    stock: 60,
-    tags: ["fashion", "shirt", "men", "casual"],
-    brand: "Modern Thread",
-    sku: "FAS-MOD-SHI-008",
-    weight: 250,
-    dimensions: {
-      width: 28.0,
-      height: 34.0,
-      depth: 3.0,
-    },
-
-    warrantyInformation: "3 months warranty",
-    shippingInformation: "Ships in 2-4 business days",
-    availabilityStatus: "In Stock",
-
-    reviews: [
-      {
-        rating: 2,
-        comment: "The fit was not what I expected.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Henry Moore",
-        reviewerEmail: "henry.moore@x.dummyjson.com",
-      },
-      {
-        rating: 3,
-        comment: "The shirt is okay for the price.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Oliver Taylor",
-        reviewerEmail: "oliver.taylor@x.dummyjson.com",
-      },
-      {
-        rating: 2,
-        comment: "Material could be better.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Jack Wilson",
-        reviewerEmail: "jack.wilson@x.dummyjson.com",
+        comment: "Nice color and comfortable fit.",
+        date: "2026-05-24T09:41:02.053Z",
+        reviewerName: "Eric Stone",
+        reviewerEmail: "eric@example.com",
       },
     ],
 
@@ -640,312 +4312,267 @@ const products = [
     minimumOrderQuantity: 1,
 
     meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "5784719087691",
+      createdAt: "2026-05-11T09:41:02.053Z",
+      updatedAt: "2026-05-11T09:41:02.053Z",
+      barcode: "89000000119",
       qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
     },
 
-    subCategory: "Men Clothing",
-    gender: "Men",
+    images: [
+      "https://i.pinimg.com/1200x/0c/5d/15/0c5d1592181bfb592cd8dd44367f85b9.jpg",
+    ],
 
-    size: ["S", "M", "L", "XL"],
-    color: ["White", "Gray"],
-
-    images: ["https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png"],
-
-    thumbnail: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png",
-
-    isFeatured: false,
-    isNewArrival: true,
+    thumbnail:
+      "https://i.pinimg.com/1200x/0c/5d/15/0c5d1592181bfb592cd8dd44367f85b9.jpg",
   },
-  {
-    id: 10,
-    title: "Women's Winter Snowboard Jacket",
-    description:
-      "Warm winter jacket with detachable liner, adjustable hood, and comfortable design for cold weather.",
-    category: "Fashion",
 
-    price: 47500,
-    actualPrice: 58000,
-    discountPercentage: 18,
+  {
+    id: 120,
+    title: "Premium Brown Fashion Coat",
+    description:
+      "A premium brown coat with a refined appearance designed for stylish outfits and cooler weather.",
+    category: "fashion",
+
+    price: 95000,
+    actualPrice: 115000,
+    discountPercentage: 17.39,
 
     rating: {
-      rate: 2.6,
-      count: 235,
+      rate: 4.8,
+      count: 174,
     },
 
-    stock: 55,
-    tags: ["fashion", "jacket", "women", "winter"],
-    brand: "Luxe Winter",
-    sku: "FAS-LUX-JAC-009",
-    weight: 950,
+    stock: 5,
+
+    tags: ["coat", "brown", "premium", "outerwear"],
+    brand: "EliteWear",
+    sku: "FAS-ELI-012",
+
+    weight: 1.1,
+
     dimensions: {
-      width: 36.0,
-      height: 52.0,
-      depth: 10.0,
+      width: 42,
+      height: 8,
+      depth: 34,
     },
 
-    warrantyInformation: "1 year warranty",
-    shippingInformation: "Ships in 3-5 business days",
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 4-6 days",
     availabilityStatus: "In Stock",
+
+    sizes: ["M", "L", "XL", "XXL"],
+    colors: ["Brown"],
+
+    flashDeal: false,
 
     reviews: [
       {
-        rating: 3,
-        comment: "Warm and comfortable but slightly bulky.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Emma Johnson",
-        reviewerEmail: "emma.johnson@x.dummyjson.com",
-      },
-      {
-        rating: 2,
-        comment: "The color looked different from the picture.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Olivia Smith",
-        reviewerEmail: "olivia.smith@x.dummyjson.com",
-      },
-      {
-        rating: 3,
-        comment: "Decent winter jacket.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Sophia Brown",
-        reviewerEmail: "sophia.brown@x.dummyjson.com",
+        rating: 5,
+        comment: "Very good quality coat.",
+        date: "2026-05-25T09:41:02.053Z",
+        reviewerName: "George Adams",
+        reviewerEmail: "george@example.com",
       },
     ],
 
-    returnPolicy: "30 days return policy",
+    returnPolicy: "14 days return policy",
     minimumOrderQuantity: 1,
 
     meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "5784719087692",
+      createdAt: "2026-05-12T09:41:02.053Z",
+      updatedAt: "2026-05-12T09:41:02.053Z",
+      barcode: "89000000120",
       qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
     },
 
-    subCategory: "Women Clothing",
-    gender: "Women",
+    images: [
+      "https://i.pinimg.com/736x/9b/ba/dd/9bbadda4fcb68e1fb4efb8e433d1f518.jpg",
+    ],
 
-    size: ["S", "M", "L", "XL"],
-    color: ["Black", "Blue", "White"],
-
-    images: ["https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png"],
-
-    thumbnail: "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png",
-
-    isFeatured: true,
-    isNewArrival: false,
+    thumbnail:
+      "https://i.pinimg.com/736x/9b/ba/dd/9bbadda4fcb68e1fb4efb8e433d1f518.jpg",
   },
-  {
-    id: 11,
-    title: "Women's Faux Leather Moto Jacket",
-    description:
-      "Stylish faux leather jacket designed for comfort with a modern biker-inspired look.",
-    category: "Fashion",
 
-    price: 32000,
-    actualPrice: 40000,
+  {
+    id: 121,
+    title: "Light Blue Casual Shirt",
+    description:
+      "A lightweight light-blue casual shirt suitable for relaxed daytime outfits.",
+    category: "fashion",
+
+    price: 22000,
+    actualPrice: 28000,
+    discountPercentage: 21.43,
+
+    rating: {
+      rate: 4.4,
+      count: 132,
+    },
+
+    stock: 17,
+
+    tags: ["shirt", "blue", "casual", "lightweight"],
+    brand: "DailyWear",
+    sku: "FAS-DAI-013",
+
+    weight: 0.4,
+
+    dimensions: {
+      width: 33,
+      height: 3,
+      depth: 27,
+    },
+
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 2-4 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Light Blue"],
+
+    flashDeal: true,
+
+    reviews: [
+      {
+        rating: 4,
+        comment: "Good shirt for everyday wear.",
+        date: "2026-05-26T09:41:02.053Z",
+        reviewerName: "Brian Hall",
+        reviewerEmail: "brian@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-05-13T09:41:02.053Z",
+      updatedAt: "2026-05-13T09:41:02.053Z",
+      barcode: "89000000121",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/65/4e/c5/654ec5f5f4985b7186e62132add9e163.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/65/4e/c5/654ec5f5f4985b7186e62132add9e163.jpg",
+  },
+
+  {
+    id: 122,
+    title: "Modern White Fashion Set",
+    description:
+      "A clean white fashion set designed with a modern silhouette for casual and semi-formal occasions.",
+    category: "fashion",
+
+    price: 45000,
+    actualPrice: 55000,
+    discountPercentage: 18.18,
+
+    rating: {
+      rate: 4.6,
+      count: 203,
+    },
+
+    stock: 10,
+
+    tags: ["white", "fashion", "set", "modern"],
+    brand: "EliteWear",
+    sku: "FAS-ELI-014",
+
+    weight: 0.7,
+
+    dimensions: {
+      width: 38,
+      height: 5,
+      depth: 30,
+    },
+
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 3-5 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["White"],
+
+    flashDeal: false,
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Very clean and stylish.",
+        date: "2026-05-27T09:41:02.053Z",
+        reviewerName: "Jason Reed",
+        reviewerEmail: "jason@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-05-14T09:41:02.053Z",
+      updatedAt: "2026-05-14T09:41:02.053Z",
+      barcode: "89000000122",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/736x/27/e9/77/27e977edc78108c3391e0f6c68281066.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/736x/27/e9/77/27e977edc78108c3391e0f6c68281066.jpg",
+  },
+
+  {
+    id: 123,
+    title: "Black Premium Streetwear Hoodie",
+    description:
+      "A premium black hoodie with a modern streetwear aesthetic and comfortable relaxed fit.",
+    category: "fashion",
+
+    price: 52000,
+    actualPrice: 65000,
     discountPercentage: 20,
 
     rating: {
-      rate: 2.9,
-      count: 340,
-    },
-
-    stock: 40,
-    tags: ["fashion", "jacket", "women", "leather"],
-    brand: "Chic Avenue",
-    sku: "FAS-CHI-JAC-010",
-    weight: 900,
-    dimensions: {
-      width: 35.0,
-      height: 50.0,
-      depth: 8.0,
-    },
-
-    warrantyInformation: "6 months warranty",
-    shippingInformation: "Ships in 3-5 business days",
-    availabilityStatus: "In Stock",
-
-    reviews: [
-      {
-        rating: 3,
-        comment: "Looks stylish and fits nicely.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Ava Williams",
-        reviewerEmail: "ava.williams@x.dummyjson.com",
-      },
-      {
-        rating: 2,
-        comment: "The material feels a little thin.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Mia Jones",
-        reviewerEmail: "mia.jones@x.dummyjson.com",
-      },
-      {
-        rating: 3,
-        comment: "Good jacket for casual outfits.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Isabella Garcia",
-        reviewerEmail: "isabella.garcia@x.dummyjson.com",
-      },
-    ],
-
-    returnPolicy: "14 days return policy",
-    minimumOrderQuantity: 1,
-
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "5784719087693",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-
-    subCategory: "Women Clothing",
-    gender: "Women",
-
-    size: ["S", "M", "L"],
-    color: ["Black", "Brown"],
-
-    images: ["https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_t.png"],
-
-    thumbnail: "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_t.png",
-
-    isFeatured: false,
-    isNewArrival: true,
-  },
-
-  {
-    id: 12,
-    title: "Women's Windbreaker Rain Jacket",
-    description:
-      "Lightweight rain jacket perfect for travel and casual wear with hood and adjustable design.",
-    category: "Fashion",
-
-    price: 30000,
-    actualPrice: 35000,
-    discountPercentage: 14,
-
-    rating: {
-      rate: 3.8,
-      count: 679,
-    },
-
-    stock: 70,
-    tags: ["fashion", "jacket", "women", "rainwear"],
-    brand: "Outdoor Style",
-    sku: "FAS-OUT-WIN-011",
-    weight: 550,
-    dimensions: {
-      width: 34.0,
-      height: 49.0,
-      depth: 6.0,
-    },
-
-    warrantyInformation: "1 year warranty",
-    shippingInformation: "Ships in 2-4 business days",
-    availabilityStatus: "In Stock",
-
-    reviews: [
-      {
-        rating: 4,
-        comment: "Lightweight and perfect for rainy days.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Charlotte Martinez",
-        reviewerEmail: "charlotte.martinez@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Very useful for traveling.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Amelia Robinson",
-        reviewerEmail: "amelia.robinson@x.dummyjson.com",
-      },
-      {
-        rating: 3,
-        comment: "Good jacket but the hood could be better.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Harper Clark",
-        reviewerEmail: "harper.clark@x.dummyjson.com",
-      },
-    ],
-
-    returnPolicy: "30 days return policy",
-    minimumOrderQuantity: 1,
-
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "5784719087694",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-
-    subCategory: "Women Clothing",
-    gender: "Women",
-
-    size: ["S", "M", "L", "XL"],
-    color: ["Blue", "White"],
-
-    images: ["https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2t.png"],
-
-    thumbnail: "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2t.png",
-
-    isFeatured: true,
-    isNewArrival: false,
-  },
-  {
-    id: 13,
-    title: "Women's Solid Short Sleeve Top",
-    description:
-      "Soft lightweight fabric top with comfortable stretch designed for casual everyday fashion.",
-    category: "Fashion",
-
-    price: 9500,
-    actualPrice: 10000,
-    discountPercentage: 5,
-
-    rating: {
       rate: 4.7,
-      count: 130,
+      count: 267,
     },
 
-    stock: 90,
-    tags: ["fashion", "top", "women", "casual"],
-    brand: "Nova Wear",
-    sku: "FAS-NOV-TOP-012",
-    weight: 180,
+    stock: 8,
+
+    tags: ["hoodie", "black", "streetwear", "premium"],
+    brand: "StreetMode",
+    sku: "FAS-STR-015",
+
+    weight: 0.75,
+
     dimensions: {
-      width: 25.0,
-      height: 32.0,
-      depth: 2.0,
+      width: 39,
+      height: 5,
+      depth: 31,
     },
 
-    warrantyInformation: "3 months warranty",
-    shippingInformation: "Ships in 2-4 business days",
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 3-5 days",
     availabilityStatus: "In Stock",
+
+    sizes: ["M", "L", "XL", "XXL"],
+    colors: ["Black"],
+
+    flashDeal: true,
 
     reviews: [
       {
         rating: 5,
-        comment: "Very soft and comfortable.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Evelyn Lewis",
-        reviewerEmail: "evelyn.lewis@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Great quality for the price.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Abigail Lee",
-        reviewerEmail: "abigail.lee@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Nice everyday top.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Emily Walker",
-        reviewerEmail: "emily.walker@x.dummyjson.com",
+        comment: "Great hoodie and very comfortable.",
+        date: "2026-05-28T09:41:02.053Z",
+        reviewerName: "Tom Harris",
+        reviewerEmail: "tom@example.com",
       },
     ],
 
@@ -953,2000 +4580,420 @@ const products = [
     minimumOrderQuantity: 1,
 
     meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "5784719087695",
+      createdAt: "2026-05-15T09:41:02.053Z",
+      updatedAt: "2026-05-15T09:41:02.053Z",
+      barcode: "89000000123",
       qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
     },
 
-    subCategory: "Women Clothing",
-    gender: "Women",
+    images: [
+      "https://i.pinimg.com/1e/ca/d7/1ecad7fa91ba8a4f693d314952e80312.jpg",
+    ],
 
-    size: ["S", "M", "L"],
-    color: ["Black", "Pink", "White"],
-
-    images: ["https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_t.png"],
-
-    thumbnail: "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_t.png",
-
-    isFeatured: true,
-    isNewArrival: true,
+    thumbnail:
+      "https://i.pinimg.com/736x/1e/ca/d7/1ecad7fa91ba8a4f693d314952e80312.jpg",
   },
-  {
-    id: 14,
-    title: "Women's Moisture Control T-Shirt",
-    description:
-      "Lightweight breathable polyester shirt designed for comfort and active lifestyles.",
-    category: "Fashion",
 
-    price: 9000,
-    actualPrice: 10000,
-    discountPercentage: 10,
+  {
+    id: 124,
+    title: "Cream Casual Fashion Shirt",
+    description:
+      "A soft cream casual shirt with a simple design suitable for everyday styling.",
+    category: "fashion",
+
+    price: 19500,
+    actualPrice: 24000,
+    discountPercentage: 18.75,
 
     rating: {
       rate: 4.5,
       count: 146,
     },
 
-    stock: 100,
-    tags: ["fashion", "t-shirt", "women", "sports"],
-    brand: "Active Life",
-    sku: "FAS-ACT-TSH-013",
-    weight: 190,
-    dimensions: {
-      width: 25.0,
-      height: 32.0,
-      depth: 2.0,
-    },
+    stock: 19,
 
-    warrantyInformation: "6 months warranty",
-    shippingInformation: "Ships in 2-4 business days",
-    availabilityStatus: "In Stock",
+    tags: ["cream", "shirt", "casual", "fashion"],
+    brand: "DailyWear",
+    sku: "FAS-DAI-016",
 
-    reviews: [
-      {
-        rating: 5,
-        comment: "Very comfortable for workouts.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Grace Hall",
-        reviewerEmail: "grace.hall@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Lightweight and breathable.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Ella Allen",
-        reviewerEmail: "ella.allen@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Excellent shirt for active days.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Lily Young",
-        reviewerEmail: "lily.young@x.dummyjson.com",
-      },
-    ],
-
-    returnPolicy: "14 days return policy",
-    minimumOrderQuantity: 1,
-
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "5784719087696",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-
-    subCategory: "Women Clothing",
-    gender: "Women",
-
-    size: ["S", "M", "L"],
-    color: ["Gray", "Black"],
-
-    images: ["https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_t.png"],
-
-    thumbnail: "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_t.png",
-
-    isFeatured: false,
-    isNewArrival: true,
-  },
-  {
-    id: 15,
-    title: "Women's Casual Cotton T-Shirt",
-    description:
-      "Soft cotton casual t-shirt suitable for office, school, beach, and everyday street fashion.",
-    category: "Fashion",
-
-    price: 12000,
-    actualPrice: 13000,
-    discountPercentage: 7,
-
-    rating: {
-      rate: 3.6,
-      count: 145,
-    },
-
-    stock: 65,
-    tags: ["fashion", "t-shirt", "women", "cotton", "casual"],
-    brand: "Everyday Fashion",
-    sku: "FAS-EVE-TSH-014",
-    weight: 210,
-    dimensions: {
-      width: 26.0,
-      height: 33.0,
-      depth: 2.0,
-    },
-
-    warrantyInformation: "3 months warranty",
-    shippingInformation: "Ships in 2-4 business days",
-    availabilityStatus: "In Stock",
-
-    reviews: [
-      {
-        rating: 4,
-        comment: "Very comfortable cotton material.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Chloe King",
-        reviewerEmail: "chloe.king@x.dummyjson.com",
-      },
-      {
-        rating: 3,
-        comment: "Good shirt for everyday wear.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Zoe Wright",
-        reviewerEmail: "zoe.wright@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Nice quality and comfortable fit.",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Hannah Scott",
-        reviewerEmail: "hannah.scott@x.dummyjson.com",
-      },
-    ],
-
-    returnPolicy: "14 days return policy",
-    minimumOrderQuantity: 1,
-
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "5784719087697",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-
-    subCategory: "Women Clothing",
-    gender: "Women",
-
-    size: ["S", "M", "L", "XL"],
-    color: ["White", "Black", "Gray"],
-
-    images: ["https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png"],
-
-    thumbnail: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png",
-
-    isFeatured: false,
-    isNewArrival: true,
-  },
-
-  {
-    id: 16,
-    title: "Nike Air Jordan 1 Red And Black",
-    description:
-      "The Nike Air Jordan 1 in Red and Black is an iconic basketball sneaker known for its stylish design and high-performance features, making it a favorite among sneaker enthusiasts and athletes.",
-    category: "mens-shoes",
-
-    price: 239984,
-    actualPrice: 250296,
-
-    discountPercentage: 4.12,
-
-    rating: {
-      rate: 4.77,
-      count: 287,
-    },
-
-    stock: 7,
-
-    tags: ["footwear", "athletic shoes", "basketball"],
-    brand: "Nike",
-    sku: "MEN-NIK-NIK-088",
-
-    weight: 3,
+    weight: 0.4,
 
     dimensions: {
-      width: 17.44,
-      height: 9.52,
+      width: 33,
+      height: 3,
       depth: 27,
     },
 
-    warrantyInformation: "1 year warranty",
-    shippingInformation: "Ships in 1 week",
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 2-4 days",
     availabilityStatus: "In Stock",
 
-    size: [40, 41, 42, 43, 44, 45],
-    color: ["Red", "Black", "White"],
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Cream"],
 
-    reviews: [
-      {
-        rating: 5,
-        comment: "Highly impressed!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Elena Long",
-        reviewerEmail: "elena.long@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Very happy with my purchase!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Addison Wright",
-        reviewerEmail: "addison.wright@x.dummyjson.com",
-      },
-      {
-        rating: 1,
-        comment: "Waste of money!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Mason Wright",
-        reviewerEmail: "mason.wright@x.dummyjson.com",
-      },
-    ],
-
-    returnPolicy: "30 days return policy",
-    minimumOrderQuantity: 1,
-
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "7631625812393",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-
-    images: [
-      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/1.webp",
-      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/2.webp",
-      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/3.webp",
-      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/4.webp",
-    ],
-
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/thumbnail.webp",
-  },
-
-  {
-    id: 17,
-    title: "Nike Baseball Cleats",
-    description:
-      "Nike Baseball Cleats are designed for maximum traction and performance on the baseball field. They provide stability and support for players during games and practices.",
-    category: "mens-shoes",
-
-    price: 127984,
-    actualPrice: 156154,
-
-    discountPercentage: 18.04,
-
-    rating: {
-      rate: 3.88,
-      count: 198,
-    },
-
-    stock: 12,
-
-    tags: ["footwear", "sports cleats", "baseball"],
-    brand: "Nike",
-    sku: "MEN-NIK-NIK-089",
-
-    weight: 9,
-
-    dimensions: {
-      width: 11.75,
-      height: 26.65,
-      depth: 19.6,
-    },
-
-    warrantyInformation: "6 months warranty",
-    shippingInformation: "Ships in 2 weeks",
-    availabilityStatus: "In Stock",
-
-    size: [40, 41, 42, 43, 44, 45],
-    color: ["Black", "White", "Red"],
-
-    reviews: [
-      {
-        rating: 5,
-        comment: "Would buy again!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Aaron Cook",
-        reviewerEmail: "aaron.cook@x.dummyjson.com",
-      },
-      {
-        rating: 2,
-        comment: "Very disappointed!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Noah Lewis",
-        reviewerEmail: "noah.lewis@x.dummyjson.com",
-      },
-      {
-        rating: 3,
-        comment: "Would not recommend!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Michael Johnson",
-        reviewerEmail: "michael.johnson@x.dummyjson.com",
-      },
-    ],
-
-    returnPolicy: "30 days return policy",
-    minimumOrderQuantity: 1,
-
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "2449851358796",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-
-    images: [
-      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-baseball-cleats/1.webp",
-      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-baseball-cleats/2.webp",
-      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-baseball-cleats/3.webp",
-      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-baseball-cleats/4.webp",
-    ],
-
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-baseball-cleats/thumbnail.webp",
-  },
-  {
-    id: 18,
-    title: "Puma Future Rider Trainers",
-    description:
-      "The Puma Future Rider Trainers offer a blend of retro style and modern comfort. Perfect for casual wear, these trainers provide a fashionable and comfortable option for everyday use.",
-    category: "mens-shoes",
-
-    price: 143984,
-    actualPrice: 150296,
-
-    discountPercentage: 4.2,
-
-    rating: {
-      rate: 4.9,
-      count: 342,
-    },
-
-    stock: 90,
-
-    tags: ["footwear", "casual shoes", "trainers"],
-    brand: "Puma",
-    sku: "MEN-PUM-PUM-090",
-
-    weight: 6,
-
-    dimensions: {
-      width: 17.45,
-      height: 15.58,
-      depth: 23.13,
-    },
-
-    warrantyInformation: "5 year warranty",
-    shippingInformation: "Ships in 1-2 business days",
-    availabilityStatus: "In Stock",
-
-    size: [39, 40, 41, 42, 43, 44, 45],
-    color: ["White", "Blue", "Red", "Gray"],
-
-    reviews: [
-      {
-        rating: 5,
-        comment: "Highly impressed!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Jackson Morales",
-        reviewerEmail: "jackson.morales@x.dummyjson.com",
-      },
-      {
-        rating: 1,
-        comment: "Very disappointed!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Sophia Jones",
-        reviewerEmail: "sophia.jones@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Very pleased!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Logan Torres",
-        reviewerEmail: "logan.torres@x.dummyjson.com",
-      },
-    ],
-
-    returnPolicy: "30 days return policy",
-    minimumOrderQuantity: 1,
-
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "9715091831404",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-
-    images: [
-      "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/1.webp",
-      "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/2.webp",
-      "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/3.webp",
-      "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/4.webp",
-    ],
-
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/thumbnail.webp",
-  },
-
-  {
-    id: 19,
-    title: "Sports Sneakers Off White & Red",
-    description:
-      "The Sports Sneakers in Off White and Red combine style and functionality, making them a fashionable choice for sports enthusiasts. The red and off-white color combination adds a bold and energetic touch.",
-    category: "mens-shoes",
-
-    price: 191984,
-    actualPrice: 202025,
-
-    discountPercentage: 4.97,
-
-    rating: {
-      rate: 4.77,
-      count: 267,
-    },
-
-    stock: 17,
-
-    tags: ["footwear", "athletic shoes", "sports"],
-    brand: "Off White",
-    sku: "MEN-OFF-SPO-091",
-
-    weight: 7,
-
-    dimensions: {
-      width: 14.37,
-      height: 23.44,
-      depth: 12.84,
-    },
-
-    warrantyInformation: "1 week warranty",
-    shippingInformation: "Ships in 3-5 business days",
-    availabilityStatus: "In Stock",
-
-    size: [40, 41, 42, 43, 44, 45],
-    color: ["Off White", "Red", "Black"],
+    flashDeal: false,
 
     reviews: [
       {
         rating: 4,
-        comment: "Would buy again!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Sadie Morales",
-        reviewerEmail: "sadie.morales@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Fast shipping!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Julian Newton",
-        reviewerEmail: "julian.newton@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Awesome product!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Logan Lee",
-        reviewerEmail: "logan.lee@x.dummyjson.com",
+        comment: "Simple and comfortable.",
+        date: "2026-05-29T09:41:02.053Z",
+        reviewerName: "Adam Young",
+        reviewerEmail: "adam@example.com",
       },
     ],
 
-    returnPolicy: "30 days return policy",
+    returnPolicy: "14 days return policy",
     minimumOrderQuantity: 1,
 
     meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "6740319943645",
+      createdAt: "2026-05-16T09:41:02.053Z",
+      updatedAt: "2026-05-16T09:41:02.053Z",
+      barcode: "89000000124",
       qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
     },
 
     images: [
-      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-&-red/1.webp",
-      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-&-red/2.webp",
-      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-&-red/3.webp",
-      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-&-red/4.webp",
+      "https://i.pinimg.com/1200x/43/63/f2/4363f208b410102ef3c90582eb23c7af.jpg",
     ],
 
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-&-red/thumbnail.webp",
+      "https://i.pinimg.com/1200x/43/63/f2/4363f208b410102ef3c90582eb23c7af.jpg",
   },
 
   {
-    id: 20,
-    title: "Sports Sneakers Off White Red",
+    id: 125,
+    title: "Dark Grey Oversized Sweatshirt",
     description:
-      "Another variant of the Sports Sneakers in Off White Red, featuring a unique design. These sneakers offer style and comfort for casual occasions.",
-    category: "mens-shoes",
+      "A dark grey oversized sweatshirt designed for relaxed everyday outfits and comfortable streetwear styling.",
+    category: "fashion",
 
-    price: 175984,
-    actualPrice: 176054,
-
-    discountPercentage: 0.04,
+    price: 30000,
+    actualPrice: 38000,
+    discountPercentage: 21.05,
 
     rating: {
-      rate: 4.69,
-      count: 189,
+      rate: 4.6,
+      count: 228,
     },
 
-    stock: 62,
+    stock: 14,
 
-    tags: ["footwear", "casual shoes", "sneakers"],
-    brand: "Off White",
-    sku: "MEN-OFF-SPO-092",
+    tags: ["sweatshirt", "grey", "oversized", "streetwear"],
+    brand: "UrbanStyle",
+    sku: "FAS-URB-017",
 
-    weight: 9,
+    weight: 0.65,
 
     dimensions: {
-      width: 21.43,
-      height: 9.86,
-      depth: 28.5,
-    },
-
-    warrantyInformation: "3 months warranty",
-    shippingInformation: "Ships overnight",
-    availabilityStatus: "In Stock",
-
-    size: [40, 41, 42, 43, 44, 45],
-    color: ["Off White", "Red", "Gray"],
-
-    reviews: [
-      {
-        rating: 4,
-        comment: "Excellent quality!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Aurora Lawson",
-        reviewerEmail: "aurora.lawson@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Great value for money!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Gabriel Mitchell",
-        reviewerEmail: "gabriel.mitchell@x.dummyjson.com",
-      },
-      {
-        rating: 1,
-        comment: "Not worth the price!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Eli Bennett",
-        reviewerEmail: "eli.bennett@x.dummyjson.com",
-      },
-    ],
-
-    returnPolicy: "60 days return policy",
-    minimumOrderQuantity: 1,
-
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "0430266023617",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-
-    images: [
-      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/1.webp",
-      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/2.webp",
-      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/3.webp",
-      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/4.webp",
-    ],
-
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/thumbnail.webp",
-  },
-
-  {
-    id: 21,
-    title: "Black & Brown Slipper",
-    description:
-      "The Black & Brown Slipper is a comfortable and stylish choice for casual wear. Featuring a blend of black and brown colors, it adds a touch of sophistication to your relaxation.",
-    category: "womens-shoes",
-
-    price: 31984,
-    actualPrice: 33086,
-
-    discountPercentage: 3.33,
-
-    rating: {
-      rate: 2.53,
-      count: 76,
-    },
-
-    stock: 3,
-
-    tags: ["footwear", "slippers", "casual"],
-    brand: "Comfort Trends",
-    sku: "WOM-COM-BLA-185",
-
-    weight: 5,
-
-    dimensions: {
-      width: 21.35,
-      height: 26.21,
-      depth: 17,
-    },
-
-    warrantyInformation: "Lifetime warranty",
-    shippingInformation: "Ships in 1 month",
-    availabilityStatus: "Low Stock",
-
-    size: [38, 39, 40, 41, 42],
-    color: ["Black", "Brown"],
-
-    reviews: [
-      {
-        rating: 5,
-        comment: "Highly impressed!",
-        date: "2025-04-30T09:41:02.054Z",
-        reviewerName: "Isaac Lawrence",
-        reviewerEmail: "isaac.lawrence@x.dummyjson.com",
-      },
-      {
-        rating: 2,
-        comment: "Not worth the price!",
-        date: "2025-04-30T09:41:02.054Z",
-        reviewerName: "William Gonzalez",
-        reviewerEmail: "william.gonzalez@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Very happy with my purchase!",
-        date: "2025-04-30T09:41:02.054Z",
-        reviewerName: "Sophia Jones",
-        reviewerEmail: "sophia.jones@x.dummyjson.com",
-      },
-    ],
-
-    returnPolicy: "60 days return policy",
-    minimumOrderQuantity: 1,
-
-    meta: {
-      createdAt: "2025-04-30T09:41:02.054Z",
-      updatedAt: "2025-04-30T09:41:02.054Z",
-      barcode: "5732146194724",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-
-    images: [
-      "https://cdn.dummyjson.com/product-images/womens-shoes/black-&-brown-slipper/1.webp",
-      "https://cdn.dummyjson.com/product-images/womens-shoes/black-&-brown-slipper/2.webp",
-      "https://cdn.dummyjson.com/product-images/womens-shoes/black-&-brown-slipper/3.webp",
-      "https://cdn.dummyjson.com/product-images/womens-shoes/black-&-brown-slipper/4.webp",
-    ],
-
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/womens-shoes/black-&-brown-slipper/thumbnail.webp",
-  },
-
-  {
-    id: 22,
-    title: "Calvin Klein Heel Shoes",
-    description:
-      "Calvin Klein Heel Shoes are elegant and sophisticated, designed for formal occasions. With a classic design and high-quality materials, they complement your stylish ensemble.",
-    category: "womens-shoes",
-
-    price: 127984,
-    actualPrice: 132201,
-
-    discountPercentage: 3.19,
-
-    rating: {
-      rate: 4.92,
-      count: 421,
-    },
-
-    stock: 93,
-
-    tags: ["footwear", "heel shoes", "formal"],
-    brand: "Calvin Klein",
-    sku: "WOM-CAL-CAL-186",
-
-    weight: 6,
-
-    dimensions: {
-      width: 29.12,
-      height: 20.94,
-      depth: 20.65,
-    },
-
-    warrantyInformation: "2 year warranty",
-    shippingInformation: "Ships in 1 week",
-    availabilityStatus: "In Stock",
-
-    size: [37, 38, 39, 40, 41],
-    color: ["Black", "Brown", "Nude"],
-
-    reviews: [
-      {
-        rating: 5,
-        comment: "Great value for money!",
-        date: "2025-04-30T09:41:02.054Z",
-        reviewerName: "Maya Reed",
-        reviewerEmail: "maya.reed@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Great value for money!",
-        date: "2025-04-30T09:41:02.054Z",
-        reviewerName: "Grace Perry",
-        reviewerEmail: "grace.perry@x.dummyjson.com",
-      },
-      {
-        rating: 1,
-        comment: "Not as described!",
-        date: "2025-04-30T09:41:02.054Z",
-        reviewerName: "Eleanor Collins",
-        reviewerEmail: "eleanor.collins@x.dummyjson.com",
-      },
-    ],
-
-    returnPolicy: "60 days return policy",
-    minimumOrderQuantity: 1,
-
-    meta: {
-      createdAt: "2025-04-30T09:41:02.054Z",
-      updatedAt: "2025-04-30T09:41:02.054Z",
-      barcode: "0196443645959",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-
-    images: [
-      "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/1.webp",
-      "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/2.webp",
-      "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/3.webp",
-      "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/4.webp",
-    ],
-
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/thumbnail.webp",
-  },
-
-  {
-    id: 23,
-    title: "Golden Shoes Woman",
-    description:
-      "The Golden Shoes for Women are a glamorous choice for special occasions. Featuring a golden hue and stylish design, they add a touch of luxury to your outfit.",
-    category: "womens-shoes",
-
-    price: 79984,
-    actualPrice: 92929,
-
-    discountPercentage: 13.93,
-
-    rating: {
-      rate: 3.26,
-      count: 174,
-    },
-
-    stock: 88,
-
-    tags: ["footwear", "women's shoes", "formal"],
-    brand: "Fashion Diva",
-    sku: "WOM-FAS-GOL-187",
-
-    weight: 4,
-
-    dimensions: {
-      width: 16.38,
-      height: 20.06,
-      depth: 8.8,
-    },
-
-    warrantyInformation: "6 months warranty",
-    shippingInformation: "Ships in 2 weeks",
-    availabilityStatus: "In Stock",
-
-    size: [37, 38, 39, 40, 41],
-    color: ["Gold", "Black", "Silver"],
-
-    reviews: [
-      {
-        rating: 4,
-        comment: "Excellent quality!",
-        date: "2025-04-30T09:41:02.054Z",
-        reviewerName: "Nolan Gonzalez",
-        reviewerEmail: "nolan.gonzalez@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Very pleased!",
-        date: "2025-04-30T09:41:02.054Z",
-        reviewerName: "Brayden Fleming",
-        reviewerEmail: "brayden.fleming@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Very pleased!",
-        date: "2025-04-30T09:41:02.054Z",
-        reviewerName: "Eleanor Tyler",
-        reviewerEmail: "eleanor.tyler@x.dummyjson.com",
-      },
-    ],
-
-    returnPolicy: "7 days return policy",
-    minimumOrderQuantity: 1,
-
-    meta: {
-      createdAt: "2025-04-30T09:41:02.054Z",
-      updatedAt: "2025-04-30T09:41:02.054Z",
-      barcode: "0365072601388",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-
-    images: [
-      "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/1.webp",
-      "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/2.webp",
-      "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/3.webp",
-      "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/4.webp",
-    ],
-
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/thumbnail.webp",
-  },
-
-  {
-    id: 24,
-    title: "Pampi Shoes",
-    description:
-      "Pampi Shoes offer a blend of comfort and style for everyday use. With a versatile design, they are suitable for various casual occasions, providing a trendy and relaxed look.",
-    category: "womens-shoes",
-
-    price: 47984,
-    actualPrice: 55886,
-
-    discountPercentage: 14.14,
-
-    rating: {
-      rate: 3.05,
-      count: 96,
-    },
-
-    stock: 49,
-
-    tags: ["footwear", "casual shoes", "everyday"],
-    brand: "Pampi",
-    sku: "WOM-PAM-PAM-188",
-
-    weight: 7,
-
-    dimensions: {
-      width: 29.43,
-      height: 22.65,
-      depth: 16.12,
+      width: 38,
+      height: 5,
+      depth: 30,
     },
 
     warrantyInformation: "No warranty",
-    shippingInformation: "Ships in 1 week",
+    shippingInformation: "Ships in 3-5 days",
     availabilityStatus: "In Stock",
 
-    size: [37, 38, 39, 40, 41],
-    color: ["Black", "White", "Brown", "Beige"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: ["Dark Grey"],
+
+    flashDeal: true,
 
     reviews: [
       {
-        rating: 4,
-        comment: "Highly recommended!",
-        date: "2025-04-30T09:41:02.054Z",
-        reviewerName: "Nathan Reed",
-        reviewerEmail: "nathan.reed@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Would buy again!",
-        date: "2025-04-30T09:41:02.054Z",
-        reviewerName: "Connor Baker",
-        reviewerEmail: "connor.baker@x.dummyjson.com",
-      },
-      {
         rating: 5,
-        comment: "Awesome product!",
-        date: "2025-04-30T09:41:02.054Z",
-        reviewerName: "Noah Lewis",
-        reviewerEmail: "noah.lewis@x.dummyjson.com",
+        comment: "Perfect oversized fit.",
+        date: "2026-05-30T09:41:02.053Z",
+        reviewerName: "Luke Martin",
+        reviewerEmail: "luke@example.com",
       },
     ],
 
-    returnPolicy: "60 days return policy",
+    returnPolicy: "14 days return policy",
     minimumOrderQuantity: 1,
 
     meta: {
-      createdAt: "2025-04-30T09:41:02.054Z",
-      updatedAt: "2025-04-30T09:41:02.054Z",
-      barcode: "9686058230535",
+      createdAt: "2026-05-17T09:41:02.053Z",
+      updatedAt: "2026-05-17T09:41:02.053Z",
+      barcode: "89000000125",
       qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
     },
 
     images: [
-      "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/1.webp",
-      "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/2.webp",
-      "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/3.webp",
-      "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/4.webp",
+      "https://i.pinimg.com/736x/8d/2f/3f/8d2f3f3d73e4cbbb89270c18c41b9a66.jpg",
     ],
 
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/thumbnail.webp",
+      "https://i.pinimg.com/736x/8d/2f/3f/8d2f3f3d73e4cbbb89270c18c41b9a66.jpg",
   },
 
   {
-    id: 25,
-    title: "Red Shoes",
+    id: 126,
+    title: "Luxury Navy Blue Blazer",
     description:
-      "The Red Shoes make a bold statement with their vibrant red color. Whether for a party or a casual outing, these shoes add a pop of color and style to your wardrobe.",
-    category: "womens-shoes",
+      "A sophisticated navy blue blazer designed for smart-casual and formal occasions.",
+    category: "fashion",
 
-    price: 55984,
-    actualPrice: 68016,
-
-    discountPercentage: 17.69,
+    price: 78000,
+    actualPrice: 95000,
+    discountPercentage: 17.89,
 
     rating: {
-      rate: 3.25,
-      count: 153,
+      rate: 4.9,
+      count: 154,
     },
 
     stock: 7,
 
-    tags: ["footwear", "women's shoes", "casual"],
-    brand: "Fashion Express",
-    sku: "WOM-FAS-SHO-189",
+    tags: ["blazer", "navy", "formal", "luxury"],
+    brand: "EliteWear",
+    sku: "FAS-ELI-018",
 
-    weight: 10,
+    weight: 0.9,
 
     dimensions: {
-      width: 15.21,
-      height: 11.62,
-      depth: 22.63,
+      width: 42,
+      height: 7,
+      depth: 33,
     },
 
     warrantyInformation: "No warranty",
-    shippingInformation: "Ships in 1 month",
-    availabilityStatus: "Low Stock",
+    shippingInformation: "Ships in 4-6 days",
+    availabilityStatus: "In Stock",
 
-    size: [37, 38, 39, 40, 41],
-    color: ["Red", "Black", "White"],
+    sizes: ["M", "L", "XL", "XXL"],
+    colors: ["Navy Blue"],
+
+    flashDeal: false,
 
     reviews: [
       {
         rating: 5,
-        comment: "Fast shipping!",
-        date: "2025-04-30T09:41:02.054Z",
-        reviewerName: "Isabella Anderson",
-        reviewerEmail: "isabella.anderson@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Awesome product!",
-        date: "2025-04-30T09:41:02.054Z",
-        reviewerName: "Luna Perez",
-        reviewerEmail: "luna.perez@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Highly impressed!",
-        date: "2025-04-30T09:41:02.054Z",
-        reviewerName: "Savannah Gomez",
-        reviewerEmail: "savannah.gomez@x.dummyjson.com",
+        comment: "Excellent blazer.",
+        date: "2026-05-31T09:41:02.053Z",
+        reviewerName: "Frank James",
+        reviewerEmail: "frank@example.com",
       },
     ],
 
-    returnPolicy: "60 days return policy",
+    returnPolicy: "14 days return policy",
     minimumOrderQuantity: 1,
 
     meta: {
-      createdAt: "2025-04-30T09:41:02.054Z",
-      updatedAt: "2025-04-30T09:41:02.054Z",
-      barcode: "5817762883655",
+      createdAt: "2026-05-18T09:41:02.053Z",
+      updatedAt: "2026-05-18T09:41:02.053Z",
+      barcode: "89000000126",
       qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
     },
 
     images: [
-      "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/1.webp",
-      "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/2.webp",
-      "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/3.webp",
-      "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/4.webp",
+      "https://i.pinimg.com/1200x/29/7b/bb/297bbbd77fcf7bbac870aa19e813e8e8.jpg",
     ],
 
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/thumbnail.webp",
+      "https://i.pinimg.com/1200x/29/7b/bb/297bbbd77fcf7bbac870aa19e813e8e8.jpg",
   },
 
   {
-    id: 26,
-    title: "Amazon Echo Plus",
+    id: 127,
+    title: "Casual Black Cargo Pants",
     description:
-      "The Amazon Echo Plus is a smart speaker with built-in Alexa voice control. It features premium sound quality and serves as a hub for controlling smart home devices.",
-    category: "mobile-accessories",
+      "Modern black cargo pants with a relaxed fit and practical pocket design for everyday streetwear.",
+    category: "fashion",
 
-    price: 99.99,
-    actualPrice: 113.72,
-    discountPercentage: 12.07,
-
-    color: ["Black", "White", "Charcoal"],
-    size: ["Standard", "Compact"],
+    price: 26000,
+    actualPrice: 32000,
+    discountPercentage: 18.75,
 
     rating: {
-      rate: 4.99,
-      count: 61,
+      rate: 4.5,
+      count: 189,
     },
 
-    stock: 61,
-    tags: ["electronics", "smart speakers"],
-    brand: "Amazon",
-    sku: "MOB-AMA-AMA-099",
-    weight: 5,
+    stock: 16,
+
+    tags: ["cargo", "pants", "black", "streetwear"],
+    brand: "StreetMode",
+    sku: "FAS-STR-019",
+
+    weight: 0.6,
+
     dimensions: {
-      width: 12.68,
-      height: 15.24,
-      depth: 27.46,
-    },
-    warrantyInformation: "6 months warranty",
-    shippingInformation: "Ships in 1 week",
-    availabilityStatus: "In Stock",
-    reviews: [
-      {
-        rating: 2,
-        comment: "Would not recommend!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Chloe Morales",
-        reviewerEmail: "chloe.morales@x.dummyjson.com",
-      },
-      {
-        rating: 3,
-        comment: "Very disappointed!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Mateo Perez",
-        reviewerEmail: "mateo.perez@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Fast shipping!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Evelyn Walker",
-        reviewerEmail: "evelyn.walker@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "7 days return policy",
-    minimumOrderQuantity: 9,
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "2256117192038",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-    images: [
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/1.webp",
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/2.webp",
-    ],
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/thumbnail.webp",
-  },
-
-  {
-    id: 27,
-    title: "Apple Airpods",
-    description:
-      "The Apple Airpods offer a seamless wireless audio experience. With easy pairing, high-quality sound, and Siri integration, they are perfect for on-the-go listening.",
-    category: "mobile-accessories",
-
-    price: 129.99,
-    actualPrice: 153.9,
-    discountPercentage: 15.54,
-
-    color: ["White"],
-    size: ["Standard"],
-
-    rating: {
-      rate: 4.15,
-      count: 67,
+      width: 35,
+      height: 5,
+      depth: 29,
     },
 
-    stock: 67,
-    tags: ["electronics", "wireless earphones"],
-    brand: "Apple",
-    sku: "MOB-APP-APP-100",
-    weight: 4,
-    dimensions: {
-      width: 25.79,
-      height: 18.38,
-      depth: 11.53,
-    },
-    warrantyInformation: "3 year warranty",
-    shippingInformation: "Ships in 3-5 business days",
-    availabilityStatus: "In Stock",
-    reviews: [
-      {
-        rating: 3,
-        comment: "Would not buy again!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Christopher West",
-        reviewerEmail: "christopher.west@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Great product!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Emma Wilson",
-        reviewerEmail: "emma.wilson@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Excellent quality!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Xavier Wright",
-        reviewerEmail: "xavier.wright@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "No return policy",
-    minimumOrderQuantity: 4,
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "1104115683955",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-    images: [
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/1.webp",
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/2.webp",
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/3.webp",
-    ],
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/thumbnail.webp",
-  },
-
-  {
-    id: 28,
-    title: "Apple AirPods Max Silver",
-    description:
-      "The Apple AirPods Max in Silver are premium over-ear headphones with high-fidelity audio, adaptive EQ, and active noise cancellation. Experience immersive sound in style.",
-    category: "mobile-accessories",
-
-    price: 549.99,
-    actualPrice: 636.99,
-    discountPercentage: 13.67,
-
-    color: ["Silver", "Space Gray", "Sky Blue", "Pink"],
-    size: ["Standard"],
-
-    rating: {
-      rate: 3.47,
-      count: 59,
-    },
-
-    stock: 59,
-    tags: ["electronics", "over-ear headphones"],
-    brand: "Apple",
-    sku: "MOB-APP-APP-101",
-    weight: 2,
-    dimensions: {
-      width: 24.88,
-      height: 14.9,
-      depth: 27.54,
-    },
     warrantyInformation: "No warranty",
-    shippingInformation: "Ships in 2 weeks",
+    shippingInformation: "Ships in 3-5 days",
     availabilityStatus: "In Stock",
+
+    sizes: ["30", "32", "34", "36", "38"],
+    colors: ["Black"],
+
+    flashDeal: true,
+
     reviews: [
       {
         rating: 5,
-        comment: "Excellent quality!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Henry Adams",
-        reviewerEmail: "henry.adams@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Very happy with my purchase!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Elijah Cruz",
-        reviewerEmail: "elijah.cruz@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Would buy again!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "William Lopez",
-        reviewerEmail: "william.lopez@x.dummyjson.com",
+        comment: "Good quality cargo pants.",
+        date: "2026-06-01T09:41:02.053Z",
+        reviewerName: "Henry Scott",
+        reviewerEmail: "henry@example.com",
       },
     ],
-    returnPolicy: "No return policy",
+
+    returnPolicy: "14 days return policy",
     minimumOrderQuantity: 1,
+
     meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "4062176053732",
+      createdAt: "2026-05-19T09:41:02.053Z",
+      updatedAt: "2026-05-19T09:41:02.053Z",
+      barcode: "89000000127",
       qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
     },
+
     images: [
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/1.webp",
+      "https://i.pinimg.com/736x/b8/3f/08/b83f0833956a171c1793d0e7327a642a.jpg",
     ],
+
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp",
+      "https://i.pinimg.com/736x/b8/3f/08/b83f0833956a171c1793d0e7327a642a.jpg",
   },
 
   {
-    id: 29,
-    title: "Apple Airpower Wireless Charger",
+    id: 128,
+    title: "Premium White Formal Shirt",
     description:
-      "The Apple AirPower Wireless Charger provides a convenient way to charge your compatible Apple devices wirelessly. Simply place your devices on the charging mat for effortless charging.",
-    category: "mobile-accessories",
+      "A premium white formal shirt designed for professional outfits, events, and smart occasions.",
+    category: "fashion",
 
-    price: 79.99,
-    actualPrice: 83.74,
-    discountPercentage: 4.48,
-
-    color: ["White"],
-    size: ["Standard"],
+    price: 34000,
+    actualPrice: 42000,
+    discountPercentage: 19.05,
 
     rating: {
-      rate: 3.68,
-      count: 1,
+      rate: 4.8,
+      count: 241,
     },
 
-    stock: 1,
-    tags: ["electronics", "wireless chargers"],
-    brand: "Apple",
-    sku: "MOB-APP-APP-102",
-    weight: 5,
+    stock: 13,
+
+    tags: ["formal", "shirt", "white", "premium"],
+    brand: "ClassicFit",
+    sku: "FAS-CLA-020",
+
+    weight: 0.4,
+
     dimensions: {
-      width: 25.25,
-      height: 25.44,
-      depth: 10.98,
-    },
-    warrantyInformation: "2 year warranty",
-    shippingInformation: "Ships in 1 week",
-    availabilityStatus: "Low Stock",
-    reviews: [
-      {
-        rating: 5,
-        comment: "Would buy again!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Christian Perez",
-        reviewerEmail: "christian.perez@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Awesome product!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Ruby Andrews",
-        reviewerEmail: "ruby.andrews@x.dummyjson.com",
-      },
-      {
-        rating: 3,
-        comment: "Not worth the price!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Harper Turner",
-        reviewerEmail: "harper.turner@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "90 days return policy",
-    minimumOrderQuantity: 7,
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "3323662242939",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-    images: [
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpower-wireless-charger/1.webp",
-    ],
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpower-wireless-charger/thumbnail.webp",
-  },
-
-  {
-    id: 30,
-    title: "Apple HomePod Mini Cosmic Grey",
-    description:
-      "The Apple HomePod Mini in Cosmic Grey is a compact smart speaker that delivers impressive audio and integrates seamlessly with the Apple ecosystem for a smart home experience.",
-    category: "mobile-accessories",
-
-    price: 99.99,
-    actualPrice: 122.08,
-    discountPercentage: 18.1,
-
-    color: ["Cosmic Gray", "White", "Orange", "Blue"],
-    size: ["Mini", "Standard"],
-
-    rating: {
-      rate: 4.62,
-      count: 27,
+      width: 34,
+      height: 3,
+      depth: 28,
     },
 
-    stock: 27,
-    tags: ["electronics", "smart speakers"],
-    brand: "Apple",
-    sku: "MOB-APP-APP-103",
-    weight: 10,
-    dimensions: {
-      width: 16.02,
-      height: 29.2,
-      depth: 19.81,
-    },
-    warrantyInformation: "3 months warranty",
-    shippingInformation: "Ships in 1 month",
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 2-4 days",
     availabilityStatus: "In Stock",
+
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: ["White"],
+
+    flashDeal: false,
+
     reviews: [
       {
         rating: 5,
-        comment: "Great product!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Max Russell",
-        reviewerEmail: "max.russell@x.dummyjson.com",
-      },
-      {
-        rating: 3,
-        comment: "Would not buy again!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Isaac Lawrence",
-        reviewerEmail: "isaac.lawrence@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Very pleased!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Avery Carter",
-        reviewerEmail: "avery.carter@x.dummyjson.com",
+        comment: "Excellent formal shirt.",
+        date: "2026-06-02T09:41:02.053Z",
+        reviewerName: "Robert Lee",
+        reviewerEmail: "robert@example.com",
       },
     ],
-    returnPolicy: "90 days return policy",
-    minimumOrderQuantity: 8,
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "6135642608024",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-    images: [
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/1.webp",
-    ],
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/thumbnail.webp",
-  },
 
-  {
-    id: 31,
-    title: "Apple iPhone Charger",
-    description:
-      "The Apple iPhone Charger is a high-quality charger designed for fast and efficient charging of your iPhone. Ensure your device stays powered up and ready to go.",
-    category: "mobile-accessories",
-
-    price: 19.99,
-    actualPrice: 24.53,
-    discountPercentage: 18.52,
-
-    color: ["White"],
-    size: ["Standard", "Compact"],
-
-    rating: {
-      rate: 4.15,
-      count: 31,
-    },
-
-    stock: 31,
-    tags: ["electronics", "chargers"],
-    brand: "Apple",
-    sku: "MOB-APP-APP-104",
-    weight: 1,
-    dimensions: {
-      width: 13.63,
-      height: 26.25,
-      depth: 5.95,
-    },
-    warrantyInformation: "1 year warranty",
-    shippingInformation: "Ships in 2 weeks",
-    availabilityStatus: "In Stock",
-    reviews: [
-      {
-        rating: 1,
-        comment: "Very disappointed!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Sadie Morales",
-        reviewerEmail: "sadie.morales@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Great product!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Lily Torres",
-        reviewerEmail: "lily.torres@x.dummyjson.com",
-      },
-      {
-        rating: 2,
-        comment: "Waste of money!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Luke Cooper",
-        reviewerEmail: "luke.cooper@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "90 days return policy",
-    minimumOrderQuantity: 14,
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "0879776541417",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-    images: [
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/1.webp",
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/2.webp",
-    ],
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/thumbnail.webp",
-  },
-
-  {
-    id: 32,
-    title: "Apple MagSafe Battery Pack",
-    description:
-      "The Apple MagSafe Battery Pack is a portable and convenient way to add extra battery life to your MagSafe-compatible iPhone. Attach it magnetically for a secure connection.",
-    category: "mobile-accessories",
-
-    price: 99.99,
-    actualPrice: 120.7,
-    discountPercentage: 17.17,
-
-    color: ["White"],
-    size: ["Compact", "Standard"],
-
-    rating: {
-      rate: 3.62,
-      count: 1,
-    },
-
-    stock: 1,
-    tags: ["electronics", "power banks"],
-    brand: "Apple",
-    sku: "MOB-APP-APP-105",
-    weight: 6,
-    dimensions: {
-      width: 15.4,
-      height: 11.89,
-      depth: 19.67,
-    },
-    warrantyInformation: "2 year warranty",
-    shippingInformation: "Ships overnight",
-    availabilityStatus: "Low Stock",
-    reviews: [
-      {
-        rating: 2,
-        comment: "Would not recommend!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Stella Morris",
-        reviewerEmail: "stella.morris@x.dummyjson.com",
-      },
-      {
-        rating: 2,
-        comment: "Not as described!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Henry Adams",
-        reviewerEmail: "henry.adams@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Fast shipping!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Cameron Burke",
-        reviewerEmail: "cameron.burke@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "No return policy",
-    minimumOrderQuantity: 4,
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "5157424897794",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-    images: [
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/1.webp",
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/2.webp",
-    ],
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/thumbnail.webp",
-  },
-
-  {
-    id: 33,
-    title: "Apple Watch Series 4 Gold",
-    description:
-      "The Apple Watch Series 4 in Gold is a stylish and advanced smartwatch with features like heart rate monitoring, fitness tracking, and a beautiful Retina display.",
-    category: "mobile-accessories",
-
-    price: 349.99,
-    actualPrice: 397.78,
-    discountPercentage: 12.02,
-
-    color: ["Gold", "Silver", "Space Gray"],
-    size: ["40mm", "44mm"],
-
-    rating: {
-      rate: 2.74,
-      count: 33,
-    },
-
-    stock: 33,
-    tags: ["electronics", "smartwatches"],
-    brand: "Apple",
-    sku: "MOB-APP-APP-106",
-    weight: 6,
-    dimensions: {
-      width: 27.69,
-      height: 28.03,
-      depth: 7.11,
-    },
-    warrantyInformation: "6 months warranty",
-    shippingInformation: "Ships in 1 month",
-    availabilityStatus: "In Stock",
-    reviews: [
-      {
-        rating: 3,
-        comment: "Very unhappy with my purchase!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Chloe Morales",
-        reviewerEmail: "chloe.morales@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Fast shipping!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Ava Harrison",
-        reviewerEmail: "ava.harrison@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Would buy again!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Nicholas Bailey",
-        reviewerEmail: "nicholas.bailey@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "No return policy",
-    minimumOrderQuantity: 3,
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "3921248718888",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-    images: [
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/1.webp",
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/2.webp",
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/3.webp",
-    ],
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/thumbnail.webp",
-  },
-
-  {
-    id: 34,
-    title: "Beats Flex Wireless Earphones",
-    description:
-      "The Beats Flex Wireless Earphones offer a comfortable and versatile audio experience. With magnetic earbuds and up to 12 hours of battery life, they are ideal for everyday use.",
-    category: "mobile-accessories",
-
-    price: 49.99,
-    actualPrice: 53.03,
-    discountPercentage: 5.73,
-
-    color: ["Black", "Yuzu Yellow", "Smoke Gray"],
-    size: ["Standard"],
-
-    rating: {
-      rate: 4.24,
-      count: 50,
-    },
-
-    stock: 50,
-    tags: ["electronics", "wireless earphones"],
-    brand: "Beats",
-    sku: "MOB-BEA-BEA-107",
-    weight: 8,
-    dimensions: {
-      width: 17.86,
-      height: 25.74,
-      depth: 23.09,
-    },
-    warrantyInformation: "1 year warranty",
-    shippingInformation: "Ships in 1-2 business days",
-    availabilityStatus: "In Stock",
-    reviews: [
-      {
-        rating: 2,
-        comment: "Disappointing product!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "William Gonzalez",
-        reviewerEmail: "william.gonzalez@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Very pleased!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Gabriel Mitchell",
-        reviewerEmail: "gabriel.mitchell@x.dummyjson.com",
-      },
-      {
-        rating: 2,
-        comment: "Not worth the price!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Gabriel Adams",
-        reviewerEmail: "gabriel.adams@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "7 days return policy",
-    minimumOrderQuantity: 17,
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "1741271692174",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-    images: [
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/1.webp",
-    ],
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/thumbnail.webp",
-  },
-
-  {
-    id: 35,
-    title: "iPhone 12 Silicone Case with MagSafe Plum",
-    description:
-      "The iPhone 12 Silicone Case with MagSafe in Plum is a stylish and protective case designed for the iPhone 12. It features MagSafe technology for easy attachment of accessories.",
-    category: "mobile-accessories",
-
-    price: 29.99,
-    actualPrice: 34.81,
-    discountPercentage: 13.85,
-
-    color: ["Plum", "Black", "White", "Blue"],
-    size: ["iPhone 12"],
-
-    rating: {
-      rate: 3.62,
-      count: 69,
-    },
-
-    stock: 69,
-    tags: ["electronics", "phone accessories"],
-    brand: "Apple",
-    sku: "MOB-APP-IPH-108",
-    weight: 7,
-    dimensions: {
-      width: 12.49,
-      height: 11.29,
-      depth: 23.52,
-    },
-    warrantyInformation: "3 months warranty",
-    shippingInformation: "Ships in 3-5 business days",
-    availabilityStatus: "In Stock",
-    reviews: [
-      {
-        rating: 2,
-        comment: "Would not buy again!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Penelope King",
-        reviewerEmail: "penelope.king@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Great value for money!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Isabella Anderson",
-        reviewerEmail: "isabella.anderson@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Highly recommended!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Claire Foster",
-        reviewerEmail: "claire.foster@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "90 days return policy",
-    minimumOrderQuantity: 4,
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "8156838251449",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-    images: [
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/1.webp",
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/2.webp",
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/3.webp",
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/4.webp",
-    ],
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/thumbnail.webp",
-  },
-
-  {
-    id: 36,
-    title: "Monopod",
-    description:
-      "The Monopod is a versatile camera accessory for stable and adjustable shooting. Perfect for capturing selfies, group photos, and videos with ease.",
-    category: "mobile-accessories",
-
-    price: 19.99,
-    actualPrice: 21.87,
-    discountPercentage: 8.58,
-
-    color: ["Black", "Silver"],
-    size: ["Small", "Medium", "Large"],
-
-    rating: {
-      rate: 4.43,
-      count: 48,
-    },
-
-    stock: 48,
-    tags: ["electronics", "camera accessories"],
-    brand: "TechGear",
-    sku: "MOB-TEC-MON-109",
-    weight: 10,
-    dimensions: {
-      width: 8.8,
-      height: 12.93,
-      depth: 21.1,
-    },
-    warrantyInformation: "1 year warranty",
-    shippingInformation: "Ships in 1-2 business days",
-    availabilityStatus: "In Stock",
-    reviews: [
-      {
-        rating: 1,
-        comment: "Not worth the price!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Max Parker",
-        reviewerEmail: "max.parker@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Highly recommended!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Maya Reed",
-        reviewerEmail: "maya.reed@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Fast shipping!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Mila Hernandez",
-        reviewerEmail: "mila.hernandez@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "60 days return policy",
-    minimumOrderQuantity: 30,
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "2915346477518",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-    images: [
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/1.webp",
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/2.webp",
-    ],
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/thumbnail.webp",
-  },
-
-  {
-    id: 37,
-    title: "Selfie Lamp with iPhone",
-    description:
-      "The Selfie Lamp with iPhone is a portable and adjustable LED light designed to enhance your selfies and video calls. Attach it to your iPhone for well-lit photos.",
-    category: "mobile-accessories",
-
-    price: 14.99,
-    actualPrice: 18.6,
-    discountPercentage: 19.4,
-
-    color: ["White", "Black", "Pink"],
-    size: ["Small", "Medium"],
-
-    rating: {
-      rate: 3.55,
-      count: 58,
-    },
-
-    stock: 58,
-    tags: ["electronics", "selfie accessories"],
-    brand: "GadgetMaster",
-    sku: "MOB-GAD-SEL-110",
-    weight: 10,
-    dimensions: {
-      width: 5.26,
-      height: 13.84,
-      depth: 22.83,
-    },
-    warrantyInformation: "Lifetime warranty",
-    shippingInformation: "Ships in 2 weeks",
-    availabilityStatus: "In Stock",
-    reviews: [
-      {
-        rating: 4,
-        comment: "Highly recommended!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Luke Cooper",
-        reviewerEmail: "luke.cooper@x.dummyjson.com",
-      },
-      {
-        rating: 3,
-        comment: "Poor quality!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Caleb Perkins",
-        reviewerEmail: "caleb.perkins@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Highly recommended!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Benjamin Wilson",
-        reviewerEmail: "benjamin.wilson@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "60 days return policy",
-    minimumOrderQuantity: 22,
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "4372781189895",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-    images: [
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-lamp-with-iphone/1.webp",
-    ],
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-lamp-with-iphone/thumbnail.webp",
-  },
-
-  {
-    id: 38,
-    title: "Selfie Stick Monopod",
-    description:
-      "The Selfie Stick Monopod is a extendable and foldable device for capturing the perfect selfie or group photo. Compatible with smartphones and cameras.",
-    category: "mobile-accessories",
-
-    price: 12.99,
-    actualPrice: 16.05,
-    discountPercentage: 19.12,
-
-    color: ["Black", "Blue", "Pink"],
-    size: ["Small", "Medium", "Large"],
-
-    rating: {
-      rate: 3.88,
-      count: 11,
-    },
-
-    stock: 11,
-    tags: ["electronics", "selfie accessories"],
-    brand: "SnapTech",
-    sku: "MOB-SNA-SEL-111",
-    weight: 2,
-    dimensions: {
-      width: 24.76,
-      height: 26.38,
-      depth: 21.39,
-    },
-    warrantyInformation: "3 year warranty",
-    shippingInformation: "Ships in 1-2 business days",
-    availabilityStatus: "In Stock",
-    reviews: [
-      {
-        rating: 4,
-        comment: "Great product!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Ryan Graham",
-        reviewerEmail: "ryan.graham@x.dummyjson.com",
-      },
-      {
-        rating: 4,
-        comment: "Great product!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Nora Russell",
-        reviewerEmail: "nora.russell@x.dummyjson.com",
-      },
-      {
-        rating: 1,
-        comment: "Very dissatisfied!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Luna Perez",
-        reviewerEmail: "luna.perez@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "30 days return policy",
-    minimumOrderQuantity: 8,
-    meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "7063982050226",
-      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
-    },
-    images: [
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-stick-monopod/1.webp",
-    ],
-    thumbnail:
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-stick-monopod/thumbnail.webp",
-  },
-
-  {
-    id: 39,
-    title: "TV Studio Camera Pedestal",
-    description:
-      "The TV Studio Camera Pedestal is a professional-grade camera support system for smooth and precise camera movements in a studio setting. Ideal for broadcast and production.",
-    category: "mobile-accessories",
-
-    price: 499.99,
-    actualPrice: 545.28,
-    discountPercentage: 8.31,
-
-    color: ["Black", "Silver"],
-    size: ["Standard", "Professional"],
-
-    rating: {
-      rate: 2.78,
-      count: 15,
-    },
-
-    stock: 15,
-    tags: ["electronics", "camera accessories"],
-    brand: "ProVision",
-    sku: "MOB-PRO-STU-112",
-    weight: 4,
-    dimensions: {
-      width: 29.84,
-      height: 11.01,
-      depth: 6.81,
-    },
-    warrantyInformation: "3 months warranty",
-    shippingInformation: "Ships in 1-2 business days",
-    availabilityStatus: "In Stock",
-    reviews: [
-      {
-        rating: 3,
-        comment: "Would not recommend!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Aubrey Gutierrez",
-        reviewerEmail: "aubrey.gutierrez@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Would buy again!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Carter Rivera",
-        reviewerEmail: "carter.rivera@x.dummyjson.com",
-      },
-      {
-        rating: 5,
-        comment: "Fast shipping!",
-        date: "2025-04-30T09:41:02.053Z",
-        reviewerName: "Max Russell",
-        reviewerEmail: "max.russell@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "7 days return policy",
+    returnPolicy: "14 days return policy",
     minimumOrderQuantity: 1,
+
     meta: {
-      createdAt: "2025-04-30T09:41:02.053Z",
-      updatedAt: "2025-04-30T09:41:02.053Z",
-      barcode: "1488782082307",
+      createdAt: "2026-05-20T09:41:02.053Z",
+      updatedAt: "2026-05-20T09:41:02.053Z",
+      barcode: "89000000128",
       qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
     },
+
     images: [
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/tv-studio-camera-pedestal/1.webp",
+      "https://i.pinimg.com/1200x/c9/16/75/c91675bce20f20f7534e0a6c502ffa90.jpg",
     ],
+
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/mobile-accessories/tv-studio-camera-pedestal/thumbnail.webp",
+      "https://i.pinimg.com/1200x/c9/16/75/c91675bce20f20f7534e0a6c502ffa90.jpg",
+  },
+
+  {
+    id: 129,
+    title: "Modern Black Casual Outfit",
+    description:
+      "A modern black casual outfit combining a clean design with a relaxed fit for everyday fashion.",
+    category: "fashion",
+
+    price: 44000,
+    actualPrice: 55000,
+    discountPercentage: 20,
+
+    rating: {
+      rate: 4.7,
+      count: 219,
+    },
+
+    stock: 10,
+
+    tags: ["black", "casual", "outfit", "modern"],
+    brand: "UrbanStyle",
+    sku: "FAS-URB-021",
+
+    weight: 0.75,
+
+    dimensions: {
+      width: 38,
+      height: 5,
+      depth: 30,
+    },
+
+    warrantyInformation: "No warranty",
+    shippingInformation: "Ships in 3-5 days",
+    availabilityStatus: "In Stock",
+
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Black"],
+
+    flashDeal: true,
+
+    reviews: [
+      {
+        rating: 5,
+        comment: "Really nice casual outfit.",
+        date: "2026-06-03T09:41:02.053Z",
+        reviewerName: "Steven Moore",
+        reviewerEmail: "steven@example.com",
+      },
+    ],
+
+    returnPolicy: "14 days return policy",
+    minimumOrderQuantity: 1,
+
+    meta: {
+      createdAt: "2026-05-21T09:41:02.053Z",
+      updatedAt: "2026-05-21T09:41:02.053Z",
+      barcode: "89000000129",
+      qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    },
+
+    images: [
+      "https://i.pinimg.com/1200x/1c/32/68/1c326856475e03c8efec8b59b8b0aef6.jpg",
+    ],
+
+    thumbnail:
+      "https://i.pinimg.com/1200x/1c/32/68/1c326856475e03c8efec8b59b8b0aef6.jpg",
   },
 ];
 

@@ -1,5 +1,8 @@
 import React from "react";
-
+import { FaInstagram } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaTiktok } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -7,7 +10,7 @@ export default function Footer() {
       <div class="footer-container">
         <div class="footer-top">
           <div class="footer-brand">
-            <h2>HunchoMart</h2>
+            <h2 className="topHeader">HunchoMart</h2>
             <p>
               Premium fashion & lifestyle marketplace built for modern shoppers.
               Discover fashion, sneakers, tech, beauty and more.
@@ -67,10 +70,18 @@ export default function Footer() {
           <p>© {year} HUNCHO MART. All rights reserved.</p>
 
           <div class="socials">
-            <a href="#">Instagram</a>
-            <a href="#">X</a>
-            <a href="#">TikTok</a>
-            <a href="#">Facebook</a>
+            <a href="#">
+              <FaInstagram />
+            </a>
+            <a href="#">
+              <FaXTwitter />
+            </a>
+            <a href="#">
+              <FaTiktok />
+            </a>
+            <a href="#">
+              <FaFacebook />
+            </a>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import heroBackgroundImg from "../assets/heroBackground.png";
 import fashion from "../assets/fashion.webp";
-import tech from "../assets/tech.webp";
+import tech from "../assets/tech.jpeg";
 import { NavLink } from "react-router-dom";
 import beauty from "../assets/beauty.webp";
 import sneakers from "../assets/sneaker.webp";

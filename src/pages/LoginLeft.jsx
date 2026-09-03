@@ -35,6 +35,7 @@ export default function LoginLeft() {
         setError({
           email: "Account does not exist or password is incorrect",
         });
+
         return;
       }
 
@@ -50,15 +51,17 @@ export default function LoginLeft() {
       <div className="loginFrame">
         <form onSubmit={handleSubmit} className="inputBackground">
           <div>
-            <h1 className="text-[24px] text-[#333333] [@media(max-width:640px)]:text-[24px] font-[600]">
+            <h1 className="text-[24px] text-[#333333] [@media(max-width:767px)]:text-[24px] font-[600] topHeader">
               Welcome to Huncho Mart
             </h1>
-            <p className="mt-[8px] text-[16px]  font-[400] text-[#737373]">
+            <p className="mt-[8px] text-[16px]  font-[400] text-[#737373] font-serif">
               Add your details below to get back into the app
             </p>
           </div>
           <div className="flex flex-col mt-[40px]">
-            <label className="text-[12px] font-[400]">Email Address</label>
+            <label className=" font-serif text-[12px] font-[400]">
+              Email Address
+            </label>
             <div className={`inputLoginBorder ${error.email ? "error" : ""}`}>
               <span>
                 <AiOutlineMail />
@@ -66,6 +69,7 @@ export default function LoginLeft() {
               <input
                 onChange={(e) => {
                   setFormDate({ ...formData, email: e.target.value });
+                  setError("");
                 }}
                 type="email"
                 name=""
@@ -75,7 +79,7 @@ export default function LoginLeft() {
               {error.email && <p className="errorMessage">{error.email}</p>}
             </div>
 
-            <label className="mt-[24px] text-[12px] font-[400]">
+            <label className="mt-[24px] font-serif  text-[12px] font-[400]">
               Passwords
             </label>
             <div
@@ -87,6 +91,7 @@ export default function LoginLeft() {
               <input
                 onChange={(e) => {
                   setFormDate({ ...formData, password: e.target.value });
+                  setError("");
                 }}
                 type="password"
                 name=""
@@ -99,7 +104,7 @@ export default function LoginLeft() {
             </div>
 
             <div className="LoginBorder hover:bg-[#BEADFF] mt-[24px] bg-[#633CFF] text-center">
-              <button className="  text-[white]" type="submit">
+              <button className=" font-serif  text-[white]" type="submit">
                 Login
               </button>
             </div>

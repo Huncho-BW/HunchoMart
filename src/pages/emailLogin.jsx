@@ -30,7 +30,7 @@ export default function EmailLongin() {
           />
         </div>
         <div className="eamilBut">
-          <button>join </button>
+          <button className="topHeader text-[16px]">Join </button>
         </div>
       </div>
     </div>

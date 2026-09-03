@@ -10,12 +10,15 @@ export default function HomeBueaty() {
     queryKey: ["product", "beauty"],
     queryFn: () => CategoriesApi("beauty"),
     retry: 5,
+
     retryDelay: 10 * 60 * 1000,
   });
 
   console.log("log data in Beauty", data);
 
-  const BeautyProduct = data ?? [];
+  const BeautyProduct = [...(data ?? [])]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 14);
 
   return (
     <div>

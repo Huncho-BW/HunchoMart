@@ -101,7 +101,7 @@ export default function ProductDetails() {
             className="product-image"
           />
 
-          <div className="product-type">
+          <div className="product-type mt-3">
             <h1>{productData?.title}</h1>
           </div>
         </div>
@@ -190,7 +190,7 @@ export default function ProductDetails() {
               </h1>
 
               <div className="flex gap-2">
-                {productData?.color?.map((item) => (
+                {productData?.colors?.map((item) => (
                   <button
                     onClick={() => {
                       setproductDetailsData((prev) => ({
@@ -231,7 +231,7 @@ export default function ProductDetails() {
             </div>
 
             <div className="flex gap-2">
-              {productData?.size?.map((item) => (
+              {productData?.sizes?.map((item) => (
                 <div
                   className={`${productDetailsData.size === item ? " bg-[#0c0c0c] text-white size-box " : " size-box"}`}
                   key={item}

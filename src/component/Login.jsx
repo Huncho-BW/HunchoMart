@@ -12,7 +12,7 @@ import { CreditCard } from "lucide-react";
 import { motion } from "framer-motion";
 export default function Login() {
   return (
-    <>
+    <div className="">
       <div>
         <motion.div
           initial={{ opacity: 0, y: 100 }}
@@ -96,12 +96,12 @@ export default function Login() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 8, delay: 7 }}
+          transition={{ duration: 5 }}
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           <LoginLeft />
         </motion.div>
       </div>
-    </>
+    </div>
   );
 }

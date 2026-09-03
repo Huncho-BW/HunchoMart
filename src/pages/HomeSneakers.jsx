@@ -8,15 +8,16 @@ import { motion } from "motion/react";
 export default function HomeSneankers() {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["product", "sneakers"],
-    queryFn: () => CategoriesApi("mens-shoes"),
+    queryFn: () => CategoriesApi("sneaker"),
     retry: 5,
     retryDelay: 10 * 60 * 1000,
   });
 
   console.log("log data in sneaker", data);
 
-  const sneakers = data ?? [];
-
+  const sneakers = [...(data ?? [])]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 14);
   return (
     <div>
       {/* Heading */}

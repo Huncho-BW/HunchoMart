@@ -2,7 +2,7 @@ import React from "react";
 import ProductCard from "./ProductCard";
 import heroBackgroundImg from "../assets/heroBackground.png";
 import fashion from "../assets/fashion.webp";
-import tech from "../assets/tech.webp";
+import tech from "../assets/tech.jpeg";
 import sneakers from "../assets/sneaker.webp";
 import beauty from "../assets/beauty.webp";
 import { NavLink } from "react-router-dom";

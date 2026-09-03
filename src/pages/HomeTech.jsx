@@ -8,14 +8,16 @@ import BrandSke from "../skeletonComponenet/BrandCardSkeleton";
 export default function HomeTech() {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["product", "tech"],
-    queryFn: () => CategoriesApi("mobile-accessories"),
+    queryFn: () => CategoriesApi("tech"),
     retry: 5,
     retryDelay: 10 * 60 * 1000,
   });
 
   console.log("log data in tech", data);
 
-  const techData = data ?? [];
+  const techData = [...(data ?? [])]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 14);
 
   console.log("log out tech data", techData);
 

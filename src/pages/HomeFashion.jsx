@@ -15,7 +15,9 @@ export default function HomeFashion() {
 
   console.log("log data in fashion", data);
 
-  const fashionData = data ?? [];
+  const fashionData = [...(data ?? [])]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 14);
 
   console.log("log out fashion data", fashionData);
 

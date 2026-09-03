@@ -3,6 +3,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { CiLock, CiCreditCard1 } from "react-icons/ci";
 import { AiOutlineMail, AiOutlineHome } from "react-icons/ai";
 import { AuthenticatonContext } from "../context/AuthenticatonContext";
+
+import bgImage from "../assets/creatBG.png";
 export default function CreateAccount() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -24,12 +26,12 @@ export default function CreateAccount() {
 
     // First Name
     if (formDataCreateAccount.firstName === "") {
-      newError.firstName = "First name can't be empty";
+      newError.firstName = " can't be empty";
     }
 
     // Last Name
     if (formDataCreateAccount.lastName === "") {
-      newError.lastName = "Last name can't be empty";
+      newError.lastName = " can't be empty";
     }
 
     // Email
@@ -103,26 +105,34 @@ export default function CreateAccount() {
   }
 
   return (
-    <>
+    <div
+      className="cf"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="createFrame">
         <form onSubmit={handleSubmit}>
           <div className="CreateBackground">
             <div>
-              <h1 className="text-[24px] [@media(max-width:640px)]:text-[24px] font-[700] text-[#333333]">
+              <h1 className="text-[24px] [@media(max-width:640px)]:text-[24px] font-[700] text-[#333333] topHeader">
                 Welcome to Huncho Mart
               </h1>
 
-              <p className="mt-[8px] text-[16px] font-[400] text-[#888888]">
+              <p className="mt-[8px] text-[16px] font-[400] text-[#888888] font-serif">
                 Let’s get you started sharing your links!
               </p>
             </div>
 
-            <div className="flex flex-col mt-[40px]">
+            <div className="flex flex-col mt-[40px] gap-[20px]">
               {/* FIRST + LAST NAME */}
               <div className="flex gap-[16px]">
                 {/* FIRST NAME */}
-                <div className="flex flex-col flex-1">
-                  <label className="text-[12px] font-[400] text-[#333333]">
+                <div className="flex flex-col flex-1 gap-[20px]">
+                  <label className="text-[12px] font-[400] text-[#333333]  font-serif">
                     First Name
                   </label>
 
@@ -140,6 +150,7 @@ export default function CreateAccount() {
                           ...formDataCreateAccount,
                           firstName: e.target.value,
                         });
+                        setError("");
                       }}
                     />
 
@@ -150,8 +161,8 @@ export default function CreateAccount() {
                 </div>
 
                 {/* LAST NAME */}
-                <div className="flex flex-col flex-1">
-                  <label className="text-[12px] font-[400] text-[#333333]">
+                <div className="flex flex-col flex-1  gap-[20px]">
+                  <label className="text-[12px] font-[400] text-[#333333]  font-serif">
                     Last Name
                   </label>
 
@@ -169,6 +180,7 @@ export default function CreateAccount() {
                           ...formDataCreateAccount,
                           lastName: e.target.value,
                         });
+                        setError("");
                       }}
                     />
 
@@ -179,7 +191,7 @@ export default function CreateAccount() {
                 </div>
               </div>
               {/* EMAIL */}
-              <label className="text-[12px] font-[400] text-[#333333]">
+              <label className="text-[12px] font-[400] text-[#333333]  font-serif">
                 Email Address
               </label>
 
@@ -199,6 +211,7 @@ export default function CreateAccount() {
                       ...formDataCreateAccount,
                       email: e.target.value,
                     });
+                    setError("");
                   }}
                 />
 
@@ -206,7 +219,7 @@ export default function CreateAccount() {
               </div>
 
               {/* PASSWORD */}
-              <label className="mt-[24px] text-[12px] font-[400] text-[#333333]">
+              <label className="mt-[24px] text-[12px] font-[400] text-[#333333]  font-serif">
                 Create Password
               </label>
 
@@ -226,6 +239,7 @@ export default function CreateAccount() {
                       ...formDataCreateAccount,
                       password: e.target.value,
                     });
+                    setError("");
                   }}
                 />
 
@@ -235,7 +249,7 @@ export default function CreateAccount() {
               </div>
 
               {/* CONFIRM PASSWORD */}
-              <label className="mt-[24px] text-[12px] font-[400] text-[#333333]">
+              <label className="mt-[24px] text-[12px] font-[400] text-[#333333]  font-serif">
                 Confirm Password
               </label>
 
@@ -257,6 +271,7 @@ export default function CreateAccount() {
                       ...formDataCreateAccount,
                       comfirmPassword: e.target.value,
                     });
+                    setError("");
                   }}
                 />
 
@@ -266,7 +281,7 @@ export default function CreateAccount() {
               </div>
 
               {/* ADDRESS */}
-              <label className="mt-[24px] text-[12px] font-[400] text-[#333333]">
+              <label className="mt-[24px] text-[12px] font-[400] text-[#333333]  font-serif">
                 Address
               </label>
 
@@ -286,6 +301,7 @@ export default function CreateAccount() {
                       ...formDataCreateAccount,
                       address: e.target.value,
                     });
+                    setError("");
                   }}
                 />
 
@@ -295,7 +311,7 @@ export default function CreateAccount() {
               </div>
 
               {/* CARD NUMBER */}
-              <label className="mt-[24px] text-[12px] font-[400] text-[#333333]">
+              <label className="mt-[24px] text-[12px] font-[400] text-[#333333]  font-serif">
                 Card Number
               </label>
 
@@ -318,6 +334,7 @@ export default function CreateAccount() {
                       ...formDataCreateAccount,
                       card: value,
                     });
+                    setError("");
                   }}
                 />
 
@@ -327,8 +344,8 @@ export default function CreateAccount() {
               {/* EXPIRY + CVV */}
               <div className="flex gap-[16px] mt-[24px]">
                 {/* EXPIRE DATE */}
-                <div className="flex flex-col flex-1">
-                  <label className="text-[12px] font-[400] text-[#333333]">
+                <div className="flex flex-col flex-1  gap-[20px]">
+                  <label className="text-[12px] font-[400] text-[#333333]  font-serif">
                     Expiry Date
                   </label>
 
@@ -355,6 +372,8 @@ export default function CreateAccount() {
                           ...formDataCreateAccount,
                           expireDate: value,
                         });
+
+                        setError("");
                       }}
                     />
 
@@ -365,8 +384,8 @@ export default function CreateAccount() {
                 </div>
 
                 {/* CVV */}
-                <div className="flex flex-col flex-1">
-                  <label className="text-[12px] font-[400] text-[#333333]">
+                <div className="flex flex-col flex-1  gap-[20px]">
+                  <label className="text-[12px] font-[400] text-[#333333]  font-serif">
                     CVV
                   </label>
 
@@ -390,6 +409,7 @@ export default function CreateAccount() {
                           ...formDataCreateAccount,
                           cvv: value,
                         });
+                        setError("");
                       }}
                     />
 
@@ -399,26 +419,29 @@ export default function CreateAccount() {
               </div>
 
               {/* PASSWORD INFO */}
-              <p className="mt-[24px] text-[12px] font-[400] text-[#737373]">
+              <p className="mt-[24px] text-[12px] font-[400] text-[#737373]  font-serif">
                 Password must contain at least 8 characters
               </p>
 
               {/* SUBMIT */}
               <div className="CreateBorder mt-[24px] bg-[#633CFF] text-center">
-                <button className="text-[white] w-full" type="submit">
+                <button
+                  className="text-[white] font-serif w-full"
+                  type="submit  "
+                >
                   Create new account
                 </button>
               </div>
 
               {/* LOGIN */}
-              <div className="flex items-center mt-[24px] [@media(max-width:640px)]:flex-col [@media(max-width:640px)]:justify-center">
-                <p className="text-[16px] font-[400] text-[#888888]">
+              <div className="flex items-center mt-[24px] [@media(max-width:640px)]:flex-col [@media(max-width:640px)]:justify-center mb-[30px]">
+                <p className="text-[16px] font-[400] text-[#888888]  font-serif">
                   Already have an account?
                 </p>
 
                 <span
                   onClick={() => navigate("/login")}
-                  className="text-[#633CFF] text-[16px] font-[400] cursor-pointer ml-[5px]"
+                  className="text-[#633CFF] text-[16px] font-[400] cursor-pointer ml-[5px]  font-serif "
                 >
                   Login
                 </span>
@@ -427,6 +450,6 @@ export default function CreateAccount() {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }

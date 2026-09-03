@@ -11,7 +11,7 @@ import { motion, useAnimation } from "motion/react";
 export default function FlashDeal() {
   const getFlashData = async () => {
     const result = await axios.get(
-      "https://huncho-mart-api.onrender.com/api/products",
+      "https://huncho-mart-api.onrender.com/api/products/flash-deals",
     );
 
     return result?.data;
@@ -24,7 +24,9 @@ export default function FlashDeal() {
     retryDelay: 1000,
   });
 
-  const flashData = data?.products ?? [];
+  const flashData = [...(data?.data ?? [])]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 14);
 
   console.log("RAW DATA:", data);
   console.log("FLASH DATA:", flashData);
@@ -63,7 +65,7 @@ export default function FlashDeal() {
         <div className="flex items-center gap-2">
           <div>
             <h1>
-              <IoIosFlash size={30} />
+              <IoIosFlash color="gold" size={30} />
             </h1>
           </div>
 
@@ -103,7 +105,7 @@ export default function FlashDeal() {
             >
               <div className="relative h-[220px] overflow-hidden bg-[#22201E]">
                 <img
-                  src={sneakers}
+                  src={item.images}
                   alt=""
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.05]"
                 />
@@ -128,13 +130,13 @@ export default function FlashDeal() {
                 <div className="flex items-center gap-2">
                   <div>
                     <h1 className="text-[16px] font-[600] text-[#B8965A]">
-                      ${item.price ?? 230}
+                      ₦{Number(item?.price || 0).toLocaleString("en-NG")}
                     </h1>
                   </div>
 
                   <div>
                     <h1 className="text-[12px] font-[700] text-[#555] line-through">
-                      ${item.oldPrice ?? 250}
+                      ₦{Number(item.oldPrice || 0).toLocaleString("en-NG")}
                     </h1>
                   </div>
 

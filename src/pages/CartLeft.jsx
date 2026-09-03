@@ -36,7 +36,7 @@ export default function CartLeft({ productData, isLoading }) {
               <div className="cartVariation relative text-[11px]">
                 {sizeClick === item.id && (
                   <div className="absolute bottom-full left-1/2 z-20 mb-1 flex -translate-x-1/2 gap-1 whitespace-nowrap bg-white border border-gray-200 shadow-md p-1">
-                    {item.size.map((size, index) => (
+                    {item.sizes.map((size, index) => (
                       <button
                         className="whitespace-nowrap px-3 py-2 hover:bg-gray-100"
                         onClick={() => {
@@ -74,7 +74,7 @@ export default function CartLeft({ productData, isLoading }) {
 
                 {colorClick === item.id && (
                   <div className="absolute bottom-full left-1/2 z-20 mb-1 flex -translate-x-1/2 items-center justify-center gap-2 whitespace-nowrap bg-white border border-gray-200 shadow-md p-2">
-                    {item.color.map((color, index) => (
+                    {item.colors.map((color, index) => (
                       <span
                         onClick={() => {
                           setCartItems((prev) =>

@@ -1,4 +1,8 @@
-
+.cf {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
 
 .login {
     position: relative;
@@ -199,8 +203,8 @@ width: 200px;
 
 
 
-    .inputLoginBorder input {
-        flex: 1;
+    .inputLoginBorder  input {
+        width: 100%;
         border: none;
         outline: none;
         background: transparent;
@@ -235,10 +239,22 @@ width: 200px;
 
 
     /* Create Account */
+.createFrame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    z-index: 100;
+    animation: createFade 600ms ease-out forwards;
 
-        .createFrame {
-            animation: createFade 300ms ease-out forwards;
-        }
+
+
+}
+.createFrame::-webkit-scrollbar {
+    display: none;
+}
+     
     
         @keyframes createFade {
             0% {
@@ -253,13 +269,7 @@ width: 200px;
         }
     
         
-            .createFrame {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding: 32px;
-            }
+            
     
             .CreateBackground {
                 margin-top: 51px;
@@ -270,9 +280,23 @@ width: 200px;
                 width: 476px;
     
                 border: 1px solid #E5E7EB;
+
+
+    position: fixed;
+        
+    top: 0%;
     
+        left: 50%;
+        transform: translate( -50%);
+        height: 100dvh;
+        overflow-y: auto;
+
+        scrollbar-width: none;
+            -ms-overflow-style: none;
             }
-    
+.CreateBackground::-webkit-scrollbar {
+                            display: none;
+                        }
             .inputCreateBorder {
                 width: 396px;
                 width: 100%;
@@ -295,7 +319,7 @@ width: 200px;
                 justify-content: space-between;
                 gap: 12px;
     
-                border: 1px solid transparent;
+                border: 1px solid #E5E5E5;
     
                 transition: all 0.2s ease;
     

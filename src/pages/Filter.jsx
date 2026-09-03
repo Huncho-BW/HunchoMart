@@ -5,6 +5,8 @@ export default function FilterSide({
   category,
   setSelectionValue,
   selectedValue,
+  searchInput,
+  setSearchInput,
 }) {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["filter-category", category],
@@ -88,11 +90,11 @@ export default function FilterSide({
         </div>
         <div className="w-[100%] border px-[8px] py-[6px] rounded-lg ">
           <input
-            className="w-[100%]"
+            className="w-[100%] outline-none"
             type="text"
-            placeholder="search"
-            name=""
-            id=""
+            placeholder="Search products..."
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
           />
         </div>
 

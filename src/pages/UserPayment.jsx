@@ -12,12 +12,6 @@ export default function UserPayment() {
         <h1 className="text-[26px] font-[700] text-gray-900">
           Payment Methods
         </h1>
-
-        <div>
-          <button className="cursor-pointer rounded-[8px] bg-black px-[16px] py-[9px] text-[13px] font-[500] text-white transition hover:bg-gray-800">
-            + Add Card
-          </button>
-        </div>
       </div>
 
       {/* Payment Card */}
@@ -43,16 +37,6 @@ export default function UserPayment() {
 
             <h1 className="text-[13px] font-[500] text-gray-700">
               {details.exp}
-            </h1>
-          </div>
-
-          <div className="flex items-center gap-5">
-            <h1 className="cursor-pointer text-[13px] font-[500] text-gray-600 transition hover:text-black hover:underline">
-              Edit
-            </h1>
-
-            <h1 className="cursor-pointer text-[13px] font-[500] text-red-500 transition hover:text-red-600 hover:underline">
-              Remove
             </h1>
           </div>
         </div>

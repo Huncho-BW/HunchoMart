@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Heart, CircleUser, ShoppingCart, Menu, X } from "lucide-react";
 import * as Dialog from "@radix-ui/react-dialog";
 import NavlinkMobile from "./nav-link";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowRight } from "lucide-react";
+import { AuthenticatonContext } from "../context/AuthenticatonContext";
 
 import { CircleX } from "lucide-react";
 export default function Navbar() {
+  const { details } = useContext(AuthenticatonContext);
   const [searchInput, setSearchInput] = useState("");
   const [searchDebounce, setsearchDebounce] = useState("");
-
+  const navigate = useNavigate();
   useEffect(() => {
     const timer = setTimeout(() => {
       setsearchDebounce(searchInput);
@@ -42,6 +44,27 @@ export default function Navbar() {
 
   const searchData = data || [];
   console.log("log out search data", searchData);
+
+  const handleSearch = (cat) => {
+    const category = cat.category?.toLowerCase();
+    if (category === "fashion") {
+      navigate(`/fashion?search=${encodeURIComponent(cat.title)}`);
+    }
+
+    if (category === "sneaker") {
+      navigate(`/sneakers?search=${encodeURIComponent(cat.title)}`);
+    }
+
+    if (category === "tech") {
+      navigate(`/tech?search=${encodeURIComponent(cat.title)}`);
+    }
+
+    if (category === "beauty") {
+      navigate(`/beauty?search=${encodeURIComponent(cat.title)}`);
+    }
+
+    setSearchInput("");
+  };
 
   return (
     <div>
@@ -122,7 +145,11 @@ export default function Navbar() {
               {!isLoading &&
                 !isError &&
                 searchData.map((item) => (
-                  <div key={item.id} className="search-dropdown-item group">
+                  <div
+                    onClick={() => handleSearch(item)}
+                    key={item.id}
+                    className="search-dropdown-item group"
+                  >
                     <p>{item.title}</p>
 
                     <ArrowRight className="search-arrow" size={16} />
@@ -149,9 +176,18 @@ export default function Navbar() {
           </NavLink>
           <NavLink to="/userDash">
             {({ isActive }) => (
-              <CircleUser
-                className={isActive ? "nav-text active" : "nav-text"}
-              />
+              <div
+                className={
+                  isActive
+                    ? " flex gap-3 items-center nav-text active"
+                    : " flex gap-3 items-center nav-text"
+                }
+              >
+                <CircleUser />
+                {details?.firstName.length > 1 && (
+                  <h1>{`Hi ${details.lastName} `}</h1>
+                )}
+              </div>
             )}
           </NavLink>
         </div>
@@ -176,7 +212,7 @@ export default function Navbar() {
                 </Dialog.Close>
 
                 <div>
-                  <div className=" mobileSearch search relative">
+                  <div className=" mobileSearch relative">
                     <input
                       type="text"
                       placeholder="Search products..."

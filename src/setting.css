@@ -65,6 +65,109 @@ width: 200px;
    
 }
 
+/* setting */
+
+.settings-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.settings-header {
+    margin-bottom: 30px;
+}
+
+.settings-header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.settings-section {
+    margin-bottom: 28px;
+}
+
+.settings-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.settings-section-header h2 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.edit-button {
+    border: none;
+    background: transparent;
+    color: #176b4d;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.settings-list {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #eeeeee;
+}
+
+.setting-item {
+    min-height: 58px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+.setting-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: #222;
+    text-transform: capitalize;
+}
+
+.setting-value {
+    font-size: 14px;
+    color: #777;
+}
+
+.delete-account {
+    margin-top: 35px;
+    padding: 18px;
+    background: #fff1f1;
+    border: 1px solid #ffd5d5;
+    border-radius: 12px;
+}
+
+.delete-account button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #d93030;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.delete-account button:hover {
+    background: #b92323;
+}
+
+
 /* Tablet */
 @media (max-width: 1024px) {
     .wishlist-item {

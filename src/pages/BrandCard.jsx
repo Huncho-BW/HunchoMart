@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import { CiHeart } from "react-icons/ci";
 import { Heart } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Star } from "lucide-react";
 import BrandSke from "../skeletonComponenet/BrandCardSkeleton";
+
 export default function BrandCard({ product }) {
   if (!product) return null;
 
   const { addToCart, addToWhishList, removeWhishList, whishlist } =
     useContext(CartContext);
+
   const [click, setClick] = useState(false);
 
   const handleClick = (id) => {
@@ -22,6 +23,7 @@ export default function BrandCard({ product }) {
       addToWhishList(productId);
     }
   };
+
   return (
     <div>
       <NavLink to={`/product/${product.id}`}>
@@ -73,26 +75,28 @@ export default function BrandCard({ product }) {
               </div>
 
               <div>
-                <h1 className="text-[10px]">{`(${product?.rating.count} )`}</h1>
+                <h1 className="text-[10px]">({product?.rating?.count})</h1>
               </div>
             </div>
 
             <div className="flex gap-2">
+              {/* Current Price */}
               <div>
                 <h1 className="text-[16px] font-[600] text-[#0C0C0C]">
-                  {product?.price}
+                  ₦{Number(product?.price || 0).toLocaleString("en-NG")}
                 </h1>
               </div>
 
+              {/* Actual Price */}
               <div>
                 <h1 className="text-[12px] font-[700] text-[#8A8580] line-through">
-                  {product?.actualPrice}
+                  ₦{Number(product?.actualPrice || 0).toLocaleString("en-NG")}
                 </h1>
               </div>
 
               <div className="ml-[auto] p-1">
                 <h1 className="text-[10px] text-[#2D5A3D]">
-                  - {product?.discountPercentage} %
+                  - {product?.discountPercentage}%
                 </h1>
               </div>
             </div>
@@ -101,7 +105,7 @@ export default function BrandCard({ product }) {
           <div className="absolute left-0 top-0 flex w-full justify-between p-2">
             <div>
               <h1 className="text-[12px] text-[#2D5A3D]">
-                {product?.discountPercentage} %
+                {product?.discountPercentage}%
               </h1>
             </div>
 

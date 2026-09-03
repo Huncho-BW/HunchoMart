@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
-import { ChevronUp } from "lucide-react";
+import { ChevronUp, LayoutGrid, Logs } from "lucide-react";
 import FilterSide from "../pages/Filter";
 import BrandCard from "../pages/BrandCard";
-import { LayoutGrid } from "lucide-react";
-import { Logs } from "lucide-react";
 import LayoutCard from "./LayoutCard";
+import { useSearchParams } from "react-router-dom";
 export default function Beauty() {
   const [dropdownMenu, setDropdownMenu] = useState(false);
   const [displayMode, setDisplayMode] = useState("grid");
+  const [searchParams] = useSearchParams();
+  const urlSearch = searchParams.get("search" || "");
+  const [searchInput, setSearchInput] = useState(urlSearch);
+
   const sortOptions = [
     { label: "Featured", value: "" },
     { label: "Price: Low to High", value: "price-asc" },
@@ -17,6 +20,7 @@ export default function Beauty() {
     { label: "Newest", value: "newest" },
     { label: "Top Rated", value: "rating" },
   ];
+
   const [selectedValue, setSelectionValue] = useState({
     brand: [],
     price: {
@@ -34,7 +38,27 @@ export default function Beauty() {
 
   const limit = 12;
 
-  // Fetch fashion products
+  // --------------------------------
+  // SEARCH DEBOUNCE
+  // --------------------------------
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSelectionValue((prev) => ({
+        ...prev,
+        title: searchInput,
+      }));
+
+      setPage(1);
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, [searchInput]);
+
+  // --------------------------------
+  // FETCH BEAUTY PRODUCTS
+  // --------------------------------
+
   const getBeautyData = async () => {
     const response = await axios.get(
       "https://huncho-mart-api.onrender.com/api/products",
@@ -55,7 +79,9 @@ export default function Beauty() {
           color: selectedValue.color.join(",") || undefined,
 
           sort: selectedValue.sort || undefined,
+
           rating: selectedValue.rating || undefined,
+
           page,
           limit,
         },
@@ -75,10 +101,16 @@ export default function Beauty() {
 
   console.log("Beauty API:", data);
 
-  // Products
+  // --------------------------------
+  // PRODUCTS
+  // --------------------------------
+
   const beautyData = data?.products ?? [];
 
-  // Pagination data from backend
+  // --------------------------------
+  // PAGINATION
+  // --------------------------------
+
   const pagination = data?.pagination;
 
   const totalProducts = pagination?.totalProducts ?? 0;
@@ -87,25 +119,49 @@ export default function Beauty() {
 
   const currentPage = pagination?.page ?? page;
 
-  // Whenever filter changes,
-  // go back to page 1
+  // --------------------------------
+  // FILTER CHANGE
+  // --------------------------------
+
   const handleFilterChange = (value) => {
     setSelectionValue(value);
     setPage(1);
   };
 
+  // --------------------------------
+  // SORT CHANGE
+  // --------------------------------
+
+  const handleSortChange = (value) => {
+    setSelectionValue((prev) => ({
+      ...prev,
+      sort: value,
+    }));
+
+    setPage(1);
+    setDropdownMenu(false);
+  };
+
+  // --------------------------------
+  // LOADING
+  // --------------------------------
+
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-[50vh]">
-        Loading fashion products...
+        Loading beauty products...
       </div>
     );
   }
 
+  // --------------------------------
+  // ERROR
+  // --------------------------------
+
   if (isError) {
     return (
       <div className="flex justify-center items-center h-[50vh]">
-        Failed to load fashion products.
+        Failed to load beauty products.
       </div>
     );
   }
@@ -116,25 +172,26 @@ export default function Beauty() {
       <div className="flex gap-2">
         <h1 className="text-[10px] text-[#8A8580]">Home</h1>
 
-        <h1 className="text-[12px] text-[#0C0C0C]">Fashion</h1>
+        <h1 className="text-[12px] text-[#0C0C0C]">Beauty</h1>
       </div>
 
       {/* Header */}
       <div className="flex justify-between">
         <div>
-          <h1 className="text-[30px] topHeader text-[#0C0C0C]">ALL Product</h1>
+          <h1 className="text-[30px] topHeader text-[#0C0C0C]">ALL Products</h1>
 
           <span className="text-[14px] text-[#8A8580]">
-            {totalProducts} item
+            {totalProducts} items
           </span>
         </div>
       </div>
 
       {/* Category Layout */}
-      <div className=" ">
-        <div className=" flex items-center justify-end w-full gap-5">
-          {/* Sort*/}
-          <div className="flex items-center ">
+      <div>
+        {/* Sort + Display Mode */}
+        <div className="flex items-center justify-end w-full gap-5">
+          {/* Sort */}
+          <div className="flex items-center">
             <div className="relative">
               <div
                 onClick={() => setDropdownMenu((prev) => !prev)}
@@ -143,7 +200,8 @@ export default function Beauty() {
                 <span className="text-sm text-gray-500">Sort:</span>
 
                 <span className="text-sm font-semibold text-gray-800">
-                  {selectedValue.sort || "Feature"}
+                  {sortOptions.find((item) => item.value === selectedValue.sort)
+                    ?.label || "Featured"}
                 </span>
 
                 <span
@@ -160,14 +218,7 @@ export default function Beauty() {
                   {sortOptions.map((item) => (
                     <div
                       key={item.value}
-                      onClick={() => {
-                        setSelectionValue((prev) => ({
-                          ...prev,
-                          sort: item.value,
-                        }));
-
-                        setDropdownMenu(false);
-                      }}
+                      onClick={() => handleSortChange(item.value)}
                       className="px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer"
                     >
                       {item.label}
@@ -178,25 +229,24 @@ export default function Beauty() {
             </div>
           </div>
 
-          {/* grid */}
           {/* Display Mode */}
           <div className="flex gap-2 border">
             <button
               onClick={() => setDisplayMode("grid")}
               className={
                 displayMode === "grid"
-                  ? " px-[4px] py-[4px] bg-black text-white"
+                  ? "px-[4px] py-[4px] bg-black text-white"
                   : "px-[4px] py-[4px]"
               }
             >
-              <LayoutGrid style={{ stroke: "0.5px" }} />
+              <LayoutGrid />
             </button>
 
             <button
               onClick={() => setDisplayMode("block")}
               className={
                 displayMode === "block"
-                  ? " px-[4px] py-[4px] bg-black text-white"
+                  ? "px-[4px] py-[4px] bg-black text-white"
                   : "px-[4px] py-[4px]"
               }
             >
@@ -205,6 +255,7 @@ export default function Beauty() {
           </div>
         </div>
 
+        {/* Filter + Products */}
         <div className="CatLayout flex-col mt-5">
           {/* Filter */}
           <div>
@@ -212,11 +263,14 @@ export default function Beauty() {
               category="beauty"
               setSelectionValue={handleFilterChange}
               selectedValue={selectedValue}
+              searchInput={searchInput}
+              setSearchInput={setSearchInput}
             />
           </div>
 
           {/* Products */}
           <div>
+            {/* GRID VIEW */}
             {displayMode === "grid" ? (
               <div className="catDisplay">
                 {beautyData.length > 0 ? (
@@ -224,17 +278,18 @@ export default function Beauty() {
                     <BrandCard key={item.id} product={item} />
                   ))
                 ) : (
-                  <p>No fashion products found.</p>
+                  <p>No beauty products found.</p>
                 )}
               </div>
             ) : (
+              /* LIST VIEW */
               <div className="flex flex-col gap-[20px]">
                 {beautyData.length > 0 ? (
                   beautyData.map((item) => (
                     <LayoutCard key={item.id} product={item} />
                   ))
                 ) : (
-                  <p>No fashion products found.</p>
+                  <p>No beauty products found.</p>
                 )}
               </div>
             )}
@@ -269,6 +324,7 @@ export default function Beauty() {
         </button>
       </div>
 
+      {/* Updating */}
       {isFetching && (
         <p className="text-center mt-3 text-sm text-gray-500">
           Updating products...

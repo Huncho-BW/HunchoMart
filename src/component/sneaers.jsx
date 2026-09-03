@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
-import { ChevronUp } from "lucide-react";
+import { ChevronUp, LayoutGrid, Logs } from "lucide-react";
 import FilterSide from "../pages/Filter";
 import BrandCard from "../pages/BrandCard";
-import { LayoutGrid } from "lucide-react";
-import { Logs } from "lucide-react";
 import LayoutCard from "./LayoutCard";
+import { useSearchParams } from "react-router-dom";
 export default function Sneaker() {
   const [dropdownMenu, setDropdownMenu] = useState(false);
   const [displayMode, setDisplayMode] = useState("grid");
+  const [searchParams] = useSearchParams();
+  const urlSearch = searchParams.get("search" || "");
+  // Search input state
+  const [searchInput, setSearchInput] = useState(urlSearch);
+
   const sortOptions = [
     { label: "Featured", value: "" },
     { label: "Price: Low to High", value: "price-asc" },
@@ -17,6 +21,7 @@ export default function Sneaker() {
     { label: "Newest", value: "newest" },
     { label: "Top Rated", value: "rating" },
   ];
+
   const [selectedValue, setSelectionValue] = useState({
     brand: [],
     price: {
@@ -34,7 +39,27 @@ export default function Sneaker() {
 
   const limit = 12;
 
-  // Fetch fashion products
+  // --------------------------------------------------
+  // SEARCH DEBOUNCE
+  // --------------------------------------------------
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSelectionValue((prev) => ({
+        ...prev,
+        title: searchInput,
+      }));
+
+      setPage(1);
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, [searchInput]);
+
+  // --------------------------------------------------
+  // FETCH SNEAKER PRODUCTS
+  // --------------------------------------------------
+
   const getSneakerData = async () => {
     const response = await axios.get(
       "https://huncho-mart-api.onrender.com/api/products",
@@ -55,7 +80,9 @@ export default function Sneaker() {
           color: selectedValue.color.join(",") || undefined,
 
           sort: selectedValue.sort || undefined,
+
           rating: selectedValue.rating || undefined,
+
           page,
           limit,
         },
@@ -75,10 +102,16 @@ export default function Sneaker() {
 
   console.log("Sneaker API:", data);
 
-  // Products
-  const SneakerData = data?.products ?? [];
+  // --------------------------------------------------
+  // PRODUCTS
+  // --------------------------------------------------
 
-  // Pagination data from backend
+  const sneakerData = data?.products ?? [];
+
+  // --------------------------------------------------
+  // PAGINATION
+  // --------------------------------------------------
+
   const pagination = data?.pagination;
 
   const totalProducts = pagination?.totalProducts ?? 0;
@@ -87,25 +120,35 @@ export default function Sneaker() {
 
   const currentPage = pagination?.page ?? page;
 
-  // Whenever filter changes,
-  // go back to page 1
+  // --------------------------------------------------
+  // FILTER CHANGE
+  // --------------------------------------------------
+
   const handleFilterChange = (value) => {
     setSelectionValue(value);
     setPage(1);
   };
 
+  // --------------------------------------------------
+  // LOADING
+  // --------------------------------------------------
+
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-[50vh]">
-        Loading fashion products...
+        Loading sneaker products...
       </div>
     );
   }
 
+  // --------------------------------------------------
+  // ERROR
+  // --------------------------------------------------
+
   if (isError) {
     return (
       <div className="flex justify-center items-center h-[50vh]">
-        Failed to load fashion products.
+        Failed to load sneaker products.
       </div>
     );
   }
@@ -116,13 +159,13 @@ export default function Sneaker() {
       <div className="flex gap-2">
         <h1 className="text-[10px] text-[#8A8580]">Home</h1>
 
-        <h1 className="text-[12px] text-[#0C0C0C]">Fashion</h1>
+        <h1 className="text-[12px] text-[#0C0C0C]">Sneakers</h1>
       </div>
 
       {/* Header */}
       <div className="flex justify-between">
         <div>
-          <h1 className="text-[30px] topHeader text-[#0C0C0C]">ALL Product</h1>
+          <h1 className="text-[30px] topHeader text-[#0C0C0C]">ALL Sneakers</h1>
 
           <span className="text-[14px] text-[#8A8580]">
             {totalProducts} item
@@ -131,10 +174,11 @@ export default function Sneaker() {
       </div>
 
       {/* Category Layout */}
-      <div className=" ">
-        <div className=" flex items-center justify-end w-full gap-5">
-          {/* Sort*/}
-          <div className="flex items-center ">
+      <div>
+        {/* Sort + Display Mode */}
+        <div className="flex items-center justify-end w-full gap-5">
+          {/* Sort */}
+          <div className="flex items-center">
             <div className="relative">
               <div
                 onClick={() => setDropdownMenu((prev) => !prev)}
@@ -143,18 +187,22 @@ export default function Sneaker() {
                 <span className="text-sm text-gray-500">Sort:</span>
 
                 <span className="text-sm font-semibold text-gray-800">
-                  {selectedValue.sort || "Feature"}
+                  {sortOptions.find((item) => item.value === selectedValue.sort)
+                    ?.label || "Featured"}
                 </span>
 
                 <span
-                  className={`transition-transform duration-300 ${
-                    dropdownMenu ? "rotate-180" : "rotate-0"
-                  }`}
+                  className={
+                    dropdownMenu
+                      ? "transition-transform duration-300 rotate-180"
+                      : "transition-transform duration-300 rotate-0"
+                  }
                 >
                   <ChevronUp />
                 </span>
               </div>
 
+              {/* Sort Dropdown */}
               {dropdownMenu && (
                 <div className="absolute right-0 top-full mt-2 z-50 w-[200px] rounded-xl border border-gray-200 bg-white shadow-lg overflow-hidden">
                   {sortOptions.map((item) => (
@@ -165,6 +213,8 @@ export default function Sneaker() {
                           ...prev,
                           sort: item.value,
                         }));
+
+                        setPage(1);
 
                         setDropdownMenu(false);
                       }}
@@ -178,25 +228,26 @@ export default function Sneaker() {
             </div>
           </div>
 
-          {/* grid */}
           {/* Display Mode */}
           <div className="flex gap-2 border">
+            {/* Grid */}
             <button
               onClick={() => setDisplayMode("grid")}
               className={
                 displayMode === "grid"
-                  ? " px-[4px] py-[4px] bg-black text-white"
+                  ? "px-[4px] py-[4px] bg-black text-white"
                   : "px-[4px] py-[4px]"
               }
             >
-              <LayoutGrid style={{ stroke: "0.5px" }} />
+              <LayoutGrid />
             </button>
 
+            {/* List */}
             <button
               onClick={() => setDisplayMode("block")}
               className={
                 displayMode === "block"
-                  ? " px-[4px] py-[4px] bg-black text-white"
+                  ? "px-[4px] py-[4px] bg-black text-white"
                   : "px-[4px] py-[4px]"
               }
             >
@@ -205,6 +256,7 @@ export default function Sneaker() {
           </div>
         </div>
 
+        {/* Filter + Products */}
         <div className="CatLayout flex-col mt-5">
           {/* Filter */}
           <div>
@@ -212,29 +264,33 @@ export default function Sneaker() {
               category="sneaker"
               setSelectionValue={handleFilterChange}
               selectedValue={selectedValue}
+              searchInput={searchInput}
+              setSearchInput={setSearchInput}
             />
           </div>
 
           {/* Products */}
           <div>
+            {/* GRID VIEW */}
             {displayMode === "grid" ? (
               <div className="catDisplay">
-                {SneakerData.length > 0 ? (
-                  SneakerData.map((item) => (
+                {sneakerData.length > 0 ? (
+                  sneakerData.map((item) => (
                     <BrandCard key={item.id} product={item} />
                   ))
                 ) : (
-                  <p>No fashion products found.</p>
+                  <p>No sneaker products found.</p>
                 )}
               </div>
             ) : (
+              /* LIST VIEW */
               <div className="flex flex-col gap-[20px]">
-                {SneakerData.length > 0 ? (
-                  SneakerData.map((item) => (
+                {sneakerData.length > 0 ? (
+                  sneakerData.map((item) => (
                     <LayoutCard key={item.id} product={item} />
                   ))
                 ) : (
-                  <p>No fashion products found.</p>
+                  <p>No sneaker products found.</p>
                 )}
               </div>
             )}
@@ -244,6 +300,7 @@ export default function Sneaker() {
 
       {/* Pagination */}
       <div className="flex justify-center items-center gap-4 mt-8">
+        {/* Previous */}
         <button
           disabled={currentPage === 1 || isFetching}
           onClick={() => {
@@ -254,10 +311,12 @@ export default function Sneaker() {
           Previous
         </button>
 
+        {/* Page */}
         <span>
           Page {currentPage} of {totalPages}
         </span>
 
+        {/* Next */}
         <button
           disabled={currentPage === totalPages || isFetching}
           onClick={() => {
@@ -269,6 +328,7 @@ export default function Sneaker() {
         </button>
       </div>
 
+      {/* Updating */}
       {isFetching && (
         <p className="text-center mt-3 text-sm text-gray-500">
           Updating products...
