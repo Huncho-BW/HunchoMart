@@ -13,7 +13,7 @@ export default function HomeDivider() {
     },
     {
       logo: <Shield />,
-      title: "Authenticity Guaranteed",
+      title: "Authenticated",
       name: "100% verified products",
     },
     {
@@ -34,7 +34,7 @@ export default function HomeDivider() {
       transition={{
         duration: 1,
       }}
-      className=" home flex flex-col justify-center border h-[95px] bg-[#0C0C0C]"
+      className=" home flex flex-col justify-center border h-[95px] bg-[#0C0C0C] divider-content"
     >
       <div className="flex justify-between">
         {defaul.map((item) => (
@@ -46,14 +46,19 @@ export default function HomeDivider() {
               delay: 1,
             }}
             className="flex
-        gap-2 items-center"
+        gap-2 items-center [@media(max-width:767px)]:flex [@media(max-width:767px)]:flex-col  [@media(max-width:767px)]:items-center  [@media(max-width:767px)]:justify-center "
           >
-            <span className="text-[#B8965A]">{item.logo}</span>{" "}
-            <div className="flex flex-col">
-              <h1 className="text-[12px] text-[600] text-white">
+            <div className=" [@media(max-width:767px)]:flex [@media(max-width:767px)]:flex-col [@media(max-width:767px)]:items-center  [@media(max-width:767px)]:justify-center ">
+              <span className="text-[#B8965A]">{item.logo}</span>
+            </div>
+
+            <div className="flex flex-col [@media(max-width:767px)]:flex [@media(max-width:767px)]:flex-col [@media(max-width:767px)]:gap-[10px] ">
+              <h1 className="text-[12px] [@media(max-width:767px)]:text-[10px] text-[600] text-white text-wrap">
                 {item.title}
               </h1>
-              <p className="text-[10px] text-[#8A8580]">{item.name}</p>
+              <p className="text-[10px] [@media(max-width:767px)]:text-[8px] text-[#8A8580] text-wrap text-left">
+                {item.name}
+              </p>
             </div>
           </motion.div>
         ))}

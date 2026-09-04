@@ -163,14 +163,20 @@ export default function Navbar() {
         <div className="actions">
           <NavLink to="/heart">
             {({ isActive }) => (
-              <Heart className={isActive ? "nav-text active" : "nav-text"} />
+              <Heart
+                className={
+                  isActive ? "flex  nav-text active" : " flex  nav-text"
+                }
+              />
             )}
           </NavLink>
 
           <NavLink to="/cart">
             {({ isActive }) => (
               <ShoppingCart
-                className={isActive ? "nav-text active" : "nav-text"}
+                className={
+                  isActive ? "flex  nav-text active" : "flex  nav-text"
+                }
               />
             )}
           </NavLink>
@@ -185,80 +191,80 @@ export default function Navbar() {
               >
                 <CircleUser />
                 {details?.firstName.length > 1 && (
-                  <h1>{`Hi ${details.lastName} `}</h1>
+                  <h1 className="text-nowrap head-name">{`Hi ${details.lastName} `}</h1>
                 )}
               </div>
             )}
           </NavLink>
+          <div className="mobile-menu">
+            <Dialog.Root>
+              <Dialog.Trigger asChild>
+                <button>
+                  <Menu />
+                </button>
+              </Dialog.Trigger>
+
+              <Dialog.Portal>
+                <Dialog.Overlay className="overlay" />
+
+                <Dialog.Content className="mobile-drawer">
+                  <Dialog.Close asChild>
+                    <button>
+                      <X />
+                    </button>
+                  </Dialog.Close>
+
+                  <div>
+                    <div className=" mobileSearch relative">
+                      <input
+                        type="text"
+                        placeholder="Search products..."
+                        value={searchInput}
+                        onChange={(e) => setSearchInput(e.target.value)}
+                      />
+
+                      {searchInput.length > 0 && (
+                        <CircleX
+                          size={18}
+                          className="search-clear"
+                          onClick={() => setSearchInput("")}
+                        />
+                      )}
+                    </div>
+
+                    {searchDebounce?.length >= 3 && (
+                      <div className="search-dropdown absolute">
+                        {isLoading && (
+                          <p className="search-status">Searching...</p>
+                        )}
+
+                        {isError && (
+                          <p className="search-status">No products found</p>
+                        )}
+
+                        {!isLoading &&
+                          !isError &&
+                          searchData.map((item) => (
+                            <div
+                              key={item.id}
+                              className="search-dropdown-item group"
+                            >
+                              <p>{item.title}</p>
+
+                              <ArrowRight className="search-arrow" size={16} />
+                            </div>
+                          ))}
+                      </div>
+                    )}
+                    <NavlinkMobile />
+                  </div>
+                </Dialog.Content>
+              </Dialog.Portal>
+            </Dialog.Root>
+          </div>
         </div>
 
         {/* Mobile Menu */}
-        <div className="mobile-menu">
-          <Dialog.Root>
-            <Dialog.Trigger asChild>
-              <button>
-                <Menu />
-              </button>
-            </Dialog.Trigger>
-
-            <Dialog.Portal>
-              <Dialog.Overlay className="overlay" />
-
-              <Dialog.Content className="mobile-drawer">
-                <Dialog.Close asChild>
-                  <button>
-                    <X />
-                  </button>
-                </Dialog.Close>
-
-                <div>
-                  <div className=" mobileSearch relative">
-                    <input
-                      type="text"
-                      placeholder="Search products..."
-                      value={searchInput}
-                      onChange={(e) => setSearchInput(e.target.value)}
-                    />
-
-                    {searchInput.length > 0 && (
-                      <CircleX
-                        size={18}
-                        className="search-clear"
-                        onClick={() => setSearchInput("")}
-                      />
-                    )}
-                  </div>
-
-                  {searchDebounce?.length >= 3 && (
-                    <div className="search-dropdown absolute">
-                      {isLoading && (
-                        <p className="search-status">Searching...</p>
-                      )}
-
-                      {isError && (
-                        <p className="search-status">No products found</p>
-                      )}
-
-                      {!isLoading &&
-                        !isError &&
-                        searchData.map((item) => (
-                          <div
-                            key={item.id}
-                            className="search-dropdown-item group"
-                          >
-                            <p>{item.title}</p>
-
-                            <ArrowRight className="search-arrow" size={16} />
-                          </div>
-                        ))}
-                    </div>
-                  )}
-                  <NavlinkMobile />
-                </div>
-              </Dialog.Content>
-            </Dialog.Portal>
-          </Dialog.Root>
-        </div>
       </header>
     </div>
   );

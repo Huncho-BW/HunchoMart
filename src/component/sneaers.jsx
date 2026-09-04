@@ -1,17 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
-import { ChevronUp, LayoutGrid, Logs } from "lucide-react";
+import { ChevronUp } from "lucide-react";
 import FilterSide from "../pages/Filter";
 import BrandCard from "../pages/BrandCard";
+import { LayoutGrid } from "lucide-react";
+import { Logs } from "lucide-react";
 import LayoutCard from "./LayoutCard";
 import { useSearchParams } from "react-router-dom";
+import { BsFilterSquareFill } from "react-icons/bs";
+import * as Dialog from "@radix-ui/react-dialog";
+
+import BrandSke from "../skeletonComponenet/BrandCardSkeleton";
+import LayoutSke from "../skeletonComponenet/LayoutCardSkeleton";
+
 export default function Sneaker() {
-  const [dropdownMenu, setDropdownMenu] = useState(false);
-  const [displayMode, setDisplayMode] = useState("grid");
   const [searchParams] = useSearchParams();
   const urlSearch = searchParams.get("search" || "");
-  // Search input state
+
+  const [dropdownMenu, setDropdownMenu] = useState(false);
+  const [displayMode, setDisplayMode] = useState("grid");
   const [searchInput, setSearchInput] = useState(urlSearch);
 
   const sortOptions = [
@@ -35,14 +43,6 @@ export default function Sneaker() {
     sort: "",
   });
 
-  const [page, setPage] = useState(1);
-
-  const limit = 12;
-
-  // --------------------------------------------------
-  // SEARCH DEBOUNCE
-  // --------------------------------------------------
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setSelectionValue((prev) => ({
@@ -56,33 +56,25 @@ export default function Sneaker() {
     return () => clearTimeout(timer);
   }, [searchInput]);
 
-  // --------------------------------------------------
-  // FETCH SNEAKER PRODUCTS
-  // --------------------------------------------------
+  const [page, setPage] = useState(1);
 
-  const getSneakerData = async () => {
+  const limit = 12;
+
+  // Fetch fashion products
+  const getFashionData = async () => {
     const response = await axios.get(
       "https://huncho-mart-api.onrender.com/api/products",
       {
         params: {
           categories: "sneaker",
-
           brand: selectedValue.brand.join(",") || undefined,
-
           title: selectedValue.title || undefined,
-
           minPrice: selectedValue.price.min ?? undefined,
-
           maxPrice: selectedValue.price.max ?? undefined,
-
           size: selectedValue.size.join(",") || undefined,
-
           color: selectedValue.color.join(",") || undefined,
-
           sort: selectedValue.sort || undefined,
-
           rating: selectedValue.rating || undefined,
-
           page,
           limit,
         },
@@ -94,78 +86,50 @@ export default function Sneaker() {
 
   const { data, isLoading, isError, isFetching } = useQuery({
     queryKey: ["sneaker", page, selectedValue],
-
-    queryFn: getSneakerData,
-
+    queryFn: getFashionData,
     placeholderData: (previousData) => previousData,
   });
 
   console.log("Sneaker API:", data);
 
-  // --------------------------------------------------
-  // PRODUCTS
-  // --------------------------------------------------
+  // Products
+  const fashionData = data?.products ?? [];
 
-  const sneakerData = data?.products ?? [];
-
-  // --------------------------------------------------
-  // PAGINATION
-  // --------------------------------------------------
-
+  // Pagination data from backend
   const pagination = data?.pagination;
 
   const totalProducts = pagination?.totalProducts ?? 0;
-
   const totalPages = pagination?.totalPages ?? 1;
-
   const currentPage = pagination?.page ?? page;
 
-  // --------------------------------------------------
-  // FILTER CHANGE
-  // --------------------------------------------------
-
+  // Whenever filter changes,
+  // go back to page 1
   const handleFilterChange = (value) => {
     setSelectionValue(value);
     setPage(1);
   };
 
-  // --------------------------------------------------
-  // LOADING
-  // --------------------------------------------------
-
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center h-[50vh]">
-        Loading sneaker products...
-      </div>
-    );
-  }
-
-  // --------------------------------------------------
-  // ERROR
-  // --------------------------------------------------
-
   if (isError) {
     return (
       <div className="flex justify-center items-center h-[50vh]">
-        Failed to load sneaker products.
+        Failed to load fashion products.
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col px-[24px] py-[40px]">
+    <div className="flex flex-col py-[40px]">
       {/* Breadcrumb */}
-      <div className="flex gap-2">
+      <div className="flex gap-2 px-[40px]">
         <h1 className="text-[10px] text-[#8A8580]">Home</h1>
 
-        <h1 className="text-[12px] text-[#0C0C0C]">Sneakers</h1>
+        <h1 className="text-[12px] text-[#0C0C0C]">Sneaker</h1>
       </div>
 
       {/* Header */}
-      <div className="flex justify-between">
+      <div className="flex justify-between px-[40px]">
         <div>
-          <h1 className="text-[30px] topHeader text-[#0C0C0C]">ALL Sneakers</h1>
+          <h1 className="text-[30px] topHeader text-[#0C0C0C]">ALL Product</h1>
 
           <span className="text-[14px] text-[#8A8580]">
             {totalProducts} item
@@ -174,92 +138,183 @@ export default function Sneaker() {
       </div>
 
       {/* Category Layout */}
-      <div>
-        {/* Sort + Display Mode */}
-        <div className="flex items-center justify-end w-full gap-5">
-          {/* Sort */}
-          <div className="flex items-center">
-            <div className="relative">
-              <div
-                onClick={() => setDropdownMenu((prev) => !prev)}
-                className="flex items-center gap-2 border border-gray-200 rounded-xl px-4 py-2.5 bg-white cursor-pointer"
-              >
-                <span className="text-sm text-gray-500">Sort:</span>
+      <div className="cateLayout-head">
+        <div className="cate-layout-subHead">
+          {/* Mobile Filter */}
+          <div className="moblieFilter">
+            <Dialog.Root>
+              <Dialog.Trigger>
+                <BsFilterSquareFill size={24} />
+              </Dialog.Trigger>
 
-                <span className="text-sm font-semibold text-gray-800">
-                  {sortOptions.find((item) => item.value === selectedValue.sort)
-                    ?.label || "Featured"}
-                </span>
+              <Dialog.Portal>
+                <Dialog.Overlay />
 
-                <span
-                  className={
-                    dropdownMenu
-                      ? "transition-transform duration-300 rotate-180"
-                      : "transition-transform duration-300 rotate-0"
-                  }
-                >
-                  <ChevronUp />
-                </span>
-              </div>
-
-              {/* Sort Dropdown */}
-              {dropdownMenu && (
-                <div className="absolute right-0 top-full mt-2 z-50 w-[200px] rounded-xl border border-gray-200 bg-white shadow-lg overflow-hidden">
-                  {sortOptions.map((item) => (
-                    <div
-                      key={item.value}
-                      onClick={() => {
-                        setSelectionValue((prev) => ({
-                          ...prev,
-                          sort: item.value,
-                        }));
-
-                        setPage(1);
-
-                        setDropdownMenu(false);
-                      }}
-                      className="px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer"
-                    >
-                      {item.label}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+                <Dialog.Content className="filter-drawer">
+                  <FilterSide
+                    category="sneaker"
+                    setSelectionValue={handleFilterChange}
+                    selectedValue={selectedValue}
+                    searchInput={searchInput}
+                    setSearchInput={setSearchInput}
+                  />
+                </Dialog.Content>
+              </Dialog.Portal>
+            </Dialog.Root>
           </div>
 
-          {/* Display Mode */}
-          <div className="flex gap-2 border">
-            {/* Grid */}
-            <button
-              onClick={() => setDisplayMode("grid")}
-              className={
-                displayMode === "grid"
-                  ? "px-[4px] py-[4px] bg-black text-white"
-                  : "px-[4px] py-[4px]"
-              }
-            >
-              <LayoutGrid />
-            </button>
+          <div className="cate-sort">
+            {/* Sort */}
+            <div className="flex items-center">
+              <div className="relative">
+                <div
+                  onClick={() => setDropdownMenu((prev) => !prev)}
+                  className="flex items-center gap-2 border border-gray-200 rounded-xl px-4 py-2.5 bg-white cursor-pointer"
+                >
+                  <span className="text-sm text-gray-500">Sort:</span>
 
-            {/* List */}
-            <button
-              onClick={() => setDisplayMode("block")}
-              className={
-                displayMode === "block"
-                  ? "px-[4px] py-[4px] bg-black text-white"
-                  : "px-[4px] py-[4px]"
-              }
-            >
-              <Logs />
-            </button>
+                  <span className="text-sm font-semibold text-gray-800">
+                    {selectedValue.sort || "Feature"}
+                  </span>
+
+                  <span
+                    className={`transition-transform duration-300 ${
+                      dropdownMenu ? "rotate-180" : "rotate-0"
+                    }`}
+                  >
+                    <ChevronUp />
+                  </span>
+                </div>
+
+                {dropdownMenu && (
+                  <div className="absolute right-0 top-full mt-2 z-50 w-[200px] rounded-xl border border-gray-200 bg-white shadow-lg overflow-hidden">
+                    {sortOptions.map((item) => (
+                      <div
+                        key={item.value}
+                        onClick={() => {
+                          setSelectionValue((prev) => ({
+                            ...prev,
+                            sort: item.value,
+                          }));
+
+                          setDropdownMenu(false);
+                        }}
+                        className="px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer"
+                      >
+                        {item.label}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Display Mode */}
+            <div className="flex gap-2 border">
+              <button
+                onClick={() => setDisplayMode("grid")}
+                className={
+                  displayMode === "grid"
+                    ? "px-[4px] py-[4px] bg-black text-white"
+                    : "px-[4px] py-[4px]"
+                }
+              >
+                <LayoutGrid style={{ stroke: "0.5px" }} />
+              </button>
+
+              <button
+                onClick={() => setDisplayMode("block")}
+                className={
+                  displayMode === "block"
+                    ? "px-[4px] py-[4px] bg-black text-white"
+                    : "px-[4px] py-[4px]"
+                }
+              >
+                <Logs />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop Sort */}
+        <div className="sort-Desktop">
+          <div className="cate-sort">
+            {/* Sort */}
+            <div className="flex items-center">
+              <div className="relative">
+                <div
+                  onClick={() => setDropdownMenu((prev) => !prev)}
+                  className="flex items-center gap-2 border border-gray-200 rounded-xl px-4 py-2.5 bg-white cursor-pointer"
+                >
+                  <span className="text-sm text-gray-500">Sort:</span>
+
+                  <span className="text-sm font-semibold text-gray-800">
+                    {selectedValue.sort || "Feature"}
+                  </span>
+
+                  <span
+                    className={`transition-transform duration-300 ${
+                      dropdownMenu ? "rotate-180" : "rotate-0"
+                    }`}
+                  >
+                    <ChevronUp />
+                  </span>
+                </div>
+
+                {dropdownMenu && (
+                  <div className="absolute right-0 top-full mt-2 z-50 w-[200px] rounded-xl border border-gray-200 bg-white shadow-lg overflow-hidden">
+                    {sortOptions.map((item) => (
+                      <div
+                        key={item.value}
+                        onClick={() => {
+                          setSelectionValue((prev) => ({
+                            ...prev,
+                            sort: item.value,
+                          }));
+
+                          setDropdownMenu(false);
+                        }}
+                        className="px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer"
+                      >
+                        {item.label}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Display Mode */}
+            <div className="flex gap-2 border">
+              <button
+                onClick={() => setDisplayMode("grid")}
+                className={
+                  displayMode === "grid"
+                    ? "px-[4px] py-[4px] bg-black text-white"
+                    : "px-[4px] py-[4px]"
+                }
+              >
+                <LayoutGrid style={{ stroke: "0.5px" }} />
+              </button>
+
+              <button
+                onClick={() => setDisplayMode("block")}
+                className={
+                  displayMode === "block"
+                    ? "px-[4px] py-[4px] bg-black text-white"
+                    : "px-[4px] py-[4px]"
+                }
+              >
+                <Logs />
+              </button>
+            </div>
           </div>
         </div>
 
         {/* Filter + Products */}
         <div className="CatLayout flex-col mt-5">
           {/* Filter */}
-          <div>
+          <div className="filter-head">
             <FilterSide
               category="sneaker"
               setSelectionValue={handleFilterChange}
@@ -271,26 +326,38 @@ export default function Sneaker() {
 
           {/* Products */}
           <div>
-            {/* GRID VIEW */}
-            {displayMode === "grid" ? (
+            {isFetching ? (
+              displayMode === "grid" ? (
+                <div className="catDisplay">
+                  {Array.from({ length: 12 }).map((_, index) => (
+                    <BrandSke key={index} />
+                  ))}
+                </div>
+              ) : (
+                <div className="flex flex-col gap-[20px]">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <LayoutSke key={index} />
+                  ))}
+                </div>
+              )
+            ) : displayMode === "grid" ? (
               <div className="catDisplay">
-                {sneakerData.length > 0 ? (
-                  sneakerData.map((item) => (
+                {fashionData.length > 0 ? (
+                  fashionData.map((item) => (
                     <BrandCard key={item.id} product={item} />
                   ))
                 ) : (
-                  <p>No sneaker products found.</p>
+                  <p>No fashion products found.</p>
                 )}
               </div>
             ) : (
-              /* LIST VIEW */
               <div className="flex flex-col gap-[20px]">
-                {sneakerData.length > 0 ? (
-                  sneakerData.map((item) => (
+                {fashionData.length > 0 ? (
+                  fashionData.map((item) => (
                     <LayoutCard key={item.id} product={item} />
                   ))
                 ) : (
-                  <p>No sneaker products found.</p>
+                  <p>No fashion products found.</p>
                 )}
               </div>
             )}
@@ -299,36 +366,28 @@ export default function Sneaker() {
       </div>
 
       {/* Pagination */}
-      <div className="flex justify-center items-center gap-4 mt-8">
-        {/* Previous */}
+      <div className="flex justify-center items-center gap-3 mt-8">
         <button
           disabled={currentPage === 1 || isFetching}
-          onClick={() => {
-            setPage((prev) => prev - 1);
-          }}
-          className="px-4 py-2 border rounded disabled:opacity-40"
+          onClick={() => setPage((prev) => prev - 1)}
+          className="px-5 py-2.5 rounded-lg border border-black bg-white text-black font-medium transition-all duration-200 hover:bg-black hover:text-white disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-black"
         >
           Previous
         </button>
 
-        {/* Page */}
-        <span>
+        <span className="px-4 py-2.5 rounded-lg bg-black text-white font-medium">
           Page {currentPage} of {totalPages}
         </span>
 
-        {/* Next */}
         <button
           disabled={currentPage === totalPages || isFetching}
-          onClick={() => {
-            setPage((prev) => prev + 1);
-          }}
-          className="px-4 py-2 border rounded disabled:opacity-40"
+          onClick={() => setPage((prev) => prev + 1)}
+          className="px-5 py-2.5 rounded-lg border border-black bg-white text-black font-medium transition-all duration-200 hover:bg-black hover:text-white disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-black"
         >
           Next
         </button>
       </div>
 
-      {/* Updating */}
       {isFetching && (
         <p className="text-center mt-3 text-sm text-gray-500">
           Updating products...

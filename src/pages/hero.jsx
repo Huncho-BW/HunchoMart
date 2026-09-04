@@ -72,6 +72,7 @@ export default function HeroSection() {
 
   const textControls = useAnimation();
   const imageControls = useAnimation();
+  const imageText = useAnimation();
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -90,13 +91,14 @@ export default function HeroSection() {
       await Promise.all([
         textControls.set({ opacity: 0, x: 30 }),
         imageControls.set({ opacity: 0, x: -30 }),
+        imageText.set({ opacity: 0, y: -30 }),
       ]);
 
       textControls.start({
         opacity: 1,
         x: 0,
         transition: {
-          duration: 0.8,
+          duration: 1,
           ease: "easeOut",
         },
       });
@@ -104,6 +106,14 @@ export default function HeroSection() {
       imageControls.start({
         opacity: 1,
         x: 0,
+        transition: {
+          duration: 0.8,
+          ease: "easeOut",
+        },
+      });
+      imageText.start({
+        opacity: 1,
+        y: 0,
         transition: {
           duration: 0.8,
           ease: "easeOut",
@@ -119,17 +129,17 @@ export default function HeroSection() {
       <motion.div animate={textControls} className="hero-text">
         <div className="subText">
           <h1 className="text-[10px] text-[#C9A227]"> {currentHero.title}</h1>
-          <h2 className="text-[72px] font-[600] topHeader ">
+          <h2 className="text-[72px]  [@media(max-width:767px)]:text-[62px] font-[600] topHeader ">
             {currentHero.subtitle}
           </h2>
-          <p className="text-[16px] leading-[1.7] text-[#555] ">
+          <p className="text-[16px] font-serif leading-[1.7] text-[#555] ">
             {currentHero.description}
           </p>
 
           <div className="flex gap-[20px]">
             <div className="heroBorder bg-[#08090B] text-white hover:bg-[#1C1D20]">
               <NavLink to={currentHero.link}>
-                <button className="flex gap-2 items-center">
+                <button className="flex gap-2 items-center font-serif">
                   {currentHero.button}
                   <ArrowRight className="arroRight" />
                 </button>
@@ -138,7 +148,7 @@ export default function HeroSection() {
 
             <div className="heroBorder bg-[#E0C15A] text-[#08090B] hover:bg-[#C9A943]">
               <NavLink>
-                <button>View all</button>
+                <button className="font-serif">View all</button>
               </NavLink>
             </div>
           </div>
@@ -151,27 +161,30 @@ export default function HeroSection() {
           src={currentHero.image}
           alt={currentHero.title}
         />
-        <div className=" border rounded-lg  w-[90%]  left-1/2 -translate-x-1/2 items-center p-[10px] bg-white     flex justify-between absolute bottom-[20px] hover:-translate-y-4 transition-transform duration-300 ">
+        <motion.div
+          animate={imageText}
+          className=" border rounded-lg  w-[90%]  left-1/2 -translate-x-1/2 items-center p-[10px] bg-white     flex justify-between absolute bottom-[20px] hover:-translate-y-4 transition-transform duration-300 "
+        >
           <div>
-            <h1 className="text-[#64748B] text-[10px]">Feature</h1>
-            <h1 className="text-[#08090B] text-[14px]">
+            <h1 className="text-[#64748B] font-serif text-[10px]">Feature</h1>
+            <h1 className="text-[#08090B] font-serif text-[14px]">
               {currentHero.brandTitle}
             </h1>
-            <h1 className=" font-[400] text-[12px] text-[#64748B]">
+            <h1 className=" font-[400] font-serif text-[12px] text-[#64748B]">
               {currentHero.brand}
             </h1>
           </div>
           <div>
-            <h1 className=" font-[700] text-[18px] text-[#08090B]">
+            <h1 className=" font-[700] topHeader text-[18px] text-[#08090B]">
               {" "}
               ${currentHero.price}
             </h1>
-            <h1 className="text-right line-through text-[12px] text-[#64748B]">
+            <h1 className="text-right topHeader line-through text-[12px] text-[#64748B]">
               {" "}
               ${currentHero.actualPrice}
             </h1>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   );

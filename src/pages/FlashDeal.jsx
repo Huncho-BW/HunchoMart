@@ -42,11 +42,11 @@ export default function FlashDeal() {
     return () => clearInterval(timer);
   }, [endAtTime]);
 
-  const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+  const hours = Math.floor(timeLeft / (1000 * 60 * 60)) || 0;
 
-  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)) || 0;
 
-  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000) || 0;
 
   if (isLoading) {
     return (

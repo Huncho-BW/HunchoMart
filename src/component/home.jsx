@@ -44,7 +44,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="p-[40px]">
+      <div className="home">
         <EmailLongin />
       </div>
     </div>

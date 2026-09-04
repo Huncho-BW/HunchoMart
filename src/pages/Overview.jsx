@@ -122,7 +122,7 @@ export default function Overview() {
       date: "+3 this month",
     },
     {
-      total: "Wishlist",
+      total: "Wishlist Like",
       spent: whishlist?.length || 0,
       date: "+3 this month",
     },
@@ -143,7 +143,7 @@ export default function Overview() {
         </h2>
       </div>
 
-      <div className="flex justify-between gap-[20px]">
+      <div className="flex justify-between [@media(max-width:767px)]:flex-col gap-[20px]">
         {orders.map((item) => (
           <div className="order-border" key={item.total}>
             <h1 className="text-[10px] tracking-[2px] font-[400]">
