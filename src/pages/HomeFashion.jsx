@@ -4,6 +4,8 @@ import { CategoriesApi } from "../Api/CategoriesApi";
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "motion/react";
 import BrandSke from "../skeletonComponenet/BrandCardSkeleton";
+import { ChevronLeft } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 export default function HomeFashion() {
   const { data, isLoading, isError } = useQuery({
