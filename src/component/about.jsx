@@ -112,7 +112,7 @@ export default function Fashion() {
   if (isError) {
     return (
       <div className="flex justify-center items-center h-[50vh]">
-        Failed to load fashion products.
+        <p> Failed to load fashion products.</p>
       </div>
     );
   }
@@ -329,9 +329,7 @@ export default function Fashion() {
             {isFetching ? (
               displayMode === "grid" ? (
                 <div className="catDisplay">
-                  {Array.from({ length: 12 }).map((_, index) => (
-                    <BrandSke key={index} />
-                  ))}
+                  <BrandSke />
                 </div>
               ) : (
                 <div className="flex flex-col gap-[20px]">

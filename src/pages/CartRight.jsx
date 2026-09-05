@@ -49,7 +49,7 @@ export default function CartRight({ productData }) {
       <div className="summaryRow">
         <h1>Shipping</h1>
 
-        <h1 className="freeShipping">FREE</h1>
+        <h1 className="freeShipping">0</h1>
       </div>
 
       <div className="summaryRow">

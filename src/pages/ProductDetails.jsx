@@ -179,77 +179,85 @@ export default function ProductDetails() {
             <hr />
           </div>
 
-          <div className="product-color">
-            <div className="section-header">
-              <h1 className="text-[12px] tracking-[0.08em] text-[#0C0C0C]">
-                color:
-                <span className="ml-1">
-                  {" "}
-                  {productDetailsData.color || "Select a color"}
+          {productData?.colors?.length > 1 && (
+            <div className="product-color">
+              <div className="section-header">
+                <h1 className="text-[12px] tracking-[0.08em] text-[#0C0C0C]">
+                  color:
+                  <span className="ml-1">
+                    {productDetailsData.color || "Select a color"}
+                  </span>
+                </h1>
+
+                <div className="flex gap-2">
+                  {productData.colors.map((item) => (
+                    <button
+                      onClick={() => {
+                        setproductDetailsData((prev) => ({
+                          ...prev,
+                          color: item,
+                        }));
+                      }}
+                      key={item}
+                      className={`w-10 h-10 rounded-full border hover:ring-2
+              hover:ring-offset-2
+              hover:ring-[var(--ring-color)]
+              ${
+                productDetailsData.color === item
+                  ? "ring-2 ring-offset-2 ring-[var(--ring-color)]"
+                  : ""
+              }`}
+                      style={{
+                        backgroundColor: item,
+                        "--ring-color": item,
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {productData?.sizes?.length > 1 && (
+            <div className="product-size">
+              <div className="flex justify-between">
+                <h1 className="text-[12px] tracking-[0.08em] text-[#0C0C0C]">
+                  size:
+                  <span className="ml-1">
+                    {productDetailsData.size || "Select a size"}
+                  </span>
+                </h1>
+
+                <span className="text-[12px] tracking-[0.08em] text-[#B8965A]">
+                  Size Guide
                 </span>
-              </h1>
+              </div>
 
               <div className="flex gap-2">
-                {productData?.colors?.map((item) => (
-                  <button
-                    onClick={() => {
-                      setproductDetailsData((prev) => ({
-                        ...prev,
-                        color: item,
-                      }));
-                    }}
+                {productData.sizes.map((item) => (
+                  <div
+                    className={`${
+                      productDetailsData.size === item
+                        ? "bg-[#0c0c0c] text-white size-box"
+                        : "size-box"
+                    }`}
                     key={item}
-                    className={`w-10 h-10 rounded-full border  hover:ring-2
-        hover:ring-offset-2
-        hover:ring-[var(--ring-color)] 
-
-          ${
-            productDetailsData.color === item
-              ? "ring-2 ring-offset-2 ring-[var(--ring-color)]"
-              : ""
-          }`}
-                    style={{ backgroundColor: item, "--ring-color": item }}
-                  ></button>
+                  >
+                    <button
+                      onClick={() => {
+                        setproductDetailsData((prev) => ({
+                          ...prev,
+                          size: item,
+                        }));
+                      }}
+                    >
+                      {item}
+                    </button>
+                  </div>
                 ))}
               </div>
             </div>
-          </div>
-
-          <div className="product-size">
-            <div className="flex justify-between">
-              <h1 className="text-[12px] tracking-[0.08em] text-[#0C0C0C]">
-                size:
-                <span className="ml-1">
-                  {" "}
-                  {productDetailsData.size || "Select a size"}
-                </span>
-              </h1>
-
-              <span className="text-[12px] tracking-[0.08em] text-[#B8965A]">
-                Size Guide
-              </span>
-            </div>
-
-            <div className="flex gap-2">
-              {productData?.sizes?.map((item) => (
-                <div
-                  className={`${productDetailsData.size === item ? " bg-[#0c0c0c] text-white size-box " : " size-box"}`}
-                  key={item}
-                >
-                  <button
-                    onClick={() => {
-                      setproductDetailsData((prev) => ({
-                        ...prev,
-                        size: item,
-                      }));
-                    }}
-                  >
-                    {item}
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
+          )}
 
           <div className="product-quantity">
             <h1 className="text-[12px]">QTY</h1>

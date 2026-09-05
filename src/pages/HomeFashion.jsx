@@ -43,7 +43,7 @@ export default function HomeFashion() {
       {/* Products */}
       <div className="flex gap-[20px] overflow-hidden overflow-x-auto scrollbar-hide">
         {isLoading ? (
-          Array.from({ length: 5 }).map((_, index) => <BrandSke key={index} />)
+          <BrandSke />
         ) : isError ? (
           <p>Failed to load products.</p>
         ) : (

@@ -23,7 +23,7 @@ export default function FlashDeal() {
     queryKey: ["flashDeal"],
     queryFn: getFlashData,
     retry: 5,
-    retryDelay: 1000,
+    retryDelay: 10 * 60 * 1000,
   });
 
   const flashData = data?.data ?? [];

@@ -34,89 +34,99 @@ export default function CartLeft({ productData, isLoading }) {
               <h1 className="cartProductName text-[16px]">{item.title}</h1>
 
               <div className="cartVariation relative text-[11px]">
-                {sizeClick === item.id && (
-                  <div className="absolute bottom-full left-1/2 z-20 mb-1 flex -translate-x-1/2 gap-1 whitespace-nowrap bg-white border border-gray-200 shadow-md p-1">
-                    {item.sizes.map((size, index) => (
-                      <button
-                        className="whitespace-nowrap px-3 py-2 hover:bg-gray-100"
-                        onClick={() => {
-                          setCartItems((prev) =>
-                            prev.map((cartItem) =>
-                              cartItem.id === item.id
-                                ? { ...cartItem, size: size }
-                                : cartItem,
-                            ),
-                          );
+                {/* SIZE */}
+                {item.sizes?.length > 1 && (
+                  <>
+                    {sizeClick === item.id && (
+                      <div className="absolute bottom-full left-1/2 z-20 mb-1 flex -translate-x-1/2 gap-1 whitespace-nowrap bg-white border border-gray-200 shadow-md p-1">
+                        {item.sizes.map((size, index) => (
+                          <button
+                            className="whitespace-nowrap px-3 py-2 hover:bg-gray-100"
+                            onClick={() => {
+                              setCartItems((prev) =>
+                                prev.map((cartItem) =>
+                                  cartItem.id === item.id
+                                    ? { ...cartItem, size: size }
+                                    : cartItem,
+                                ),
+                              );
 
-                          SetSizeClick(null);
+                              SetSizeClick(null);
+                            }}
+                            key={index}
+                          >
+                            {size}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+
+                    <h1 className="whitespace-nowrap">
+                      Size:{" "}
+                      <span
+                        className="cursor-pointer whitespace-nowrap"
+                        onClick={() => {
+                          SetSizeClick((prev) =>
+                            prev === item.id ? null : item.id,
+                          );
                         }}
-                        key={index}
                       >
-                        {size}
-                      </button>
-                    ))}
-                  </div>
+                        {item.selectedSize || "select size"}
+                      </span>
+                    </h1>
+                  </>
                 )}
 
-                <h1 className="whitespace-nowrap">
-                  Size:{" "}
-                  <span
-                    className="cursor-pointer whitespace-nowrap"
-                    onClick={() => {
-                      SetSizeClick((prev) =>
-                        prev === item.id ? null : item.id,
-                      );
-                    }}
-                  >
-                    {item.selectedSize || "select size"}
-                  </span>
-                </h1>
+                {/* COLOR */}
+                {item.colors?.length > 1 && (
+                  <>
+                    {colorClick === item.id && (
+                      <div className="absolute bottom-full left-1/2 z-20 mb-1 flex -translate-x-1/2 items-center justify-center gap-2 whitespace-nowrap bg-white border border-gray-200 shadow-md p-2">
+                        {item.colors.map((color, index) => (
+                          <span
+                            onClick={() => {
+                              setCartItems((prev) =>
+                                prev.map((cartitem) =>
+                                  cartitem.id === item.id
+                                    ? { ...cartitem, color: color }
+                                    : cartitem,
+                                ),
+                              );
 
-                {colorClick === item.id && (
-                  <div className="absolute bottom-full left-1/2 z-20 mb-1 flex -translate-x-1/2 items-center justify-center gap-2 whitespace-nowrap bg-white border border-gray-200 shadow-md p-2">
-                    {item.colors.map((color, index) => (
+                              setColorClick(null);
+                            }}
+                            key={index}
+                            className="colorCircle cursor-pointer"
+                            style={{
+                              backgroundColor: color,
+                            }}
+                          ></span>
+                        ))}
+                      </div>
+                    )}
+
+                    <span className="cartColor whitespace-nowrap">
+                      Color:{" "}
                       <span
                         onClick={() => {
-                          setCartItems((prev) =>
-                            prev.map((cartitem) =>
-                              cartitem.id === item.id
-                                ? { ...cartitem, color: color }
-                                : cartitem,
-                            ),
+                          setColorClick((prev) =>
+                            prev === item.id ? null : item.id,
                           );
-
-                          setColorClick(null);
                         }}
-                        key={index}
-                        className="colorCircle cursor-pointer"
+                        className={`${
+                          item.selectedColor
+                            ? "colorCircle cursor-pointer"
+                            : "cursor-pointer whitespace-nowrap"
+                        }`}
                         style={{
-                          backgroundColor: color,
+                          backgroundColor: item.selectedColor || "transparent",
                         }}
-                      ></span>
-                    ))}
-                  </div>
+                      >
+                        {!item.selectedColor && "select color"}
+                      </span>
+                    </span>
+                  </>
                 )}
-
-                <span className="cartColor whitespace-nowrap">
-                  Color:{" "}
-                  <span
-                    onClick={() => {
-                      setColorClick((prev) =>
-                        prev === item.id ? null : item.id,
-                      );
-                    }}
-                    className={`${
-                      item.selectedColor
-                        ? "colorCircle cursor-pointer"
-                        : "cursor-pointer whitespace-nowrap"
-                    }`}
-                    style={{
-                      backgroundColor: item.selectedColor || "transparent",
-                    }}
-                  >
-                    {!item.selectedColor && "select color"}
-                  </span>
-                </span>
               </div>
 
               <div className="product-quantity">

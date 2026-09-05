@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Heart } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
@@ -13,6 +13,14 @@ export default function BrandCard({ product }) {
     useContext(CartContext);
 
   const [click, setClick] = useState(false);
+  useEffect(() => {
+    if (!click) return;
+    const timer = setTimeout(() => {
+      setClick(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [click]);
 
   const handleClick = (id) => {
     const productId = Number(id);
@@ -34,16 +42,21 @@ export default function BrandCard({ product }) {
             className="transition-transform duration-500 group-hover:scale-110 group-hover:border-b"
           />
 
-          <div className="addCart hidden group-hover:flex justify-center p-1">
+          <div
+            className={`addCart hidden group-hover:flex justify-center p-1 ${
+              click ? "bg-[#22C55E]" : "bg-white hover:bg-black"
+            }`}
+          >
             <button
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
                 addToCart(product?.id);
+                setClick(true);
               }}
-              className="text-center cursor-pointer"
+              className={" text-center cursor-pointer"}
             >
-              Quick Add
+              {click ? "✓ Add to Cart " : "Add to Cart"}
             </button>
           </div>
 

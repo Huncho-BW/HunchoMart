@@ -32,6 +32,9 @@ export default function Trading() {
   } = useQuery({
     queryKey: ["trending"],
     queryFn: getTrendingData,
+    retry: 5,
+
+    retryDelay: 10 * 60 * 1000,
   });
 
   return (

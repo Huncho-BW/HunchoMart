@@ -4,6 +4,8 @@ import { motion } from "motion/react";
 import { CategoriesApi } from "../Api/CategoriesApi";
 import BrandSke from "../skeletonComponenet/BrandCardSkeleton";
 import { useQuery } from "@tanstack/react-query";
+import { ChevronLeft } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 export default function HomeBueaty() {
   const { data, isLoading, isError } = useQuery({
@@ -43,7 +45,7 @@ export default function HomeBueaty() {
       {/* Cards */}
       <div className="flex gap-[20px] overflow-hidden overflow-x-auto scrollbar-hide">
         {isLoading ? (
-          Array.from({ length: 5 }).map((_, index) => <BrandSke key={index} />)
+          <BrandSke />
         ) : isError ? (
           <p>Failed to load products.</p>
         ) : (
