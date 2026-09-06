@@ -37,10 +37,7 @@ export default function HomeBueaty() {
   };
 
   return (
-    <div
-      onMouseEnter={() => setShowArrows(true)}
-      onMouseLeave={() => setShowArrows(false)}
-    >
+    <div>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
@@ -61,7 +58,11 @@ export default function HomeBueaty() {
       </motion.div>
 
       {/* Cards */}
-      <div className="relative ">
+      <div
+        onMouseEnter={() => setShowArrows(true)}
+        onMouseLeave={() => setShowArrows(false)}
+        className="relative "
+      >
         <div className="cards flex gap-[20px] overflow-x-auto scrollbar-hide">
           {isLoading ? (
             <BrandSke />

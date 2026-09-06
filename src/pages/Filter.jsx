@@ -70,9 +70,9 @@ export default function FilterSide({
     ),
   ];
 
-  let colorCate = [...new Set(result?.flatMap((item) => item.color))];
+  let colorCate = [...new Set(result?.flatMap((item) => item.colors))];
 
-  let sizeCate = [...new Set(result?.flatMap((item) => item?.size))];
+  let sizeCate = [...new Set(result?.flatMap((item) => item?.sizes))];
 
   if (isLoading) {
     return <div>Loading filters...</div>;
